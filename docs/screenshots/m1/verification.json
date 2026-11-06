@@ -1,0 +1,53 @@
+{
+  "commit": "f9985d8be4fbbb0dbd7fc44ee5e248da14de0fc4",
+  "dirty": false,
+  "pullRequestHead": null,
+  "pullRequestBase": null,
+  "timestamp": "2026-11-06T13:59:06.916Z",
+  "node": "v24.22.1",
+  "platform": "linux-x64",
+  "checks": [
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 43034
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 20383
+    },
+    {
+      "command": "npm run test",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1327
+    },
+    {
+      "command": "npm run build:main",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 5000
+    },
+    {
+      "command": "npm run build:renderer",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 24985
+    },
+    {
+      "command": "npm run build:renderer-lyric",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 5742
+    },
+    {
+      "command": "npm run build:renderer-scripts",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1642
+    }
+  ]
+}

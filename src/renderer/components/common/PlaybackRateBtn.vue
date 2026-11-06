@@ -90,7 +90,7 @@ const updatePreservesPitch = (enabled) => {
 
   &.active {
     svg {
-      color: var(--color-primary);
+      color: var(--color-primary-font);
       opacity: .8;
     }
   }

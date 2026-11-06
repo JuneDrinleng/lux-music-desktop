@@ -1,4 +1,5 @@
 import { ref, reactive, shallowRef, markRaw, computed, watch } from '@common/utils/vueTools'
+import { DEFAULT_MAGAZINE_THEME_ID } from '@common/theme/magazine'
 import { windowSizeList as configWindowSizeList } from '@common/config'
 import { appSetting } from './setting'
 import pkg from '../../../package.json'
@@ -159,7 +160,7 @@ export const setQualityList = (_qualityList: LX.QualityList) => {
   qualityList.value = _qualityList
 }
 
-export const themeId = ref('green')
+export const themeId = ref<string>(DEFAULT_MAGAZINE_THEME_ID)
 export const themeInfo: LX.ThemeInfo = {
   themes: [],
   userThemes: [],

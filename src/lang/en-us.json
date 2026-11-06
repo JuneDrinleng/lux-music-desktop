@@ -744,5 +744,11 @@
   "user_api_import_online__input_confirm": "Import",
   "user_api_import_online__input_loading": "Importing...",
   "user_api_import_online__input_tip": "Please enter an HTTP link",
-  "user_api_import_online__title": "Import Music API from network."
+  "user_api_import_online__title": "Import Music API from network.",
+  "theme_lime": "Lime",
+  "theme_mist_blue": "Mist blue",
+  "theme_sakura": "Sakura",
+  "theme_lavender": "Lavender",
+  "theme_oat_milk": "Oat milk",
+  "theme_ink_night": "Ink night"
 }

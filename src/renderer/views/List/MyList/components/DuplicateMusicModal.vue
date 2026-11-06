@@ -223,7 +223,7 @@ export default {
     background-color: var(--color-primary-background-hover);
   }
   &:active {
-    background-color: var(--color-primary-font-active);
+    background-color: var(--color-primary-background-active);
   }
 }
 

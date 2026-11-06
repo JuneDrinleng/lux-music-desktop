@@ -6,6 +6,7 @@
 //   return listId == 'download' ? downloadList : getListFromState(listId)
 // }
 import { encodePath, isUrl } from '@common/utils/common'
+import { resolveThemeColors, getPreferredThemeId, getFallbackThemeId } from '@common/theme/magazine'
 import { joinPath } from '@common/utils/nodejs'
 import { markRaw, shallowReactive } from '@common/utils/vueTools'
 import { getThemes as getTheme } from '@renderer/utils/ipc'
@@ -38,12 +39,7 @@ export const buildThemeColors = (theme: LX.Theme, dataPath: string) => {
     theme = copyTheme(theme)
     theme.config.extInfo['--background-image'] = buildBgUrl(theme.config.extInfo['--background-image'], dataPath)
   }
-  const colors: Record<string, string> = {
-    ...theme.config.themeColors,
-    ...theme.config.extInfo,
-  }
-
-  return colors
+  return resolveThemeColors(theme)
 }
 
 export const copyTheme = (theme: LX.Theme): LX.Theme => {
@@ -66,15 +62,11 @@ export const findTheme = (themeInfo: LX.ThemeInfo, id: string): LX.Theme | undef
 
 export const applyTheme = (id: string, lightId: string, darkId: string, dataPath: string) => {
   getThemes((themeInfo) => {
-    let themeId = id == 'auto'
-      ? themeShouldUseDarkColors.value
-        ? darkId
-        : lightId
-      : id
+    let themeId = getPreferredThemeId(id, lightId, darkId, themeShouldUseDarkColors.value)
 
     let theme = findTheme(themeInfo, themeId)
     if (!theme) {
-      themeId = id == 'auto' && themeShouldUseDarkColors.value ? 'black' : 'green'
+      themeId = getFallbackThemeId(id, themeShouldUseDarkColors.value)
       theme = themeInfo.themes.find(theme => theme.id == themeId)!
     }
     window.setTheme(buildThemeColors(theme, dataPath))

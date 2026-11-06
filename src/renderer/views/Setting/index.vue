@@ -205,7 +205,7 @@ export default {
     }
   }
   &.active {
-    color: var(--color-primary);
+    color: var(--color-primary-font);
   }
 }
 .activeIcon {

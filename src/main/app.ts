@@ -48,6 +48,7 @@ export const initGlobalData = () => {
       shouldUseDarkColors: nativeTheme.shouldUseDarkColors,
       theme: {
         id: '',
+        resolvedId: '',
         name: '',
         isDark: false,
         colors: {},

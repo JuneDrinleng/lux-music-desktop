@@ -17,7 +17,7 @@ dd
   h3#basic_theme {{ $t('setting__basic_theme') }}
   div
     ul(:class="$style.theme")
-      li(v-for="theme in themeList" :key="theme.id" :aria-label="theme.name" :style="theme.styles" :class="[$style.themeItem, {[$style.active]: themeId == theme.id}]" @click="toggleTheme(theme)" @contextmenu="handleEditTheme(theme)")
+      li(v-for="theme in themeList" :key="theme.id" :data-theme-id="theme.id" role="button" tabindex="0" :aria-pressed="themeId == theme.id" :aria-label="theme.name" :style="theme.styles" :class="[$style.themeItem, {[$style.active]: themeId == theme.id}]" @click="toggleTheme(theme)" @keydown.enter.prevent="toggleTheme(theme)" @keydown.space.prevent="toggleTheme(theme)" @contextmenu="handleEditTheme(theme)")
         div(:class="$style.bg")
         span(:class="$style.label") {{ theme.name }}
       li(v-if="showAllTheme || themeId == 'auto'" :aria-label="$t('theme_auto_tip')" :style="autoTheme" :class="[$style.themeItem, $style.auto, {[$style.active]: themeId == 'auto'}]" @click="handleSetThemeAuto" @contextmenu="isShowThemeSelectorModal = true")
@@ -31,7 +31,7 @@ dd
           div(:class="$style.bgContent")
             svg-icon(:class="$style.icon" name="plus")
         span(:class="$style.label") {{ $t('theme_add') }}
-      li(v-if="!showAllTheme" :aria-label="$t('theme_more_btn_show')" :class="[$style.themeItem, $style.moreThme]" @click="showAllTheme = true")
+      li(v-if="!showAllTheme" data-action="show-themes" role="button" tabindex="0" :aria-label="$t('theme_more_btn_show')" :class="[$style.themeItem, $style.moreThme]" @click="showAllTheme = true" @keydown.enter.prevent="showAllTheme = true" @keydown.space.prevent="showAllTheme = true")
         span(:class="$style.label") {{ $t('theme_more_btn_show') }}
         svg-icon(name="angle-right-solid" :class="$style.activeIcon")
 
@@ -113,6 +113,7 @@ user-api-modal(v-model="isShowUserApiModal")
 
 <script>
 import { computed, ref, watch, reactive, shallowReactive } from '@common/utils/vueTools'
+import { DEFAULT_MAGAZINE_THEME_ID, DEFAULT_MAGAZINE_DARK_THEME_ID } from '@common/theme/magazine'
 import { windowSizeList, userApi, isFullscreen, themeId } from '@renderer/store'
 import { langList, useI18n } from '@root/lang'
 import { getSystemFonts } from '@renderer/utils/ipc'
@@ -159,9 +160,9 @@ export default {
     const autoTheme = reactive({})
     const updateAutoTheme = (info) => {
       let light = findTheme(info, appSetting['theme.lightId'])
-      light ??= info.themes.find(theme => theme.id == 'green')
+      light ??= info.themes.find(theme => theme.id == DEFAULT_MAGAZINE_THEME_ID)
       let dark = findTheme(info, appSetting['theme.darkId'])
-      dark ??= info.themes.find(theme => theme.id == 'black')
+      dark ??= info.themes.find(theme => theme.id == DEFAULT_MAGAZINE_DARK_THEME_ID)
       autoTheme['--color-primary-theme-light'] = light.config.themeColors['--color-theme']
       autoTheme['--background-image-theme-light'] = light.isCustom
         ? light.config.extInfo['--background-image'] == 'none'
@@ -503,8 +504,8 @@ export default {
           transition: .3s ease;
           transition-property: border, color;
           box-sizing: border-box;
-          border: 1Px dashed var(--color-primary-light-100-alpha-300);
-          color: var(--color-primary-light-100-alpha-300);
+          border: 1Px dashed var(--color-primary-font);
+          color: var(--color-primary-font);
           position: relative;
           height: 100%;
           overflow: hidden;
@@ -521,7 +522,7 @@ export default {
         }
       }
       .label {
-        color: var(--color-primary-dark-100-alpha-300);
+        color: var(--color-primary-font);
       }
     }
 

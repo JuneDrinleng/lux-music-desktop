@@ -1,0 +1,55 @@
+// Desktop density keeps the magazine type hierarchy and respects root font scaling.
+:root {
+  --lux-font-body: system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  --lux-font-display: 'Inter', 'Roboto', var(--lux-font-body);
+  --lux-type-display: 3.5rem;
+  --lux-type-page: 2.5rem;
+  --lux-type-page-line: 2.75rem;
+  --lux-type-detail: 2rem;
+  --lux-type-section: 1.375rem;
+  --lux-type-row: .9375rem;
+  --lux-type-body: .875rem;
+  --lux-type-meta: .75rem;
+  --lux-type-eyebrow: .6875rem;
+  --lux-weight-display: 800;
+  --lux-weight-label: 700;
+  --lux-space-1: .25rem;
+  --lux-space-2: .5rem;
+  --lux-space-3: .75rem;
+  --lux-space-4: 1rem;
+  --lux-space-5: 1.375rem;
+  --lux-space-6: 1.75rem;
+  --lux-space-7: 2.125rem;
+  --lux-page-gutter: 1.75rem;
+  --lux-rule-width: 2px;
+  --lux-hairline-width: 1px;
+  --lux-marker-width: 3px;
+  --lux-hit-icon: 2.25rem;
+  --lux-hit-primary: 2.5rem;
+  --lux-radius-cover: 6px;
+  --lux-radius-dialog: 8px;
+  --lux-radius-menu: 4px;
+  --lux-focus-width: 2px;
+  --lux-focus-offset: 3px;
+  color-scheme: var(--lux-color-scheme, light);
+}
+
+#root :is(button, a[href], input, textarea, select, [tabindex]):focus-visible {
+  outline: var(--lux-focus-width) solid var(--lux-ink, var(--color-1000));
+  outline-offset: var(--lux-focus-offset);
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --lux-page-gutter: 1.375rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root *, #root *::before, #root *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

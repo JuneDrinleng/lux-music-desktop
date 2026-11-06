@@ -275,7 +275,7 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  color: var(--color-primary);
+  color: var(--color-primary-font);
 }
 .commentHeaderBtn {
   height: 22px;
@@ -346,7 +346,7 @@ export default {
     opacity: .7;
   }
   &.active {
-    color: var(--color-primary);
+    color: var(--color-primary-font);
   }
 }
 .commentFloor {

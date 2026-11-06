@@ -126,6 +126,7 @@
 import { joinPath, extname, copyFile, checkPath, createDir, removeFile, moveFile, basename } from '@common/utils/nodejs'
 import { nextTick, ref, watch } from '@common/utils/vueTools'
 import { applyTheme, buildThemeColors, getThemes, copyTheme } from '@renderer/store/utils'
+import { DEFAULT_MAGAZINE_THEME_ID, DEFAULT_MAGAZINE_DARK_THEME_ID } from '@common/theme/magazine'
 import { isUrl, encodePath } from '@common/utils/common'
 // import { appSetting, updateSetting } from '@renderer/store/setting'
 // import { applyTheme, getThemes } from '@renderer/store/utils'
@@ -461,17 +462,17 @@ export default {
       let isRequireUpdateSetting = false
       const newSetting = {}
       if (appSetting['theme.id'] == props.themeId) {
-        newSetting['theme.id'] = 'green'
+        newSetting['theme.id'] = DEFAULT_MAGAZINE_THEME_ID
         isRequireUpdateSetting = true
       }
       if (theme.isDark) {
         if (appSetting['theme.darkId'] == props.themeId) {
-          newSetting['theme.darkId'] = 'black'
+          newSetting['theme.darkId'] = DEFAULT_MAGAZINE_DARK_THEME_ID
           isRequireUpdateSetting = true
         }
       } else {
         if (appSetting['theme.lightId'] == props.themeId) {
-          newSetting['theme.lightId'] = 'green'
+          newSetting['theme.lightId'] = DEFAULT_MAGAZINE_THEME_ID
           isRequireUpdateSetting = true
         }
       }
@@ -634,12 +635,12 @@ export default {
 .bgImg {
   width: 100%;
   height: 60px;
-  border: 1Px dashed var(--color-primary-light-100-alpha-300);
+  border: 1Px dashed var(--color-primary-font);
   transition: .3s ease;
   transition-property: border, color;
   box-sizing: border-box;
-  border: 1px dashed var(--color-primary-light-100-alpha-300);
-  color: var(--color-primary-light-100-alpha-300);
+  border: 1px dashed var(--color-primary-font);
+  color: var(--color-primary-font);
   position: relative;
   border-radius: 5px;
   display: flex;

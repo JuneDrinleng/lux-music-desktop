@@ -1,0 +1,30 @@
+{
+  "source": "mobile docs/theme-tokens.md complete six-theme table; M1 core roles",
+  "ids": ["lime", "mist_blue", "sakura", "lavender", "oat_milk", "ink_night"],
+  "names": ["黄绿", "雾蓝", "樱粉", "薰衣草紫", "暖米", "墨夜"],
+  "dark": [false, false, false, false, false, true],
+  "roles": {
+    "paper": ["#eef0fb", "#eef3f9", "#faf0f3", "#f3f0fb", "#f6f1ea", "#12141c"],
+    "paperRaised": ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#1c1f2a"],
+    "display": ["#16181f", "#131c2f", "#21161a", "#1a1725", "#201a15", "#eff0f5"],
+    "ink": ["#111827", "#0f172a", "#1c1216", "#16131f", "#1c1712", "#f3f4f8"],
+    "list": ["#20242d", "#1e293b", "#2d1f25", "#242033", "#2a231c", "#e5e7ef"],
+    "muted": ["#767d89", "#556274", "#7a646e", "#716a82", "#6f6458", "#a0a6b8"],
+    "eyebrow": ["#838995", "#64748b", "#8a747c", "#7d768f", "#867a6d", "#8b92a5"],
+    "option": ["#5f6572", "#5b697d", "#806a74", "#766f87", "#786d60", "#989eb0"],
+    "faint": ["#9ca3af", "#94a3b8", "#a8929a", "#9a93a8", "#a3988b", "#6b7285"],
+    "quiet": ["#9aa1ae", "#8393a8", "#9e8890", "#90899f", "#998e81", "#767d90"],
+    "rule": ["#111827", "#0f172a", "#1c1216", "#16131f", "#1c1712", "#f3f4f8"],
+    "hairline": ["#e1e6ef", "#d9e2ec", "#eadde3", "#ddd7eb", "#e2d8cb", "#2f3444"],
+    "accent": ["#c8e600", "#2563eb", "#db2777", "#7c5cbf", "#a65d28", "#c8e600"],
+    "accentSoft": ["#dbeb92", "#bfdbfe", "#f9c2d4", "#ddd0f5", "#f0d5b8", "#3d4a1a"],
+    "onAccent": ["#111827", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#111827"],
+    "accentInk": ["#58651b", "#173473", "#651a3b", "#3d2f5c", "#50321a", "#d1e932"],
+    "onInk": ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#12141c"],
+    "danger": ["#ef4444", "#ef4444", "#dc2626", "#ef4444", "#dc2626", "#f87171"],
+    "like": ["#FA5252", "#FA5252", "#e11d48", "#FA5252", "#e11d48", "#fb7185"],
+    "placeholder": ["#e8eaef", "#e4eaf2", "#eee4e8", "#e9e5f2", "#ebe4da", "#2a2e3c"],
+    "skeleton": ["#e2e6ef", "#dfe6ef", "#ece1e6", "#e4dfef", "#e7dfd3", "#2c3140"],
+    "scrim": ["rgba(17, 24, 39, 0.32)", "rgba(15,23,42,0.32)", "rgba(28,18,22,0.32)", "rgba(22,19,31,0.32)", "rgba(28,23,18,0.32)", "rgba(0,0,0,0.62)"]
+  }
+}

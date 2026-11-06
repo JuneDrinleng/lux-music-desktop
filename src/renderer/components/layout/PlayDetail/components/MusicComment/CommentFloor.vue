@@ -144,7 +144,7 @@ export default defineComponent({
   width: 12px;
   height: 12px;
   margin-right: 3px;
-  color: var(--color-primary-alpha-500);
+  color: var(--color-primary-font);
 }
 .comment_text {
   text-align: justify;

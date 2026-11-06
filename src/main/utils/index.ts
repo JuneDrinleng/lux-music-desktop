@@ -8,6 +8,7 @@ import { migrateDataJson, migrateHotKey, migrateUserApi, parseDataFile } from '.
 import { nativeTheme, powerSaveBlocker } from 'electron'
 import { joinPath } from '@common/utils/nodejs'
 import themes from '@common/theme/index.json'
+import { resolveThemeColors, getPreferredThemeId, getFallbackThemeId } from '@common/theme/magazine'
 
 export const parseEnvParams = (argv = process.argv): { cmdParams: LX.CmdParams, deeplink: string | null } => {
   const cmdParams: LX.CmdParams = {}
@@ -245,14 +246,7 @@ const copyTheme = (theme: LX.Theme): LX.Theme => {
 export const getTheme = () => {
   // fs.promises.readdir()
   const shouldUseDarkColors = nativeTheme.shouldUseDarkColors
-  let themeId = global.lx.appSetting['theme.id'] == 'auto'
-    ? shouldUseDarkColors
-      ? global.lx.appSetting['theme.darkId']
-      : global.lx.appSetting['theme.lightId']
-    : global.lx.appSetting['theme.id']
-  // themeId = 'naruto'
-  // themeId = 'pink'
-  // themeId = 'black'
+  let themeId = getPreferredThemeId(global.lx.appSetting['theme.id'], global.lx.appSetting['theme.lightId'], global.lx.appSetting['theme.darkId'], shouldUseDarkColors)
   let theme = themes.find(theme => theme.id == themeId)
   if (!theme) {
     userThemes = getStore(STORE_NAMES.THEME).get('themes') ?? []
@@ -266,20 +260,18 @@ export const getTheme = () => {
             : `url(${encodePath(joinPath(global.lxDataPath, 'theme_images', theme.config.extInfo['--background-image']))})`
       }
     } else {
-      themeId = global.lx.appSetting['theme.id'] == 'auto' && shouldUseDarkColors ? 'black' : 'green'
+      themeId = getFallbackThemeId(global.lx.appSetting['theme.id'], shouldUseDarkColors)
       theme = themes.find(theme => theme.id == themeId) as LX.Theme
     }
   }
 
-  const colors: Record<string, string> = {
-    ...theme.config.themeColors,
-    ...theme.config.extInfo,
-  }
+  const colors = resolveThemeColors(theme)
 
   return {
     shouldUseDarkColors,
     theme: {
       id: global.lx.appSetting['theme.id'],
+      resolvedId: theme.id,
       name: theme.name,
       isDark: theme.isDark,
       isDarkFont: theme.isDarkFont,

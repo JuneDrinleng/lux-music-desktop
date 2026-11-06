@@ -230,7 +230,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-primary-light-400-alpha-200);
+    color: var(--color-primary-font);
     user-select: none;
     font-size: 20px;
     font-family: Consolas, "Courier New", monospace;

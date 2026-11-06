@@ -140,7 +140,7 @@ export default {
 }
 
 .name {
-  color: var(--color-primary);
+  color: var(--color-primary-font);
 }
 
 .checkbox {

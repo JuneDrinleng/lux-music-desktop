@@ -292,7 +292,7 @@ export default defineComponent({
       background-color: var(--color-primary-background-hover);
     }
     &:active {
-      background-color: var(--color-primary-font-active);
+      background-color: var(--color-primary-background-active);
     }
   }
 
@@ -345,7 +345,7 @@ export default defineComponent({
       font-size: 12px;
       opacity: 0.8;
       padding: 0 5px;
-      color: var(--color-primary);
+      color: var(--color-primary-font);
       // display: flex;
       // align-items: center;
       // transform: rotate(45deg);

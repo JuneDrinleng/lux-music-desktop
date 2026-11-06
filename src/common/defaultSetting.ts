@@ -1,5 +1,6 @@
 import path from 'node:path'
 import os from 'node:os'
+import { DEFAULT_MAGAZINE_THEME_ID, DEFAULT_MAGAZINE_DARK_THEME_ID } from './theme/magazine'
 
 const isMac = process.platform == 'darwin'
 const isWin = process.platform == 'win32'
@@ -149,10 +150,9 @@ const defaultSetting: LX.AppSetting = {
   'openAPI.port': '23330',
   'openAPI.bindLan': false,
 
-  // 'theme.id': 'blue_plus',
-  'theme.id': 'green',
-  'theme.lightId': 'green',
-  'theme.darkId': 'black',
+  'theme.id': DEFAULT_MAGAZINE_THEME_ID,
+  'theme.lightId': DEFAULT_MAGAZINE_THEME_ID,
+  'theme.darkId': DEFAULT_MAGAZINE_DARK_THEME_ID,
 
   'odc.isAutoClearSearchInput': false,
   'odc.isAutoClearSearchList': false,
@@ -160,9 +160,8 @@ const defaultSetting: LX.AppSetting = {
 }
 
 
-// 使用新年皮肤
+// Keep the existing seasonal lyric color; theme choice always follows preferences.
 if (new Date().getMonth() < 2) {
-  defaultSetting['theme.id'] = 'happy_new_year'
   defaultSetting['desktopLyric.style.lyricPlayedColor'] = 'rgba(255, 57, 71, 1)'
 }
 
