@@ -26,7 +26,7 @@ LUX_EVIDENCE_MODE=themes LUX_EVIDENCE_DIR=artifacts/screenshots npm run evidence
 
 `themes` 模式顺序启动九个独立 Electron 进程，共用一个仅在首次启动前初始化的临时 profile。先取上述十二张页面截图，再以 Enter/Space 在实际设置页选择六个新主题、保留的 green 主题及明确标记的自定义主题 fixture。每次必须等上一个应用正常退出后再启动新进程，核对主进程、renderer、实际 CSS 和磁盘配置；最后一个进程只验证自定义主题重启保持。首个进程还会右键打开原自动主题配置弹层，逐项核对六个主题色块 `::after` 的实际背景色，再点击原关闭按钮退出，确认当前主题保持 lime。默认矩阵包含 35 张证据截图：十二张页面、六张主题、六张键盘 focus-visible、两张兼容主题、八张进程重启保持，以及一张自动主题色块预览。真实音频设备警告另记为 observation，不计入这个矩阵。
 
-每个阶段会记录实际数据库查询和截图的字体、双 animation frame、DOM 快照、capturePage 边界，失败清单包含最后阶段和窗口可见/最小化/焦点/节流状态。Xvfb 可能把可见窗口当作后台窗口并停止 animation frame；证据 harness 会单独关闭目标 webContents 的后台节流，仍要求每张图前两个真实帧的时间戳严格递增并写入清单。单次 renderer 操作和截图必须在十秒内完成，整个进程阶段上限为两分钟。driver 另对每个具体 launcher child 设置 150 秒退出期限，覆盖 Electron 尚未建立内部计时器、正常退出未完成或 launcher 卡住的情况；期限到达后只向此 child 发 SIGTERM，三秒仍未退出才发 SIGKILL，并等待其实际 exit 后写入失败及 PID/期限/退出状态，不重启该阶段。超时直接失败，不跳过绘制或主题验证。
+每个阶段会记录实际数据库查询和截图的字体、双 animation frame、DOM 快照、capturePage 边界，失败清单包含最后阶段和窗口可见/最小化/焦点/节流状态。Xvfb 可能把可见窗口当作后台窗口并停止 animation frame；证据 harness 会单独关闭目标 webContents 的后台节流，仍要求每张图前两个真实帧的时间戳严格递增并写入清单。相对等待期限与阶段耗时使用 performance.now 单调时钟，UTC 时间仅作取证标签，系统时钟校正不消耗等待预算。单次 renderer 操作和截图必须在十秒内完成，整个进程阶段上限为两分钟。driver 另对每个具体 launcher child 设置 150 秒退出期限，覆盖 Electron 尚未建立内部计时器、正常退出未完成或 launcher 卡住的情况；期限到达后只向此 child 发 SIGTERM，三秒仍未退出才发 SIGKILL，并等待其实际 exit 后写入失败及 PID/期限/退出状态，不重启该阶段。超时直接失败，不跳过绘制或主题验证。
 
 运行使用自动删除的临时 userData 和真实空数据库，不读取个人配置或账号。确定性的配置种子选择简中、关闭透明/动画/自动下载更新/协议提示/更新日志、打开下载入口，并关闭同步、OpenAPI、桌面歌词和托盘。种子的完整内容写在清单中；这些是截图环境设置，不代表应用默认值。HTTP(S) 和 Node TCP 都在证据环境拒绝连接，因此在线歌单和榜单展示真实错误或空状态，不将公共服务响应或合成曲目冒充回归证据。应用 URL scheme 的系统注册和外部浏览器启动被抑制，避免修改运行宿主。
 

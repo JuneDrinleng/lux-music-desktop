@@ -3,6 +3,7 @@ const { createHash } = require('node:crypto')
 const fs = require('node:fs')
 const os = require('node:os')
 const path = require('node:path')
+const { performance } = require('node:perf_hooks')
 const installOfflineGuard = require('./offline.cjs')
 const { preferences, palettes, legacyIds, customThemeId } = require('./profile.cjs')
 
@@ -13,6 +14,7 @@ const routes = [
   { name: 'downloads', path: '/download' }, { name: 'settings', path: '/setting' },
 ]
 const startedAt = new Date().toISOString()
+const startedTick = performance.now()
 const manifestPath = path.join(config.output, config.manifestName)
 const errors = []
 const captures = []
@@ -53,14 +55,14 @@ const bounded = async(promise, description, timeout = 10000) => {
 const execute = (code, description = 'renderer JavaScript') => bounded(mainWindow.webContents.executeJavaScript(code, true), description)
 const stage = (description, detail = {}) => {
   currentStage = description
-  const record = { description, at: new Date().toISOString(), elapsedMs: Date.now() - Date.parse(startedAt), ...detail }
+  const record = { description, at: new Date().toISOString(), elapsedMs: Math.round(performance.now() - startedTick), ...detail }
   stages.push(record)
   console.log(`Evidence ${config.phase.id}: ${description} (+${record.elapsedMs}ms)`)
 }
 const waitFor = async(predicate, description, timeout = 30000) => {
   stage(`wait for ${description}`)
-  const deadline = Date.now() + timeout
-  while (Date.now() < deadline) {
+  const deadline = performance.now() + timeout
+  while (performance.now() < deadline) {
     if (await predicate()) return
     await delay(100)
   }
