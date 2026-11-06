@@ -41,7 +41,21 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Install virtual display and Chinese fonts
-        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y xvfb fonts-noto-cjk
+        timeout-minutes: 7
+        shell: bash
+        run: |
+          packages=()
+          for package in xvfb fonts-noto-cjk; do
+            if ! dpkg-query -W -f='${Status}' "$package" 2>/dev/null | grep -q '^install ok installed$'; then
+              packages+=("$package")
+            fi
+          done
+          if [ "${#packages[@]}" -gt 0 ]; then
+            sudo timeout 180s apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 update
+            sudo timeout 180s apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 install --no-install-recommends -y "${packages[@]}"
+          fi
+          command -v xvfb-run
+          fc-match ':lang=zh' --format '%{family}\n'
 
       - name: Lint, typecheck, test and build all application targets
         run: npm run verify
