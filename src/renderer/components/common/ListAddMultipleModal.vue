@@ -1,7 +1,7 @@
 <template>
   <material-modal :show="show" :bg-close="bgClose" max-width="70%" :teleport="teleport" @close="handleClose">
     <main :class="$style.main">
-      <h2>{{ $t('list_add__multiple_' + (isMove ? 'title_move' : 'title_add'), { num: musicList.length }) }}</h2>
+      <h2>{{ $t(isMove ? 'list_add__multiple_title_move' : 'list_add__multiple_title_add', { num: musicList.length }) }}</h2>
       <div class="scroll" :class="$style.btnContent">
         <base-btn v-for="(item, index) in lists" :key="item.id" :class="$style.btn" :aria-label="$t('list_add__multiple_btn_title', { name: item.name })" @click="handleClick(index)">{{ item.name }}</base-btn>
         <base-btn :class="[$style.btn, $style.newList, isEditing ? $style.editing : null]" :aria-label="$t('lists__new_list_btn')" @click="handleEditing($event)">
@@ -31,7 +31,7 @@ export default {
       default: false,
     },
     musicList: {
-      type: Array,
+      type: /** @type {import('vue').PropType<Array<LX.Music.MusicInfo | LX.Download.ListItem>>} */ (Array),
       default() {
         return []
       },
@@ -110,7 +110,7 @@ export default {
           : width < 3840 ? 5 : 6
     },
     handleClick(index) {
-      const list = 'progress' in this.musicList[0] ? this.musicList.map(t => t.metadata.musicInfo) : this.musicList
+      const list = this.musicList.map(item => 'progress' in item ? item.metadata.musicInfo : item)
 
       if (this.isMove) void moveListMusics(this.fromListId, this.lists[index].id, list)
       else void addListMusics(this.lists[index].id, list)

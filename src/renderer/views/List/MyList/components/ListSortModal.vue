@@ -92,7 +92,9 @@ export default {
   emits: ['update:visible'],
   setup(props, { emit }) {
     const t = useI18n()
+    /** @type {import('vue').Ref<import('@renderer/worker/main/list').SortFieldName | ''>} */
     const sortField = ref('')
+    /** @type {import('vue').Ref<import('@renderer/worker/main/list').SortFieldType | ''>} */
     const sortType = ref('')
     const closeModal = () => {
       emit('update:visible', false)
@@ -105,7 +107,7 @@ export default {
       return !!sortType.value && (!!sortField.value || sortType.value == 'random')
     }
     const handleSort = async() => {
-      if (!verify()) return
+      if (!verify() || !sortType.value) return
       // if (!await dialog.confirm({
       //   message: t('list_sort_modal_tip_confirm'),
       //   cancelButtonText: t('cancel_button_text'),
@@ -113,7 +115,7 @@ export default {
       // })) return
 
       let list = [...(await getListMusics(props.listInfo.id))]
-      list = await window.lx.worker.main.sortListMusicInfo(list, sortType.value, sortField.value, window.i18n.locale)
+      list = await window.lx.worker.main.sortListMusicInfo(list, sortType.value, sortField.value || 'name', window.i18n.locale)
       console.log(sortType.value, sortField.value)
 
       closeModal()

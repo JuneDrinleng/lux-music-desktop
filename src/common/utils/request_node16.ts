@@ -1,4 +1,5 @@
 import qs from 'node:querystring'
+import * as undici from 'undici'
 import {
   FormData,
   getGlobalDispatcher,
@@ -180,7 +181,15 @@ const buildRequestBody = (options: Options) => {
 }
 
 const buildRequestDispatcher = (options: Options) => {
-  return buildDispatcher()
+  const dispatcher = buildDispatcher()
+  const maxRedirections = options.maxRedirect ?? defaultOptions.maxRedirect
+  // The Windows 7 build installs Undici 5, which uses the request option.
+  // Undici 7 moved the same behavior into a dispatcher interceptor.
+  const { interceptors } = undici
+  if (interceptors?.redirect && typeof dispatcher.compose == 'function') {
+    return { dispatcher: dispatcher.compose(interceptors.redirect({ maxRedirections })) }
+  }
+  return { dispatcher, maxRedirections }
 }
 
 export const request = async <T = unknown>(url: string, options: Options = {}): Promise<Response<T>> => {
@@ -205,8 +214,7 @@ export const request = async <T = unknown>(url: string, options: Options = {}): 
     query: options.query,
     body,
     signal: options.signal,
-    dispatcher: buildRequestDispatcher(options),
-    maxRedirections: options.maxRedirect ?? defaultOptions.maxRedirect,
+    ...buildRequestDispatcher(options),
   }).then(async(response) => {
     if (options.needBody) {
       return {

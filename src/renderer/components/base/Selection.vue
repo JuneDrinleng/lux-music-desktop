@@ -10,21 +10,25 @@
     </div>
     <ul v-if="show" ref="dom_list" class="selection-list scroll" :class="$style.list" :style="listStyles">
       <li
-        v-for="(item, index) in list" :key="index" :class="[$style.listItem, (itemKey ? item[itemKey] : item) == modelValue ? $style.active : null]"
-        :aria-label="itemName ? item[itemName] : item" @click="handleClick(item)"
+        v-for="(item, index) in list" :key="index" :class="[$style.listItem, itemValue(item) == modelValue ? $style.active : null]"
+        :aria-label="String(itemLabel(item) ?? '')" @click="handleClick(item)"
       >
-        {{ itemName ? item[itemName] : item }}
+        {{ itemLabel(item) }}
       </li>
     </ul>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, type PropType } from 'vue'
 
-export default {
+type SelectionValue = string | number
+type SelectionItem = SelectionValue | Record<string, SelectionValue>
+
+export default defineComponent({
   props: {
     list: {
-      type: Array,
+      type: Array as PropType<SelectionItem[]>,
       default() {
         return []
       },
@@ -46,6 +50,7 @@ export default {
   data() {
     return {
       show: false,
+      hideListener: null as ((event: MouseEvent) => void) | null,
       listStyles: {
         transform: 'scaleY(0) translateY(0)',
       },
@@ -55,51 +60,65 @@ export default {
     activeIndex() {
       if (this.modelValue == null) return -1
       if (!this.itemName) return this.list.indexOf(this.modelValue)
-      return this.list.findIndex(l => l[this.itemKey] == this.modelValue)
+      return this.list.findIndex(l => this.itemValue(l) == this.modelValue)
     },
     label() {
       if (this.modelValue == null) return ''
       if (this.itemName == null) return this.modelValue
       const item = this.list[this.activeIndex]
       if (!item) return ''
-      return item[this.itemName]
+      return typeof item === 'object' ? item[this.itemName] : (this.itemName ? undefined : item)
     },
   },
   mounted() {
-    document.addEventListener('click', this.handleHide, true)
+    this.hideListener = event => { this.handleHide(event) }
+    document.addEventListener('click', this.hideListener, true)
   },
   beforeUnmount() {
-    document.removeEventListener('click', this.handleHide, true)
+    if (this.hideListener) document.removeEventListener('click', this.hideListener, true)
   },
   methods: {
-    handleHide(e) {
+    itemValue(item: SelectionItem) {
+      return this.itemKey ? (typeof item === 'object' ? item[this.itemKey] : undefined) : item
+    },
+    itemLabel(item: SelectionItem) {
+      return this.itemName ? (typeof item === 'object' ? item[this.itemName] : undefined) : item
+    },
+    handleHide(e: MouseEvent) {
       if (!this.show) return
       // if (e && e.target.parentNode != this.$refs.dom_list && this.show) return this.show = false
-      if (e && (e.target == this.$refs.dom_btn || this.$refs.dom_btn.contains(e.target))) return
+      const button = this.$refs.dom_btn
+      if (button instanceof HTMLElement && e.target instanceof Node && (e.target == button || button.contains(e.target))) return
       this.listStyles.transform = 'scaleY(0) translateY(0)'
       setTimeout(() => {
         this.show = false
       }, 50)
     },
-    handleClick(item) {
+    handleClick(item: SelectionItem) {
       // console.log(this.modelValue)
       if (item === this.modelValue) return
-      this.$emit('update:modelValue', this.itemKey ? item[this.itemKey] : item)
+      this.$emit('update:modelValue', this.itemValue(item))
       this.$emit('change', item)
     },
     handleShow() {
       this.show = true
-      this.$nextTick(() => {
+      void this.$nextTick(() => {
         this.listStyles.transform = `scaleY(1) translateY(${this.handleGetOffset()}px)`
 
-        const activeItem = this.$refs.dom_list.children[this.activeIndex]
-        if (activeItem) this.$refs.dom_list.scrollTop = activeItem.offsetTop - this.$refs.dom_list.clientHeight * 0.38
+        const list = this.$refs.dom_list
+        if (!(list instanceof HTMLElement)) return
+        const activeItem = list.children[this.activeIndex]
+        if (activeItem instanceof HTMLElement) list.scrollTop = activeItem.offsetTop - list.clientHeight * 0.38
       })
     },
     handleGetOffset() {
-      const listHeight = this.$refs.dom_list.clientHeight
-      const dom_select = this.$refs.dom_list.offsetParent
+      const list = this.$refs.dom_list
+      if (!(list instanceof HTMLElement)) return 0
+      const listHeight = list.clientHeight
+      const dom_select = list.offsetParent
+      if (!(dom_select instanceof HTMLElement)) return 0
       const dom_container = dom_select.offsetParent
+      if (!(dom_container instanceof HTMLElement)) return 0
       const containerHeight = dom_container.clientHeight
       if (containerHeight < listHeight) return 0
       const offsetHeight = (dom_container.scrollTop + containerHeight) - (dom_select.offsetTop + listHeight)
@@ -107,7 +126,7 @@ export default {
       return offsetHeight - 5
     },
   },
-}
+})
 </script>
 
 

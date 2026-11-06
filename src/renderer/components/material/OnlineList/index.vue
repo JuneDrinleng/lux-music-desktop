@@ -113,7 +113,7 @@ export default {
   name: 'MaterialOnlineList',
   props: {
     list: {
-      type: Array,
+      type: /** @type {import('vue').PropType<LX.Music.MusicInfoOnline[]>} */ (Array),
       default() {
         return []
       },
@@ -210,7 +210,7 @@ export default {
     }
     const handleListItemRightClick = (event, index) => {
       rightClickSelectedIndex.value = index
-      showMenu(event, props.list[index], index)
+      showMenu(event, props.list[index])
     }
     const handleMenuClick = (action) => {
       let index = rightClickSelectedIndex.value

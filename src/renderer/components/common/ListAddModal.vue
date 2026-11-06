@@ -1,7 +1,7 @@
 <template>
   <material-modal :show="show" :bg-close="bgClose" :teleport="teleport" max-width="70%" min-width="200px" @close="handleClose">
     <main :class="$style.main">
-      <h2>{{ $t('list_add__' + (isMove ? 'title_first_move' : 'title_first_add')) }}&nbsp;<span :class="$style.name">{{ currentMusicInfo.name }}</span>&nbsp;{{ $t('list_add__title_last') }}</h2>
+      <h2>{{ $t(isMove ? 'list_add__title_first_move' : 'list_add__title_first_add') }}&nbsp;<span :class="$style.name">{{ currentMusicInfo?.name }}</span>&nbsp;{{ $t('list_add__title_last') }}</h2>
       <div class="scroll" :class="$style.btnContent">
         <base-btn v-for="(item, index) in lists" :key="item.id" :class="$style.btn" :aria-label="$t('list_add__btn_title', { name: item.name })" :disabled="item.isExist" @click="handleClick(index)">{{ item.name }}</base-btn>
         <base-btn :class="[$style.btn, $style.newList, isEditing ? $style.editing : null]" :aria-label="$t('lists__new_list_btn')" @click="handleEditing($event)">
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 // import { mapMutations } from 'vuex'
 import { watch, ref, onBeforeUnmount } from '@common/utils/vueTools'
 import { defaultList, loveList, userLists } from '@renderer/store/list/state'
@@ -25,14 +26,14 @@ import useKeyDown from '@renderer/utils/compositions/useKeyDown'
 import { useI18n } from '@root/lang'
 import { dialog } from '@renderer/plugins/Dialog'
 
-export default {
+export default defineComponent({
   props: {
     show: {
       type: Boolean,
       default: false,
     },
     musicInfo: {
-      type: [Object, null],
+      type: /** @type {import('vue').PropType<LX.Music.MusicInfo | LX.Download.ListItem | null>} */ ([Object, null]),
       required: true,
     },
     bgClose: {
@@ -68,9 +69,10 @@ export default {
     const t = useI18n()
     const lists = ref([])
 
-    const currentMusicInfo = ref({})
+    const currentMusicInfo = /** @type {import('vue').Ref<LX.Music.MusicInfo | null>} */ (ref(null))
 
     const checkMusicExist = (musicInfo) => {
+      if (!musicInfo) return
       const mid = musicInfo.id
       void getMusicExistListIds(mid).then(ids => {
         if (mid != musicInfo.id) return
@@ -151,6 +153,7 @@ export default {
           : width < 3840 ? 5 : 6
     },
     handleClick(index) {
+      if (!this.currentMusicInfo) return
       if (this.isMove) void moveListMusics(this.fromListId, this.lists[index].id, [this.currentMusicInfo])
       else void addListMusics(this.lists[index].id, [this.currentMusicInfo])
 
@@ -179,7 +182,7 @@ export default {
       void createUserList({ name })
     },
   },
-}
+})
 </script>
 
 

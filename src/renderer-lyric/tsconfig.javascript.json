@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Existing TypeScript is checked separately with the strict project.
+    // This adds TypeScript's normal JavaScript semantics to legacy SFCs.
+    "checkJs": true,
+    "strict": false,
+    "noImplicitThis": true,
+  },
+  "include": ["./**/*.vue", "./types/**/*.d.ts", "../common/types/**/*.d.ts"],
+}

@@ -1,5 +1,5 @@
 <template>
-  <material-modal :show="sync.isShowAuthCodeModal" :bg-close="false" @close="handleClose" @after-enter="$refs.input.focus()">
+  <material-modal :show="sync.isShowAuthCodeModal" :bg-close="false" @close="handleClose" @after-enter="focusInput">
     <main :class="$style.main">
       <h2>{{ $t('sync__auth_code_title') }}</h2>
       <base-input
@@ -24,6 +24,9 @@ import { sendSyncAction } from '@renderer/utils/ipc'
 
 export default {
   setup() {
+    /** @type {import('vue').Ref<{ focus: () => void } | null>} */
+    const input = ref(null)
+    const focusInput = () => input.value?.focus()
     const authCode = ref('')
     const handleClose = () => {
       sync.isShowAuthCodeModal = false
@@ -49,6 +52,8 @@ export default {
       })
     }
     return {
+      input,
+      focusInput,
       sync,
       authCode,
       handleClose,

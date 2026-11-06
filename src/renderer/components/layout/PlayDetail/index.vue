@@ -87,7 +87,7 @@ export default {
 
     const handleAfterLeave = () => {
       setShowPlayLrcSelectContentLrc(false)
-      hideComment(false)
+      hideComment()
       visibled.value = false
 
       unregisterAutoHideMounse()

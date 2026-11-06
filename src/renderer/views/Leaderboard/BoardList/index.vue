@@ -31,7 +31,7 @@ import { useRouter, useRoute } from '@common/utils/vueRouter'
 
 const props = defineProps({
   source: {
-    type: String,
+    type: /** @type {import('vue').PropType<LX.OnlineSource>} */ (String),
     required: true,
   },
   boardId: {

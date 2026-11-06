@@ -5,7 +5,7 @@ import { play } from '@renderer/core/player/action'
 import { appSetting } from '@renderer/store/setting'
 // import { player as eventPlayerNames } from '@renderer/event/names'
 
-export default ({ isPlay, lyric, playProgress, isShowLyricProgressSetting, offset }) => {
+export default ({ isPlay, lyric, playProgress, isShowLyricProgressSetting }) => {
   const dom_lyric = ref(null)
   const dom_lyric_text = ref(null)
   const dom_skip_line = ref(null)
@@ -48,13 +48,15 @@ export default ({ isPlay, lyric, playProgress, isShowLyricProgressSetting, offse
     const rect = dom_skip_line.value.getBoundingClientRect()
     point.x = rect.x
     point.y = rect.y
-    let dom = document.elementFromPoint(point.x, point.y)
+    let dom = /** @type {Element & { time?: number }} */ (document.elementFromPoint(point.x, point.y))
+    if (!dom) return
     if (dom_pre_line === dom) return
     if (dom.tagName == 'SPAN') {
-      dom = dom.parentNode.parentNode
+      dom = dom.parentElement?.parentElement
     } else if (dom.classList.contains('line')) {
-      dom = dom.parentNode
+      dom = dom.parentElement
     }
+    if (!dom) return
     if (dom.time == null) {
       if (lyric.lines.length) {
         time = dom.classList.contains('pre') ? 0 : lyric.lines[lyric.lines.length - 1].time ?? 0

@@ -155,7 +155,7 @@ export default {
       }
       const task = list.value[index]
       if (task.isComplate) {
-        handlePlayMusic(list.value.indexOf(task), true)
+        handlePlayMusic(list.value.indexOf(task))
       } else if (task.status === downloadStatus.RUN || task.status === downloadStatus.WAITING) {
         void handlePauseTask(index, true)
       } else {
@@ -172,7 +172,7 @@ export default {
     }
     const handleListItemRightClick = (event, index) => {
       rightClickSelectedIndex.value = index
-      showMenu(event, list.value[index], index)
+      showMenu(event, list.value[index])
     }
     const handleMenuClick = (action) => {
       let index = rightClickSelectedIndex.value
@@ -183,7 +183,7 @@ export default {
     const handleListBtnClick = ({ action, index }) => {
       switch (action) {
         case 'play':
-          handlePlayMusic(index, true)
+          handlePlayMusic(index)
           break
         case 'start':
           void handleStartTask(index, true)

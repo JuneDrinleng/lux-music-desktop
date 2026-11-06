@@ -24,6 +24,7 @@ import BlankView from './components/BlankView.vue'
 import { computed, ref } from '@common/utils/vueTools'
 import { sourceNames } from '@renderer/store'
 
+/** @type {import('vue').Ref<import('@renderer/store/hotSearch').Source>} */
 const source = ref('kw')
 const searchType = ref(null)
 const page = ref(1)

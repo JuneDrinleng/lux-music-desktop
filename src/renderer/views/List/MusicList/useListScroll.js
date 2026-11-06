@@ -36,7 +36,7 @@ export default ({ props, listRef, list, handleRestoreScroll }) => {
         path: '/list',
         query: {
           id: props.listId,
-          updated: true,
+          updated: 'true',
         },
       })
     }

@@ -11,10 +11,23 @@ const defaultOptions = {
   selection: false,
 }
 
+/**
+ * @typedef {Object} DialogOptions
+ * @property {string} [message]
+ * @property {string} [teleport]
+ * @property {boolean} [showCancel]
+ * @property {string} [cancelButtonText]
+ * @property {string} [confirmButtonText]
+ * @property {boolean} [selection]
+ */
+/**
+ * @param {string | DialogOptions} options
+ * @returns {Promise<boolean>}
+ */
 export const dialog = function(options) {
   const { message, showCancel, cancelButtonText, confirmButtonText, teleport, selection } =
     Object.assign({}, defaultOptions, typeof options == 'string' ? { message: options } : options || {})
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     let app = createApp(Dialog, {
       afterLeave() {
         app?.unmount()
@@ -22,7 +35,7 @@ export const dialog = function(options) {
       },
     })
 
-    let instance = app.mount(document.createElement('div'))
+    let instance = /** @type {InstanceType<typeof Dialog>} */ (app.mount(document.createElement('div')))
 
     // 属性设置
     instance.visible = true

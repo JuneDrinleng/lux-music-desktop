@@ -22,14 +22,27 @@ div(:class="$style.container")
       comment-floor(v-if="item.reply && item.reply.length" :class="$style.reply_floor" :comments="item.reply")
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, type PropType } from 'vue'
 import commentDefImg from '@renderer/assets/images/defaultUser.jpg'
 
-export default {
+interface MusicComment {
+  id: string | number
+  userName: string
+  text: string | string[]
+  avatar?: string
+  timeStr?: string
+  location?: string
+  likedCount?: number
+  images?: string[]
+  reply?: MusicComment[]
+}
+
+export default defineComponent({
   name: 'CommentFloor',
   props: {
     comments: {
-      type: Array,
+      type: Array as PropType<MusicComment[]>,
       default() {
         return []
       },
@@ -41,15 +54,15 @@ export default {
     }
   },
   methods: {
-    timeFormat(time) {
+    timeFormat(time: string) {
       return time
       // return formatTime(new Date(time), true)
     },
-    handleUserImg(event) {
-      event.target.src = this.commentDefImg
+    handleUserImg(event: Event) {
+      if (event.target instanceof HTMLImageElement) event.target.src = this.commentDefImg
     },
   },
-}
+})
 </script>
 
 <style lang="less" module>

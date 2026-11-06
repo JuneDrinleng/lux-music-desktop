@@ -9,11 +9,13 @@
   </transition>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, type PropType } from 'vue'
+
+export default defineComponent({
   props: {
     afterLeave: {
-      type: Function,
+      type: Function as PropType<() => void>,
       default: () => {},
     },
   },
@@ -27,16 +29,16 @@ export default {
       },
       transform: 'translate(0, 0)',
       maxWidth: '80%',
-      cancel: null,
-      setTips: null,
-      aotoCloseTimer: null,
+      cancel: null as (() => void) | null,
+      setTips: null as ((tips: string) => void) | null,
+      aotoCloseTimer: null as ReturnType<typeof setTimeout> | null,
     }
   },
   watch: {
     message() {
-      this.$nextTick(() => {
+      void this.$nextTick(() => {
         this.maxWidth = this.handleGetMaxWidth(this.position.left) + 'px'
-        this.$nextTick(() => {
+        void this.$nextTick(() => {
           this.transform = `translate(${this.handleGetOffsetXY(this.position.left, this.position.top)})`
         })
       })
@@ -47,14 +49,15 @@ export default {
     el.parentNode.removeChild(el)
   },
   methods: {
-    handleGetMaxWidth(left) {
+    handleGetMaxWidth(left: number) {
       const containerWidth = document.documentElement.clientWidth
       let maxWidth = containerWidth - left
       return (maxWidth > left ? maxWidth : left - 12) - 30
     },
-    handleGetOffsetXY(left, top) {
-      const tipsWidth = this.$refs.dom_tips.clientWidth
-      const tipsHeight = this.$refs.dom_tips.clientHeight
+    handleGetOffsetXY(left: number, top: number) {
+      const tips = this.$refs.dom_tips as HTMLDivElement
+      const tipsWidth = tips.clientWidth
+      const tipsHeight = tips.clientHeight
       const dom_container = document.documentElement
       const containerWidth = dom_container.clientWidth
       const containerHeight = dom_container.clientHeight
@@ -71,7 +74,7 @@ export default {
       return `${x}px, ${y}px`
     },
   },
-}
+})
 </script>
 
 <style lang="less" module>

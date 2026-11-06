@@ -19,6 +19,7 @@ const allApi = {
 }
 
 const apiList = {}
+/** @type {Record<string, LX.QualityList>} */
 const supportQuality = {}
 
 for (const api of apiSourceInfo) {

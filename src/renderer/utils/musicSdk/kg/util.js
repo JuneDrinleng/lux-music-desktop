@@ -8,7 +8,8 @@ import { httpFetch } from '../../request'
 /**
  * 签名
  * @param {*} params
- * @param {*} apiver
+ * @param {string} platform
+ * @param {string} body
  */
 export const signatureParams = (params, platform = 'android', body = '') => {
   let keyparam = 'OIlwieks28dk2k092lksi2UIkp'

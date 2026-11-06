@@ -126,8 +126,8 @@ export default {
    * @param {*} num
    */
   formatPlayCount(num) {
-    if (num > 100000000) return parseInt(num / 10000000) / 10 + '亿'
-    if (num > 10000) return parseInt(num / 1000) / 10 + '万'
+    if (num > 100000000) return parseInt(String(num / 10000000)) / 10 + '亿'
+    if (num > 10000) return parseInt(String(num / 1000)) / 10 + '万'
     return num
   },
   filterList(rawData) {
@@ -291,7 +291,7 @@ export default {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36',
         plat: 'h5',
       },
-    }).promise.catch(() => ({ code: 0 }))
+    }).promise.catch(() => ({ body: { code: 0 } }))
 
     if (infoData.code != 200) return null
 
@@ -309,7 +309,7 @@ export default {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36',
         plat: 'h5',
       },
-    }).promise.catch(() => ({ code: 0 }))
+    }).promise.catch(() => ({ body: { code: 0 } }))
 
     if (infoData.code != 200) return null
 
@@ -349,16 +349,17 @@ export default {
     const source = /source=(\d+)/.exec(id)?.[1]
     if (!listId) return Promise.reject(new Error('failed'))
 
-    const task = [this.getListDetailMusicListByBDList(listId, source, page)]
+    const listTask = this.getListDetailMusicListByBDList(listId, source, page)
+    let infoTask
     switch (source) {
       case '4':
-        task.push(this.getListDetailMusicListByBDListInfo(listId, source))
+        infoTask = this.getListDetailMusicListByBDListInfo(listId, source)
         break
       case '5':
-        task.push(this.getListDetailMusicListByBDUserPub(uid ?? listId))
+        infoTask = this.getListDetailMusicListByBDUserPub(uid ?? listId)
         break
     }
-    const [listData, info] = await Promise.all(task)
+    const [listData, info] = await Promise.all([listTask, infoTask])
     listData.info = info ?? {
       name: '',
       img: '',

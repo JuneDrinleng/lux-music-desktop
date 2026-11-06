@@ -158,5 +158,5 @@ export const getMusicInfo = async(copyrightId) => {
 }
 
 export const getMusicInfos = async(copyrightIds) => {
-  return filterMusicInfoList(await Promise.all(createGetMusicInfosTask(copyrightIds)).then(data => data.flat()))
+  return filterMusicInfoList((await createGetMusicInfosTask(copyrightIds)).flat())
 }

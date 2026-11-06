@@ -100,8 +100,7 @@ export default {
       const api = this.apiList[index]
       if (!api) return
       if (appSetting['common.apiSource'] == api.id) {
-        let backApi = apiSourceInfo.find(api => !api.disabled)
-        if (!backApi) backApi = userApi.list[0]
+        const backApi = apiSourceInfo.find(api => !api.disabled) ?? userApi.list[0]
         updateSetting({ 'common.apiSource': backApi?.id ?? '' })
       }
       userApi.list = await removeUserApi([api.id])

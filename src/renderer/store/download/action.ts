@@ -212,7 +212,7 @@ const getUrl = async(downloadInfo: LX.Download.ListItem, isRefresh: boolean = fa
     isRefresh,
     quality: downloadInfo.metadata.quality,
     allowToggleSource: false,
-  }) : Promise.reject(new Error('not found'))).catch(() => {
+  }) : Promise.reject(new Error('not found'))).catch(async() => {
     return getMusicUrl({
       musicInfo: downloadInfo.metadata.musicInfo,
       isRefresh: false,
@@ -229,7 +229,7 @@ const handleRefreshUrl = (downloadInfo: LX.Download.ListItem) => {
     isRefresh: true,
     quality: downloadInfo.metadata.quality,
     allowToggleSource: false,
-  }) : Promise.reject(new Error('not found'))).catch(() => {
+  }) : Promise.reject(new Error('not found'))).catch(async() => {
     return getMusicUrl({
       musicInfo: downloadInfo.metadata.musicInfo,
       isRefresh: true,

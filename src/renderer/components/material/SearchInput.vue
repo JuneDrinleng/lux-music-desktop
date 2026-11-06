@@ -48,19 +48,20 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, type CSSProperties, type PropType } from 'vue'
 import { clipboardReadText } from '@common/utils/electron'
 import { HOTKEY_COMMON } from '@common/hotKey'
 import { appSetting } from '@renderer/store/setting'
 
-export default {
+export default defineComponent({
   props: {
     placeholder: {
       type: String,
       default: 'Search for something...',
     },
     list: {
-      type: Array,
+      type: Array as PropType<string[]>,
       default() {
         return []
       },
@@ -84,22 +85,22 @@ export default {
   },
   emits: ['update:modelValue', 'event'],
   data() {
+    const listStyle: CSSProperties = { height: 0 }
     return {
       isShow: false,
       text: '',
       selectIndex: -1,
       focus: false,
-      listStyle: {
-        height: 0,
-      },
+      listStyle,
     }
   },
   watch: {
     list(n) {
       if (!this.visibleList) return
       if (this.selectIndex > -1) this.selectIndex = -1
-      this.$nextTick(() => {
-        this.listStyle.height = this.$refs.dom_list.scrollHeight + 'px'
+      void this.$nextTick(() => {
+        const list = this.$refs.dom_list
+        if (list instanceof HTMLElement) this.listStyle.height = list.scrollHeight + 'px'
       })
     },
     modelValue(n) {
@@ -117,16 +118,17 @@ export default {
     this.handleRegisterEvent('off')
   },
   methods: {
-    handleRegisterEvent(action) {
+    handleRegisterEvent(action: 'on' | 'off') {
       let eventHub = window.key_event
-      let name = action == 'on' ? 'on' : 'off'
+      // Vue binds Options API methods to the component instance.
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      eventHub[name](HOTKEY_COMMON.focusSearchInput.action, this.handleFocusInput)
+      eventHub[action](HOTKEY_COMMON.focusSearchInput.action, this.handleFocusInput)
     },
     handleFocusInput() {
-      this.$refs.dom_input.focus()
+      const input = this.$refs.dom_input
+      if (input instanceof HTMLInputElement) input.focus()
     },
-    handleTemplistClick(index) {
+    handleTemplistClick(index: number) {
       console.log(index)
       this.sendEvent('listClick', index)
     },
@@ -150,16 +152,17 @@ export default {
     },
     showList() {
       this.isShow = true
-      this.listStyle.height = this.$refs.dom_list.scrollHeight + 'px'
+      const list = this.$refs.dom_list
+      if (list instanceof HTMLElement) this.listStyle.height = list.scrollHeight + 'px'
     },
     hideList() {
       this.isShow = false
       this.listStyle.height = 0
-      this.$nextTick(() => {
+      void this.$nextTick(() => {
         this.selectIndex = -1
       })
     },
-    sendEvent(action, data) {
+    sendEvent(action: 'change' | 'listClick' | 'focus' | 'blur' | 'submit', data?: number) {
       this.$emit('event', {
         action,
         data,
@@ -185,7 +188,8 @@ export default {
       str = str.replace(/\t|\r\n|\n|\r/g, ' ')
       str = str.replace(/\s+/g, ' ')
       let dom_input = this.$refs.dom_input
-      this.text = this.text.substring(0, dom_input.selectionStart) + str + this.text.substring(dom_input.selectionEnd, this.text.length)
+      if (!(dom_input instanceof HTMLInputElement)) return
+      this.text = this.text.substring(0, dom_input.selectionStart ?? 0) + str + this.text.substring(dom_input.selectionEnd ?? 0, this.text.length)
       this.$emit('update:modelValue', this.text)
     },
     handleClearList() {
@@ -194,7 +198,7 @@ export default {
       this.sendEvent('submit')
     },
   },
-}
+})
 </script>
 
 

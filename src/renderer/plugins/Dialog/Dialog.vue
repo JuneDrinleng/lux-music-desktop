@@ -9,11 +9,12 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import Modal from '@renderer/components/material/Modal.vue'
 import Btn from '@renderer/components/base/Btn.vue'
 import { useI18n } from '@renderer/plugins/i18n'
 import { computed } from '@common/utils/vueTools'
-export default {
+export default defineComponent({
   components: {
     Modal,
     Btn,
@@ -67,7 +68,7 @@ export default {
     handleComfirm() {
     },
   },
-}
+})
 </script>
 
 <style lang="less" module>

@@ -45,6 +45,14 @@ const parseExtendedLyric = (lrcLinesMap, extendedLyric) => {
 }
 
 export default class LinePlayer {
+  /**
+   * @param {{
+   *   offset?: number,
+   *   rate?: number,
+   *   onPlay?: (line: number, text: string, currentTime: number) => void,
+   *   onSetLyric?: (lines: Array<{time: number, text: string, extendedLyrics: string[]}>, offset: number) => void,
+   * }} options
+   */
   constructor({ offset = 0, rate = 1, onPlay = function() { }, onSetLyric = function() { } } = {}) {
     this.tags = {}
     this.lines = null

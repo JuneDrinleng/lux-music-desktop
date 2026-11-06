@@ -8,16 +8,17 @@
     :disabled="disabled"
     tabindex="0"
     @input="handleInput"
-    @change="$emit('change', $event.target.value.trim())"
-    @keyup.enter="$emit('submit', $event.target.value.trim())"
+    @change="$emit('change', inputValue($event))"
+    @keyup.enter="$emit('submit', inputValue($event))"
     @contextmenu="handleContextMenu"
   >
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import { clipboardReadText } from '@common/utils/electron'
 
-export default {
+export default defineComponent({
   props: {
     placeholder: {
       type: String,
@@ -54,6 +55,9 @@ export default {
   },
   emits: ['update:modelValue', 'submit', 'change'],
   methods: {
+    inputValue(event) {
+      return event.target instanceof HTMLInputElement ? event.target.value.trim() : ''
+    },
     handleInput(event) {
       let value = event.target.value
       if (this.trim) {
@@ -63,12 +67,14 @@ export default {
       this.$emit('update:modelValue', value)
     },
     focus() {
-      this.$refs.dom_input.focus()
+      const input = this.$refs.dom_input
+      if (input instanceof HTMLInputElement) input.focus()
     },
     handleContextMenu(event) {
       if (this.stopContentEventPropagation) event.stopPropagation()
       if (!this.autoPaste) return
       let dom_input = this.$refs.dom_input
+      if (!(dom_input instanceof HTMLInputElement)) return
       if (dom_input.selectionStart === null) return
       let str = clipboardReadText()
       str = str.trim()
@@ -84,7 +90,7 @@ export default {
       // }
     },
   },
-}
+})
 </script>
 
 

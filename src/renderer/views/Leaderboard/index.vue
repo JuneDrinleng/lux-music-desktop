@@ -4,10 +4,10 @@
       <div :class="$style.listsSelect">
         <base-selection :model-value="source" :class="$style.select" :list="sourceList" item-key="id" item-name="name" @update:model-value="handleToggleSource" />
       </div>
-      <BoardList ref="boardListRef" :board-id="boardId" :source="source" @show-menu="$refs.musicListRef?.hideMenu()" />
+      <BoardList ref="boardListRef" :board-id="boardId" :source="source" @show-menu="musicListRef?.hideMenu()" />
     </div>
     <div :class="$style.list">
-      <MusicList ref="musicListRef" :source="source" :board-id="boardId" @show-menu="$refs.boardListRef?.hideMenu()" />
+      <MusicList ref="musicListRef" :source="source" :board-id="boardId" @show-menu="boardListRef?.hideMenu()" />
     </div>
   </div>
 </template>
@@ -22,7 +22,8 @@ import { sourceNames } from '@renderer/store'
 import { useRoute, useRouter } from '@common/utils/vueRouter'
 
 
-const source = ref('')
+/** @type {import('vue').Ref<LX.OnlineSource>} */
+const source = ref('kw')
 const boardId = ref(null)
 
 const verifyQueryParams = async function(to, from, next) {
@@ -56,8 +57,8 @@ export default {
   beforeRouteEnter: verifyQueryParams,
   beforeRouteUpdate: verifyQueryParams,
   setup() {
-    const musicListRef = ref(null)
-    const boardListRef = ref(null)
+    const musicListRef = ref(/** @type {InstanceType<typeof MusicList> | null} */ (null))
+    const boardListRef = ref(/** @type {InstanceType<typeof BoardList> | null} */ (null))
     const sourceList = computed(() => {
       return sources.map(s => ({ id: s, name: sourceNames.value[s] }))
     })

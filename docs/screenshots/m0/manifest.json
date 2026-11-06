@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "startedAt": "2026-11-06T01:11:17.469Z",
+  "finishedAt": "2026-11-06T01:11:31.827Z",
+  "source": {
+    "commit": "c32ddcd5fe37adc6e97e225242c709dd1727154d",
+    "branch": "codex/desktop-m0",
+    "pullRequestHeadSha": null,
+    "pullRequestBaseSha": null,
+    "dirty": true,
+    "buildSha256": {
+      "249.js": "f827c5972adb6a25884296b33ed45c8d6ef4c1468e761b6abc65088dd8403712",
+      "249.js.map": "d74b4c839f12a821adaf2e3c6202630b325df7ecf820e613f3ced6fd174ac4ec",
+      "272.js": "85f5181b3501dee8e1e0b509ce49caeed26e0920d5c954d00202195912087234",
+      "272.js.map": "527b43d286ac3225b54ebe158be70108cd1ae2b14581f3b34cd6035a80867763",
+      "315.js": "78427b31655cf035aea93bab58050157fe787eb7291df684826efa6ca61a4dec",
+      "315.js.map": "aad5780c1ece3c1db3a8e6932911488491a313fa9c861a305ac0e6a2a14d3385",
+      "408.js": "77a0e19d940d170807b992b45a60a486ff72db07e1e1034e72b7c1567af11740",
+      "408.js.map": "7f210c53f93b9cd3a2f9adcd739da28d03dd405cb628874169f885a6526d8431",
+      "409.js": "baa22cf8017f80b92c708296d312f8b63d031ab9e3f8a29ab02dce674cd56128",
+      "409.js.map": "2d187a7e4218cd15cc81c186aa4a85b33fd358430b4925565ced96d18720b59a",
+      "420.js": "f559363e7bf023ac547320dd72405d20de0f181cb9dbc9ebdf5e723d0d42b9ef",
+      "420.js.map": "f1010713c926eede3291e5a3c333e9e6cb5deaf4f0e20f5f9aee5a5c4d90aee6",
+      "438.js": "f189bd6834d38fcc0f122111eeb1d099a1186a90f0f0499e2aef263a5ee485b7",
+      "438.js.map": "8737f3a7fb17d50f804a4ce8280db14e4efd84148daaf8740900a53eda79c688",
+      "46.js": "0d9294e5ab3712753cdfb98a6e13cf63d9bb2455a1fa47def5ed856fb9b92220",
+      "46.js.map": "dce9eb42d2b85a2dcea810a2dffef6aa697561fc8a4f249710d156086180ef0a",
+      "465.js": "0cf9ba5127ee79b1041ce7855fa522ffeeb784a6318b91da210c3e99114fc1c8",
+      "465.js.map": "cd59099d90ae3038ae82cb6f20902f5013507bbb46947128326e4b2d3b6baf19",
+      "630.js": "c95d96b5bf5c2f24eefd2ed8aff4ae9f2af06f6c971f2bd1369fc4b637c036a1",
+      "630.js.map": "4481fba4d6e839ccc47a6093a8331bfb0d62da202399b60b11ae9cb6254e83f0",
+      "675.js": "10268a6ca02548b91798ffde34fd444f601590518d977e001927298635557298",
+      "675.js.map": "e1ac0c74525fa5678b22871f050b3a1195cfee074edba361664f725cec8bafbe",
+      "764.js": "a6f87684b2bf99c18c78e095fc0874d1f16f35d65ea853caf26bcf00ce006ffc",
+      "764.js.map": "1b305a1e71e650566af2572ea324b441317098a548edd621c8bbb4115129f90c",
+      "790.js": "bb3b21798a7d0b99ceae82a4c5242a449b7e8085554a050dc78c0c2ea151595e",
+      "790.js.map": "7a0e388eac6a3e2c9c28d941ae5fea77ce0e298a550bae15cd6c0b04801ee70c",
+      "930.js": "10932601f97122b7d3734281b9ee4c5059c63ac9964cc6baf443bba726854f26",
+      "930.js.map": "2ddb75127d65dc776076504147bac277c74f4839fb2f9ba2e93e1692b8523fdf",
+      "978.js": "3177c9f0734a39ece7c1de039807d261ec35bb34320460d9d30d5fef7844cd1d",
+      "978.js.LICENSE.txt": "b3c329926d3bef0b39302d3b779f84effba3578e264279e6ca7b88535d51a0fe",
+      "978.js.map": "eb7bbe966eded66843709e5436f4cfe26ca21f89291fdd24a68bf55ca0922ca5",
+      "984.js": "02159dcf550e499559187afcea0352da1144f81ad0b24078c401fc1e2f5230e7",
+      "984.js.map": "a17a6958624014b09b29145b4f58b76a7dc799aae6bef0a892a2b600684231e5",
+      "dbService.worker.js": "80dc388b39a0399405c7173e4291364750331b016503e3401ab8dc469f3c9ac7",
+      "index.html": "7f6cf3b788a222a6339a2150e9c5f419571af014ee43da64b54bb91cf3b736de",
+      "lyric.html": "f675d5b4d758f628425586bd4369c2884defa1fb80cdb0158ab51718127d693a",
+      "main.js": "7a804bcd3a0da06e2419ac8149e64820faecf07822341ec486aaf9cc72a7348c",
+      "media/bright-hall-3f627fa1.wav": "4f0d8c51a4a5f7a5061c4037136a314a673abb502a86fab869a3b068a4754f83",
+      "media/cardiod-35-10-spread-fa4ea52f.wav": "cf3ab1550ea86065baa9f63a00c6265de7360e167a0bc6a1d0ca54b3f97050ad",
+      "media/cinema-diningroom-e66a593a.wav": "c515a820912cd2fe54f687f6cee36bb2c0b947a6bc23ad057327a8ae9abe44b0",
+      "media/dining-living-true-stereo-b9112ee8.wav": "b0287ec2305edc75d6c484c6a9e55339162acdc2edf7c18b53dfb835563b454f",
+      "media/feedback-spring-7efe92c2.wav": "41d038558169517e38995325de9309c28ebf7c01abda579ec58670043f1961ba",
+      "media/filter-telephone-318685f3.wav": "4dc96614900e1b3fa85611de2ddfd39f2e26530b3b8336239dc1badbfd89f7e9",
+      "media/living-bedroom-leveled-d6a1258e.wav": "d0ec29a1ac756ee6fcd20e1d05018792e645eb606cdc8727a38497f99de34592",
+      "media/matrix-reverb1-44d89638.wav": "333d05904c01c774b28a05a0fae147f8475f6e4f7daa92c3e16d879867f97d0c",
+      "media/matrix-reverb2-c5e38eb5.wav": "888b47ee698110b8e0de89aa8f03edfcd76f19485b2c08675d5ff1d72c6c1343",
+      "media/medium-room1-71e73cdf.wav": "2ac7b2973096c56e3c1fbb252f687371be8cc818af2fc0c59aca61b67c5abc7e",
+      "media/s2_r4_bd-b3f483cd.wav": "400e242cb263d1ce83bed6b7fc2e75f498e0695735974f943d0269befcb31b2f",
+      "media/s3_r1_bd-efaac21f.wav": "3ae4c9ade438e69c23e2e26ecc9bc579bee345be506a6ac30349c34c66177be0",
+      "media/spreader50-65ms-464ad7db.wav": "40fffaf053416be74002d7636c7b469eb17c8762a0d096491c986d00f9a36e64",
+      "media/tim-omni-35-10-magnetic-7a3cb7be.wav": "d73086428420282fe2452f71e289d8521ac9b118947637e9ef97bc832de710c4",
+      "pitch_shifter.audioWorklet.js": "25471bef842572e059fa4e6c3396af2bc576d9faa09e0941135cb886f98a6e4c",
+      "pitch_shifter.audioWorklet.js.map": "b47c842a9b9750c77d73922071fc1f61b996b7a10048834968f65b23d24fbdda",
+      "renderer-lyric.a4feb459.css": "06ebbb2a82e373efd56ae38cb44080396ca390e045c69dc14dad4214103a442d",
+      "renderer-lyric.a4feb459.css.map": "53fd3acb6cf5072a3186b3d97e986d571ba05f5cfef6952bec9f5692a65e8a34",
+      "renderer-lyric.js": "2482589d9cc6ec10837cae28f0fee111da2623b2dbf41e5e8362c8576c999a75",
+      "renderer-lyric.js.LICENSE.txt": "de3e11568629c0e539e6cf9e7a251c7502b3de75cbb8d6598737a48dd0d02a59",
+      "renderer-lyric.js.map": "9b1e810f4df517a36c7f4a2fe61d50345a6730297dd1ca2a554bceedd27a6b13",
+      "renderer.2763f858.css": "b1e594c3a770500e6e2891f1c31972d78ec4d8441ea4ddcf7b99272bd0bcc5dc",
+      "renderer.2763f858.css.map": "372caf4557b17fa872cb3f9909c6bd74b97a8eac58840686d79960050da31cd4",
+      "renderer.download.worker.js": "58822b91114eafa79a2d41bc5f0ef3159dd1b20f67164e6585611d493c257816",
+      "renderer.download.worker.js.map": "506467a022883c0b0f3131fbe9ad45acb9051c136d13e82324727698604b3941",
+      "renderer.js": "15dafb64d69347344c0496636285cc3f01062063f8fc33a03914841f2027997a",
+      "renderer.js.LICENSE.txt": "bbcd3b96b195b7ca89f8d15a33b23b4badf42ad0152a87b90bdbf67bfc8d6e5e",
+      "renderer.js.map": "cb09db2d56cd9f0921fb0ba1c569edb7f3c7866e503d640d5a32c2e0380c176c",
+      "renderer.main.worker.js": "12109215a028367b3e6fac256f93d61328b45da3cecc623a2f40e1e0997ffbde",
+      "renderer.main.worker.js.map": "93fdaa928a9c9e29f8c303f7eda0c17d8ba744dda28c6818ff909bd1a40703a3",
+      "static/images/taskbar/collect.png": "24c87b9d3fdca1cc44daa14a8ff9cc4e9713c7452e487cf7785d1c90e360b50c",
+      "static/images/taskbar/collected.png": "8e12eea68e888231fb82147d937fdb73cc069d2003a59980bf41a3156b042b07",
+      "static/images/taskbar/next.png": "7125bb861430d4f4afe67d0a8785f1c8177807e40e5813e483c4ceb84ba3d6a3",
+      "static/images/taskbar/pause.png": "7d6e8aa0daecd0190dfb133bbf25f9a07a96067469d591004898f40ee1031f03",
+      "static/images/taskbar/play.png": "b2c9e162e37e2f9c2706ba93a2d9223c0dff27dfb21a9ed5c7896f0bbb29c67a",
+      "static/images/taskbar/prev.png": "83a4a8d37d8fd87e8335a0a04988bef4c9751e2955e2e39f45ba4a88d70ad7db",
+      "static/images/tray/trayTemplate.ico": "c1016d1134aecda755b34754b2a1475b1f26c8129bf28c99ae908da7cc705265",
+      "static/images/tray/trayTemplate.png": "5eb72d1d7adee103bad10913229cd36b1bb9bf47cb321c3e9a1b57b02f27f542",
+      "static/images/tray/trayTemplate@1.25x.png": "3d93efcf3395e06cc12d159d26863532adee52defe192316e11d9675743eb0af",
+      "static/images/tray/trayTemplate@1.5x.png": "14f2a6889b853166416cc48693e11d987dfbd161f67619585c85a1fe2beff5d8",
+      "static/images/tray/trayTemplate@2x.ico": "74fb642e24a687afcfb980cf22925a8dbcf8f416af1440eb3c1f9d86a8b490cd",
+      "static/images/tray/trayTemplate@2x.png": "3a98c5c0c79d2f235a9e1890802a5ca8ca8f79531df81e17cfd6377c55294db0",
+      "static/images/tray/tray_black.ico": "3547d1c10197e53cdca68ac557c0c27e2679483283b18dda0e2a752fefe80a0e",
+      "static/images/tray/tray_black.png": "0e3817b191a2eadb343a09f68498027334f741a5a343e004daca5f173d421e59",
+      "static/images/tray/tray_black@1.25x.png": "0b6e7823ff4bda76b224adc9a264e4b6bc41886e149d2c13b0fa62d17807cce4",
+      "static/images/tray/tray_black@1.5x.png": "26f4b3c9cafce0a7a4dc845cc1d3009a5c5eed3e5bbf99e290b77d120e42c5bb",
+      "static/images/tray/tray_black@2x.ico": "4cc8c4c0c18191e6dbeb9cd6e0fc730d00012d131efd5e002876ae0a15497775",
+      "static/images/tray/tray_black@2x.png": "2183885202605fd25b1648948838355d0cd153162403258ee3178b8317ff26cb",
+      "static/images/tray/tray_origin.ico": "efcf345b5943716daf637414e5960cd83cb6816274b382813874efbff17f16af",
+      "static/images/tray/tray_origin.png": "b0deb836c4ea77f6c153fd3a5e3e5c50e60df09ea625c30134a2bf9cb2377c65",
+      "static/images/tray/tray_origin@2x.ico": "0129884c33229ab48b188ee02988f03f9e8f0511a82d55cbffd1187cb757a0c4",
+      "static/images/tray/tray_origin@2x.png": "6ffc7d2d11aed40ec883ea020e8605e9c6839e240a94f65c75243b3d93203f82",
+      "theme_images/china_ink.jpg": "3f022a20c234334523fd876fad5e721cf2a1ad9c3a60525365ba88ccf8e6746e",
+      "theme_images/jqbg.jpg": "74fbe3b664788c4d81b77d5cacc6f38a5ad58c9222a75abb75a51de0a296754e",
+      "theme_images/landingMoon.png": "01572eff8b85e71ac9ad1e8228b8b48143b4ff4c0246ecd803eadf1cf1008eb4",
+      "theme_images/myzcbg.jpg": "1e4ee8c55bcb5f7a45639c12723ba0a7a1c39e7a52ff1cea2ea1a60d9de9584f",
+      "theme_images/xnkl.png": "c6926a2e8780a6073a94e09657aecd360ca0e3136437dcfc2c5e78742c3912b5",
+      "user-api-preload.js": "5054614e36a516c8174c35735de74b20b8c34c48a0ed2a802eff73c24ad05a8e",
+      "user-api-preload.js.map": "aadc0d376dcc9022a81c18219dc86d89188d8e26c0c3a8667e675a29b7e531c5",
+      "userApi/renderer/user-api.html": "bd4f1b83d8c804334c401035173dfd9fff65f87f6909b9915c6d4ac96fb4fbd8"
+    },
+    "harnessSha256": {
+      "capture.cjs": "1d31fd0c381343a8de7e02665d6a2490a26890a6502b2e857d3cc22686ae5bdf",
+      "electron-main.cjs": "8c6b5b5d7371d7038eb659c0b1c0adfc1da95067f7a4b81aee6b2ef687f2eb99",
+      "offline-preload.cjs": "94fadee845e38b4e14b5609a0a2477a9be5ef5ba6e51599ed802ff56917d58c3",
+      "offline.cjs": "664201a557982cc9b19aa456079ed92d61e6208d1e2e601dbf6c052732218d87",
+      "prepare-runtime.cjs": "1bf3cf0c81431e957dfe8d09be3e1d5f016fcd26aa5aa7a1e700090cbac7047c"
+    }
+  },
+  "runtime": {
+    "os": "linux 6.12.94+ x64",
+    "driverNode": "v24.22.1",
+    "electron": "42.11.6",
+    "node": "24.19.0",
+    "chrome": "148.0.7778.280",
+    "modulesAbi": "146",
+    "scaleFactor": 1
+  },
+  "application": {
+    "mainEntry": "dist/main.js",
+    "rendererEntry": "dist/index.html",
+    "nativeDatabase": "better-sqlite3; real application worker, isolated temporary database",
+    "routeNavigation": "click actual sidebar anchors and inspect active route",
+    "data": "empty isolated userData; no user accounts, secrets, music, or public API responses",
+    "network": "Node TCP and Chromium HTTP(S) denied; remote pages show real offline states",
+    "blockedNetworkRequests": 8,
+    "seededPreferences": {
+      "common.langId": "zh-cn",
+      "common.isAgreePact": true,
+      "common.showChangeLog": false,
+      "common.tryAutoUpdate": false,
+      "common.transparentWindow": false,
+      "common.isShowAnimation": false,
+      "common.randomAnimate": false,
+      "search.isShowHotSearch": false,
+      "search.isShowHistorySearch": false,
+      "download.enable": true,
+      "sync.enable": false,
+      "openAPI.enable": false,
+      "desktopLyric.enable": false,
+      "tray.enable": false
+    },
+    "unverifiedNativeBoundaries": [
+      "Windows/macOS window controls and taskbar",
+      "system URL scheme registration (suppressed)",
+      "system tray",
+      "audio output",
+      "desktop lyric window",
+      "downloaded media",
+      "real online music services"
+    ]
+  },
+  "command": "npm run evidence",
+  "captures": [
+    {
+      "file": "search-1280x800.png",
+      "route": "/search",
+      "themeId": "green",
+      "width": 1280,
+      "height": 800,
+      "capturedAt": "2026-11-06T01:11:21.152Z",
+      "sha256": "8eb2a8310f893cd244dd2a59be342235f346aa695b0235e3de1461b30103af8c",
+      "bytes": 30322,
+      "snapshot": {
+        "hash": "#/search?source=all&type=music",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1278,
+          "height": 798
+        },
+        "viewSize": {
+          "width": 1194,
+          "height": 678
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "小蜗音乐\n小枸音乐\n小秋音乐\n小芸音乐\n小蜜音乐\n聚合大会\n歌曲\n歌单\n\n搜我所想~~😉"
+      }
+    },
+    {
+      "file": "songlists-1280x800.png",
+      "route": "/songList/list",
+      "themeId": "green",
+      "width": 1280,
+      "height": 800,
+      "capturedAt": "2026-11-06T01:11:22.193Z",
+      "sha256": "1f9a2c529097b9e5fa97d54efad71eb547ed82ff0bbe064012e999e9dc39cb68",
+      "bytes": 29647,
+      "snapshot": {
+        "hash": "#/songList/list?source=kw&tagId=&sortId=new&page=1",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1278,
+          "height": 798
+        },
+        "viewSize": {
+          "width": 1194,
+          "height": 678
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "默认\n默认\n最新\n最热\n打开歌单\n小蜗音乐\n\n啊，加载失败了😭"
+      }
+    },
+    {
+      "file": "leaderboard-1280x800.png",
+      "route": "/leaderboard",
+      "themeId": "green",
+      "width": 1280,
+      "height": 800,
+      "capturedAt": "2026-11-06T01:11:23.229Z",
+      "sha256": "af85b94b7f076684f3be116be3e582af1facc4422f80272ef4fc8d3618f0d249",
+      "bytes": 55426,
+      "snapshot": {
+        "hash": "#/leaderboard?source=kw&boardId=kw__16",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1278,
+          "height": 798
+        },
+        "viewSize": {
+          "width": 1194,
+          "height": 678
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "小蜗音乐\n飙升榜\n新歌榜\n 热歌榜\n抖音热歌榜\n铃声榜\n热评榜\nACG新歌榜\n台湾KKBOX榜\n冬日暖心榜\n巴士随身听榜\nKTV点唱榜\n家务进行曲榜\n熬夜修仙榜\n枕边轻音乐榜\n古风音乐榜\nVlog音乐榜\n电音榜\n流行趋势榜\n现场音乐榜\nACG神曲榜\n最强翻唱榜\n经典怀旧榜\n华语榜\n粤语榜\n欧美榜\n韩语榜\n日语榜\n会员畅听榜\n网红新歌榜\n影视金曲榜\nDJ嗨歌榜\n真声音\nBillboard榜\niTunes音乐榜\nbeatport电音榜\n英国UK榜\n百大DJ榜\nYouTube音乐排行榜\n韩国Genie榜\n韩国M-net榜\n香港电台榜\n日本公信榜\n腾讯音乐人原创榜\n#\t歌曲名\t艺术家\t专辑名\t时长\n\n啊，加载失败了😭"
+      }
+    },
+    {
+      "file": "library-1280x800.png",
+      "route": "/list",
+      "themeId": "green",
+      "width": 1280,
+      "height": 800,
+      "capturedAt": "2026-11-06T01:11:24.258Z",
+      "sha256": "30f6e0b1d540bcfe7c7852176a854e339e2c3d5c79803824a23d01795f73317b",
+      "bytes": 31712,
+      "snapshot": {
+        "hash": "#/list?id=default",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1278,
+          "height": 798
+        },
+        "viewSize": {
+          "width": 1194,
+          "height": 678
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "我的列表\n 试听列表\n我的收藏\n#\t歌曲名\t艺术家\t专辑名\t时长\n\n列表竟然是空的..."
+      }
+    },
+    {
+      "file": "downloads-1280x800.png",
+      "route": "/download",
+      "themeId": "green",
+      "width": 1280,
+      "height": 800,
+      "capturedAt": "2026-11-06T01:11:25.214Z",
+      "sha256": "5da6d77cd868dd3eb8ac8bf8dd68f995e86255eac587356d8fff47563417c590",
+      "bytes": 31519,
+      "snapshot": {
+        "hash": "#/download",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1278,
+          "height": 798
+        },
+        "viewSize": {
+          "width": 1194,
+          "height": 678
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "所有任务\n正在下载\n已暂停\n出错\n下载完成\n#\t歌曲名\t进度\t状态\t品质\t操作\n\n列表竟然是空的..."
+      }
+    },
+    {
+      "file": "settings-1280x800.png",
+      "route": "/setting",
+      "themeId": "green",
+      "width": 1280,
+      "height": 800,
+      "capturedAt": "2026-11-06T01:11:26.182Z",
+      "sha256": "2d5651c868a77a0f0898860bf260abb5099e04925a433ddd55740a2a0b5ea968",
+      "bytes": 70117,
+      "snapshot": {
+        "hash": "#/setting",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1278,
+          "height": 798
+        },
+        "viewSize": {
+          "width": 1194,
+          "height": 678
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": " 基本设置\n播放设置\n播放详情页设置\n桌面歌词设置\n搜索设置\n列表设置\n下载设置\n快捷键设置\n数据同步\n开放 API\n网络设置\n强迫症设置\n备份与恢复\n其他\n软件更新\n关于 LX Music\n基本设置\n显示动画效果\n弹出层随机动画\n以全屏模式启动\n关闭窗口时不退出软件将其最小化到系统托盘\n定时暂停\n主题颜色\n绿意盎然\n更多主题\n自定义源\n自定义源管理\n窗口尺寸\n更小\n小\n中\n大\n更大\n超大\n巨大\n字体大小\n更小\n小\n标准\n大\n更大\n非常大\n字体\n默认\n语言\nEnglish\n한국어\n简体中文\n繁體中文\n歌曲来源名称\n原名\n别名\n控制按钮位置\n左边\n右边\n播放栏进度条样式\n迷你\n中等\n全宽"
+      }
+    },
+    {
+      "file": "search-1024x700.png",
+      "route": "/search",
+      "themeId": "green",
+      "width": 1024,
+      "height": 700,
+      "capturedAt": "2026-11-06T01:11:27.121Z",
+      "sha256": "ea6db5bae21e8c610b2b30f93fd05cfac845f1a8d9593ec466cc74593ca1deeb",
+      "bytes": 27261,
+      "snapshot": {
+        "hash": "#/search?source=all&type=music",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1022,
+          "height": 698
+        },
+        "viewSize": {
+          "width": 955,
+          "height": 578
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "小蜗音乐\n小枸音乐\n小秋音乐\n小芸音乐\n小蜜音乐\n聚合大会\n歌曲\n歌单\n\n搜我所想~~😉"
+      }
+    },
+    {
+      "file": "songlists-1024x700.png",
+      "route": "/songList/list",
+      "themeId": "green",
+      "width": 1024,
+      "height": 700,
+      "capturedAt": "2026-11-06T01:11:28.054Z",
+      "sha256": "35f22be65d439ef5a559c5a35dc9ce91133f2c879802e0041a0165aaa9d9fcd8",
+      "bytes": 27152,
+      "snapshot": {
+        "hash": "#/songList/list?source=kw&tagId=&sortId=new&page=1",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1022,
+          "height": 698
+        },
+        "viewSize": {
+          "width": 955,
+          "height": 578
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "默认\n默认\n最新\n最热\n打开歌单\n小蜗音乐\n\n啊，加载失败了😭"
+      }
+    },
+    {
+      "file": "leaderboard-1024x700.png",
+      "route": "/leaderboard",
+      "themeId": "green",
+      "width": 1024,
+      "height": 700,
+      "capturedAt": "2026-11-06T01:11:29.009Z",
+      "sha256": "0bf63c6d0ba68ea973683bbd02c214c306007877d6ecb84ce8e2f3ecb270eb8a",
+      "bytes": 48721,
+      "snapshot": {
+        "hash": "#/leaderboard?source=kw&boardId=kw__16",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1022,
+          "height": 698
+        },
+        "viewSize": {
+          "width": 955,
+          "height": 578
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "小蜗音乐\n飙升榜\n新歌榜\n 热歌榜\n抖音热歌榜\n铃声榜\n热评榜\nACG新歌榜\n台湾KKBOX榜\n冬日暖心榜\n巴士随身听榜\nKTV点唱榜\n家务进行曲榜\n熬夜修仙榜\n枕边轻音乐榜\n古风音乐榜\nVlog音乐榜\n电音榜\n流行趋势榜\n现场音乐榜\nACG神曲榜\n最强翻唱榜\n经典怀旧榜\n华语榜\n粤语榜\n欧美榜\n韩语榜\n日语榜\n会员畅听榜\n网红新歌榜\n影视金曲榜\nDJ嗨歌榜\n真声音\nBillboard榜\niTunes音乐榜\nbeatport电音榜\n英国UK榜\n百大DJ榜\nYouTube音乐排行榜\n韩国Genie榜\n韩国M-net榜\n香港电台榜\n日本公信榜\n腾讯音乐人原创榜\n#\t歌曲名\t艺术家\t专辑名\t时长\n\n啊，加载失败了😭"
+      }
+    },
+    {
+      "file": "library-1024x700.png",
+      "route": "/list",
+      "themeId": "green",
+      "width": 1024,
+      "height": 700,
+      "capturedAt": "2026-11-06T01:11:29.955Z",
+      "sha256": "87e38bb6a7a9f70b44c12a87c12b22c459b483c1a47a2999b889d80bc886e00e",
+      "bytes": 29341,
+      "snapshot": {
+        "hash": "#/list?id=default",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1022,
+          "height": 698
+        },
+        "viewSize": {
+          "width": 955,
+          "height": 578
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "我的列表\n 试听列表\n我的收藏\n#\t歌曲名\t艺术家\t专辑名\t时长\n\n列表竟然是空的..."
+      }
+    },
+    {
+      "file": "downloads-1024x700.png",
+      "route": "/download",
+      "themeId": "green",
+      "width": 1024,
+      "height": 700,
+      "capturedAt": "2026-11-06T01:11:30.886Z",
+      "sha256": "160efc98af4e08ed42451df03f888185f080e2129f8ff544eec6e67048c72245",
+      "bytes": 28493,
+      "snapshot": {
+        "hash": "#/download",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1022,
+          "height": 698
+        },
+        "viewSize": {
+          "width": 955,
+          "height": 578
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": "所有任务\n正在下载\n已暂停\n出错\n下载完成\n#\t歌曲名\t进度\t状态\t品质\t操作\n\n列表竟然是空的..."
+      }
+    },
+    {
+      "file": "settings-1024x700.png",
+      "route": "/setting",
+      "themeId": "green",
+      "width": 1024,
+      "height": 700,
+      "capturedAt": "2026-11-06T01:11:31.826Z",
+      "sha256": "5c7f0bb51cf9a36944efc7078d01c8820d1bf616f1ca03a7c4ae15be7cf7a29c",
+      "bytes": 64768,
+      "snapshot": {
+        "hash": "#/setting",
+        "title": "LX Music",
+        "lang": "zh-Hans",
+        "rootSize": {
+          "width": 1022,
+          "height": 698
+        },
+        "viewSize": {
+          "width": 955,
+          "height": 578
+        },
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(66, 66, 66)",
+        "themeId": null,
+        "text": " 基本设置\n播放设置\n播放详情页设置\n桌面歌词设置\n搜索设置\n列表设置\n下载设置\n快捷键设置\n数据同步\n开放 API\n网络设置\n强迫症设置\n备份与恢复\n其他\n软件更新\n关于 LX Music\n基本设置\n显示动画效果\n弹出层随机动画\n以全屏模式启动\n关闭窗口时不退出软件将其最小化到系统托盘\n定时暂停\n主题颜色\n绿意盎然\n更多主题\n自定义源\n自定义源管理\n窗口尺寸\n更小\n小\n中\n大\n更大\n超大\n巨大\n字体大小\n更小\n小\n标准\n大\n更大\n非常大\n字体\n默认\n语言\nEnglish\n한국어\n简体中文\n繁體中文\n歌曲来源名称\n原名\n别名\n控制按钮位置\n左边\n右边\n播放栏进度条样式\n迷你\n中等\n全宽"
+      }
+    }
+  ],
+  "observations": [
+    {
+      "kind": "audio-device-unavailable",
+      "message": "音频输出设备为空，若出现无法播放的情况，请检查声卡驱动是否已安装。或卸载并重新安装软件，安装时选「仅为我安装」，并保持默认安装路径。",
+      "confirmationButtonText": "我知道了",
+      "action": "Captured the real startup warning, then clicked its normal confirmation button before page evidence",
+      "file": "startup-audio-warning.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "ead20de480e036003ccbafc52a4e3fe94d550945cbfceaf3c9c2e138fc4fca0e",
+      "bytes": 38533
+    }
+  ],
+  "runtimeErrors": []
+}

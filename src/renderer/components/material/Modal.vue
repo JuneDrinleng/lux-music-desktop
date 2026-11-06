@@ -21,13 +21,14 @@
   </teleport>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { getRandom } from '@common/utils/common'
 import { nextTick } from '@common/utils/vueTools'
 import { appSetting } from '@renderer/store/setting'
 
 let modalCount = 0
-export default {
+export default defineComponent({
   props: {
     show: {
       type: Boolean,
@@ -143,7 +144,7 @@ export default {
       outClass: 'animated slideOutRight',
       showModal: false,
       showContent: false,
-      modalCount: false,
+      modalCount: 0,
       isAddedClass: false,
       // ai: 0,
     }
@@ -175,7 +176,7 @@ export default {
     this.removeClass()
   },
   methods: {
-    handleShowChange(val) {
+    handleShowChange(val: boolean) {
       if (val) {
         // const dom = document.getElementById(this.teleport)
         // if (dom) {
@@ -185,7 +186,10 @@ export default {
         this.modalCount = ++modalCount
         this.showModal = true
         void nextTick(() => {
-          const node = this.$refs.dom_container.parentNode
+          const container = this.$refs.dom_container
+          if (!(container instanceof HTMLElement)) return
+          const node = container.parentElement
+          if (!node) return
           if (!node.classList.contains('show-modal')) {
             node.classList.add('show-modal')
             this.isAddedClass = true
@@ -200,7 +204,8 @@ export default {
     },
     removeClass() {
       if (!this.isAddedClass) return
-      this.$refs.dom_container?.parentNode.classList.remove('show-modal')
+      const container = this.$refs.dom_container
+      if (container instanceof HTMLElement) container.parentElement?.classList.remove('show-modal')
     },
     setRandomAnimation() {
       if (appSetting['common.randomAnimate']) {
@@ -217,12 +222,12 @@ export default {
     close() {
       this.$emit('close')
     },
-    handleAfterLeave(event) {
+    handleAfterLeave(event: Element) {
       this.$emit('after-leave', event)
       this.showModal = false
     },
   },
-}
+})
 </script>
 
 

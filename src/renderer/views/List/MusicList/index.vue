@@ -260,7 +260,7 @@ export default {
     }
     const handleListItemRightClick = (event, index) => {
       rightClickSelectedIndex.value = index
-      showMenu(event, list.value[index], index)
+      showMenu(event, list.value[index])
     }
     const handleMenuClick = (action) => {
       let index = rightClickSelectedIndex.value
@@ -286,7 +286,7 @@ export default {
           handleShowDownloadModal(index, true)
           break
         case 'play':
-          handlePlayMusic(index, true)
+          handlePlayMusic(index)
           break
         case 'search':
           handleSearch(index)

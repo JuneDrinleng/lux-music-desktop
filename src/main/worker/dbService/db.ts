@@ -1,5 +1,6 @@
 import Database from 'better-sqlite3'
 import path from 'path'
+import { existsSync } from 'node:fs'
 import tables, { DB_VERSION } from './tables'
 import verifyDB from './verifyDB'
 import migrateData from './migrate'
@@ -18,7 +19,11 @@ const initTables = (db: Database.Database) => {
 // 打开、初始化数据库
 export const init = (lxDataPath: string): boolean | null => {
   const databasePath = path.join(lxDataPath, 'lx.data.db')
-  const nativeBinding = path.join(__dirname, '../node_modules/better-sqlite3/build/Release/better_sqlite3.node')
+  // Packaged/legacy builds still provide this explicit binding (including the
+  // Windows 7 SQLite 12 build). Script-free SQLite 13 installs use its bundled
+  // Node-API prebuild instead of requiring a nonexistent legacy path.
+  const legacyBinding = path.join(__dirname, '../node_modules/better-sqlite3/build/Release/better_sqlite3.node')
+  const nativeBinding = existsSync(legacyBinding) ? legacyBinding : undefined
   let dbFileExists = true
 
   try {

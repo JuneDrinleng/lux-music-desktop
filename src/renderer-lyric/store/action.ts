@@ -6,10 +6,7 @@ export const initSetting = (newSetting: LX.DesktopLyric.Config) => {
 }
 
 export const mergeSetting = (newSetting: Partial<LX.DesktopLyric.Config>) => {
-  for (const [key, value] of Object.entries(newSetting)) {
-    // @ts-expect-error
-    setting[key] = value
-  }
+  Object.assign(setting, newSetting)
 }
 
 export const updateSetting = (setting: Partial<LX.DesktopLyric.Config>) => {

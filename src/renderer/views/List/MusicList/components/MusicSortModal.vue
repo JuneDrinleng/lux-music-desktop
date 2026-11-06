@@ -1,5 +1,5 @@
 <template>
-  <material-modal :show="show" teleport="#view" @close="handleClose" @after-enter="$refs.input.focus()">
+  <material-modal :show="show" teleport="#view" @close="handleClose" @after-enter="focusInput">
     <main :class="$style.main">
       <h2>{{ selectedNum > 0 ? $t('music_sort__title_multiple', { num: selectedNum }) : $t('music_sort__title', { name: musicInfo ? musicInfo.name : '' }) }}</h2>
       <base-input
@@ -17,18 +17,17 @@
   </material-modal>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, type PropType } from 'vue'
+export default defineComponent({
   props: {
     show: {
       type: Boolean,
       default: false,
     },
     musicInfo: {
-      type: Object,
-      default() {
-        return {}
-      },
+      type: Object as PropType<LX.Music.MusicInfo | null>,
+      default: null,
     },
     selectedNum: {
       type: Number,
@@ -49,23 +48,27 @@ export default {
     },
   },
   methods: {
+    focusInput() {
+      const input = this.$refs.input as { focus: () => void }
+      input?.focus()
+    },
     handleClose() {
       this.$emit('update:show', false)
     },
-    verify() {
-      let num = /^[1-9]\d*/.exec(this.sortNum)
-      num = num ? parseInt(num[0]) : ''
+    verify(): number | '' {
+      const match = /^[1-9]\d*/.exec(this.sortNum)
+      const num = match ? parseInt(match[0]) : ''
       this.sortNum = num.toString()
       return num
     },
     handleSubmit() {
       let num = this.verify()
-      if (this.sortNum == '') return
+      if (num === '') return
       this.handleClose()
       this.$emit('confirm', num)
     },
   },
-}
+})
 </script>
 
 

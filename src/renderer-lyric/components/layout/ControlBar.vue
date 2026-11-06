@@ -7,7 +7,7 @@
             <use xlink:href="#icon-close" />
           </svg>
         </button>
-        <button :class="$style.btn" :title="$t('desktop_lyric__' + (setting['desktopLyric.isLock'] ? 'unlock' : 'lock'))" @click="handleLock">
+        <button :class="$style.btn" :title="$t(setting['desktopLyric.isLock'] ? 'desktop_lyric__unlock' : 'desktop_lyric__lock')" @click="handleLock">
           <svg v-if="setting['desktopLyric.isLock']" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" height="20px" viewBox="0 0 24 24" space="preserve">
             <use xlink:href="#icon-unlock" />
           </svg>
@@ -35,7 +35,7 @@
             <use xlink:href="#icon-opactiy-decrease" />
           </svg>
         </button>
-        <button :class="$style.btn" :title="$t('desktop_lyric__' + (setting['desktopLyric.style.isZoomActiveLrc'] ? 'lrc_active_zoom_off' : 'lrc_active_zoom_on'))" @click="handleZoomLrc">
+        <button :class="$style.btn" :title="$t(setting['desktopLyric.style.isZoomActiveLrc'] ? 'desktop_lyric__lrc_active_zoom_off' : 'desktop_lyric__lrc_active_zoom_on')" @click="handleZoomLrc">
           <svg v-if="setting['desktopLyric.style.isZoomActiveLrc']" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" height="20px" viewBox="0 0 24 24" space="preserve">
             <use xlink:href="#icon-vibrate-off" />
           </svg>
@@ -43,7 +43,7 @@
             <use xlink:href="#icon-vibrate" />
           </svg>
         </button>
-        <button :class="$style.btn" :title="$t('desktop_lyric__' + (setting['desktopLyric.isAlwaysOnTop'] ? 'win_top_off' : 'win_top_on'))" @click="handleAlwaysOnTop">
+        <button :class="$style.btn" :title="$t(setting['desktopLyric.isAlwaysOnTop'] ? 'desktop_lyric__win_top_off' : 'desktop_lyric__win_top_on')" @click="handleAlwaysOnTop">
           <svg v-if="setting['desktopLyric.isAlwaysOnTop']" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" height="20px" viewBox="0 0 24 24" space="preserve">
             <use xlink:href="#icon-top-off" />
           </svg>

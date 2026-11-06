@@ -1,17 +1,18 @@
 <template>
-  <div id="my-list" :class="$style.container" @click="handleContainerClick">
-    <MyList ref="myList" :list-id="listId" @show-menu="$refs.musicList.handleMenuClick()" />
-    <MusicList ref="musicList" :list-id="listId" @show-menu="$refs.myList.handleMenuClick()" />
+  <div id="my-list" :class="$style.container">
+    <MyList ref="myList" :list-id="listId" @show-menu="hideMusicMenu" />
+    <MusicList ref="musicList" :list-id="listId" @show-menu="hideListMenu" />
   </div>
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import { getListPrevSelectId } from '@renderer/utils/data'
 
 import MyList from './MyList/index.vue'
 import MusicList from './MusicList/index.vue'
 
-export default {
+export default defineComponent({
   name: 'List',
   components: {
     MyList,
@@ -35,18 +36,19 @@ export default {
     // if (!getList(id)) {
     //   id = defaultList.id
     // }
-    this.listId = id
+    this.listId = Array.isArray(id) ? id[0] : id
     const scrollIndex = to.query.scrollIndex
     const isAnimation = from.query.id == to.query.id
-    this.$refs.musicList?.handleRestoreScroll(scrollIndex, isAnimation)
+    const musicList = /** @type {InstanceType<typeof MusicList>} */ (this.$refs.musicList)
+    musicList?.handleRestoreScroll(scrollIndex, isAnimation)
 
     return {
       path: '/list',
-      query: { id, updated: true },
+      query: { id, updated: 'true' },
     }
   },
   beforeRouteLeave(to, from) {
-    this.$refs.musicList?.saveListPosition()
+    (/** @type {InstanceType<typeof MusicList>} */ (this.$refs.musicList))?.saveListPosition()
   },
   data() {
     return {
@@ -54,9 +56,20 @@ export default {
     }
   },
   created() {
-    this.listId = this.$route.query.id
+    const id = this.$route.query.id
+    this.listId = Array.isArray(id) ? id[0] : id
   },
-}
+  methods: {
+    hideMusicMenu() {
+      const musicList = /** @type {InstanceType<typeof MusicList>} */ (this.$refs.musicList)
+      musicList?.handleMenuClick()
+    },
+    hideListMenu() {
+      const myList = /** @type {InstanceType<typeof MyList>} */ (this.$refs.myList)
+      myList?.handleMenuClick()
+    },
+  },
+})
 </script>
 
 <style lang="less" module>

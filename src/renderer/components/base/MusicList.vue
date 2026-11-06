@@ -11,6 +11,7 @@
 
 <script>
 import {
+  defineComponent,
   computed,
   ref,
   nextTick,
@@ -71,7 +72,7 @@ const handleScroll = (element, to, duration = 300, callback = () => {}, onCancel
   }
 }
 
-export default {
+export default defineComponent({
   name: 'VirtualizedList',
   props: {
     containerEl: {
@@ -145,7 +146,7 @@ export default {
         case 'down':
           break
         default:
-          render(null, slots.default(list[0])[0])
+          render(slots.default(list[0])[0], dom_list.value)
           break
       }
     }
@@ -300,5 +301,5 @@ export default {
   //     })),
   //   ])
   // },
-}
+})
 </script>

@@ -45,6 +45,12 @@ import { appSetting, updateSetting } from '@renderer/store/setting'
 import migrateSetting from '@common/utils/migrateSetting'
 
 
+/**
+ * @param {LX.List.MyDefaultListInfoFull | LX.List.MyLoveListInfoFull | LX.List.UserListInfoFull} list
+ * @returns {list is LX.List.UserListInfoFull}
+ */
+const isUserList = (list) => list.id !== LIST_IDS.DEFAULT && list.id !== LIST_IDS.LOVE
+
 export default {
   name: 'SettingUpdate',
   setup() {
@@ -90,7 +96,8 @@ export default {
       }
       const defaultList = allLists.shift().list
       const loveList = allLists.shift().list
-      await overwriteListFull({ defaultList, loveList, userList: allLists })
+      const userList = allLists.filter(isUserList)
+      await overwriteListFull({ defaultList, loveList, userList })
     }
     const importNewListData = async(lists) => {
       const allLists = await getAllLists()
@@ -115,7 +122,8 @@ export default {
       }
       const defaultList = allLists.shift().list
       const loveList = allLists.shift().list
-      await overwriteListFull({ defaultList, loveList, userList: allLists })
+      const userList = allLists.filter(isUserList)
+      await overwriteListFull({ defaultList, loveList, userList })
     }
     const importOldSettingData = (setting) => {
       console.log(setting)

@@ -110,13 +110,13 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 
 截图旁的证据清单记录 build/commit SHA、UTC 时间、OS/Node/Electron 版本、窗口尺寸、路由/主题、fixture 模式、生成命令和 SHA256。CI artifact 包含测试/构建日志与截图清单；本地 `_goal/` 持久留存详细记录，但通过 `.git/info/exclude` 排除，不提交。
 
-## 6. 当前进度与阻碍
+## 6. 当前进度
 
-- 计划和静态审计完成，所有实现检查点仍未验收。
-- 本环境原 `.git` 为只读，已建立 `/tmp/lux-desktop-goal-git` 独立 Git 元数据并指向原工作区；原 master ref 未改动。恢复时显式使用该 GIT_DIR，或建立可写独立 checkout，不能误在原 master 上提交。
-- 已在独立元数据创建本地 dev 与 `codex/desktop-m0`。尝试推送 dev 被 GitHub 返回 403；REST 创建同一基线 ref 也返回 `Resource not accessible by personal access token`。远端 dev 尚未建立，尚无 PR、CI 或合并。
-- 需要 June 为当前环境更新授权，包含此仓库 Contents、Pull requests、Workflows 写权限及 Actions 读权限；账号角色显示 admin/push 不等于当前 token 有相应 scope。凭据只通过环境配置更新，不进入聊天或仓库。
-- 授权恢复后首先重新核对远端 refs（可能由 June 创建过 dev），从原基线安全建立/复用 dev，然后继续 M0，不覆盖已有分支。
+- 计划和静态审计先于实现完成；所有实现检查点尚待逐 PR 验收。
+- 初次 Git/REST 创建 dev 遭旧 token HTTP 403，已由 June 更新授权、开发 Bot 从原基线建立远端 dev。本轮 fetch 核对 `origin/dev` 为 `ad95d5091c9ed689fa72b5e5c849df65f5a679ce`；`codex/desktop-m0` 首次推送也已成功。
+- 原 `.git` 为只读，采用独立 Git 元数据 `/tmp/lux-desktop-goal-git` 操作原工作区；原 master ref 保持原值。复现本环境命令时显式设 `GIT_DIR=/tmp/lux-desktop-goal-git`，不能在原 master 上提交。
+- M0 正在补齐安全 CI、类型检查、离线行为测试和真实 Electron 基线截图。具体结果和日志以本地 `_goal/PROGRESS.md` 及对应 PR 的最终 CI 为准，未验收的标准不勾选。
+- 原 TS 项目保持 strict 检查；旧 JS SFC 模板需额外启用 checkJs 才会检查。新增 JS 语义检查项目允许原动态 JS 的隐式类型，同时检查真实属性、调用、模板与传递依赖；不以普通 tsc 的 Vue shim 充当模板验证。详细配置及负例检测证据见 `docs/verification.md`。
 
 ## 7. 结束判定
 
