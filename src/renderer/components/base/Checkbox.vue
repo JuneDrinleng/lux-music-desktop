@@ -165,7 +165,7 @@ export default defineComponent({
   height: 1em;
   cursor: pointer;
   display: flex;
-  color: var(--color-primary);
+  color: var(--color-primary-font);
   // border: 1px solid #ccc;
   &:after {
     position: absolute;

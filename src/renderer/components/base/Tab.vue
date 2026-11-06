@@ -80,12 +80,12 @@ export default {
 
 
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-font);
   }
 
 
   &.active {
-    color: var(--color-primary);
+    color: var(--color-primary-font);
     cursor: default;
 
     >.label {

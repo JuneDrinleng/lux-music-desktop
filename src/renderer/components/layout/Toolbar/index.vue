@@ -48,7 +48,7 @@ import SearchInput from './SearchInput.vue'
   box-sizing: border-box;
   padding: 0 @height-toolbar * .4;
   height: @height-toolbar;
-  color: var(--color-primary);
+  color: var(--color-primary-font);
   flex: none;
   text-align: center;
   line-height: @height-toolbar;

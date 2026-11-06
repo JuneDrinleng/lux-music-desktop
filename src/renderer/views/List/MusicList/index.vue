@@ -377,7 +377,7 @@ export default {
   }
   :global {
     .label-source {
-      color: var(--color-primary);
+      color: var(--color-primary-font);
       padding: 5px;
       font-size: .8em;
       line-height: 1.2;

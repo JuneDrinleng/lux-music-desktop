@@ -1,13 +1,13 @@
 <template>
   <material-modal :show="modelValue" bg-close="bg-close" teleport="#view" @close="$emit('update:modelValue', false)">
-    <main :class="$style.main">
+    <main data-theme-dialog="automatic" :class="$style.main">
       <h2>{{ $t('theme_selector_modal__title') }}</h2>
       <div class="scroll" :class="$style.content">
         <div>
           <h3>{{ $t('theme_selector_modal__light_title') }}</h3>
           <ul :class="$style.theme">
             <li
-              v-for="theme in themeInfo.themeLights" :key="theme.id"
+              v-for="theme in themeInfo.themeLights" :key="theme.id" :data-theme-preview-id="theme.id"
               :style="theme.styles" :aria-label="theme.name"
               :class="[{[$style.active]: appSetting['theme.lightId'] == theme.id}]" @click="setLightId(theme.id)"
             >
@@ -20,7 +20,7 @@
           <h3>{{ $t('theme_selector_modal__dark_title') }}</h3>
           <ul :class="$style.theme">
             <li
-              v-for="theme in themeInfo.themeDarks" :key="theme.id"
+              v-for="theme in themeInfo.themeDarks" :key="theme.id" :data-theme-preview-id="theme.id"
               :style="theme.styles" :aria-label="theme.name"
               :class="[{[$style.active]: appSetting['theme.darkId'] == theme.id}]" @click="setDarkId(theme.id)"
             >
@@ -180,9 +180,9 @@ export default {
     }
 
     &.active {
-      color: var(--color-primary-theme);
+      color: var(--color-primary-font);
       .bg {
-        border-color: var(--color-primary-theme);
+        border-color: var(--color-primary-font);
       }
     }
 

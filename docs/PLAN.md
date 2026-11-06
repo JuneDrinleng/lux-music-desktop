@@ -80,7 +80,7 @@ Lux 认证优先采用绑定会话的 accessToken，校验服务端实际返回�
 
 | 检查点 / 分支 | 交付物 | 必须具备的验收证据 |
 | --- | --- | --- |
-| [ ] M0 `codex/desktop-m0` | 建立远端 dev；提交本计划；安全 PR CI；显式 lint/typecheck/test/build 命令及实际应用截图工具 | dev 从上述 desktop 基线建立；PR base=dev；main/renderer/lyric/common/lang 与 Vue SFC 的类型检查真实运行；离线行为测试真实运行；renderer 构建成功；基线真实应用截图；CI artifact 和绿灯；squash 合并 SHA |
+| [x] M0 `codex/desktop-m0` | 建立远端 dev；提交本计划；安全 PR CI；显式 lint/typecheck/test/build 命令及实际应用截图工具 | dev 从上述 desktop 基线建立；PR base=dev；main/renderer/lyric/common/lang 与 Vue SFC 的类型检查真实运行；离线行为测试真实运行；renderer 构建成功；基线真实应用截图；CI artifact 和绿灯；squash 合并 SHA |
 | [ ] M1 `codex/desktop-m1` | 六套语义主题、默认黄绿、字体/间距/线/焦点 token；兼容原主题入口 | 六主题角色/默认色值回归测试；主题切换与重启保持；原自定义主题可选；六主题截图，至少黄绿/暖米/墨夜可读性和焦点自查；完整检查及 PR 合并证据 |
 | [ ] M2 `codex/desktop-m2` | Lux 品牌外壳、桌面侧栏与导航、工具栏、底部播放条 | 六导航逐一可达；前进/返回/详情状态保持；原窗口按钮与拖动区域有效；窄/中/宽三尺寸截图；播放条控制真实状态；完整检查及 PR 合并证据 |
 | [ ] M3a `codex/desktop-m3a` | 搜索、在线歌单/详情、排行榜杂志风 | 歌曲/歌单切换、来源、建议/历史、分页、空/失败/重试、详情、播放/添加/下载入口回归；虚拟行高/滚动定位一致；相应页面与多选截图；完整检查及 PR 合并证据 |
@@ -112,10 +112,10 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 
 ## 6. 当前进度
 
-- 计划和静态审计先于实现完成；所有实现检查点尚待逐 PR 验收。
+- 计划和静态审计先于实现完成。M0 已由 PR #1 squash 合入 dev，合并 SHA `e638690fa5b158b6669008d8e67db966aa563439`；最终 head `b13a6dddcab35f3394cd32ffae57b787d510ca29` 的 CI run42155997130、80项测试、四目标构建和真实 Electron 截图 artifact 已验收。M1–M5 仍待逐 PR 验收。
 - 初次 Git/REST 创建 dev 遭旧 token HTTP 403，已由 June 更新授权、开发 Bot 从原基线建立远端 dev。本轮 fetch 核对 `origin/dev` 为 `ad95d5091c9ed689fa72b5e5c849df65f5a679ce`；`codex/desktop-m0` 首次推送也已成功。
 - 原 `.git` 为只读，采用独立 Git 元数据 `/tmp/lux-desktop-goal-git` 操作原工作区；原 master ref 保持原值。复现本环境命令时显式设 `GIT_DIR=/tmp/lux-desktop-goal-git`，不能在原 master 上提交。
-- M0 正在补齐安全 CI、类型检查、离线行为测试和真实 Electron 基线截图。具体结果和日志以本地 `_goal/PROGRESS.md` 及对应 PR 的最终 CI 为准，未验收的标准不勾选。
+- M1 从最新 origin/dev 建立分支，正在实现六套语义主题与兼容桥接。具体结果和日志以本地 `_goal/PROGRESS.md` 及对应 PR 的最终 CI 为准，未验收的标准不勾选。
 - 原 TS 项目保持 strict 检查；旧 JS SFC 模板需额外启用 checkJs 才会检查。新增 JS 语义检查项目允许原动态 JS 的隐式类型，同时检查真实属性、调用、模板与传递依赖；不以普通 tsc 的 Vue shim 充当模板验证。详细配置及负例检测证据见 `docs/verification.md`。
 
 ## 7. 结束判定

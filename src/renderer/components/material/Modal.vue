@@ -300,7 +300,7 @@ export default defineComponent({
     cursor: pointer;
     padding: 4px 7px;
     background-color: transparent;
-    color: var(--color-primary-dark-500-alpha-500);
+    color: var(--color-primary-font);
     outline: none;
     transition: background-color 0.2s ease;
     line-height: 0;

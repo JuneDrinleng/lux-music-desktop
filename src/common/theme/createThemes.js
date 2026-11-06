@@ -3,6 +3,7 @@
 const fs = require('fs')
 const path = require('path')
 const { createThemeColors } = require('./utils')
+const { createMagazineThemes } = require('./magazine')
 
 const defaultThemes = [
   {
@@ -369,7 +370,7 @@ const defaultThemes = [
   },
 ]
 
-const themes = defaultThemes.map(({ config: { primary, font, ...extInfo }, ...themeInfo }) => {
+const legacyThemes = defaultThemes.map(({ config: { primary, font, ...extInfo }, ...themeInfo }) => {
   return {
     ...themeInfo,
     isCustom: false,
@@ -380,5 +381,6 @@ const themes = defaultThemes.map(({ config: { primary, font, ...extInfo }, ...th
   }
 })
 
+const themes = [...createMagazineThemes(createThemeColors), ...legacyThemes]
 fs.writeFileSync(path.join(__dirname, 'index.json'), JSON.stringify(themes, null, 2))
 

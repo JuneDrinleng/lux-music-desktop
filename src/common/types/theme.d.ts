@@ -298,6 +298,7 @@ declare namespace LX {
     shouldUseDarkColors: boolean
     theme: {
       id: string
+      resolvedId: string
       name: string
       isDark: boolean
       colors: Record<string, string>

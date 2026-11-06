@@ -339,10 +339,10 @@ export default {
   }
   &.active {
     // background-color:
-    color: var(--color-primary);
+    color: var(--color-primary-font);
   }
   &.selected {
-    background-color: var(--color-primary-font-active);
+    background-color: var(--color-primary-background-active);
   }
   &.clicked {
     background-color: var(--color-primary-background-hover);

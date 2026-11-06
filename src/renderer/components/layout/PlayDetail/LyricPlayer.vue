@@ -235,7 +235,7 @@ export default {
         }
       }
       &.line-mode.active .font-lrc, &.font-mode.played .font-lrc {
-        color: var(--color-primary-dark-200);
+        color: var(--color-primary-font);
       }
       &.font-mode .extended .font-lrc {
         transition: @transition-slow;
@@ -249,7 +249,7 @@ export default {
           font-size: 1em;
           background-repeat: no-repeat;
           background-color: var(--color-450);
-          background-image: -webkit-linear-gradient(top, var(--color-primary-dark-200), var(--color-primary-dark-200));
+          background-image: -webkit-linear-gradient(top, var(--color-primary-font), var(--color-primary-font));
           -webkit-text-fill-color: transparent;
           -webkit-background-clip: text;
           background-size: 0 100%;
@@ -304,7 +304,7 @@ export default {
     top: -14px;
     line-height: 1.2;
     font-size: 12px;
-    color: var(--color-primary-dark-100);
+    color: var(--color-primary-font);
     opacity: .7;
   }
   .skipBtn {
@@ -350,7 +350,7 @@ export default {
     font-size: 14px;
   }
   .lrcActive {
-    color: var(--color-primary);
+    color: var(--color-primary-font);
   }
 }
 

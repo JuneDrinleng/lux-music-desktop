@@ -744,5 +744,11 @@
   "user_api_import_online__input_confirm": "가져오기",
   "user_api_import_online__input_loading": "가져오는 중...",
   "user_api_import_online__input_tip": "HTTP 링크를 입력하세요",
-  "user_api_import_online__title": "네트워크에서 음악 API 가져오기"
+  "user_api_import_online__title": "네트워크에서 음악 API 가져오기",
+  "theme_lime": "라임",
+  "theme_mist_blue": "미스트 블루",
+  "theme_sakura": "사쿠라",
+  "theme_lavender": "라벤더",
+  "theme_oat_milk": "오트 밀크",
+  "theme_ink_night": "잉크 나이트"
 }

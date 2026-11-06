@@ -22,6 +22,7 @@ jobs:
     env:
       IS_CI: 'true'
       LUX_EVIDENCE_DIR: artifacts/screenshots
+      LUX_EVIDENCE_MODE: themes
       LUX_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
       LUX_PR_BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
 
