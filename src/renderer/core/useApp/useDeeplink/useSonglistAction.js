@@ -31,6 +31,7 @@ const useOpenSonglist = () => {
   }
 
   return ({ paths, data }) => {
+    /** @type {{ source?: LX.OnlineSource, id?: string | number, url?: string }} */
     let songlistInfo = {
       source: null,
       id: null,
@@ -61,6 +62,7 @@ const usePlaySonglistDetail = () => {
   const playSongListDetail = usePlaySonglist()
 
   return async({ paths, data }) => {
+    /** @type {{ source?: LX.OnlineSource, id?: string | number, url?: string, index?: number }} */
     let songlistInfo = {
       source: null,
       id: null,
@@ -74,7 +76,7 @@ const usePlaySonglistDetail = () => {
       songlistInfo.url = paths[1]
       songlistInfo.index = paths[2]
       if (songlistInfo.index != null) {
-        songlistInfo.index = parseInt(songlistInfo.index)
+        songlistInfo.index = parseInt(String(songlistInfo.index))
         if (Number.isNaN(songlistInfo.index)) delete songlistInfo.index
       }
     }
@@ -90,7 +92,7 @@ const usePlaySonglistDetail = () => {
 
     if (!songlistInfo.id && !songlistInfo.url) throw new Error('id or url missing')
 
-    await playSongListDetail(songlistInfo.source, songlistInfo.id ?? songlistInfo.url, songlistInfo.index)
+    await playSongListDetail(songlistInfo.source, String(songlistInfo.id ?? songlistInfo.url), songlistInfo.index)
   }
 }
 

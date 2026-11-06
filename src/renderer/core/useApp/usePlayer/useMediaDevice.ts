@@ -41,12 +41,12 @@ export default () => {
   const setMediaDevice = async(deviceId: string, label: string) => {
     prevDeviceLabel = label
     // console.log(device)
-    setMediaDeviceId(deviceId).then(() => {
+    return setMediaDeviceId(deviceId).then(() => {
       prevDeviceId = deviceId
       saveMediaDeviceId(deviceId)
-    }).catch((err: any) => {
+    }).catch(async(err: any) => {
       console.log(err)
-      setMediaDeviceId('default').finally(() => {
+      return setMediaDeviceId('default').finally(() => {
         prevDeviceId = 'default'
         saveMediaDeviceId('default')
       })

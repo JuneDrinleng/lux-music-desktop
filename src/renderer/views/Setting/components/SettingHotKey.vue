@@ -6,7 +6,7 @@ dd
     base-checkbox(id="setting_download_hotKeyLocal" v-model="current_hot_key.local.enable" :label="$t('setting__is_enable')" @change="handleHotKeySaveConfig")
   div(:class="$style.hotKeyContainer" :style="{ opacity: current_hot_key.local.enable ? 1 : .6 }")
     div(v-for="(item, index) in allHotKeys.local" :key="index" :class="$style.hotKeyItem")
-      h4(:class="$style.hotKeyItemTitle") {{ $t('setting__hot_key_' + item.name) }}
+      h4(:class="$style.hotKeyItemTitle") {{ getHotKeyLabel(item.name) }}
       base-input(
         :class="$style.hotKeyItemInput" readonly :auto-paste="false"
         :placeholder="$t('setting__hot_key_unset_input')" :value="hotKeyConfig.local[item.name] && formatHotKeyName(hotKeyConfig.local[item.name].key)"
@@ -19,7 +19,7 @@ dd
     base-checkbox(id="setting_download_hotKeyGlobal" v-model="current_hot_key.global.enable" :label="$t('setting__is_enable')" @change="handleEnableHotKey")
   div(:class="$style.hotKeyContainer" :style="{ opacity: current_hot_key.global.enable ? 1 : .6 }")
     div(v-for="(item, index) in allHotKeys.global" :key="index" :class="$style.hotKeyItem")
-      h4(:class="$style.hotKeyItemTitle") {{ $t('setting__hot_key_' + item.name) }}
+      h4(:class="$style.hotKeyItemTitle") {{ getHotKeyLabel(item.name) }}
       base-input(
         :class="[$style.hotKeyItemInput, hotKeyConfig.global[item.name] && hotKeyStatus[hotKeyConfig.global[item.name].key] && hotKeyStatus[hotKeyConfig.global[item.name].key].status === false ? $style.hotKeyFailed : null]"
         :value="hotKeyConfig.global[item.name] && formatHotKeyName(hotKeyConfig.global[item.name].key)" :auto-paste="false" readonly :placeholder="$t('setting__hot_key_unset_input')" @input.prevent
@@ -55,6 +55,7 @@ export default {
   name: 'SettingHotKey',
   setup() {
     const t = useI18n()
+    const getHotKeyLabel = (name) => t(/** @type {keyof import('@root/lang').Message} */ ('setting__hot_key_' + name))
     const current_hot_key = ref({
       local: {
         enable: false,
@@ -78,7 +79,7 @@ export default {
     let tip
 
     const initHotKeyConfig = () => {
-      let config = {}
+      let config = { local: {}, global: {} }
       for (const [type, typeInfo] of Object.entries(current_hot_key.value)) {
         let configInfo = config[type] = {}
         for (const [key, info] of Object.entries(typeInfo.keys)) {
@@ -227,6 +228,7 @@ export default {
       // appSetting,
       allHotKeys,
       current_hot_key,
+      getHotKeyLabel,
       hotKeyConfig,
       hotKeyStatus,
       handleHotKeyFocus,

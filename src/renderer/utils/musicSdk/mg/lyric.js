@@ -23,14 +23,14 @@ const mrcTools = {
       let time = startTime
       let ms = (time % 1000).toString().padStart(3, '0')
       time /= 1000
-      let m = parseInt(time / 60).toString().padStart(2, '0')
+      let m = parseInt(String(time / 60)).toString().padStart(2, '0')
       time %= 60
-      let s = parseInt(time).toString().padStart(2, '0')
-      time = `${m}:${s}.${ms}`
+      let s = parseInt(String(time)).toString().padStart(2, '0')
+      const timestamp = `${m}:${s}.${ms}`
 
       let words = line.replace(this.rxps.lineTime, '')
 
-      lrcLines.push(`[${time}]${words.replace(this.rxps.wordTimeAll, '')}`)
+      lrcLines.push(`[${timestamp}]${words.replace(this.rxps.wordTimeAll, '')}`)
 
       let times = words.match(this.rxps.wordTimeAll)
       if (!times) continue
@@ -40,7 +40,7 @@ const mrcTools = {
       })
       const wordArr = words.split(this.rxps.wordTime)
       const newWords = times.map((time, index) => `${time}${wordArr[index]}`).join('')
-      lxlrcLines.push(`[${time}]${newWords}`)
+      lxlrcLines.push(`[${timestamp}]${newWords}`)
     }
     return {
       lyric: lrcLines.join('\n'),

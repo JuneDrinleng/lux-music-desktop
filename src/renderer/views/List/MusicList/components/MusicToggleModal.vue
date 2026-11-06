@@ -30,7 +30,7 @@
           <p v-text="noItemLabel" />
         </div>
       </div>
-      <div :class="$style.footer">
+      <div v-if="musicInfo" :class="$style.footer">
         <div :class="$style.info">
           <h2>
             <div :class="$style.nameLabel">
@@ -62,32 +62,40 @@
   </material-modal>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, markRaw, type PropType } from 'vue'
 import { LIST_IDS } from '@common/constants'
 import { openUrl } from '@common/utils/electron'
 import { playNext } from '@renderer/core/player'
-import { getSourceI18nPrefix } from '@renderer/store'
+import { sourceNames } from '@renderer/store'
 import { addTempPlayList } from '@renderer/store/player/action'
 import { playMusicInfo } from '@renderer/store/player/state'
 import { toNewMusicInfo, toOldMusicInfo } from '@renderer/utils'
 import musicSdk from '@renderer/utils/musicSdk'
-import { markRaw } from 'vue'
 
-export default {
+interface ToggleState {
+  tabs: Array<{ id: LX.OnlineSource, label: string }>
+  lists: Partial<Record<LX.OnlineSource, LX.Music.MusicInfo[]>>
+  source: LX.OnlineSource | ''
+  isError: boolean
+  loading: boolean
+  searchKey: number
+  toggleMusicInfo: LX.Music.MusicInfo | null
+}
+
+export default defineComponent({
   props: {
     show: {
       type: Boolean,
       default: false,
     },
     musicInfo: {
-      type: Object,
-      default() {
-        return {}
-      },
+      type: Object as PropType<LX.Music.MusicInfo | null>,
+      default: null,
     },
   },
   emits: ['update:show', 'toggle'],
-  data() {
+  data(): ToggleState {
     return {
       tabs: [],
       lists: {},
@@ -100,7 +108,7 @@ export default {
   },
   computed: {
     list() {
-      return this.lists[this.source] ?? []
+      return this.source ? this.lists[this.source] ?? [] : []
     },
     noItemLabel() {
       return this.loading ? this.$t('list__loading') : this.isError ? this.$t('list__load_failed') : this.$t('no_item')
@@ -108,7 +116,7 @@ export default {
   },
   watch: {
     show(n) {
-      if (n) {
+      if (n && this.musicInfo) {
         this.isError = false
         this.toggleMusicInfo = null
         const musicInfo = this.musicInfo
@@ -116,19 +124,20 @@ export default {
         this.lists = {}
         this.loading = true
         const searchKey = this.searchKey = Math.random()
-        void musicSdk.searchMusic({
+        const searchInfo = {
           name: musicInfo.name,
           singer: musicInfo.singer,
           source: '',
           albumName: musicInfo.meta.albumName,
           interval: musicInfo.interval ?? '',
-        }).then((lists) => {
+        }
+        const search = musicSdk.searchMusic(searchInfo) as Promise<Array<{ source: LX.OnlineSource, list: Array<Record<string, unknown>> }>>
+        void search.then((lists) => {
           if (this.searchKey != searchKey) return
-          const prefix = getSourceI18nPrefix()
           this.tabs = lists.map(item => {
             return {
               id: item.source,
-              label: window.i18n.t(prefix + item.source),
+              label: sourceNames.value[item.source],
             }
           })
           if (lists.length) this.source = lists[0].source
@@ -148,21 +157,22 @@ export default {
       this.$emit('update:show', false)
     },
     handleConfirm() {
-      this.$emit('toggle', this.toggleMusicInfo)
+      if (this.toggleMusicInfo) this.$emit('toggle', this.toggleMusicInfo)
     },
-    openDetail(minfo) {
+    openDetail(minfo: LX.Music.MusicInfo) {
+      if (minfo.source === 'local') return
       const url = musicSdk[minfo.source]?.getMusicDetailPageUrl(toOldMusicInfo(minfo))
       if (!url) return
       void openUrl(url)
     },
-    handlePlay(musicInfo) {
+    handlePlay(musicInfo: LX.Music.MusicInfo) {
       this.toggleMusicInfo = musicInfo
       const isPlaying = !!playMusicInfo.musicInfo
       addTempPlayList([{ listId: LIST_IDS.PLAY_LATER, musicInfo, isTop: true }])
       if (isPlaying) void playNext()
     },
   },
-}
+})
 </script>
 
 

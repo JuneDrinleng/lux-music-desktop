@@ -31,6 +31,7 @@ const sortQualityArray = array => {
 }
 
 export default {
+  /** @type {Array<{ id: string, name: string, bangid: string | number }>} */
   list: [
     {
       id: 'kwbiaosb',

@@ -21,7 +21,7 @@
           </div>
           <div v-if="resultList" ref="dom_scrollContainer" class="scroll" :class="$style.list" :style="listStyle">
             <ul ref="dom_list">
-              <li v-for="(item, index) in resultList" :key="item.songmid" :class="selectIndex === index ? $style.select : null" @mouseenter="selectIndex = index" @click="handleTemplistClick(index)">
+              <li v-for="(item, index) in resultList" :key="item.id" :class="selectIndex === index ? $style.select : null" @mouseenter="selectIndex = index" @click="handleTemplistClick(index)">
                 <div :class="$style.img" />
                 <div :class="$style.text">
                   <h3 :class="$style.text">{{ item.name }} - {{ item.singer }}</h3>
@@ -37,19 +37,32 @@
   </teleport>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, type PropType, type CSSProperties } from 'vue'
 import { debounce } from '@common/utils'
 import { clipboardReadText } from '@common/utils/electron'
 import { toRaw } from '@common/utils/vueTools'
 
-export default {
+interface SearchState {
+  text: string
+  handleDelaySearch: () => void
+  handleModFKey: () => void
+  selectIndex: number
+  listStyle: CSSProperties
+  maxHeight: number
+  resultList: LX.Music.MusicInfo[]
+  isModDown: boolean
+  isShow: boolean
+}
+
+export default defineComponent({
   props: {
     placeholder: {
       type: String,
       default: 'Search for something...',
     },
     list: {
-      type: Array,
+      type: Array as PropType<LX.Music.MusicInfo[]>,
       default() {
         return []
       },
@@ -60,9 +73,11 @@ export default {
     },
   },
   emits: ['action'],
-  data() {
+  data(): SearchState {
     return {
       text: '',
+      handleDelaySearch: debounce(() => this.handleSearch()),
+      handleModFKey: () => this.handle_key_mod_f_down(),
       selectIndex: -1,
       listStyle: {
         height: 0,
@@ -78,8 +93,8 @@ export default {
   watch: {
     resultList(n) {
       if (this.selectIndex > -1) this.selectIndex = -1
-      this.$nextTick(() => {
-        const height = this.$refs.dom_list.scrollHeight
+      void this.$nextTick(() => {
+        const height = this.getElements().list.scrollHeight
         if (height > this.maxHeight) {
           this.listStyle.height = this.maxHeight + 'px'
           this.listStyle.overflow = 'auto'
@@ -100,32 +115,39 @@ export default {
     },
   },
   created() {
-    this.handleDelaySearch = debounce(() => {
-      this.handleSearch()
-    })
     if (this.visible) this.isShow = true
   },
   mounted() {
     this.init()
     // window.key_event.on('key_mod_down', this.handle_key_mod_down)
     // window.key_event.on('key_mod_up', this.handle_key_mod_up)
-    window.key_event.on('key_mod+f_down', this.handle_key_mod_f_down)
+    window.key_event.on('key_mod+f_down', this.handleModFKey)
   },
   beforeUnmount() {
     // window.key_event.off('key_mod_down', this.handle_key_mod_down)
     // window.key_event.off('key_mod_up', this.handle_key_mod_up)
-    window.key_event.off('key_mod+f_down', this.handle_key_mod_f_down)
+    window.key_event.off('key_mod+f_down', this.handleModFKey)
   },
   methods: {
+    getElements() {
+      return {
+        list: this.$refs.dom_list as HTMLUListElement,
+        input: this.$refs.dom_input as HTMLInputElement,
+        container: this.$refs.dom_container as HTMLElement,
+        scrollContainer: this.$refs.dom_scrollContainer as HTMLElement,
+      }
+    },
     init() {
       if (!this.visible) return
-      this.handleSearch()
-      this.$nextTick(() => {
+      void this.handleSearch()
+      void this.$nextTick(() => {
         if (!this.listStyle.maxHeight) {
-          this.maxHeight = this.$refs.dom_container.offsetParent.clientHeight - this.$refs.dom_list.offsetTop - 70
+          const parent = this.getElements().container.offsetParent
+          if (!parent) return
+          this.maxHeight = parent.clientHeight - this.getElements().list.offsetTop - 70
           this.listStyle.maxHeight = this.maxHeight + 'px'
         }
-        this.$refs.dom_input.focus()
+        this.getElements().input.focus()
       })
     },
     handleKeyEsc() {
@@ -144,15 +166,17 @@ export default {
       this.isModDown &&= false
     },
     handle_key_mod_f_down() {
-      if (this.visible) this.$refs.dom_input.focus()
+      if (this.visible) this.getElements().input.focus()
     },
     handleAnimated() {
       if (this.visible) return
       this.isShow = false
     },
-    handleTemplistClick(index) {
+    handleTemplistClick(index: number) {
       if (index < 0) return
-      const id = this.resultList[index].id
+      const music = this.resultList[index]
+      if (!music) return
+      const id = music.id
       this.sendEvent('listClick', {
         index: this.list.findIndex(m => m.id == id),
         isPlay: this.isModDown,
@@ -161,7 +185,7 @@ export default {
     handleHide() {
       this.sendEvent('hide')
     },
-    sendEvent(action, data) {
+    sendEvent(action: 'listClick' | 'hide', data?: { index: number, isPlay: boolean }) {
       this.$emit('action', {
         action,
         data,
@@ -185,26 +209,26 @@ export default {
     },
     handleScrollList() {
       if (this.selectIndex < 0) return
-      let dom = this.$refs.dom_list.children[this.selectIndex]
+      const dom = this.getElements().list.children[this.selectIndex] as HTMLElement
       let offsetTop = dom.offsetTop
-      let scrollTop = this.$refs.dom_scrollContainer.scrollTop
+      let scrollTop = this.getElements().scrollContainer.scrollTop
       let top
       if (offsetTop < scrollTop) {
         top = offsetTop
-      } else if (offsetTop + dom.clientHeight > this.$refs.dom_scrollContainer.clientHeight + scrollTop) {
-        top = offsetTop + dom.clientHeight - this.$refs.dom_scrollContainer.clientHeight
+      } else if (offsetTop + dom.clientHeight > this.getElements().scrollContainer.clientHeight + scrollTop) {
+        top = offsetTop + dom.clientHeight - this.getElements().scrollContainer.clientHeight
       } else return
-      this.$refs.dom_scrollContainer.scrollTo(0, top)
+      this.getElements().scrollContainer.scrollTo(0, top)
     },
     handleContextMenu() {
       let str = clipboardReadText()
       str = str.trim()
       str = str.replace(/\t|\r\n|\n|\r/g, ' ')
       str = str.replace(/\s+/g, ' ')
-      let dom_input = this.$refs.dom_input
+      let dom_input = this.getElements().input
       const text = dom_input.value
       // if (dom_input.selectionStart == dom_input.selectionEnd) {
-      const value = text.substring(0, dom_input.selectionStart) + str + text.substring(dom_input.selectionEnd, text.length)
+      const value = text.substring(0, dom_input.selectionStart ?? text.length) + str + text.substring(dom_input.selectionEnd ?? text.length, text.length)
       // event.target.value = value
       this.text = value
       // } else {
@@ -216,7 +240,7 @@ export default {
       this.resultList = await window.lx.worker.main.searchListMusic(toRaw(this.list), this.text)
     },
   },
-}
+})
 </script>
 
 

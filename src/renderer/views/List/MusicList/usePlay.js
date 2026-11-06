@@ -27,7 +27,7 @@ export default ({ props, selectedList, list, removeAllSelect }) => {
       clickIndex = index
       return
     }
-    handlePlayMusic(index, true)
+    handlePlayMusic(index)
     clickTime = 0
     clickIndex = -1
   }

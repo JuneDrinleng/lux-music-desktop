@@ -45,6 +45,7 @@ export default {
       }
       handleCloseModal()
     }
+    /** @returns {number | ''} */
     const verify = () => {
       const orgText = time.value
       let text = time.value
@@ -52,7 +53,7 @@ export default {
       if (rxp.test(text)) {
         text = RegExp.$1
         if (parseInt(text) > MAX_MIN) {
-          text = MAX_MIN
+          text = String(MAX_MIN)
         }
       } else {
         text = ''
@@ -62,8 +63,8 @@ export default {
     }
     const handleConfirm = () => {
       let time = verify()
-      if (time == '') return
-      if (appSetting['player.waitPlayEndStopTime'] != time) updateSetting({ 'player.waitPlayEndStopTime': time })
+      if (time === '') return
+      if (appSetting['player.waitPlayEndStopTime'] !== String(time)) updateSetting({ 'player.waitPlayEndStopTime': String(time) })
       startTimeoutStop(time * 60)
       handleCloseModal()
     }

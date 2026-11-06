@@ -1,5 +1,5 @@
 <template>
-  <base-btn min :class="[$style.newPreset, {[$style.editing]: isEditing}]" :aria-label="$t('player__sound_effect_biquad_filter_save_btn')" @click="handleEditing($event)">
+  <base-btn min :class="[$style.newPreset, {[$style.editing]: isEditing}]" :aria-label="$t('player__sound_effect_biquad_filter_save_btn')" @click="handleEditing">
     <svg-icon name="plus" />
     <base-input ref="input" :class="$style.newPresetInput" :value="newPresetName" :placeholder="$t('player__sound_effect_biquad_filter_save_input')" @keyup.enter="handleSave($event)" @blur="handleSave($event)" />
   </base-btn>
@@ -11,7 +11,7 @@ import { appSetting } from '@renderer/store/setting'
 import { saveUserEQPreset } from '@renderer/store/soundEffect'
 
 const isEditing = ref(false)
-const input = ref(false)
+const input = /** @type {import('vue').Ref<{ focus: () => void } | null>} */ (ref(null))
 const newPresetName = ref('')
 
 const handleEditing = () => {
@@ -19,7 +19,7 @@ const handleEditing = () => {
   // if (!this.newPresetName) this.newPresetName = this.listName
   isEditing.value = true
   void nextTick(() => {
-    input.value.$el.focus()
+    input.value?.focus()
   })
 }
 

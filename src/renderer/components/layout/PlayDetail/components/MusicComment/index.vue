@@ -60,6 +60,7 @@ export default {
       currentMusicInfo: {
         name: '',
         singer: '',
+        source: '',
       },
       tabActiveId: 'hot',
       newComment: {
@@ -128,7 +129,9 @@ export default {
   methods: {
     setWidth() {
       setTimeout(() => {
-        this.$refs.dom_container.style.width = Math.floor(this.$refs.dom_container.parentNode.clientWidth * 0.5) + 'px'
+        const container = /** @type {HTMLDivElement} */ (this.$refs.dom_container)
+        if (!container?.parentElement) return
+        container.style.width = Math.floor(container.parentElement.clientWidth * 0.5) + 'px'
 
         setTimeout(() => {
           this.handleToggleTab(this.tabActiveId, true)
@@ -165,7 +168,7 @@ export default {
         this.newComment.page = page
         this.newComment.list = comment.comments
         this.$nextTick(() => {
-          this.$refs.dom_commentNew.scrollTo(0, 0)
+          /** @type {HTMLDivElement} */ (this.$refs.dom_commentNew)?.scrollTo(0, 0)
         })
       }).catch(err => {
         console.log(err)
@@ -184,7 +187,7 @@ export default {
         this.hotComment.page = page
         this.hotComment.list = hotComment.comments
         this.$nextTick(() => {
-          this.$refs.dom_commentHot.scrollTo(0, 0)
+          /** @type {HTMLDivElement} */ (this.$refs.dom_commentHot)?.scrollTo(0, 0)
         })
       }).catch(err => {
         console.log(err)
@@ -227,12 +230,14 @@ export default {
     },
     handleToggleTab(id, force) {
       if (!this.available || (!force && this.tabActiveId == id)) return
+      const tabMain = /** @type {HTMLDivElement} */ (this.$refs.dom_tabMain)
+      if (!tabMain) return
       switch (id) {
         case 'hot':
-          this.$refs.dom_tabMain.scrollLeft = 0
+          tabMain.scrollLeft = 0
           break
         case 'new':
-          this.$refs.dom_tabMain.scrollLeft = this.$refs.dom_tabMain.clientWidth
+          tabMain.scrollLeft = tabMain.clientWidth
           break
       }
       this.tabActiveId = id

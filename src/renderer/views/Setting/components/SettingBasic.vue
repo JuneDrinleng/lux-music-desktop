@@ -54,7 +54,7 @@ dd
   div
     base-checkbox.gap-left(
       v-for="item in windowSizeList" :id="`setting_window_size_${item.id}`" :key="item.id"
-      name="setting_window_size" need :model-value="appSetting['common.windowSizeId']" :disabled="isFullscreen" :value="item.id" :label="$t('setting__basic_window_size_' + item.name)"
+      name="setting_window_size" need :model-value="appSetting['common.windowSizeId']" :disabled="isFullscreen" :value="item.id" :label="getWindowSizeLabel(item.name)"
       @update:model-value="updateSetting({'common.windowSizeId': $event})")
 
 dd
@@ -138,10 +138,11 @@ export default {
   setup() {
     const t = useI18n()
 
+    const getWindowSizeLabel = (name) => t(/** @type {keyof import('@root/lang').Message} */ ('setting__basic_window_size_' + name))
     const showAllTheme = ref(false)
     const defaultThemesRaw = shallowReactive([])
     const defaultThemes = computed(() => {
-      return defaultThemesRaw.map(theme => ({ ...theme, isDefault: true, name: t('theme_' + theme.id) }))
+      return defaultThemesRaw.map(theme => ({ ...theme, isDefault: true, name: t(/** @type {keyof import('@root/lang').Message} */ ('theme_' + theme.id)) }))
     })
     const userThemes = shallowReactive([])
     const allThemes = computed(() => {
@@ -265,6 +266,8 @@ export default {
           name: api.name,
           label: api.name,
           disabled: api.disabled,
+          desc: '',
+          statusLabel: '',
         })),
         ...userApi.list.map(api => ({
           id: api.id,
@@ -272,8 +275,6 @@ export default {
           label: `${api.name}${api.id == appSetting['common.apiSource'] ? `[${getApiStatus()}]` : ''}`,
           desc: [/^\d/.test(api.version) ? `v${api.version}` : api.version].filter(Boolean).join(', '),
           statusLabel: api.id == appSetting['common.apiSource'] ? `[${getApiStatus()}]` : '',
-          status: api.status,
-          message: api.message,
           disabled: false,
         })),
       ]
@@ -327,6 +328,7 @@ export default {
 
     return {
       appSetting,
+      getWindowSizeLabel,
       updateSetting,
       userThemes,
       autoTheme,

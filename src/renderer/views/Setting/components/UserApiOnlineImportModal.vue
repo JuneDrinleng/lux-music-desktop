@@ -1,5 +1,5 @@
 <template>
-  <material-modal :show="show" teleport="#view" @close="handleClose" @after-enter="$refs.input.focus()">
+  <material-modal :show="show" teleport="#view" @close="handleClose" @after-enter="focusInput">
     <main :class="$style.main">
       <h2>{{ $t('user_api_import_online__title') }}</h2>
       <base-input
@@ -18,11 +18,12 @@
   </material-modal>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { dialog } from '@renderer/plugins/Dialog'
 import { httpFetch } from '@renderer/utils/request'
 
-export default {
+export default defineComponent({
   props: {
     show: {
       type: Boolean,
@@ -47,6 +48,10 @@ export default {
     },
   },
   methods: {
+    focusInput() {
+      const input = this.$refs.input as { focus: () => void }
+      input?.focus()
+    },
     handleClose() {
       this.$emit('update:show', false)
     },
@@ -59,11 +64,13 @@ export default {
       if (!url) return
       this.disabled = true
       this.btnText = this.$t('user_api_import_online__input_loading')
-      let script
+      let script: string
       try {
-        script = await httpFetch(url, { follow_max: 3 }).promise.then(resp => resp.body)
+        const body: unknown = await httpFetch(url, { follow_max: 3 }).promise.then(resp => resp.body)
+        if (typeof body !== 'string') throw new Error('Expected user API script text')
+        script = body
       } catch (err) {
-        void dialog(this.$t('user_api_import__failed', { message: err.message }))
+        void dialog(this.$t('user_api_import__failed', { message: err instanceof Error ? err.message : String(err) }))
         return
       } finally {
         this.disabled = false
@@ -80,7 +87,7 @@ export default {
       this.handleClose()
     },
   },
-}
+})
 </script>
 
 

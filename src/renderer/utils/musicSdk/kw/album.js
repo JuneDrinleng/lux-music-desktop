@@ -72,8 +72,8 @@ export default {
    * @param {*} num
    */
   formatPlayCount(num) {
-    if (num > 100000000) return parseInt(num / 10000000) / 10 + '亿'
-    if (num > 10000) return parseInt(num / 1000) / 10 + '万'
+    if (num > 100000000) return parseInt(String(num / 10000000)) / 10 + '亿'
+    if (num > 10000) return parseInt(String(num / 1000)) / 10 + '万'
     return num
   },
   getAlbumListDetail(id, page, retryNum = 0) {

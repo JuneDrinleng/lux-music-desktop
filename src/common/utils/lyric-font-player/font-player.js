@@ -80,8 +80,7 @@ export default class FontPlayer {
 
     this.isLineMode = false
 
-    this.lineContent = document.createElement('div')
-    this.lineContent.time = this.time
+    this.lineContent = Object.assign(document.createElement('div'), { time: this.time })
     this.lineContent.className = this.lineContentClassName
 
     this.line = document.createElement('div')
@@ -327,7 +326,7 @@ export default class FontPlayer {
     this.timeoutTools.clear()
     this.waitPlayTimeout.clear()
     this._handlePauseFont(this.fonts[this.curFontNum])
-    if (this.curFontNum === this.maxLine) return
+    if (this.curFontNum === this.maxFontNum) return
     const curFontNum = this._findcurFontNum(this._currentTime())
     if (this.curFontNum === curFontNum) return
     for (let i = 0; i < this.curFontNum; i++) this._handlePlayFont(this.fonts[i], 0, true)
@@ -347,7 +346,7 @@ export default class FontPlayer {
 
   setPlaybackRate(rate) {
     this._rate = rate
-    if (!this.lines.length) return
+    if (!this.fonts.length) return
     if (!this.isPlay) return
     this.play(this._currentTime())
   }
@@ -363,4 +362,3 @@ export default class FontPlayer {
     this.curFontNum = 0
   }
 }
-

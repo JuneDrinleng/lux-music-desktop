@@ -7,8 +7,8 @@ export default ({ visible, location, onHide }) => {
   let show = false
   const dom_menu = ref(null)
   const menuStyles = reactive({
-    left: 0,
-    top: 0,
+    left: '0px',
+    top: '0px',
     opacity: 0,
     transitionProperty: 'transform, opacity',
     transform: 'scale(.8, .7) translate(0,0)',

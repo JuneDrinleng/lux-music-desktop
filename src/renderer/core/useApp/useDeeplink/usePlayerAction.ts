@@ -12,10 +12,10 @@ export default () => {
         pause()
         break
       case 'skipNext':
-        playNext()
+        await playNext()
         break
       case 'skipPrev':
-        playPrev()
+        await playPrev()
         break
       case 'togglePlay':
         togglePlay()
@@ -27,7 +27,7 @@ export default () => {
         uncollectMusic()
         break
       case 'dislike':
-        dislikeMusic()
+        await dislikeMusic()
         break
       default: throw new Error('Unknown action: ' + (action as any ?? ''))
     }

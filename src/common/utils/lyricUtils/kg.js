@@ -2,7 +2,7 @@ import { inflate } from 'zlib'
 import { decodeName } from './util'
 
 // https://github.com/lyswhut/lx-music-desktop/issues/296#issuecomment-683285784
-const enc_key = Buffer.from([0x40, 0x47, 0x61, 0x77, 0x5e, 0x32, 0x74, 0x47, 0x51, 0x36, 0x31, 0x2d, 0xce, 0xd2, 0x6e, 0x69], 'binary')
+const enc_key = Buffer.from([0x40, 0x47, 0x61, 0x77, 0x5e, 0x32, 0x74, 0x47, 0x51, 0x36, 0x31, 0x2d, 0xce, 0xd2, 0x6e, 0x69])
 const decodeLyric = str => new Promise((resolve, reject) => {
   if (!str.length) return
   const buf_str = Buffer.from(str, 'base64').subarray(4)
@@ -44,14 +44,14 @@ const parseLyric = str => {
     let time = parseInt(result[2])
     let ms = (time % 1000).toString().padStart(3, '0')
     time /= 1000
-    let m = parseInt(time / 60).toString().padStart(2, '0')
+    let m = Math.trunc(time / 60).toString().padStart(2, '0')
     time %= 60
-    let s = parseInt(time).toString().padStart(2, '0')
-    time = `${m}:${s}.${ms}`
-    if (rlyric) rlyric[i] = `[${time}]${rlyric[i]?.join('') ?? ''}`
-    if (tlyric) tlyric[i] = `[${time}]${tlyric[i]?.join('') ?? ''}`
+    let s = Math.trunc(time).toString().padStart(2, '0')
+    const formattedTime = `${m}:${s}.${ms}`
+    if (rlyric) rlyric[i] = `[${formattedTime}]${rlyric[i]?.join('') ?? ''}`
+    if (tlyric) tlyric[i] = `[${formattedTime}]${tlyric[i]?.join('') ?? ''}`
     i++
-    return str.replace(result[1], time)
+    return str.replace(result[1], formattedTime)
   })
   rlyric = rlyric ? rlyric.join('\n') : ''
   tlyric = tlyric ? tlyric.join('\n') : ''

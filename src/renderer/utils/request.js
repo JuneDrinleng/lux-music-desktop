@@ -15,14 +15,14 @@ const getRequestAgent = url => {
     options = {
       proxy: {
         host: proxy.host,
-        port: proxy.port,
+        port: Number(proxy.port || 80),
       },
     }
   } else if (proxy.envProxy) {
     options = {
       proxy: {
         host: proxy.envProxy.host,
-        port: proxy.envProxy.port,
+        port: Number(proxy.envProxy.port || 80),
       },
     }
   }
@@ -45,7 +45,9 @@ const request = (url, options, callback) => {
   }
   options.response_timeout = options.timeout
 
-  return needle.request(options.method || 'get', url, data, options, (err, resp, body) => {
+  // The retained Needle fork exposes its cancellable ClientRequest on the
+  // returned stream (lib/needle.js); upstream @types/needle omits that field.
+  const stream = /** @type {ReturnType<typeof needle.request> & { request: import('node:http').ClientRequest }} */ (needle.request(options.method || 'get', url, data, options, (err, resp, body) => {
     if (!err) {
       body = resp.body = resp.raw.toString()
       try {
@@ -54,7 +56,8 @@ const request = (url, options, callback) => {
       body = resp.body
     }
     callback(err, resp, body)
-  }).request
+  }))
+  return stream.request
 }
 
 
@@ -65,13 +68,37 @@ const defaultHeaders = {
 // var proxiedRequest = request.defaults({'proxy': proxyUrl});
 
 /**
+ * @template [Response=import('needle').NeedleResponse]
+ * @typedef {Object} HttpTask
+ * @property {boolean} isCancelled
+ * @property {() => void} cancelHttp
+ * @property {Promise<Response>} promise Active response promise; cancellation disposes this handle.
+ * @property {import('node:http').ClientRequest | null} requestObj
+ * @property {((reason?: unknown) => void) | null} cancelFn
+ */
+
+/**
+ * Change a task's response payload while retaining its identity and live cancel
+ * handler. Music SDK adapters return lyrics / metadata instead of HTTP responses.
+ * @template Response, Result
+ * @param {HttpTask<Response>} task
+ * @param {(response: Response) => Result | PromiseLike<Result>} transform
+ * @returns {Omit<HttpTask<Response>, 'promise'> & { promise: Promise<Result> }}
+ */
+export const mapHttpTask = (task, transform) => Object.assign(task, { promise: task.promise.then(transform) })
+
+/**
  * promise 形式的请求方法
  * @param {*} url
  * @param {*} options
  */
 const buildHttpPromose = (url, options) => {
+  /** @type {HttpTask} */
   let obj = {
     isCancelled: false,
+    promise: null,
+    requestObj: null,
+    cancelFn: null,
     cancelHttp: () => {
       if (!obj.requestObj) return obj.isCancelled = true
       cancelHttp(obj.requestObj)
@@ -128,7 +155,7 @@ export const httpFetch = (url, options = { method: 'get' }) => {
 
 /**
  * 取消请求
- * @param {*} index
+ * @param {import('node:http').ClientRequest} requestObj
  */
 export const cancelHttp = requestObj => {
   // console.log(requestObj)
@@ -144,7 +171,7 @@ export const cancelHttp = requestObj => {
  * @param {*} url 地址
  * @param {*} options 选项
  * @param {*} cb 回调
- * @return {Number} index 用于取消请求
+ * @return {Promise<import('node:http').ClientRequest>} 用于取消请求的对象
  */
 export const http = (url, options, cb) => {
   if (typeof options === 'function') {
@@ -172,7 +199,7 @@ export const http = (url, options, cb) => {
  * @param {*} url 地址
  * @param {*} options 选项
  * @param {*} callback 回调
- * @return {Number} index 用于取消请求
+ * @return {Promise<import('node:http').ClientRequest>} 用于取消请求的对象
  */
 export const httpGet = (url, options, callback) => {
   if (typeof options === 'function') {
@@ -202,7 +229,7 @@ export const httpGet = (url, options, callback) => {
  * @param {*} data 提交的数据
  * @param {*} options 选项
  * @param {*} callback 回调
- * @return {Number} index 用于取消请求
+ * @return {Promise<import('node:http').ClientRequest>} 用于取消请求的对象
  */
 export const httpPost = (url, data, options, callback) => {
   if (typeof options === 'function') {
@@ -233,7 +260,7 @@ export const httpPost = (url, data, options, callback) => {
  * @param {*} options 选项
  *             options.jsonpCallback 回调
  * @param {*} callback 回调
- * @return {Number} index 用于取消请求
+ * @return {Promise<import('node:http').ClientRequest>} 用于取消请求的对象
  */
 export const http_jsonp = (url, options, callback) => {
   if (typeof options === 'function') {

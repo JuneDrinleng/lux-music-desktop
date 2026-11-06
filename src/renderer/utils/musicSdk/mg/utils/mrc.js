@@ -31,14 +31,14 @@ const teaDecrypt = (data, key) => {
       while (true) {
         j6--
         if (j6 > 0n) {
-          let j7 = data[(j6 - 1n)]
-          let i = j6
-          j2 = toLong(data[i] - (toLong(toLong(j2 ^ j4) + toLong(j7 ^ key[toLong(toLong(3n & j6) ^ j5)])) ^ toLong(toLong(toLong(j7 >> 5n) ^ toLong(j2 << 2n)) + toLong(toLong(j2 >> 3n) ^ toLong(j7 << 4n)))))
+          let j7 = data[Number(j6 - 1n)]
+          let i = Number(j6)
+          j2 = toLong(data[i] - (toLong(toLong(j2 ^ j4) + toLong(j7 ^ key[Number(toLong(toLong(3n & j6) ^ j5))])) ^ toLong(toLong(toLong(j7 >> 5n) ^ toLong(j2 << 2n)) + toLong(toLong(j2 >> 3n) ^ toLong(j7 << 4n)))))
           data[i] = j2
         } else break
       }
-      let j8 = data[lengthBitint - 1n]
-      j2 = toLong(data[0n] - toLong(toLong(toLong(key[toLong(toLong(j6 & 3n) ^ j5)] ^ j8) + toLong(j2 ^ j4)) ^ toLong(toLong(toLong(j8 >> 5n) ^ toLong(j2 << 2n)) + toLong(toLong(j2 >> 3n) ^ toLong(j8 << 4n)))))
+      let j8 = data[Number(lengthBitint - 1n)]
+      j2 = toLong(data[0] - toLong(toLong(toLong(key[Number(toLong(toLong(j6 & 3n) ^ j5))] ^ j8) + toLong(j2 ^ j4)) ^ toLong(toLong(toLong(j8 >> 5n) ^ toLong(j2 << 2n)) + toLong(toLong(j2 >> 3n) ^ toLong(j8 << 4n)))))
       data[0] = j2
       j3 = toLong(j4 - DELTA)
     }
@@ -56,7 +56,7 @@ const longArrToString = (data) => {
 const longToBytes = (l) => {
   const result = Buffer.alloc(8)
   for (let i = 0; i < 8; i++) {
-    result[i] = parseInt(l & 0xFFn)
+    result[i] = Number(l & 0xFFn)
     l >>= 8n
   }
   return result
@@ -101,4 +101,3 @@ export const decrypt = (data) => {
 // console.log(toByteArray([6048138644744000495n]))
 // console.log(toByteArray([16325999628386395n]))
 // console.log(toLong(90994076459972177136n))
-

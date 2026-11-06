@@ -42,6 +42,9 @@ module.exports = {
           loader: 'ts-loader',
           options: {
             appendTsSuffixTo: [/\.vue$/],
+            // vue-tsc checks every SFC separately. Do not reinterpret unbundled
+            // JavaScript SFC roots as TypeScript merely because include lists them.
+            onlyCompileBundledFiles: true,
           },
         },
         parser: {

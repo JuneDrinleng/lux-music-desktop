@@ -1,4 +1,4 @@
-import { httpFetch } from '../../request'
+import { httpFetch, mapHttpTask } from '../../request'
 import { decodeLyric, lrcTools } from './util'
 import { decodeName } from '../../index'
 
@@ -228,7 +228,7 @@ export default {
   getLyric(musicInfo, isGetLyricx = true) {
     // this.getLyric2(musicInfo)
     const requestObj = httpFetch(`http://mlyric.kuwo.cn/mobi.s?f=web&type=lyric&lrcx=${isGetLyricx ? 1 : 0}&rid=${musicInfo.songmid}&encode=utf8`)
-    requestObj.promise = requestObj.promise.then(async({ statusCode, body, raw }) => {
+    return mapHttpTask(requestObj, async({ statusCode, body, raw }) => {
       if (statusCode != 200) return Promise.reject(new Error(JSON.stringify(body)))
       const lrcText = await decodeLyric(raw, isGetLyricx)
       // console.log(lrcText)
@@ -257,6 +257,5 @@ export default {
       // console.log(lrcInfo)
       return lrcInfo
     })
-    return requestObj
   },
 }

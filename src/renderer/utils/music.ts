@@ -221,7 +221,7 @@ export const getLocalMusicFileLyric = async(path: string): Promise<LX.Music.Lyri
   //   }
   // }
   // console.log(metadata)
-  for (const info of Object.values(metadata.native)) {
+  for (const info of Object.values<IAudioMetadata['native'][string]>(metadata.native)) {
     for (const ust of info) {
       switch (ust.id) {
         case 'LYRICS': {

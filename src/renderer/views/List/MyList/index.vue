@@ -51,7 +51,7 @@
         :class="[$style.listsItem, {[$style.active]: item.id == listId}, {[$style.clicked]: rightClickItemIndex == index}, {[$style.fetching]: fetchingListStatus[item.id]}]"
         :data-index="index" :aria-label="item.name" :aria-selected="defaultList.id == listId" @contextmenu="handleListsItemRigthClick($event, index)"
       >
-        <span :class="$style.listsLabel" @click="handleListToggle(item.id, index + 2)">
+        <span :class="$style.listsLabel" @click="handleListToggle(item.id)">
           <transition name="list-active">
             <svg-icon v-if="item.id == listId" name="angle-right-solid" :class="$style.activeIcon" />
           </transition>

@@ -27,13 +27,13 @@ type PlayerMusicInfoKeys = keyof typeof musicInfo
 const musicInfoKeys: PlayerMusicInfoKeys[] = Object.keys(musicInfo) as PlayerMusicInfoKeys[]
 
 export const setMusicInfo = (_musicInfo: Partial<PlayerMusicInfo>) => {
-  for (const key of musicInfoKeys) {
+  const assignField = <Key extends PlayerMusicInfoKeys>(key: Key) => {
     const val = _musicInfo[key]
     if (val !== undefined) {
-      // @ts-expect-error
       musicInfo[key] = val
     }
   }
+  musicInfoKeys.forEach(assignField)
 }
 
 export const setPlay = (val: boolean) => {

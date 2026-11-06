@@ -96,7 +96,7 @@ export default {
     },
     handleClose(isExit) {
       if (isExit) {
-        quitApp(true)
+        quitApp()
         return
       }
       isShowPact.value = false

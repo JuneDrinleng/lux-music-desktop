@@ -202,7 +202,7 @@ const createAesDecrypt = (buffer, mode, key, iv) => {
 
 export const wbdCrypto = {
   aesMode: 'aes-128-ecb',
-  aesKey: Buffer.from([112, 87, 39, 61, 199, 250, 41, 191, 57, 68, 45, 114, 221, 94, 140, 228], 'binary'),
+  aesKey: Buffer.from([112, 87, 39, 61, 199, 250, 41, 191, 57, 68, 45, 114, 221, 94, 140, 228]),
   aesIv: '',
   appId: 'y67sprxhhpws',
   decodeData(base64Result) {

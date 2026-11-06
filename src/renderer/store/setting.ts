@@ -14,10 +14,7 @@ export const initSetting = (newSetting: LX.AppSetting) => {
 }
 
 export const mergeSetting = (newSetting: Partial<LX.AppSetting>) => {
-  for (const [key, value] of Object.entries(newSetting)) {
-    // @ts-expect-error
-    appSetting[key] = value
-  }
+  Object.assign(appSetting, newSetting)
 }
 
 export const updateSetting = window.lxData.updateSetting = (setting: Partial<LX.AppSetting>) => {

@@ -1,4 +1,4 @@
-import { httpFetch } from '../../request'
+import { httpFetch, mapHttpTask } from '../../request'
 import { eapi } from './utils/crypto'
 // import { decodeName } from '../..'
 
@@ -68,9 +68,9 @@ const parseTools = {
     let ms = (timeMs % 1000).toString().padStart(pad3 ? 3 : 2, '0')
     if (!pad3 && ms.length > 2) ms = ms.slice(0, 2)
     timeMs /= 1000
-    let m = parseInt(timeMs / 60).toString().padStart(2, '0')
+    let m = parseInt(String(timeMs / 60)).toString().padStart(2, '0')
     timeMs %= 60
-    let s = parseInt(timeMs).toString().padStart(2, '0')
+    let s = parseInt(String(timeMs)).toString().padStart(2, '0')
     return `[${m}:${s}.${ms}]`
   },
   parseLyric(lines) {
@@ -238,7 +238,7 @@ const parseTools = {
 //       },
 //     }),
 //   })
-//   requestObj.promise = requestObj.promise.then(({ body }) => {
+//   return mapHttpTask(requestObj, ({ body }) => {
 //     if (body.code !== 200 || !body?.lrc?.lyric) return Promise.reject(new Error('Get lyric failed'))
 //     // console.log(body)
 //     return {
@@ -248,8 +248,7 @@ const parseTools = {
 //       // lxlyric: parseLyric(body.klyric.lyric),
 //     }
 //   })
-//   return requestObj
-// }
+// // }
 
 // https://github.com/lyswhut/lx-music-mobile/issues/370
 const fixTimeLabel = (lrc, tlrc, romalrc) => {
@@ -279,7 +278,7 @@ export default songmid => {
     ytv: 0,
     yrv: 0,
   })
-  requestObj.promise = requestObj.promise.then(({ body }) => {
+  return mapHttpTask(requestObj, ({ body }) => {
     // console.log(body)
     if (body.code !== 200 || !body?.lrc?.lyric) return Promise.reject(new Error('Get lyric failed'))
     const fixTimeLabelLrc = fixTimeLabel(body.lrc.lyric, body.tlyric?.lyric, body.romalrc?.lyric)
@@ -288,5 +287,4 @@ export default songmid => {
     if (!info.lyric) return Promise.reject(new Error('Get lyric failed'))
     return info
   })
-  return requestObj
 }

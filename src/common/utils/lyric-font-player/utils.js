@@ -31,6 +31,7 @@ export class TimeoutTools {
     })
   }
 
+  /** @param {(diff: number) => void} callback */
   start(callback = () => {}, timeout = 0) {
     // console.log(timeout)
     this.callback = callback
@@ -50,4 +51,3 @@ export class TimeoutTools {
     }
   }
 }
-

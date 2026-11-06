@@ -8,6 +8,7 @@ export default ({ setSelectedIndex, handlePlayMusic, listRef }) => {
     isShowSearchBar.value = true
   }
 
+  /** @param {{ action: string, data?: { index?: number, isPlay?: boolean } }} event */
   const handleMusicSearchAction = ({ action, data: { index, isPlay } = {} }) => {
     isShowSearchBar.value = false
     switch (action) {

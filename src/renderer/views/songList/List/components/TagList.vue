@@ -29,7 +29,7 @@ import { useI18n } from '@renderer/plugins/i18n'
 
 const props = defineProps({
   source: {
-    type: String,
+    type: /** @type {import('vue').PropType<LX.OnlineSource>} */ (String),
     required: true,
   },
   tagId: {
@@ -91,7 +91,7 @@ const setTagPopupWidth = () => {
   }, 50)
 }
 
-const dom_btn = ref<HTMLElement | null>(null)
+const dom_btn = ref(/** @type {HTMLElement | null} */ (null))
 const popupVisible = ref(false)
 const handleShow = () => popupVisible.value = !popupVisible.value
 const handleHide = (evt) => {

@@ -1,28 +1,78 @@
-name: Run build test
+name: Desktop verification
 
 on:
   pull_request:
     branches:
       - dev
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-verification-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  test:
+  verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      IS_CI: 'true'
+      LUX_EVIDENCE_DIR: artifacts/screenshots
+      LUX_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      LUX_PR_BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
 
     steps:
       - name: Check out git repository
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Install Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 22
+          cache: npm
 
-      - name: Install Dependencies
-        run: npm ci
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
 
-      - name: Eslint check
-        run: npm run lint
+      - name: Install virtual display and Chinese fonts
+        timeout-minutes: 7
+        shell: bash
+        run: |
+          packages=()
+          for package in xvfb fonts-noto-cjk; do
+            if ! dpkg-query -W -f='${Status}' "$package" 2>/dev/null | grep -q '^install ok installed$'; then
+              packages+=("$package")
+            fi
+          done
+          if [ "${#packages[@]}" -gt 0 ]; then
+            sudo timeout 180s apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 update
+            sudo timeout 180s apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 install --no-install-recommends -y "${packages[@]}"
+          fi
+          command -v xvfb-run
+          fc-match ':lang=zh' --format '%{family}\n'
 
-      - name: Test Build
-        run: npm run build
+      - name: Lint, typecheck, test and build all application targets
+        run: npm run verify
+
+      - name: Prepare reviewed Electron runtime and SQLite binding
+        run: npm run evidence:prepare
+
+      - name: Capture actual Electron application
+        run: xvfb-run -a npm run evidence
+
+      - name: Upload verification logs, build and screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: desktop-evidence-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            artifacts/
+            dist/
+          if-no-files-found: error
+          retention-days: 90

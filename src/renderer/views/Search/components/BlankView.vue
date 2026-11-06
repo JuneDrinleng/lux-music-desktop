@@ -34,7 +34,7 @@ import { useRouter } from '@common/utils/vueRouter'
 const props = defineProps({
   visible: Boolean,
   source: {
-    type: String,
+    type: /** @type {import('vue').PropType<import('@renderer/store/hotSearch').Source>} */ (String),
     required: true,
   },
 })

@@ -179,6 +179,9 @@ const useSearchPlayMusic = () => {
       interval,
       meta: {
         albumName,
+        filePath: '',
+        songId: '',
+        ext: '',
       },
       source: 'local',
       id: `sp_${name}_s${singer}_a${albumName}_i${interval ?? ''}`,

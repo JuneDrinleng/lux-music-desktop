@@ -24,9 +24,9 @@ const parseTools = {
     if (Number.isNaN(timeMs)) return ''
     let ms = (timeMs % 1000).toString().padStart(3, '0')
     timeMs /= 1000
-    let m = parseInt(timeMs / 60).toString().padStart(2, '0')
+    let m = parseInt(String(timeMs / 60)).toString().padStart(2, '0')
     timeMs %= 60
-    let s = parseInt(timeMs).toString().padStart(2, '0')
+    let s = parseInt(String(timeMs)).toString().padStart(2, '0')
     return `[${m}:${s}.${ms}]`
   },
   parseLyric(lrc) {

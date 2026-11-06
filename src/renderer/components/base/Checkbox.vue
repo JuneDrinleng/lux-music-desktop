@@ -2,7 +2,7 @@
   <div :class="$style.checkbox">
     <input
       :id="id" ref="dom_input" :type="need ? 'radio' : 'checkbox'" :aria-hidden="true" :checked="checked"
-      :class="$style.input" :disabled="disabled" :value="value" :name="name" @input="handleInput($event.target.checked)"
+      :class="$style.input" :disabled="disabled" :value="value" :name="name" @input="handleInputEvent"
     >
     <label :for="id" :class="$style.content">
       <div :class="$style.container" :role="need ? 'radio' : 'checkbox'" tabindex="0" :aria-label="ariaLabel || label" :aria-checked="checked" :aria-disabled="disabled" @keydown.enter.space.stop.prevent="handleToggle">
@@ -18,8 +18,9 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
   props: {
     modelValue: {
       type: [String, Boolean, Number, Array],
@@ -69,7 +70,10 @@ export default {
     this.setValue(this.modelValue)
   },
   methods: {
-    handleInput(checked) {
+    handleInputEvent(event: Event) {
+      if (event.target instanceof HTMLInputElement) this.handleInput(event.target.checked)
+    },
+    handleInput(checked: boolean) {
       let modelValue
       if (Array.isArray(this.modelValue)) {
         modelValue = [...this.modelValue]
@@ -86,7 +90,7 @@ export default {
       this.$emit('update:modelValue', modelValue)
       this.$emit('change', modelValue)
     },
-    setValue(value) {
+    setValue(value: unknown) {
       let checked
       if (Array.isArray(value)) {
         checked = value.includes(this.value)
@@ -101,19 +105,21 @@ export default {
       if (this.checked == checked) return
       this.checked = checked
     },
-    handleToggle(event) {
+    handleToggle(event: KeyboardEvent & { lx_handled?: boolean }) {
       event.lx_handled = true
+      const input = this.$refs.dom_input
+      if (!(input instanceof HTMLInputElement)) return
       if (this.need) {
-        if (this.$refs.dom_input.checked) return
-        this.$refs.dom_input.checked = true
+        if (input.checked) return
+        input.checked = true
         this.handleInput(true)
       } else {
-        this.$refs.dom_input.checked = !this.$refs.dom_input.checked
-        this.handleInput(this.$refs.dom_input.checked)
+        input.checked = !input.checked
+        this.handleInput(input.checked)
       }
     },
   },
-}
+})
 </script>
 
 

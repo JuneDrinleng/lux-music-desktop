@@ -12,7 +12,7 @@ export default ({ dom_lists_list, handleSaveListName, handleMenuClick }: {
   const isModDown = ref(false)
   const styles = useCssModule()
 
-  const { setDisabled } = useDarg({
+  const drag = useDarg({
     dom_list: dom_lists_list,
     dragingItemClassName: styles.dragingItem,
     filter: 'default-list',
@@ -33,7 +33,7 @@ export default ({ dom_lists_list, handleSaveListName, handleMenuClick }: {
       }
 
       isModDown.value = true
-      setDisabled(false)
+      drag.setDisabled(false)
       void handleSaveListName()
     }
     handleMenuClick()
@@ -41,7 +41,7 @@ export default ({ dom_lists_list, handleSaveListName, handleMenuClick }: {
   const handle_key_mod_up = () => {
     if (isModDown.value) {
       isModDown.value = false
-      setDisabled(true)
+      drag.setDisabled(true)
     }
   }
 

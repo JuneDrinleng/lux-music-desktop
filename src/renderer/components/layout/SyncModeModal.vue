@@ -1,5 +1,5 @@
 <template>
-  <material-modal :show="sync.isShowSyncMode" :bg-close="false" :close-btn="false" @close="handleClose(false)">
+  <material-modal :show="sync.isShowSyncMode" :bg-close="false" :close-btn="false" @close="handleClose">
     <main v-if="sync.type == 'list'" :class="$style.main">
       <h2>{{ $t('sync__list_title', { name: sync.deviceName }) }}</h2>
       <div class="scroll" :class="$style.content">
@@ -101,11 +101,19 @@ export default {
     const handleClose = () => {
       sync.isShowSyncMode = false
     }
+    /** @param {LX.Sync.Dislike.SyncMode} mode */
     const handleSelectMode = (mode) => {
       if (sync.type == 'list') {
-        if (mode.startsWith('overwrite') && isOverwrite.value) mode += '_full'
+        /** @type {LX.Sync.List.SyncMode} */
+        let listMode = mode
+        if (isOverwrite.value) {
+          if (mode === 'overwrite_local_remote') listMode = 'overwrite_local_remote_full'
+          else if (mode === 'overwrite_remote_local') listMode = 'overwrite_remote_local_full'
+        }
+        void sendSyncAction({ action: 'select_mode', data: { type: 'list', mode: listMode } })
+      } else {
+        void sendSyncAction({ action: 'select_mode', data: { type: 'dislike', mode } })
       }
-      void sendSyncAction({ action: 'select_mode', data: { type: sync.type, mode } })
       handleClose()
     }
     return {
