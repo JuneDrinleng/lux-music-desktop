@@ -1,4 +1,5 @@
 const { spawn } = require('node:child_process')
+const { createHash } = require('node:crypto')
 const fs = require('node:fs')
 const path = require('node:path')
 const { performance } = require('node:perf_hooks')
@@ -134,13 +135,22 @@ async function main() {
   const existing = await commandResult('initial WM root property probe', 'xprop', ['-root', '_NET_SUPPORTING_WM_CHECK'], wmEnv)
   if (existing.code !== 0) throw new Error(`Unable to query private X display: ${existing.stderr}`)
   if (supportingWindow(existing.stdout)) throw new Error('Private display already has a window manager; refusing to replace it')
-  const version = await commandResult('xfwm4 version', 'xfwm4', ['--version'], wmEnv)
-  if (version.code !== 0) throw new Error(`Unable to read xfwm4 version: ${version.stderr}`)
-  record.wmVersion = version.stdout.trim()
-  if (version.stderr.trim()) record.wmVersionDiagnostics = version.stderr.trim()
+  const executable = (process.env.PATH ?? '/usr/bin:/bin').split(path.delimiter).map(directory => path.resolve(directory, 'xfwm4')).find(filename => {
+    try { fs.accessSync(filename, fs.constants.X_OK); return fs.statSync(filename).isFile() } catch { return false }
+  })
+  if (!executable) throw new Error('Packaged xfwm4 executable not found in PATH')
+  const wmExecutable = fs.realpathSync(executable)
+  const owner = await commandResult('xfwm4 package ownership', 'dpkg-query', ['--search', wmExecutable], wmEnv)
+  if (owner.code !== 0 || !owner.stdout.trim().split('\n').some(line => /^xfwm4(?::[\w-]+)?: /.test(line) && line.endsWith(`: ${wmExecutable}`))) throw new Error('Resolved xfwm4 executable is not owned by the installed xfwm4 package')
+  // eslint-disable-next-line no-template-curly-in-string -- dpkg-query expands these literal package fields.
+  const version = await commandResult('xfwm4 installed version', 'dpkg-query', ['--show', '--showformat=${Status}\t${Version}', 'xfwm4'], wmEnv)
+  const [status, packageVersion] = version.stdout.trim().split('\t')
+  if (version.code !== 0 || status !== 'install ok installed' || !packageVersion) throw new Error('Unable to read the installed xfwm4 package version')
+  record.wmVersion = `xfwm4 package ${packageVersion}`
+  record.wmBinary = { executable: wmExecutable, sha256: createHash('sha256').update(fs.readFileSync(wmExecutable)).digest('hex'), packageVersion, versionSource: 'installed dpkg package owning the resolved executable; metadata only, not WM readiness' }
   log(record.wmVersion)
   if (interrupted) throw new Error(`Interrupted by ${interrupted}`)
-  const wm = start('xfwm4', 'xfwm4', ['--compositor=off', '--sm-client-disable'], wmEnv)
+  const wm = start('xfwm4', wmExecutable, ['--compositor=off', '--sm-client-disable'], wmEnv)
   record.wmPid = wm.child.pid ?? null
   log(`started owned xfwm4 PID ${record.wmPid}`)
   writeRecord()
