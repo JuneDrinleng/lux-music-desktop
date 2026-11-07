@@ -87,10 +87,12 @@ Lux 认证优先采用绑定会话的 accessToken，校验服务端实际返回�
 | [ ] M3b `codex/desktop-m3b` | 我的列表与下载界面 | 歌单管理、拖动排序、去重、导入/备份、列表内搜索与批量菜单保持；下载状态与重试动作验证；列表/菜单/多选/下载截图；完整检查及 PR 合并证据 |
 | [ ] M3c `codex/desktop-m3c` | 播放详情、队列、歌词/评论及共用弹层 | 用本地音频验证播放/暂停/seek/队列/音量/模式/倍速，原音效与定时入口保留；桌面歌词编译与可启动验证；详情/队列/歌词/评论/弹层截图；完整检查及 PR 合并证据 |
 | [ ] M3d `codex/desktop-m3d` | 设置各分组、主题与自定义源界面、关于信息 | 对照功能保留表逐项确认入口；自定义源导入/选择、主题编辑、快捷键、备份、OpenAPI、网络等原控件不丢失；设置各区和关键弹层截图；完整检查及 PR 合并证据 |
-| [ ] M4a `codex/desktop-m4a` | main 侧 Lux API、会话/设备管理、安全持久化及脱敏 IPC | 用契约 fixture 覆盖实际账号 API、登录/恢复/退出、refresh 合并、过期/撤销/401/429/5xx/离线；敏感值不进日志/renderer；账号区脱敏截图；完整检查及 PR 合并证据 |
+| [ ] M4a `codex/desktop-m4a` | main 侧 Lux API、会话/设备管理、安全持久化及脱敏 IPC | 用契约 fixture 覆盖实际账号 API、登录/恢复/退出、refresh 合并、过期/撤销/401/429/5xx/离线；敏感值不进日志/renderer；有类型 IPC 脱敏返回值与泄漏测试（账号区实际截图由 M4c 界面接入取证）；完整检查及 PR 合并证据 |
 | [ ] M4b `codex/desktop-m4b` | provider 生命周期、Lux socket 认证、LX 兼容与数据空间隔离 | 本地 mock Lux server + 两客户端同步真实歌单操作；LX 连接码客户端/本机服务端兼容；首轮冲突、重连、切换、跨账号隔离/恢复、无网络本地使用测试；三模式状态截图；完整检查及 PR 合并证据 |
 | [ ] M4c `codex/desktop-m4c` | 首次同步选择/登录门、设置内三模式切换、账号与错误交互 | local→LX→Lux→local 和退出/重启恢复端到端测试；保留所有原同步控件；不使用 June 生产账号也可复现的本地契约集成；登录/错误/切换确认/三模式截图；完整检查及 PR 合并证据 |
 | [ ] M5 `codex/desktop-m5` | 清理、设计/交互/架构/测试与使用文档、最终功能保留矩阵 | 消除未使用适配代码；全套 lint/typecheck/test 通过；main/renderer/lyric/scripts 全部构建通过；全页面与主题/尺寸矩阵证据；每项 PLAN 标准能链接到 PR/CI/artifact/截图；最终 squash 合并到 dev；真机限制明确 |
+
+M4a 按小 PR 依次交付：契约与 HTTP（#4）→ safeStorage 持久化 → 会话与 refresh 状态机 → 有类型脱敏 IPC → 会话/设备列表及撤销。每块单独完整验证、CI 绿后 squash，再从最新 dev 开下一块。M4a 不修改 renderer 页面，账号区实际截图在 M4c 接入界面时验收。
 
 M0 类型或构建基线失败必须修复或明确拆分后修复，不能通过 `continue-on-error`、空测试、无条件成功、任意压低检查范围或批量 `@ts-ignore` 伪造通过。主题等低风险样式不新增镜像实现的测试；测试集中验证主题不变式、虚拟列表尺寸、同步状态机、凭据处理和用户行为。
 
@@ -105,6 +107,7 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 | 子项 / 分支 | 单一范围 | 该小块的证据与后续关系 |
 | --- | --- | --- |
 | [x] M2t1 `codex/desktop-m2-display` | 私有显示/窗口管理器及计时基础设施 | 原 baseline/themes 矩阵不减少；完整检查、35张主题/页面图与9个 Electron 进程；WM PID/身份/退出清理核验；PR #3 CI42405103927全绿，squash e2dc1e8f |
+| [x] M2t1b `codex/desktop-m2-display-probe` | 辅助WM无GUI版本/二进制元数据与依赖隔离 | 包归属/版本/实际执行SHA，每条metadata命令1500ms/真实EWMH仍8000ms；原35图/七门/最终CI，保留失败输出；不改Electron环境；PR #7 CI42427123339全绿，squash bfb3870d |
 | [ ] M2t2 `codex/desktop-m2-media` | 本地音频与滚轮音量取证工具 | 明确生成WAV，经原导入/SQLite/原生播放器验证；只读真实wheel校准，音量/静音三方状态一致；不伪造音频设备；独立CI绿与合并 |
 | [ ] M2t3a `codex/desktop-m2-ui-tools` | 共用真实输入工具 | 从已合媒体helper抽取target/click/label并实际复用；保留themes/media完整CI，不加入未来UI假设 |
 | [ ] M2t3b `codex/desktop-m2-window-evidence` | 原窗口行为取证工具 | 兼容现有原控件，真实拖动/最小化/关闭请求/F11；独立window mode实际CI，不用setPosition冒充拖动 |

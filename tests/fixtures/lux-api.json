@@ -1,0 +1,8 @@
+{
+  "note": "Synthetic values only; structure audited against server src/server/api.",
+  "serverInfo": { "name": "Mock Lux", "version": "1.0.0", "packageVersion": "1.0.0", "minClientVersion": null, "publicUrl": null, "adminContact": null, "mcp": { "tokens": true }, "registration": { "inviteOnly": true, "enabled": true }, "features": ["sessions", "refresh", "me-sessions", "invite-check"] },
+  "user": { "id": "fixture-user", "username": "fixture", "displayName": "", "role": "user", "source": "managed", "status": "active" },
+  "credentials": { "token": "fixture-legacy-never-use", "accessToken": "fixture-access", "accessTokenExpiresAt": 9999999999999, "refreshToken": "fixture-refresh", "sessionId": "fixture-session" },
+  "profile": { "username": "fixture", "displayName": "", "avatar": "", "gender": "unknown", "signature": "" },
+  "syncKey": { "clientId": "fixture-client", "key": "fixture-sync-key", "serverName": "Mock Lux", "deviceName": "Fixture Desktop" }
+}
