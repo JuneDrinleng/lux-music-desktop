@@ -15,8 +15,10 @@ npm run evidence
 
 ```sh
 LUX_EVIDENCE_DIR=artifacts/screenshots npm run evidence
-LUX_EVIDENCE_DIR=docs/screenshots/m2 LUX_EVIDENCE_SIZES=1024x700,1280x800,1440x900 npm run evidence
+LUX_EVIDENCE_DIR=artifacts/baseline-three-sizes LUX_EVIDENCE_SIZES=1024x700,1280x800,1440x900 npm run evidence
 ```
+
+Linux 独立 display 的每个阶段经 `dbus-run-session` 建立私有 D-Bus，再由 `display.cjs` 启动自己的 xfwm4 和原 Electron。需要已安装 xvfb、xauth、xfwm4、x11-utils、dbus-bin、dbus-daemon；缺失时直接失败，不在取证期间安装。wrapper 不替换宿主窗口管理器，只在私有 display 没有现存 WM 时启动；xfwm4 和私有 D-Bus 激活服务的 XDG 写路径位于临时目录，Electron 的 HOME 与原环境保持。每阶段的 display JSON 记录 WM 版本、实际 child PID、EWMH 所有者和退出结果；driver 核对 run/phase、Electron PID 与进程清单一致、WM PID 与 EWMH 一致，以及 owned child 全部清理完毕。退出时只向自己创建的 child 发送信号，三秒未退出才对该 child 发 SIGKILL，不操作宿主进程组。显式使用现有 display 或非 Linux 时仍走原启动路径，清单注明窗口管理器所有权未经验证，不将这类运行冒充私有 WM 证据。此变更只准备显示会话基础设施，不证明原生拖窗、窗口按钮或媒体行为。
 
 M1 用真实主题切换和完整进程重启取证：
 

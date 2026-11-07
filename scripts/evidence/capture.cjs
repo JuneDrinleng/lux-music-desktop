@@ -3,6 +3,7 @@ const { execFileSync, spawn } = require('node:child_process')
 const fs = require('node:fs')
 const os = require('node:os')
 const path = require('node:path')
+const { performance } = require('node:perf_hooks')
 const { preferences, palettes, customThemeId } = require('./profile.cjs')
 
 const root = path.resolve(__dirname, '../..')
@@ -98,8 +99,9 @@ async function run() {
   const isolatedDisplay = process.platform === 'linux' && (preferIsolatedDisplay || !displayAvailable)
   if (isolatedDisplay) {
     command = 'xvfb-run'
-    commandArgs = ['--auto-servernum', '--server-args=-screen 0 1920x1200x24', electron, ...args]
+    commandArgs = ['--auto-servernum', '--server-args=-screen 0 1920x1200x24', 'dbus-run-session', '--', 'env', 'LUX_EVIDENCE_PRIVATE_DBUS=1', process.execPath, path.join(__dirname, 'display.cjs'), electron, ...args]
   }
+  const displayMode = isolatedDisplay ? 'isolated Xvfb/private D-Bus/owned xfwm4' : process.platform === 'linux' ? 'inherited X11 display; WM ownership unverified' : 'native platform display; WM ownership unverified'
   const log = fs.createWriteStream(path.join(output, 'electron.log'))
   const phases = []
   let failure = null
@@ -107,7 +109,8 @@ async function run() {
     for (const phase of phasePlan()) {
       const manifestName = `phase-${phase.id}.json`
       const phaseStartedAt = new Date().toISOString()
-      fs.writeFileSync(configPath, JSON.stringify({ root, output, sizes, source, scratch, userData, runId, mode, phase, manifestName, customFixture, command: 'npm run evidence', driverNode: process.version, displayMode: isolatedDisplay ? 'isolated Xvfb' : 'inherited display' }, null, 2))
+      const phaseStartedTick = performance.now()
+      fs.writeFileSync(configPath, JSON.stringify({ root, output, sizes, source, scratch, userData, runId, mode, phase, manifestName, customFixture, command: 'npm run evidence', driverNode: process.version, displayMode }, null, 2))
       log.write(`\nEvidence phase ${phase.id}: starting a NEW Electron process with the SAME isolated userData\n`)
       console.log(`Evidence phase ${phase.id}: new Electron process`)
       const processResult = await new Promise((resolve, reject) => {
@@ -140,10 +143,13 @@ async function run() {
       })
       const phasePath = path.join(output, manifestName)
       const manifest = fs.existsSync(phasePath) ? JSON.parse(fs.readFileSync(phasePath, 'utf8')) : { status: 'failed', captures: [], observations: [], checks: [], failure: 'Electron exited without a phase manifest' }
+      const displayPath = path.join(output, `phase-${phase.id}-display.json`)
+      const nativeDisplay = isolatedDisplay && fs.existsSync(displayPath) ? JSON.parse(fs.readFileSync(displayPath, 'utf8')) : null
       const previous = phases.at(-1)
-      phases.push({ ...manifest, process: { ...processResult, startedAt: phaseStartedAt, exitedAt: new Date().toISOString(), previousPhaseExited: previous ? previous.process.code === 0 : null } })
+      phases.push({ ...manifest, nativeDisplay, process: { ...processResult, startedAt: phaseStartedAt, exitedAt: new Date().toISOString(), elapsedMs: performance.now() - phaseStartedTick, previousPhaseExited: previous ? previous.process.code === 0 : null } })
       if (processResult.timedOut) throw new Error(`Electron phase ${phase.id} did not exit within ${processResult.timeoutMs}ms; owned launcher PID ${processResult.launcherPid} was terminated and its exit was observed`)
       if (processResult.code !== 0 || manifest.status !== 'passed' || manifest.runId !== runId) throw new Error(`Electron phase ${phase.id} failed; inspect ${manifestName} and electron.log`)
+      if (isolatedDisplay && (!nativeDisplay || nativeDisplay.status !== 'passed' || !nativeDisplay.cleanupComplete || nativeDisplay.runId !== runId || nativeDisplay.phaseId !== phase.id || nativeDisplay.electronPid !== manifest.runtime.processId || !nativeDisplay.wmPid || nativeDisplay.ready?.ownerPid !== nativeDisplay.wmPid)) throw new Error(`Owned WM session identity/cleanup failed for ${phase.id}; inspect ${path.basename(displayPath)}`)
       if (previous && previous.runtime.processId === manifest.runtime.processId) throw new Error('A theme restart must use a distinct Electron process')
       if (phase.selectThemeId) {
         const setting = JSON.parse(fs.readFileSync(path.join(lxData, 'config_v2.json'), 'utf8')).setting
