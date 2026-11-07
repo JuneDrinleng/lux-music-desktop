@@ -3,7 +3,7 @@
     <div :class="[$style.progressBar, $style.progressBar2, {[$style.barTransition]: isActiveTransition}]" :style="{ transform: `scaleX(${progress || 0})` }" @transitionend="handleTransitionEnd" />
     <div v-show="dragging" :class="[$style.progressBar, $style.progressBar3]" :style="{ transform: `scaleX(${dragProgress || 0})` }" />
   </div>
-  <div ref="dom_progress" :class="$style.progressMask" @mousedown="handleMsDown" />
+  <div ref="dom_progress" data-action="seek-progress" :class="$style.progressMask" @mousedown="handleMsDown" />
 </template>
 
 <script>

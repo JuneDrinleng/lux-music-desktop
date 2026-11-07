@@ -67,6 +67,12 @@ jobs:
       - name: Capture actual Electron application
         run: npm run evidence
 
+      - name: Verify real local media controls
+        env:
+          LUX_EVIDENCE_MODE: media
+          LUX_EVIDENCE_DIR: artifacts/media
+        run: npm run evidence
+
       - name: Upload verification logs, build and screenshots
         if: always()
         uses: actions/upload-artifact@v7

@@ -35,3 +35,11 @@ LUX_EVIDENCE_MODE=themes LUX_EVIDENCE_DIR=artifacts/screenshots npm run evidence
 `manifest.json` 记录提交、PR head/base（如 CI 提供）、工作区是否含未提交改动、整个 `dist/` 构建文件和证据脚本的 SHA256、UTC 时间、OS/Node/Electron/Chromium/ABI、尺寸、路由、页面文本快照、配置种子、网络边界及每张 PNG 的 SHA256。矩阵完成后再次校验构建和证据脚本，任何中途变更都使证据失败。云端没有音频设备时，先单独保存真实启动警告截图与 observation，再点击应用原有确认按钮，避免警告遮住每个页面；不会模拟存在音频输出。Vue 未挂载、导航缺失、尺寸错误、renderer 崩溃、未处理异常或清单不完整均返回失败。初始检查点允许记录 dirty source；最终提交验证应在干净且正确的 checkpoint HEAD 构建，截图输出自身不应用作源代码变更。
 
 此基线只证明 Linux 云端能运行真实应用并逐页取证。Windows/macOS 窗口/任务栏、系统托盘、音频输出、桌面歌词独立窗口、实际媒体下载和在线音乐服务仍需相应检查点的独立测试或真机确认；截图不能替代这些行为证据。
+
+本地媒体管线可单独验证，不改变原主题矩阵：
+
+```sh
+LUX_EVIDENCE_MODE=media LUX_EVIDENCE_DIR=artifacts/media npm run evidence
+```
+
+`media` 模式只在 Linux 独立 Xvfb/私有 WM 会话运行一个真实 Electron 进程，要求三张截图和八项实际行为：本地文件导入、递增的播放时钟、暂停、seek、下一首、上一首、音量和静音、播放模式。临时生成两首明确标记的45秒 PCM WAV，点击原歌单菜单，仅在系统文件选择器边界返回这两个路径；文件元数据 worker、SQLite、IPC、原播放器控件和 HTMLAudioElement 均保持生产实现。helper 按原 aria-label 找到控件，支持现有 div 播放键，通过原生鼠标事件操作，不依赖未来外壳按钮重构。seek 仅为原交互 mask 增加稳定 data-action 标记，事件逻辑不变。额外 preload 通过 Proxy 调用原 Audio 构造并返回原生元素，只记录只读实例快照，不改写播放方法、currentTime、src 或 volume。音量轮先读取实际可信 WheelEvent 的 delta 符号，再用原滚轮处理器改变真实音量；必须核对原生媒体、renderer 设置和磁盘配置，并用原控件恢复。截图和进程/WM 身份、正常退出及清理继续受 driver 原规则核验。没有模拟音频设备，不声称扬声器声音、在线音乐服务、完整歌词/音效/倍速或桌面歌词已经验证；这些仍需后续检查点证据。
