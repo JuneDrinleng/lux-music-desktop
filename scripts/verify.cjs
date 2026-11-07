@@ -2,6 +2,7 @@
 const { spawnSync, execFileSync } = require('node:child_process')
 const { mkdirSync, writeFileSync } = require('node:fs')
 const path = require('node:path')
+const { performance } = require('node:perf_hooks')
 
 const root = path.resolve(__dirname, '..')
 const output = path.join(root, 'artifacts', 'verification')
@@ -21,12 +22,12 @@ const report = {
 }
 let failed = false
 for (const command of commands) {
-  const started = Date.now()
+  const started = performance.now()
   console.log(`\nRunning npm run ${command}`)
   const result = spawnSync(process.execPath, [npmCli, 'run', command], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
   const log = `${result.stdout || ''}${result.stderr || ''}${result.error ? `\n${result.error.stack}` : ''}`
   writeFileSync(path.join(output, `${command.replaceAll(':', '-')}.log`), log)
-  const check = { command: `npm run ${command}`, exitCode: result.status, signal: result.signal, durationMs: Date.now() - started }
+  const check = { command: `npm run ${command}`, exitCode: result.status, signal: result.signal, durationMs: performance.now() - started }
   report.checks.push(check)
   console.log(`${command}: exit ${result.status}, ${check.durationMs}ms`)
   if (result.status !== 0) {

@@ -76,12 +76,12 @@ Lux 认证优先采用绑定会话的 accessToken，校验服务端实际返回�
 
 ## 4. 检查点与可验证完成标准
 
-每行是独立 PR，严格按顺序从最新 origin/dev 开分支；前一个 PR 完成 squash 合并并核对远端后再开下一个。若审计要求拆分，先更新本计划，保持每个完成标准可验证。
+表中 M0–M5 是父检查点。按 June 2026-11-07 补充，每个后续检查点拆成一事一 PR 的小块，优先基础设施，尽量控制在几百行。每个小 PR 严格从最新 origin/dev 开分支；前一个全绿 squash 合并并核对远端后再开下一个。父检查点的全部完成标准保持不变，所有相关小 PR 有证据后才勾选。
 
 | 检查点 / 分支 | 交付物 | 必须具备的验收证据 |
 | --- | --- | --- |
 | [x] M0 `codex/desktop-m0` | 建立远端 dev；提交本计划；安全 PR CI；显式 lint/typecheck/test/build 命令及实际应用截图工具 | dev 从上述 desktop 基线建立；PR base=dev；main/renderer/lyric/common/lang 与 Vue SFC 的类型检查真实运行；离线行为测试真实运行；renderer 构建成功；基线真实应用截图；CI artifact 和绿灯；squash 合并 SHA |
-| [ ] M1 `codex/desktop-m1` | 六套语义主题、默认黄绿、字体/间距/线/焦点 token；兼容原主题入口 | 六主题角色/默认色值回归测试；主题切换与重启保持；原自定义主题可选；六主题截图，至少黄绿/暖米/墨夜可读性和焦点自查；完整检查及 PR 合并证据 |
+| [x] M1 `codex/desktop-m1` | 六套语义主题、默认黄绿、字体/间距/线/焦点 token；兼容原主题入口 | 六主题角色/默认色值回归测试；主题切换与重启保持；原自定义主题可选；六主题截图，至少黄绿/暖米/墨夜可读性和焦点自查；完整检查及 PR 合并证据 |
 | [ ] M2 `codex/desktop-m2` | Lux 品牌外壳、桌面侧栏与导航、工具栏、底部播放条 | 六导航逐一可达；前进/返回/详情状态保持；原窗口按钮与拖动区域有效；窄/中/宽三尺寸截图；播放条控制真实状态；完整检查及 PR 合并证据 |
 | [ ] M3a `codex/desktop-m3a` | 搜索、在线歌单/详情、排行榜杂志风 | 歌曲/歌单切换、来源、建议/历史、分页、空/失败/重试、详情、播放/添加/下载入口回归；虚拟行高/滚动定位一致；相应页面与多选截图；完整检查及 PR 合并证据 |
 | [ ] M3b `codex/desktop-m3b` | 我的列表与下载界面 | 歌单管理、拖动排序、去重、导入/备份、列表内搜索与批量菜单保持；下载状态与重试动作验证；列表/菜单/多选/下载截图；完整检查及 PR 合并证据 |
@@ -98,6 +98,25 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 
 无需账号的测试使用本地 fixture/mock 服务，不访问生产账号，不把云端不能验证的真机体验列为已经通过。如集成必须依赖 June 账号、付费或产品决策，先记录精确缺口和建议，停止并等待。
 
+### 4.1 M2 小 PR 顺序（June 2026-11-07 规则）
+
+原 M2 外壳、六导航、历史/详情、窗口、尺寸与播放器真实状态标准全部保留。已有整体草稿仅为本地备份，不一次提交；每个小块独立 CI、独立合并，父 M2 最后统一验收。
+
+| 子项 / 分支 | 单一范围 | 该小块的证据与后续关系 |
+| --- | --- | --- |
+| [ ] M2t1 `codex/desktop-m2-display` | 私有显示/窗口管理器及计时基础设施 | 原 baseline/themes 矩阵不减少；完整检查、35张主题/页面图与9个 Electron 进程；WM PID/身份/退出清理核验；CI绿与合并 |
+| [ ] M2t2 `codex/desktop-m2-media` | 本地音频与滚轮音量取证工具 | 明确生成WAV，经原导入/SQLite/原生播放器验证；只读真实wheel校准，音量/静音三方状态一致；不伪造音频设备；独立CI绿与合并 |
+| [ ] M2t3 `codex/desktop-m2-shell-evidence` | 外壳行为矩阵工具 | 保留主题/媒体验证，定义导航、历史、窗口、各进度风格断言；单阶段仅诊断且CI禁止；消费者UI未合前不宣称M2通过，最后激活完整矩阵 |
+| [ ] M2a `codex/desktop-m2-layout` | App与带文字侧栏 | 六原路由/下载条件、品牌与全宽底栏容器，尺寸/字体截图；不改播放核心和虚拟行高；完整检查与CI绿合并 |
+| [ ] M2b `codex/desktop-m2-history` | 工具栏与原生Router历史 | 独立7项行为测试及真实详情query back/forward/页内返回；四语言、边界禁用；完整检查与CI绿合并 |
+| [ ] M2c1 `codex/desktop-m2-player-shared` | 播放条共用样式与工具键 | 保留原volume/mode/歌词/添加绑定，真实媒体回归；完整检查与CI绿合并 |
+| [ ] M2c2 `codex/desktop-m2-player-full` | full进度组件 | 原动作与seek保留，原生按钮与主题/窄宽截图；完整检查与CI绿合并 |
+| [ ] M2c3 `codex/desktop-m2-player-middle` | middle进度组件 | 原动作与seek保留，真实状态、最小窗口/大字截图；完整检查与CI绿合并 |
+| [ ] M2c4 `codex/desktop-m2-player-mini` | mini与进度弹层 | 原动作、键盘展开/seek与四语言标签，弹层边界截图；完整检查与CI绿合并 |
+| [ ] M2gate `codex/desktop-m2-evidence` | 激活M2完整验收与归档 | 14个实际进程、完整主题/尺寸/窗口/导航/媒体矩阵，PNG/构建/harness哈希与CI最终head核验；汇总所有子PR后才完成父M2 |
+
+M3a–M5 也按同一规则，先写明各小块范围再实施：工具/契约测试先行，单页面、单组件或单修复依次合并。原父表每条标准都必须有证据，不能以拆分减少范围；每个小PR在本地PROGRESS各记编号、内容、CI和合并结果。
+
 ## 5. 每个 PR 的执行和取证流程
 
 1. 读取最新远端状态并确认上个检查点已合并。`git fetch origin dev`，从最新 `origin/dev` 创建表内分支，不复用过期基线。
@@ -112,10 +131,10 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 
 ## 6. 当前进度
 
-- 计划和静态审计先于实现完成。M0 已由 PR #1 squash 合入 dev，合并 SHA `e638690fa5b158b6669008d8e67db966aa563439`；最终 head `b13a6dddcab35f3394cd32ffae57b787d510ca29` 的 CI run42155997130、80项测试、四目标构建和真实 Electron 截图 artifact 已验收。M1–M5 仍待逐 PR 验收。
+- 计划和静态审计先于实现完成。M0 已由 PR #1 squash 合入 dev，合并 SHA `e638690fa5b158b6669008d8e67db966aa563439`；最终 head `b13a6dddcab35f3394cd32ffae57b787d510ca29` 的 CI run42155997130、80项测试、四目标构建和真实 Electron 截图 artifact 已验收。M1 已由 PR #2 squash 合入 dev，SHA `a3f40aeccafec295614aef648d0a1a32ef99fee9`；最终 head `c8d530d2123d1910b515eae96e06968120f31ef1` 的 CI run42313440707、101项测试、35张实际截图与9个独立进程已核验。M2–M5 仍待逐小 PR 验收。
 - 初次 Git/REST 创建 dev 遭旧 token HTTP 403，已由 June 更新授权、开发 Bot 从原基线建立远端 dev。本轮 fetch 核对 `origin/dev` 为 `ad95d5091c9ed689fa72b5e5c849df65f5a679ce`；`codex/desktop-m0` 首次推送也已成功。
-- 原 `.git` 为只读，采用独立 Git 元数据 `/tmp/lux-desktop-goal-git` 操作原工作区；原 master ref 保持原值。复现本环境命令时显式设 `GIT_DIR=/tmp/lux-desktop-goal-git`，不能在原 master 上提交。
-- M1 从最新 origin/dev 建立分支，正在实现六套语义主题与兼容桥接。具体结果和日志以本地 `_goal/PROGRESS.md` 及对应 PR 的最终 CI 为准，未验收的标准不勾选。
+- 原 `.git` 为只读，采用独立 Git 元数据 `/workspace/codex-dev/_base-desktop/_goal/git-metadata` 操作原工作区；原 master ref 保持原值。复现本环境命令时显式设 `GIT_DIR=/workspace/codex-dev/_base-desktop/_goal/git-metadata`，不能在原 master 上提交。
+- M2 当前整体未合改动已按 SHA256 完整备份到本地 _goal/backups，按下述小 PR 顺序从最新 dev 分别提交。具体结果和日志以本地 `_goal/PROGRESS.md` 及对应 PR 的最终 CI 为准，未验收的标准不勾选。
 - 原 TS 项目保持 strict 检查；旧 JS SFC 模板需额外启用 checkJs 才会检查。新增 JS 语义检查项目允许原动态 JS 的隐式类型，同时检查真实属性、调用、模板与传递依赖；不以普通 tsc 的 Vue shim 充当模板验证。详细配置及负例检测证据见 `docs/verification.md`。
 
 ## 7. 结束判定
