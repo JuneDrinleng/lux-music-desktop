@@ -5,7 +5,7 @@ const fixture = require('../fixtures/lux-api.json')
 const contract = loadSource('src/main/modules/lux/contract.ts')
 const { LuxSession } = loadSource('src/main/modules/lux/session.ts', { './contract': contract })
 const { LuxError, parseLogin } = contract
-const deferred = () => { let resolve, reject; const promise = new Promise((yes, no) => { resolve = yes; reject = no }); return { promise, resolve, reject } }
+const deferred = () => { let resolve, reject; const promise = new Promise((_resolve, _reject) => { resolve = _resolve; reject = _reject }); return { promise, resolve, reject } }
 const login = () => parseLogin({ ...fixture.credentials, user: fixture.user })
 const create = (saved = null) => {
   const io = { saved, writes: 0, clears: 0, refreshes: 0, logins: [] }
