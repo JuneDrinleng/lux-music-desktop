@@ -23,7 +23,6 @@ export class LuxClient {
       const response = await request(new URL(path, this.server), {
         method,
         signal,
-        maxRedirections: 0,
         headersTimeout: 15000,
         bodyTimeout: 15000,
         headers: { 'Content-Type': 'application/json', ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}) },
