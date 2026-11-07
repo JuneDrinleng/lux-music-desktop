@@ -62,7 +62,7 @@ async function commandResult(label, command, args, env, timeout = 1500, forwardO
   const timer = setTimeout(() => { expired = true; stop(owned).catch(error => console.error(error)) }, timeout)
   try {
     const result = await owned.completion
-    if (expired || result.error || result.signal) throw new Error(`${label} failed: ${JSON.stringify({ ...result, timedOut: expired })}`)
+    if (expired || result.error || result.signal) throw new Error(`${label} failed: ${JSON.stringify({ ...result, timedOut: expired, stdout: owned.stdout, stderr: owned.stderr })}`)
     return { ...result, stdout: owned.stdout, stderr: owned.stderr }
   } finally { clearTimeout(timer) }
 }
@@ -122,7 +122,11 @@ async function main() {
   recordPath = path.join(config.output, `phase-${config.phase.id}-display.json`)
   record = { schemaVersion: 1, runId: config.runId, phaseId: config.phase.id, display: process.env.DISPLAY, privateDbusSession: true, wrapperPid: process.pid, status: 'starting', wmPaths }
   writeRecord()
-  const wmEnv = { ...process.env, ...wmPaths }
+  // Auxiliary GTK tools must not wait for a desktop accessibility bus. A
+  // controlled slow org.a11y.Bus reproduced the version probe's 1500ms timeout;
+  // this flag keeps the existing bound and does not change Electron's env.
+  const wmEnv = { ...process.env, ...wmPaths, NO_AT_BRIDGE: '1' }
+  record.wmAccessibilityBridge = 'disabled for auxiliary xfwm4 only; Electron environment preserved'
   // xfconfd can be activated by the private D-Bus daemon rather than xfwm4.
   // Isolate those writes too, without changing HOME or Electron's environment.
   const activation = await commandResult('private D-Bus activation environment', 'dbus-update-activation-environment', Object.entries(wmPaths).map(([name, value]) => `${name}=${value}`), wmEnv)

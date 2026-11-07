@@ -105,6 +105,7 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 | 子项 / 分支 | 单一范围 | 该小块的证据与后续关系 |
 | --- | --- | --- |
 | [ ] M2t1 `codex/desktop-m2-display` | 私有显示/窗口管理器及计时基础设施 | 原 baseline/themes 矩阵不减少；完整检查、35张主题/页面图与9个 Electron 进程；WM PID/身份/退出清理核验；CI绿与合并 |
+| [ ] M2t1b `codex/desktop-m2-display-probe` | 辅助WM版本探针隔离AT-SPI依赖 | 保持1500ms/真实EWMH期限；私有慢服务A/B、原35图/七门/最终CI，保留失败输出；不改Electron环境 |
 | [ ] M2t2 `codex/desktop-m2-media` | 本地音频与滚轮音量取证工具 | 明确生成WAV，经原导入/SQLite/原生播放器验证；只读真实wheel校准，音量/静音三方状态一致；不伪造音频设备；独立CI绿与合并 |
 | [ ] M2t3 `codex/desktop-m2-shell-evidence` | 外壳行为矩阵工具 | 保留主题/媒体验证，定义导航、历史、窗口、各进度风格断言；单阶段仅诊断且CI禁止；消费者UI未合前不宣称M2通过，最后激活完整矩阵 |
 | [ ] M2a `codex/desktop-m2-layout` | App与带文字侧栏 | 六原路由/下载条件、品牌与全宽底栏容器，尺寸/字体截图；不改播放核心和虚拟行高；完整检查与CI绿合并 |
