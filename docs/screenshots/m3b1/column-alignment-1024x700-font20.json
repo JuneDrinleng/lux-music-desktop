@@ -1,0 +1,7 @@
+{
+  "width": 1024,
+  "height": 700,
+  "fontSize": "20px",
+  "rowCellCounts": [6, 6],
+  "columns": [{"title": "#", "header": {"left": 95.9375, "right": 150.9375}, "labelCenter": 123.4296875, "rows": [{"left": 95.9375, "right": 150.9375}, {"left": 95.9375, "right": 150.9375}]}, {"title": "歌曲名", "header": {"left": 150.9375, "right": 383.34375}, "labelCenter": 180.9453125, "rows": [{"left": 150.9375, "right": 383.640625}, {"left": 150.9375, "right": 383.640625}]}, {"title": "进度", "header": {"left": 383.34375, "right": 561.75}, "labelCenter": 405.8515625, "rows": [{"left": 383.640625, "right": 562.140625}, {"left": 383.640625, "right": 562.140625}]}, {"title": "状态", "header": {"left": 561.75, "right": 758}, "labelCenter": 584.2578125, "rows": [{"left": 562.140625, "right": 758.5}, {"left": 562.140625, "right": 758.5}]}, {"title": "品质", "header": {"left": 758, "right": 848}, "labelCenter": 780.5078125, "rows": [{"left": 758.5, "right": 848.5}, {"left": 758.5, "right": 848.5}]}, {"title": "操作", "header": {"left": 848, "right": 988}, "labelCenter": 870.5078125, "rows": [{"left": 848.5, "right": 988.5}, {"left": 848.5, "right": 988.5}]}]
+}
