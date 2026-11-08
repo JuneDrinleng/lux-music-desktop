@@ -113,7 +113,7 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 | [x] M2t3b1 `codex/desktop-m2-window-controls` | 原窗口控件与全屏取证 | 原左右控件真实最小化/guarded关闭请求/F11进入与退出；独立window mode一进程三图实际CI，恢复焦点/bounds/字号与原生leave事件；PR #13 CI42448825161全绿，squash e6e6b250 |
 | [x] M2t3b2 `codex/desktop-m2-native-drag` | 原生窗口拖动取证 | 独立修复XTest指针移动但窗口不动的诊断；侧栏与工具栏实际位移、owned WM/原生进程/清理；不用setPosition或drag CSS冒充实际拖动；PR #16 CI42449819631全绿，squash d0c13375 |
 | [x] M2t3c `codex/desktop-m2-navigation-evidence` | 导航/历史行为工具 | 导出明确未启用的未来UI检查，随M2a/M2b消费者逐项激活，无缺失跳过；PR #18 CI42451551914全绿，squash 83dbc751 |
-| [ ] M2t3d1 `codex/desktop-m2-layout-evidence` | 外壳布局、字号与焦点取证工具 | 同一concern的layout+layout-runner：planned App正常流/可见焦点、M2a五环境30route及2focus/2download编排；未接mode/CI activation，M2a消费者后真实验收；M2b第三focus/历史仍必需；当前四mode完整回归、最终headCI绿后才合 |
+| [x] M2t3d1 `codex/desktop-m2-layout-evidence` | 外壳布局、字号与焦点取证工具 | layout+layout-runner已合；M2a消费者后真实验收五环境30route及2focus/2download，M2b第三focus/历史仍必需；PR #19 CI42452270857全绿，squash 3e4e3e3b |
 | [ ] M2t3d2 `codex/desktop-m2-player-layout-evidence` | 三播放器布局与弹层取证工具 | 独立player-layout依赖ui/layout，显式逐style/固定全矩阵15player+6popup+1mini-progress；不覆盖真实media，不混入t3d1；随M2c逐组件启用并保留原三focus/四语言/键盘与完整父M2标准 |
 | [ ] M2a `codex/desktop-m2-layout` | App与带文字侧栏 | 六原路由/下载条件、品牌与全宽底栏容器，尺寸/字体截图；不改播放核心和虚拟行高；完整检查与CI绿合并 |
 | [ ] M2b `codex/desktop-m2-history` | 工具栏与原生Router历史 | 独立7项行为测试及真实详情query back/forward/页内返回；四语言、边界禁用；完整检查与CI绿合并 |

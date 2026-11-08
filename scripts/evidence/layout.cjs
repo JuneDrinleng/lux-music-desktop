@@ -158,5 +158,5 @@ module.exports = function createLayoutEvidence(context) {
     await screenshot(`layout-focus-${name}.png`, 'layout-focus', { focus: proof })
     return proof
   }
-  return { snapshotGeometry, verifyGeometry, verifyFocus }
+  return { snapshotGeometry, verifyGeometry, verifyFocus, rendererToolsSource }
 }

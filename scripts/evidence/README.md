@@ -83,3 +83,7 @@ M2a 真正合入 `#main-shell` 后才能显式启用 wide（18 route）、minimu
 工具使用计划 App 的direct-parent/flex约束，不是任意wrapper/grid布局的通用正误定义。当前拟验收形态是固定scale1、0/1px边框、无变换clip及全部可见祖先；任意fractional border/CSSOM独立取整、hidden祖先被子元素visibility覆盖等条件形态未在真实UI复现或列为通用支持。0.01px裁剪阈值不能放大为1px掩盖裁剪，实际透明/非透明根边界与最小窗19px仍须记录metrics和实图核验。21项数值/合成DOM合同、renderer语法或mock边界不替代原生颜色解析/Tab/真实DOM或截图。
 
 三播放器角色/弹层矩阵另属 `player-layout.cjs` 与后续M2c消费者，不在本外壳工具中复制。原30route/15player/6popup/1mini-progress/3focus等父M2标准、最终14进程101常规图及CI拒绝诊断selector规则全部保留；当前dormant工具不增加selector或声明父M2完成。
+
+`player-layout.cjs` 准备三播放器的尺寸、原控件与弹层矩阵，仍未接 runner/CI。它通过 layout factory 的只读 `rendererToolsSource` 复用同一可见性和 0.01px 裁剪检查；layout 算法未改。弹层需等真实 opacity=1、identity transform 和连续稳定矩形，不能用过渡态或 1px 裁剪作为成功。
+
+M2c1 先跑原媒体回归；M2c2/3/4 各在相应真实组件存在后显式启用完整 style 子集：五环境五图、volume/mode 两图，mini 再加进度弹层。最终 `verifyCompleteMatrix()` 强制 15+6+1 个互异截图；原设置/静音须控件与 renderer/main/磁盘一致，失败独立清理并保留首错。原 navigation/search/history 三张最小窗 19px 焦点、mini 键盘展开/seek、四语言和真实媒体仍分别必需，播放器子集不完成父 M2。合成边界、DOMMatrix/表达式语法检查不替代实际 UI；现有四套完整 CI 继续运行，无新 selector 或缺 DOM 跳过。
