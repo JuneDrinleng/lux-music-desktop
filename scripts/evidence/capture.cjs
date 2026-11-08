@@ -8,9 +8,10 @@ const { preferences, palettes, customThemeId } = require('./profile.cjs')
 
 const root = path.resolve(__dirname, '../..')
 const mode = process.env.LUX_EVIDENCE_MODE ?? 'baseline'
-if (!['baseline', 'themes'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
+if (!['baseline', 'themes', 'media'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
 if (process.env.LUX_EVIDENCE_XVFB && !['0', '1'].includes(process.env.LUX_EVIDENCE_XVFB)) throw new Error('LUX_EVIDENCE_XVFB must be 0 or 1')
-const output = path.resolve(root, process.env.LUX_EVIDENCE_DIR ?? (mode === 'themes' ? 'artifacts/screenshots' : 'docs/screenshots/m0'))
+if (mode === 'media' && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error('Real-media evidence requires its own Linux Xvfb/WM session')
+const output = path.resolve(root, process.env.LUX_EVIDENCE_DIR ?? (mode !== 'baseline' ? 'artifacts/screenshots' : 'docs/screenshots/m0'))
 const sizes = (process.env.LUX_EVIDENCE_SIZES ?? '1280x800,1024x700').split(',').map(value => {
   const match = /^(\d+)x(\d+)$/.exec(value)
   if (!match) throw new Error(`Invalid LUX_EVIDENCE_SIZES entry: ${value}`)
@@ -29,6 +30,7 @@ const git = args => {
 }
 const phasePlan = () => {
   if (mode === 'baseline') return [{ id: 'baseline', baseline: true }]
+  if (mode === 'media') return [{ id: 'media', media: true }]
   const ids = [...Object.keys(palettes), 'green', customThemeId]
   return [
     ...ids.map((themeId, index) => ({ id: `theme-${themeId}`, baseline: index === 0, selectThemeId: themeId, expectedRestoredThemeId: ids[index - 1] ?? null, activationKey: index % 2 ? 'Space' : 'Enter' })),
@@ -169,7 +171,15 @@ async function run() {
     }
     const captures = phases.flatMap(phase => phase.captures)
     const count = kind => captures.filter(item => item.kind === kind).length
-    if (count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
+    if (mode !== 'media' && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
+    if (mode === 'media') {
+      if (phases.length !== 1 || count('media') !== 3) throw new Error('Real-media process/three-screenshot matrix is incomplete')
+      const media = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'real-player')
+      if (media.length !== 1) throw new Error('Expected exactly one real local-media pipeline proof')
+      for (const action of ['local-file-import', 'playing', 'pause', 'seek', 'next', 'prev', 'volume-and-mute', 'playback-mode']) {
+        if (!media[0].results.some(result => result.action === action)) throw new Error(`Missing actual local-media behavior proof: ${action}`)
+      }
+    }
     if (mode === 'themes') {
       if (count('theme') !== 6 || count('focus') !== 6 || count('compatibility') !== 2 || count('restart') !== 8 || count('auto-preview') !== 1) throw new Error('Theme/focus/compatibility/restart/automatic-preview matrix is incomplete')
       if (!phases.some(phase => phase.checks.some(check => check.kind === 'automatic-theme-preview-palettes'))) throw new Error('Missing automatic-theme real CSS palette proof')

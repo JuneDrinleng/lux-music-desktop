@@ -39,3 +39,11 @@ LUX_EVIDENCE_MODE=themes LUX_EVIDENCE_DIR=artifacts/screenshots npm run evidence
 辅助 xfwm4（含版本探针）在其专有环境设置 `NO_AT_BRIDGE=1`，避免 GTK 等待桌面 AT-SPI 服务；Electron 原环境与可访问性行为保持。受控私有慢 `org.a11y.Bus` 对照中，原探针三次均触发 GetAddress 并超时，加标志组三次均正常完成且未调用该服务。CI 首次观测是版本探针超时，未采集到其 D-Bus trace，不把对照实验冒称同一次 CI 的根因实证。1500ms 探针期限、8000ms EWMH 身份/PID readiness 与全部矩阵检查保留；探针失败记录原 stdout/stderr，便于区分后续故障。
 
 版本元数据通过无GUI的 `dpkg-query` 读取：先解析 PATH 中实际可执行文件及 realpath，验证该文件由已安装的 xfwm4 包拥有，再记录包版本和实际文件 SHA256，实际启动也使用同一绝对路径。取证环境已有 dpkg/xfwm4 安装要求。原 `xfwm4 --version` 会额外初始化一次 GTK，CI 在没有输出时超过1500ms；即使隔离AT-SPI后仍复现，所以不再为元数据多启动一个GUI进程。每条metadata命令仍限1500ms；真正WM仍须在8000ms内发布原EWMH自引用/名称/owned PID，且存活到实际Electron退出。包元数据不代表WM已就绪；任何归属、版本或实际就绪/清理失败仍返回失败。
+
+本地媒体管线可单独验证，不改变原主题矩阵：
+
+```sh
+LUX_EVIDENCE_MODE=media LUX_EVIDENCE_DIR=artifacts/media npm run evidence
+```
+
+`media` 模式只在 Linux 独立 Xvfb/私有 WM 会话运行一个真实 Electron 进程，要求三张截图和八项实际行为：本地文件导入、递增的播放时钟、暂停、seek、下一首、上一首、音量和静音、播放模式。临时生成两首明确标记的45秒 PCM WAV，点击原歌单菜单，仅在系统文件选择器边界返回这两个路径；文件元数据 worker、SQLite、IPC、原播放器控件和 HTMLAudioElement 均保持生产实现。helper 按原 aria-label 找到控件，支持现有 div 播放键，通过原生鼠标事件操作，不依赖未来外壳按钮重构。seek 仅为原交互 mask 增加稳定 data-action 标记，事件逻辑不变。额外 preload 通过 Proxy 调用原 Audio 构造并返回原生元素，只记录只读实例快照，不改写播放方法、currentTime、src 或 volume。音量轮先读取实际可信 WheelEvent 的 delta 符号，再用原滚轮处理器改变真实音量；必须核对原生媒体、renderer 设置和磁盘配置，并用原控件恢复。截图和进程/WM 身份、正常退出及清理继续受 driver 原规则核验。没有模拟音频设备，不声称扬声器声音、在线音乐服务、完整歌词/音效/倍速或桌面歌词已经验证；这些仍需后续检查点证据。
