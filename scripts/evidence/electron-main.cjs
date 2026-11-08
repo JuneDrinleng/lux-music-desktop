@@ -301,6 +301,8 @@ async function capture() {
   if (!Array.isArray(initialUserLists)) throw new Error('Native database did not return a real user-list collection')
   checks.push({ kind: 'native-database-query', userListCount: initialUserLists.length })
   if (app.getPath('userData') !== config.userData) throw new Error('The app did not retain the shared isolated userData')
+  const originalResizable = mainWindow.isResizable()
+  const originalFullscreen = mainWindow.isFullScreen()
   mainWindow.setResizable(true)
   mainWindow.setContentSize(config.sizes[0].width, config.sizes[0].height)
   mainWindow.show()
@@ -318,6 +320,19 @@ async function capture() {
     await require('./window.cjs')({ mainWindow, execute, waitFor, screenshot, navigate, checks, observations, key, readSetting, flushPaint })
   }
   if (config.phase.nativeDrag) {
+    if (originalResizable !== false || originalFullscreen || global.lx.appSetting['common.startInFullscreen'] !== false) throw new Error('Native-drag fixture requires the original default fixed, nonfullscreen window')
+    const preparedResizable = mainWindow.isResizable()
+    mainWindow.setResizable(originalResizable)
+    mainWindow.focus()
+    await waitFor(async() => {
+      const [width, height] = mainWindow.getContentSize()
+      return width === config.sizes[0].width && height === config.sizes[0].height && !mainWindow.isResizable() && !mainWindow.isFullScreen() && !mainWindow.isMinimized() && mainWindow.isVisible() && mainWindow.isFocused() &&
+        await execute(`innerWidth === ${config.sizes[0].width} && innerHeight === ${config.sizes[0].height} && !document.documentElement.classList.contains('fullscreen')`)
+    }, 'original fixed window and native/renderer viewport readiness before drag')
+    const paint = await flushPaint()
+    const renderer = await execute('({ width: innerWidth, height: innerHeight, startInFullscreen: window.lxData.appSetting["common.startInFullscreen"], fullscreen: document.documentElement.classList.contains("fullscreen"), devicePixelRatio, scale: visualViewport.scale })')
+    if (preparedResizable !== true || renderer.startInFullscreen !== false || renderer.fullscreen || renderer.devicePixelRatio !== 1 || renderer.scale !== 1 || mainWindow.webContents.getZoomFactor() !== 1) throw new Error('Original native-drag fixture state or CSS/native coordinate scale changed')
+    checks.push({ kind: 'native-drag-window-fixture', originalResizable, originalFullscreen, startInFullscreen: global.lx.appSetting['common.startInFullscreen'], preparedResizable, restoredResizable: mainWindow.isResizable(), contentSize: mainWindow.getContentSize(), renderer, paint })
     await require('./native-drag.cjs')({ mainWindow, execute, waitFor, screenshot, flushPaint, delay, checks, observations, stage })
   }
   if (config.phase.expectedRestoredThemeId) await proveRestoredTheme(config.phase.expectedRestoredThemeId)

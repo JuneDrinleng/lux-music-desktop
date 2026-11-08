@@ -190,10 +190,13 @@ async function run() {
     }
     if (mode === 'native-drag') {
       if (phases.length !== 1 || count('window-native-drag') !== 1) throw new Error('Native-drag process/screenshot matrix is incomplete')
+      const fixture = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'native-drag-window-fixture')
+      if (fixture.length !== 1 || fixture[0].originalResizable !== false || fixture[0].restoredResizable !== false || fixture[0].originalFullscreen !== false || fixture[0].startInFullscreen !== false || fixture[0].renderer.startInFullscreen !== false) throw new Error('Missing original fixed/nonfullscreen native window fixture proof')
       const native = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'original-native-window-drag')
       if (native.length !== 1 || native[0].results.length !== 2 || new Set(native[0].results.map(result => result.scope)).size !== 2) throw new Error('Expected both original native drag regions')
       for (const scope of ['#left', '#toolbar']) {
         const result = native[0].results.find(result => result.scope === scope)
+        if (!result || [result.windowStateBefore, result.windowStateAfter].some(state => !state || state.resizable !== false || state.fullscreen !== false || state.minimized !== false || state.visible !== true || state.focused !== true)) throw new Error(`Native drag changed or omitted original fixed window state: ${scope}`)
         if (!result || result.afterTravel.x - result.beforeTravel.x !== 40 || result.afterTravel.y - result.beforeTravel.y !== 20 || result.restored.x !== result.originalBefore.x || result.restored.y !== result.originalBefore.y) throw new Error(`Actual measured native movement/restoration missing: ${scope}`)
       }
     }

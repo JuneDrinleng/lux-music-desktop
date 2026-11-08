@@ -68,4 +68,4 @@ LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/native-drag npm run evi
 
 `native-drag` 在一个真实原应用进程检查侧栏与工具栏区域，输出一张图及完整原生指针/窗口坐标记录。两个 10×5 的真实 priming 运动必须先让窗口实际移动并稳定，随后才读取 beforeTravel；四段 10×5 连续手势后，实际窗口相对 beforeTravel 必须移动40×20，抬键后仍稳定，最后才允许 setPosition 恢复 originalBefore。总指针运动60×30，窗口总位移另行如实记录，不将总手势夸成40×20。CSS drag/指针移动/截图本身均不能代替实际窗口位移。每个区域全部 await 受20秒预算约束，单命令至多2秒且先等退出；异常时额外各2秒抬键与观察，截止后不再发后续手势或 restore。
 
-这是原应用启动状态的独立拖动取证；最终 M2gate 仍须在同一 interactions 窗口里完成 F11 往返后再做原生拖动。此前单段手势失败与最小 Electron 诊断保留；此模式不声明 Windows/macOS 已通过。
+尺寸准备前读取并要求原应用 resizable=false、非全屏的默认窗口状态；临时调整截图 viewport 后先恢复该原生不可缩放状态，实际焦点/可见性/content size/renderer viewport 与 DPR/zoom=1 就绪且真实重绘后才开始手势。两区域前后都必须保持不可缩放，缺少状态证据即失败。这是原应用固定窗口状态的独立拖动取证；最终 M2gate 仍须在同一 interactions 窗口里完成 F11 往返后再做原生拖动。此前单段手势失败与最小 Electron 诊断保留；此模式不声明 Windows/macOS 已通过。

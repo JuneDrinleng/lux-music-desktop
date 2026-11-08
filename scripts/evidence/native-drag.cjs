@@ -5,6 +5,8 @@ const { performance } = require('node:perf_hooks')
 module.exports = async function runNativeDragEvidence(context) {
   if (process.platform !== 'linux' || process.env.LUX_EVIDENCE_PRIVATE_DBUS !== '1' || !process.env.DBUS_SESSION_BUS_ADDRESS || !process.env.DISPLAY) throw new Error('Native drag requires the owned private Linux Xvfb/D-Bus/WM session')
   const { mainWindow, execute, waitFor, screenshot, flushPaint, delay, checks, observations, stage } = context
+  const windowState = () => ({ resizable: mainWindow.isResizable(), fullscreen: mainWindow.isFullScreen(), minimized: mainWindow.isMinimized(), visible: mainWindow.isVisible(), focused: mainWindow.isFocused() })
+  const fixedActive = state => state.resizable === false && !state.fullscreen && !state.minimized && state.visible && state.focused
   const results = []
   const xid = mainWindow.getNativeWindowHandle().readUInt32LE(0).toString()
   const dragPoint = scope => execute(`(() => {
@@ -23,7 +25,7 @@ module.exports = async function runNativeDragEvidence(context) {
   for (const scope of ['#left', '#toolbar']) {
     const started = performance.now()
     const deadline = started + 20000
-    const attempt = { kind: 'native-drag-attempt', scope, nativeWindowId: xid, originalBefore: mainWindow.getBounds(), priming: [], travel: [], commands: [] }
+    const attempt = { kind: 'native-drag-attempt', scope, nativeWindowId: xid, originalBefore: mainWindow.getBounds(), windowStateBefore: windowState(), priming: [], travel: [], commands: [] }
     observations.push(attempt)
     const remaining = () => Math.max(0, deadline - performance.now())
     const budget = description => {
@@ -81,6 +83,7 @@ module.exports = async function runNativeDragEvidence(context) {
     }
     let inputFailure
     try {
+      if (!fixedActive(attempt.windowStateBefore)) throw new Error('Native gesture requires the original fixed, active, nonfullscreen window')
       stage(`native drag: actual priming and measured travel for ${scope}`)
       attempt.point = await readOnly(() => dragPoint(scope), 'renderer drag point query')
       attempt.paint = await readOnly(flushPaint, 'renderer paint')
@@ -125,8 +128,11 @@ module.exports = async function runNativeDragEvidence(context) {
       mainWindow.setPosition(attempt.originalBefore.x, attempt.originalBefore.y)
       budget('restore original position')
       attempt.restored = await stable(bounds => bounds.x === attempt.originalBefore.x && bounds.y === attempt.originalBefore.y, 'restore original position only after successful actual native travel and release')
+      attempt.windowStateAfter = windowState()
+      if (!fixedActive(attempt.windowStateAfter)) throw new Error('Native gesture changed the fixed active window state')
+      budget('record native window state')
       attempt.elapsedMs = performance.now() - started
-      results.push({ scope, originalBefore: attempt.originalBefore, beforeTravel: attempt.beforeTravel, afterTravel: attempt.afterTravel, restored: attempt.restored, totalWindowDelta: attempt.totalWindowDelta })
+      results.push({ scope, windowStateBefore: attempt.windowStateBefore, windowStateAfter: attempt.windowStateAfter, originalBefore: attempt.originalBefore, beforeTravel: attempt.beforeTravel, afterTravel: attempt.afterTravel, restored: attempt.restored, totalWindowDelta: attempt.totalWindowDelta })
     } catch (error) {
       Object.assign(attempt, { failed: true, failure: String(error.stack || error), finalBounds: mainWindow.isDestroyed() ? null : mainWindow.getBounds(), elapsedMs: performance.now() - started })
       throw error
