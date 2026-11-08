@@ -2,7 +2,7 @@ const createUiTools = require('./ui.cjs')
 
 // Original M1 controls work here; no future Lux shell or toolbar is required.
 module.exports = async function runWindowEvidence(context) {
-  const { mainWindow, execute, waitFor, screenshot, navigate, bounded, checks, observations, key, readSetting, flushPaint } = context
+  const { mainWindow, execute, waitFor, screenshot, navigate, checks, observations, key, readSetting, flushPaint } = context
   const { click, i18nControl } = createUiTools({ execute, mainWindow })
   const initialSide = readSetting()['common.controlBtnPosition']
   const allControls = '#left button, #toolbar button'
