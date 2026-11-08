@@ -5,6 +5,7 @@ import app, { sendConfigChange } from './app'
 import hotKey from './hotKey'
 import userApi from './userApi'
 import sync from './sync'
+import lux from './lux'
 import data from './data'
 import music from './music'
 import download from './download'
@@ -30,6 +31,7 @@ export default () => {
   hotKey()
   userApi()
   sync()
+  lux()
   data()
   music()
   download()

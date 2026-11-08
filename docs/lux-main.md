@@ -13,3 +13,9 @@ M4a 不改 renderer 页面；账号区实际 Electron 脱敏截图在 M4c 接入
 `LuxSession` 将客户端固定到登录时的服务器；设备 UUID 在 main 为每次登录生成并随该身份加密保存。恢复后用 me 校验 user.id；离线/429/5xx 保留缓存身份并标记未验证，可显式重试。refresh 同一生命周期合并为一个 promise；迟到的旧 token 401 复用已刷新凭据；单次请求最多执行两次，第二次 401 或 refresh 401 清除撤销身份。不会因临时错误清除会话。
 
 退出先清除本机保存并取消请求，再尽力远端撤销，`remoteRevoked=false` 明确表示远端未确认。切换/停用 provider 调用 `cancelRequests()`；revision 与身份检查阻止已取消的响应持久化或发布到新账号。刷新写盘失败保留新凭据于内存、尝试移除已花费的磁盘 refresh，并报告 memory/write_failed。所有供 provider 使用的 authorize/client/sync key 仅限 main；M4b 仍需实施 socket 和数据空间事务。
+
+Renderer 通过 `@common/luxRenderer.invokeLux` 和 `@common/luxIpc` 的命令/响应映射调用固定 `lux:account` channel。只允许已持有的主窗口主 frame、原应用 document；导航到其他地址或子 frame 被拒绝且不返回账号状态。输入按 action 验证并拒绝未知字段，renderer 无 token、设备 ID、任意 URL+Bearer 或 sync key 操作。登录/恢复/退出 IPC 互斥；状态可随时读取。所有返回值再投影白名单，错误只返回固定 kind/status，未知异常不携带 message/stack/cause；不写日志。
+
+main 注册后自动尝试恢复，失败保持未验证状态，显式 restore IPC 可重试并取得固定错误。凭据文件在 userData/LuxSession 下，与原列表数据和导出分离。该 IPC 来源检查没有改变应用已有 Node-enabled renderer 的整体威胁模型，不能替代未来的 Electron 隔离迁移。M4c 负责接入交互和实际账号区截图。
+
+M4b 使用 main 单例的 `requestSyncKey()`，由当前身份提供已保存的设备 UUID，不能向该方法传入其他 server/device/account。返回的 key 仅供 main socket 适配，不进入快照、IPC 或磁盘。

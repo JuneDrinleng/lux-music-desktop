@@ -138,3 +138,15 @@ test('rotation write failure retains fresh credentials in memory and removes spe
   assert.equal(c.session.snapshot().persistence.issue, 'write_failed')
   assert.equal(await c.session.authorize(async(_client, token) => token), 'fixture-access-rotated')
 })
+test('main-only sync key issuance uses the active account installation identity', async() => {
+  const c = create()
+  await assert.rejects(c.session.requestSyncKey())
+  await signIn(c)
+  c.client.syncKey = async(token, input) => {
+    assert.equal(token, fixture.credentials.accessToken)
+    assert.equal(input.deviceId, c.io.saved.deviceId)
+    return { ...fixture.syncKey }
+  }
+  assert.deepEqual(await c.session.requestSyncKey(), fixture.syncKey)
+  assert.equal(JSON.stringify(c.session.snapshot()).includes(fixture.syncKey.key), false)
+})
