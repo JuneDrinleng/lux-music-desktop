@@ -144,6 +144,16 @@ export class LuxSession {
     }
   }
 
+  // Main-only provider seam: the renderer cannot choose a device identity or
+  // obtain the returned sync key. Every issuance stays bound to this account.
+  async requestSyncKey() {
+    const session = this.current
+    if (!session) throw new LuxError('unauthenticated', 401)
+    return this.authorize(async(client, token, signal) => client.syncKey(token, {
+      deviceId: session.deviceId, deviceName: 'Lux Music Desktop', platform: process.platform,
+    }, signal))
+  }
+
   async logout() {
     const session = this.current
     this.forget()
