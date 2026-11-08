@@ -110,7 +110,7 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 | [x] M2t1b `codex/desktop-m2-display-probe` | 辅助WM无GUI版本/二进制元数据与依赖隔离 | 包归属/版本/实际执行SHA，每条metadata命令1500ms/真实EWMH仍8000ms；原35图/七门/最终CI，保留失败输出；不改Electron环境；PR #7 CI42427123339全绿，squash bfb3870d |
 | [x] M2t2 `codex/desktop-m2-media` | 本地音频与滚轮音量取证工具 | 明确生成WAV，经原导入/SQLite/原生播放器验证；只读真实wheel校准，音量/静音三方状态一致；不伪造音频设备；PR #5 CI42429160025全绿，squash d1128ff6 |
 | [x] M2t3a `codex/desktop-m2-ui-tools` | 共用真实输入工具 | 从已合媒体helper抽取target/click/label并实际复用；保留themes/media完整CI，不加入未来UI假设；PR #10 CI42435138084全绿，squash dd80a511 |
-| [ ] M2t3b1 `codex/desktop-m2-window-controls` | 原窗口控件与全屏取证 | 原左右控件真实最小化/guarded关闭请求/F11进入与退出；独立window mode一进程三图实际CI，恢复焦点/bounds/字号与原生leave事件 |
+| [x] M2t3b1 `codex/desktop-m2-window-controls` | 原窗口控件与全屏取证 | 原左右控件真实最小化/guarded关闭请求/F11进入与退出；独立window mode一进程三图实际CI，恢复焦点/bounds/字号与原生leave事件；PR #13 CI42448825161全绿，squash e6e6b250 |
 | [ ] M2t3b2 `codex/desktop-m2-native-drag` | 原生窗口拖动取证 | 独立修复XTest指针移动但窗口不动的诊断；侧栏与工具栏实际位移、owned WM/原生进程/清理；不用setPosition或drag CSS冒充实际拖动 |
 | [ ] M2t3c `codex/desktop-m2-navigation-evidence` | 导航/历史行为工具 | 先导出明确未启用的未来UI检查；随M2a/M2b消费者逐项激活，无缺失跳过 |
 | [ ] M2t3d `codex/desktop-m2-layout-evidence` | 外壳几何/播放器矩阵工具 | 必要时再拆两PR；未来布局随对应UI启用；保留主题/媒体，不以工具存在宣称M2通过 |

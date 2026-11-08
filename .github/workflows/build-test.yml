@@ -79,6 +79,12 @@ jobs:
           LUX_EVIDENCE_DIR: artifacts/window
         run: npm run evidence
 
+      - name: Verify actual native window drag
+        env:
+          LUX_EVIDENCE_MODE: native-drag
+          LUX_EVIDENCE_DIR: artifacts/native-drag
+        run: npm run evidence
+
       - name: Upload verification logs, build and screenshots
         if: always()
         uses: actions/upload-artifact@v7
