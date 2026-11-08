@@ -73,3 +73,13 @@ LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/native-drag npm run evi
 `navigation.cjs` 导出原六路由的真实点击、原详情页返回、下载入口开关，以及后续可读侧栏标签、原 Router back/forward 的独立检查。此小块只准备工具，尚未接 runner 或增加 CI mode；当前 themes/media/window/native-drag 四套完整矩阵继续运行，不能把未调用的导出声明为导航功能验收通过。
 
 M2a 接入时逐项调用原路由/下载开关/可读标签，M2b 实现历史按钮后调用完整详情 query back/forward 检查。需要的未来 DOM 不存在必须报错，不能 skip 成功。详情 fixture 只用挂载的生产 Router 初始化 source/id/page/fromName，后续动作使用原控件和原生输入；下载开关 cleanup 无条件回原设置页，等待 renderer/main/磁盘/checkbox 同时恢复。标签测量读取真实 span、文字范围、可见样式、祖先裁剪和中心命中；静态准备或明确 mock I/O 边界检查均不替代实际消费者截图。
+
+`layout.cjs` 和 `layout-runner.cjs` 是同一外壳布局/字号/焦点取证工具块，尚未接 runner mode 或 CI activation。前者导出计划 App 的正常流几何与真实键盘焦点检查；后者只编排 M2a 的五组尺寸/字号、原导航/下载与品牌/title，依赖已合 ui/navigation helpers。当前 themes/media/window/native-drag 四套完整矩阵继续运行，未调用的新导出不算新 App 通过。
+
+M2a 真正合入 `#main-shell` 后才能显式启用 wide（18 route）、minimum（12 route+navigation/search两张focus）、interactions（原详情返回+两张download）。每张route附真实可读标签和几何；原字体radio经native输入并等renderer/main/disk/checked/根computed一致，清理分别恢复原字号/viewport/进入夹具时resizable值。下载disabled态只验证原四方开关/入口成员及外壳几何，不能称其五标签可读性已额外跑过；M2b原history与第三张19px focus仍独立待启用。布局resize是明确fixture，不替代native-drag默认false实际门。
+
+当前通用capture固定`-dt`且profile透明设置false；工具本身不切native透明模式。未来M2a需以真实新窗口分别核透明HTML padding与非透明body border，并对齐main dt/生产constructor、URL与renderer类；单去参数或改class不构成双模式证据。五组route环境和21项合同也不代表两种原生模式已经实际运行。
+
+工具使用计划 App 的direct-parent/flex约束，不是任意wrapper/grid布局的通用正误定义。当前拟验收形态是固定scale1、0/1px边框、无变换clip及全部可见祖先；任意fractional border/CSSOM独立取整、hidden祖先被子元素visibility覆盖等条件形态未在真实UI复现或列为通用支持。0.01px裁剪阈值不能放大为1px掩盖裁剪，实际透明/非透明根边界与最小窗19px仍须记录metrics和实图核验。21项数值/合成DOM合同、renderer语法或mock边界不替代原生颜色解析/Tab/真实DOM或截图。
+
+三播放器角色/弹层矩阵另属 `player-layout.cjs` 与后续M2c消费者，不在本外壳工具中复制。原30route/15player/6popup/1mini-progress/3focus等父M2标准、最终14进程101常规图及CI拒绝诊断selector规则全部保留；当前dormant工具不增加selector或声明父M2完成。
