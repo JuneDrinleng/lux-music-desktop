@@ -73,6 +73,12 @@ jobs:
           LUX_EVIDENCE_DIR: artifacts/media
         run: npm run evidence
 
+      - name: Verify original native window controls and fullscreen
+        env:
+          LUX_EVIDENCE_MODE: window
+          LUX_EVIDENCE_DIR: artifacts/window
+        run: npm run evidence
+
       - name: Upload verification logs, build and screenshots
         if: always()
         uses: actions/upload-artifact@v7

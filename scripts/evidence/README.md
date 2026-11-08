@@ -49,3 +49,13 @@ LUX_EVIDENCE_MODE=media LUX_EVIDENCE_DIR=artifacts/media npm run evidence
 `media` 模式只在 Linux 独立 Xvfb/私有 WM 会话运行一个真实 Electron 进程，要求三张截图和八项实际行为：本地文件导入、递增的播放时钟、暂停、seek、下一首、上一首、音量和静音、播放模式。临时生成两首明确标记的45秒 PCM WAV，点击原歌单菜单，仅在系统文件选择器边界返回这两个路径；文件元数据 worker、SQLite、IPC、原播放器控件和 HTMLAudioElement 均保持生产实现。helper 按原 aria-label 找到控件，支持现有 div 播放键，通过原生鼠标事件操作，不依赖未来外壳按钮重构。seek 仅为原交互 mask 增加稳定 data-action 标记，事件逻辑不变。额外 preload 通过 Proxy 调用原 Audio 构造并返回原生元素，只记录只读实例快照，不改写播放方法、currentTime、src 或 volume。音量轮先读取实际可信 WheelEvent 的 delta 符号，再用原滚轮处理器改变真实音量；必须核对原生媒体、renderer 设置和磁盘配置，并用原控件恢复。截图和进程/WM 身份、正常退出及清理继续受 driver 原规则核验。没有模拟音频设备，不声称扬声器声音、在线音乐服务、完整歌词/音效/倍速或桌面歌词已经验证；这些仍需后续检查点证据。
 
 原媒体 helper 的坐标命中、原生点击与本地化label查询集中到 `ui.cjs` 并由实际media模式使用；函数体及事件数值/顺序保留。后续窗口/导航工具复用同一套真实输入，不通过单独DOM click或伪状态替代它们。此抽取不启用未来外壳断言；themes35与media3/八行为仍必须实际全部通过。
+
+原窗口控件与全屏另有独立 Linux 模式：
+
+```sh
+LUX_EVIDENCE_MODE=window LUX_EVIDENCE_DIR=artifacts/window npm run evidence
+```
+
+`window` 使用原设置页切换左右按钮，真实鼠标点击原 min/close 控件；必须看到原生 minimize event，恢复后等待真实可见焦点。close 用临时 listener 阻止销毁，只证明原 IPC 和 close request；原 main_window_close handlers 仍在 tray/sync/desktop lyrics 全关闭的临时 profile 运行，不声称没有副作用或关闭按钮已经退出进程。原 F11 必须同时改变 BrowserWindow 和 renderer fullscreen 状态，隐藏按钮、切换 drag CSS；退出须原生 leave 事件、原 bounds、可见焦点、配置字号和按钮/drag CSS 全恢复，并记录真实双帧重绘。默认一进程三图（左右按钮、全屏），原 themes35/media3 矩阵完整保留；driver 核验 owned WM、PID、正常退出和 cleanup。
+
+原生拖动取证独立为 M2t3b2：本地诊断的 XTest 指针移动 40×20 后窗口未移动，仍待修复，不能用上述 drag CSS 检查代替实际拖动或声明完整 M2 已通过。Windows/macOS 与真实 close-button 退出仍待真机验证。
