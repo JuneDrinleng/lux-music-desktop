@@ -262,6 +262,11 @@ export default {
   background: var(--lux-paper);
   color: var(--lux-ink);
 
+  :global(.scroll) {
+    // Match the header's reserved scrollbar width even for short lists.
+    scrollbar-gutter: stable;
+  }
+
   :global(.list-item) {
     border-bottom: var(--lux-hairline-width) solid var(--lux-hairline);
     color: var(--lux-list);
