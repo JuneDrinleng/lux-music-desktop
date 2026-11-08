@@ -92,7 +92,7 @@ Lux 认证优先采用绑定会话的 accessToken，校验服务端实际返回�
 | [ ] M4c `codex/desktop-m4c` | 首次同步选择/登录门、设置内三模式切换、账号与错误交互 | local→LX→Lux→local 和退出/重启恢复端到端测试；保留所有原同步控件；不使用 June 生产账号也可复现的本地契约集成；登录/错误/切换确认/三模式截图；完整检查及 PR 合并证据 |
 | [ ] M5 `codex/desktop-m5` | 清理、设计/交互/架构/测试与使用文档、最终功能保留矩阵 | 消除未使用适配代码；全套 lint/typecheck/test 通过；main/renderer/lyric/scripts 全部构建通过；全页面与主题/尺寸矩阵证据；每项 PLAN 标准能链接到 PR/CI/artifact/截图；最终 squash 合并到 dev；真机限制明确 |
 
-M4a 按小 PR 依次交付：契约与 HTTP（#4）→ safeStorage 持久化 → 会话与 refresh 状态机 → 有类型脱敏 IPC → 会话/设备列表及撤销。每块单独完整验证、CI 绿后 squash，再从最新 dev 开下一块。M4a 不修改 renderer 页面，账号区实际截图在 M4c 接入界面时验收。
+M4a 按小 PR 依次交付：契约与 HTTP（#4）→ safeStorage 持久化 → 会话与 refresh 状态机 → 有类型脱敏 IPC → 会话/设备列表及撤销 → 退出远端确认边界。每块单独完整验证、CI 绿后 squash，再从最新 dev 开下一块。M4a 不修改 renderer 页面，账号区实际截图在 M4c 接入界面时验收。
 
 M0 类型或构建基线失败必须修复或明确拆分后修复，不能通过 `continue-on-error`、空测试、无条件成功、任意压低检查范围或批量 `@ts-ignore` 伪造通过。主题等低风险样式不新增镜像实现的测试；测试集中验证主题不变式、虚拟列表尺寸、同步状态机、凭据处理和用户行为。
 
