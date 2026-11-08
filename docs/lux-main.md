@@ -19,3 +19,7 @@ Renderer 通过 `@common/luxRenderer.invokeLux` 和 `@common/luxIpc` 的命令/�
 main 注册后自动尝试恢复，失败保持未验证状态，显式 restore IPC 可重试并取得固定错误。凭据文件在 userData/LuxSession 下，与原列表数据和导出分离。该 IPC 来源检查没有改变应用已有 Node-enabled renderer 的整体威胁模型，不能替代未来的 Electron 隔离迁移。M4c 负责接入交互和实际账号区截图。
 
 M4b 使用 main 单例的 `requestSyncKey()`，由当前身份提供已保存的设备 UUID，不能向该方法传入其他 server/device/account。返回的 key 仅供 main socket 适配，不进入快照、IPC 或磁盘。
+
+会话/设备 IPC：`sessions`、`devices`、`revoke_session(handle)`、`revoke_device(handle)`、`revoke_others`。列表只含随机 handle、名称、平台/移动标志、时间与 current；raw session ID、client ID、device ID、同步密钥与服务端附加字段均不透传。句柄在同一生命周期内稳定，账号/服务器切换或退出后全部失效，main registry 上限 4096。撤销只接收已登记且类别相符的句柄，URL ID 在 main 编码；未知/旧句柄不会发请求。
+
+撤销当前 HTTP session 成功后立即清除本机身份；revoke-others 由绑定 sid 的认证保留当前会话；删除同步设备只撤销其同步凭据，保留 HTTP 登录。临时错误保留身份。M4b 负责同步连接状态的相应更新；renderer 不应把同步设备删除误称为所有登录会话退出。
