@@ -1,7 +1,7 @@
 // Contract audited against lux-music-server src/server/api (2026-11-07).
 // Credentials deliberately live outside common/renderer types.
 export class LuxError extends Error {
-  constructor(public readonly kind: 'storage' | 'invalid_input' | 'protocol' | 'offline' | 'unauthenticated' | 'rate_limited' | 'server' | 'request', public readonly status = 0) {
+  constructor(public readonly kind: 'cancelled' | 'storage' | 'invalid_input' | 'protocol' | 'offline' | 'unauthenticated' | 'rate_limited' | 'server' | 'request', public readonly status = 0) {
     super(`Lux ${kind}`)
     this.name = 'LuxError'
   }
