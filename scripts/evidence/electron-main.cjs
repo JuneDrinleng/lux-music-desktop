@@ -317,6 +317,9 @@ async function capture() {
   if (config.phase.window) {
     await require('./window.cjs')({ mainWindow, execute, waitFor, screenshot, navigate, checks, observations, key, readSetting, flushPaint })
   }
+  if (config.phase.nativeDrag) {
+    await require('./native-drag.cjs')({ mainWindow, execute, waitFor, screenshot, flushPaint, delay, checks, observations, stage })
+  }
   if (config.phase.expectedRestoredThemeId) await proveRestoredTheme(config.phase.expectedRestoredThemeId)
   if (config.phase.baseline) {
     stage('verify six actual sidebar entries')

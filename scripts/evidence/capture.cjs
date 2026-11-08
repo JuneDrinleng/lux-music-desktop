@@ -8,9 +8,9 @@ const { preferences, palettes, customThemeId } = require('./profile.cjs')
 
 const root = path.resolve(__dirname, '../..')
 const mode = process.env.LUX_EVIDENCE_MODE ?? 'baseline'
-if (!['baseline', 'themes', 'media', 'window'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
+if (!['baseline', 'themes', 'media', 'window', 'native-drag'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
 if (process.env.LUX_EVIDENCE_XVFB && !['0', '1'].includes(process.env.LUX_EVIDENCE_XVFB)) throw new Error('LUX_EVIDENCE_XVFB must be 0 or 1')
-if (['media', 'window'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
+if (['media', 'window', 'native-drag'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
 const output = path.resolve(root, process.env.LUX_EVIDENCE_DIR ?? (mode !== 'baseline' ? 'artifacts/screenshots' : 'docs/screenshots/m0'))
 const sizes = (process.env.LUX_EVIDENCE_SIZES ?? '1280x800,1024x700').split(',').map(value => {
   const match = /^(\d+)x(\d+)$/.exec(value)
@@ -32,6 +32,7 @@ const phasePlan = () => {
   if (mode === 'baseline') return [{ id: 'baseline', baseline: true }]
   if (mode === 'media') return [{ id: 'media', media: true }]
   if (mode === 'window') return [{ id: 'window', window: true }]
+  if (mode === 'native-drag') return [{ id: 'native-drag', nativeDrag: true }]
   const ids = [...Object.keys(palettes), 'green', customThemeId]
   return [
     ...ids.map((themeId, index) => ({ id: `theme-${themeId}`, baseline: index === 0, selectThemeId: themeId, expectedRestoredThemeId: ids[index - 1] ?? null, activationKey: index % 2 ? 'Space' : 'Enter' })),
@@ -172,7 +173,7 @@ async function run() {
     }
     const captures = phases.flatMap(phase => phase.captures)
     const count = kind => captures.filter(item => item.kind === kind).length
-    if (!['media', 'window'].includes(mode) && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
+    if (!['media', 'window', 'native-drag'].includes(mode) && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
     if (mode === 'media') {
       if (phases.length !== 1 || count('media') !== 3) throw new Error('Real-media process/three-screenshot matrix is incomplete')
       const media = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'real-player')
@@ -186,6 +187,15 @@ async function run() {
       const windowChecks = phases.flatMap(phase => phase.checks)
       for (const side of ['left', 'right']) if (!windowChecks.some(check => check.kind === 'original-window-events' && check.side === side && check.minimizeEvent && check.closeRequested)) throw new Error(`Missing actual window IPC/events for ${side}`)
       if (!windowChecks.some(check => check.kind === 'original-fullscreen-state')) throw new Error('Missing original F11 native/renderer state proof')
+    }
+    if (mode === 'native-drag') {
+      if (phases.length !== 1 || count('window-native-drag') !== 1) throw new Error('Native-drag process/screenshot matrix is incomplete')
+      const native = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'original-native-window-drag')
+      if (native.length !== 1 || native[0].results.length !== 2 || new Set(native[0].results.map(result => result.scope)).size !== 2) throw new Error('Expected both original native drag regions')
+      for (const scope of ['#left', '#toolbar']) {
+        const result = native[0].results.find(result => result.scope === scope)
+        if (!result || result.afterTravel.x - result.beforeTravel.x !== 40 || result.afterTravel.y - result.beforeTravel.y !== 20 || result.restored.x !== result.originalBefore.x || result.restored.y !== result.originalBefore.y) throw new Error(`Actual measured native movement/restoration missing: ${scope}`)
+      }
     }
     if (mode === 'themes') {
       if (count('theme') !== 6 || count('focus') !== 6 || count('compatibility') !== 2 || count('restart') !== 8 || count('auto-preview') !== 1) throw new Error('Theme/focus/compatibility/restart/automatic-preview matrix is incomplete')

@@ -59,3 +59,13 @@ LUX_EVIDENCE_MODE=window LUX_EVIDENCE_DIR=artifacts/window npm run evidence
 `window` 使用原设置页切换左右按钮，真实鼠标点击原 min/close 控件；必须看到原生 minimize event，恢复后等待真实可见焦点。close 用临时 listener 阻止销毁，只证明原 IPC 和 close request；原 main_window_close handlers 仍在 tray/sync/desktop lyrics 全关闭的临时 profile 运行，不声称没有副作用或关闭按钮已经退出进程。原 F11 必须同时改变 BrowserWindow 和 renderer fullscreen 状态，隐藏按钮、切换 drag CSS；退出须原生 leave 事件、原 bounds、可见焦点、配置字号和按钮/drag CSS 全恢复，并记录真实双帧重绘。默认一进程三图（左右按钮、全屏），原 themes35/media3 矩阵完整保留；driver 核验 owned WM、PID、正常退出和 cleanup。
 
 原生拖动取证独立为 M2t3b2：本地诊断的 XTest 指针移动 40×20 后窗口未移动，仍待修复，不能用上述 drag CSS 检查代替实际拖动或声明完整 M2 已通过。Windows/macOS 与真实 close-button 退出仍待真机验证。
+
+原生拖动单独运行，保留上述三套完整 CI 矩阵：
+
+```sh
+LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/native-drag npm run evidence
+```
+
+`native-drag` 在一个真实原应用进程检查侧栏与工具栏区域，输出一张图及完整原生指针/窗口坐标记录。两个 10×5 的真实 priming 运动必须先让窗口实际移动并稳定，随后才读取 beforeTravel；四段 10×5 连续手势后，实际窗口相对 beforeTravel 必须移动40×20，抬键后仍稳定，最后才允许 setPosition 恢复 originalBefore。总指针运动60×30，窗口总位移另行如实记录，不将总手势夸成40×20。CSS drag/指针移动/截图本身均不能代替实际窗口位移。每个区域全部 await 受20秒预算约束，单命令至多2秒且先等退出；异常时额外各2秒抬键与观察，截止后不再发后续手势或 restore。
+
+这是原应用启动状态的独立拖动取证；最终 M2gate 仍须在同一 interactions 窗口里完成 F11 往返后再做原生拖动。此前单段手势失败与最小 Electron 诊断保留；此模式不声明 Windows/macOS 已通过。
