@@ -85,6 +85,13 @@ jobs:
           LUX_EVIDENCE_DIR: artifacts/native-drag
         run: npm run evidence
 
+      - name: Verify original settings entries and capture magazine groups
+        env:
+          LUX_EVIDENCE_MODE: settings
+          LUX_EVIDENCE_DIR: artifacts/settings
+          LUX_EVIDENCE_SIZES: 1280x800,1024x700,1440x900
+        run: npm run evidence
+
       - name: Upload verification logs, build and screenshots
         if: always()
         uses: actions/upload-artifact@v7

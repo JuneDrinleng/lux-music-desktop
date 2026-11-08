@@ -8,7 +8,7 @@ const { preferences, palettes, customThemeId } = require('./profile.cjs')
 
 const root = path.resolve(__dirname, '../..')
 const mode = process.env.LUX_EVIDENCE_MODE ?? 'baseline'
-if (!['baseline', 'themes', 'media', 'window', 'native-drag'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
+if (!['baseline', 'themes', 'media', 'window', 'native-drag', 'settings'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
 if (process.env.LUX_EVIDENCE_XVFB && !['0', '1'].includes(process.env.LUX_EVIDENCE_XVFB)) throw new Error('LUX_EVIDENCE_XVFB must be 0 or 1')
 if (['media', 'window', 'native-drag'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
 const output = path.resolve(root, process.env.LUX_EVIDENCE_DIR ?? (mode !== 'baseline' ? 'artifacts/screenshots' : 'docs/screenshots/m0'))
@@ -33,6 +33,7 @@ const phasePlan = () => {
   if (mode === 'media') return [{ id: 'media', media: true }]
   if (mode === 'window') return [{ id: 'window', window: true }]
   if (mode === 'native-drag') return [{ id: 'native-drag', nativeDrag: true }]
+  if (mode === 'settings') return [{ id: 'settings', settings: true }]
   const ids = [...Object.keys(palettes), 'green', customThemeId]
   return [
     ...ids.map((themeId, index) => ({ id: `theme-${themeId}`, baseline: index === 0, selectThemeId: themeId, expectedRestoredThemeId: ids[index - 1] ?? null, activationKey: index % 2 ? 'Space' : 'Enter' })),
@@ -173,7 +174,7 @@ async function run() {
     }
     const captures = phases.flatMap(phase => phase.captures)
     const count = kind => captures.filter(item => item.kind === kind).length
-    if (!['media', 'window', 'native-drag'].includes(mode) && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
+    if (['baseline', 'themes'].includes(mode) && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
     if (mode === 'media') {
       if (phases.length !== 1 || count('media') !== 3) throw new Error('Real-media process/three-screenshot matrix is incomplete')
       const media = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'real-player')
@@ -199,6 +200,11 @@ async function run() {
         if (!result || [result.windowStateBefore, result.windowStateAfter].some(state => !state || state.resizable !== false || state.fullscreen !== false || state.minimized !== false || state.visible !== true || state.focused !== true)) throw new Error(`Native drag changed or omitted original fixed window state: ${scope}`)
         if (!result || result.afterTravel.x - result.beforeTravel.x !== 40 || result.afterTravel.y - result.beforeTravel.y !== 20 || result.restored.x !== result.originalBefore.x || result.restored.y !== result.originalBefore.y) throw new Error(`Actual measured native movement/restoration missing: ${scope}`)
       }
+    }
+    if (mode === 'settings') {
+      if (phases.length !== 1 || count('settings-category') !== 16 || count('settings-theme') !== 2 || count('settings-size') !== sizes.length - 1 || count('settings-font') !== 1) throw new Error('Settings category/theme/size/font matrix is incomplete')
+      const checks = phases.flatMap(phase => phase.checks)
+      if (checks.filter(check => check.kind === 'settings-controls-reachable').length !== 16 || !checks.some(check => check.kind === 'settings-checkbox-persistence' && check.restored)) throw new Error('Missing original settings entry/checkbox proof')
     }
     if (mode === 'themes') {
       if (count('theme') !== 6 || count('focus') !== 6 || count('compatibility') !== 2 || count('restart') !== 8 || count('auto-preview') !== 1) throw new Error('Theme/focus/compatibility/restart/automatic-preview matrix is incomplete')

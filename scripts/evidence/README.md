@@ -87,3 +87,13 @@ M2a 真正合入 `#main-shell` 后才能显式启用 wide（18 route）、minimu
 `player-layout.cjs` 准备三播放器的尺寸、原控件与弹层矩阵，仍未接 runner/CI。它通过 layout factory 的只读 `rendererToolsSource` 复用同一可见性和 0.01px 裁剪检查；layout 算法未改。弹层需等真实 opacity=1、identity transform 和连续稳定矩形，不能用过渡态或 1px 裁剪作为成功。
 
 M2c1 先跑原媒体回归；M2c2/3/4 各在相应真实组件存在后显式启用完整 style 子集：五环境五图、volume/mode 两图，mini 再加进度弹层。最终 `verifyCompleteMatrix()` 强制 15+6+1 个互异截图；原设置/静音须控件与 renderer/main/磁盘一致，失败独立清理并保留首错。原 navigation/search/history 三张最小窗 19px 焦点、mini 键盘展开/seek、四语言和真实媒体仍分别必需，播放器子集不完成父 M2。合成边界、DOMMatrix/表达式语法检查不替代实际 UI；现有四套完整 CI 继续运行，无新 selector 或缺 DOM 跳过。
+
+## 设置公共分组（M3d1）
+
+```sh
+LUX_EVIDENCE_MODE=settings LUX_EVIDENCE_DIR=artifacts/settings LUX_EVIDENCE_SIZES=1280x800,1024x700,1440x900 npm run evidence
+```
+
+复用同一生产 Electron/隔离 profile/离线网络与私有 WM 工具。真实鼠标逐一打开原 16 分类，对页面中的原控件逐个滚动并检查命中/遮挡，记录分类、子组和数量（不读输入值）。在首尺寸保存全部分类，其余尺寸保存基本设置；再由原控件切换暖米/墨夜、最大 19px 字体，验证搜索历史开关经原 IPC 持久化并恢复。矩阵缺项或控件被遮挡直接失败，CI 完整执行，主题/媒体矩阵保持原样。
+
+这里只证明原入口可达及公共容器排版，未实际导入源/恢复备份/启用同步或 OpenAPI；平台专有设置与原生对话框仍需 Windows/macOS 真机。弹层内部与具体控件的改版按 PLAN 4.2 后续小 PR 交付。

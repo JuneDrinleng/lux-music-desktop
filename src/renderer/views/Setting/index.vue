@@ -182,7 +182,9 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   height: 100%;
-  border-top: var(--color-list-header-border-bottom);
+  border-top: var(--lux-hairline-width) solid var(--lux-hairline);
+  background-color: var(--lux-paper);
+  color: var(--lux-ink);
 }
 
 .toc {
@@ -229,8 +231,9 @@ export default {
 // }
 
 .setting {
-  padding: 0 15px 15px;
-  font-size: 14px;
+  padding: 0 var(--lux-page-gutter) var(--lux-space-6);
+  font-size: var(--lux-type-body);
+  min-width: 0;
   box-sizing: border-box;
   overflow-y: auto;
   height: 100%;
@@ -238,34 +241,53 @@ export default {
   width: 100%;
 
   :global {
-    dt {
-      border-left: 5px solid var(--color-primary-alpha-700);
-      padding: 3px 7px;
-      margin: 15px 0;
+    // Direct children keep modal internals and custom control layouts intact.
+    dl > dt {
+      border-top: var(--lux-rule-width) solid var(--lux-rule);
+      padding: var(--lux-space-3) 0 0;
+      margin: var(--lux-space-6) 0 var(--lux-space-4);
+      color: var(--lux-display);
+      font-size: var(--lux-type-page);
+      font-weight: var(--lux-weight-display);
+      line-height: 1.2;
 
-      + dd h3 {
+      + dd > h3 {
         margin-top: 0;
+        border-top: none;
+        padding-top: 0;
       }
     }
 
-    dd {
-      // margin-left: 15px;
-      // font-size: 13px;
+    dl > dd {
       > div {
-        padding: 0 15px;
+        padding: 0;
       }
 
+      > h3 {
+        border-top: var(--lux-rule-width) solid var(--lux-rule);
+        padding-top: var(--lux-space-3);
+        margin: var(--lux-space-6) 0 var(--lux-space-3);
+        color: var(--lux-display);
+        font-size: var(--lux-type-section);
+        font-weight: var(--lux-weight-display);
+        line-height: 1.4;
+      }
+
+      > .gap-top,
+      > div > .gap-top,
+      > div > .p {
+        margin-top: 0;
+        padding: var(--lux-space-3) 0;
+        border-bottom: var(--lux-hairline-width) solid var(--lux-hairline);
+      }
     }
-    h3 {
-      font-size: 12px;
-      margin: 25px 0 15px;
-    }
+
     .p {
-      padding: 3px 0;
-      line-height: 1.3;
+      padding: var(--lux-space-2) 0;
+      line-height: 1.5;
       .btn {
         + .btn {
-          margin-left: 10px;
+          margin-left: var(--lux-space-3);
         }
       }
     }
