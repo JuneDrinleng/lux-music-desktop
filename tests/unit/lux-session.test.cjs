@@ -150,3 +150,63 @@ test('main-only sync key issuance uses the active account installation identity'
   assert.deepEqual(await c.session.requestSyncKey(), fixture.syncKey)
   assert.equal(JSON.stringify(c.session.snapshot()).includes(fixture.syncKey.key), false)
 })
+test('logout privately refreshes expired access and confirms only a successful remote logout', async() => {
+  const c = create()
+  c.client.login = async() => ({ ...login(), accessTokenExpiresAt: 1 })
+  await signIn(c)
+  const writes = c.io.writes
+  c.client.logout = async token => {
+    assert.equal(token, 'fixture-access-rotated')
+    assert.equal(c.io.saved, null)
+    return { ok: true }
+  }
+  assert.deepEqual(await c.session.logout(), { remoteRevoked: true })
+  assert.equal(c.io.refreshes, 1)
+  assert.equal(c.io.writes, writes)
+  assert.equal(c.session.snapshot().status, 'signed_out')
+})
+test('logout 401 retries once with refreshed access; repeated 401 is not reported as remote confirmation', async() => {
+  for (const failAgain of [false, true]) {
+    const c = create(); await signIn(c)
+    let calls = 0
+    c.client.logout = async() => {
+      if (++calls === 1 || failAgain) throw new LuxError('unauthenticated', 401)
+      return { ok: true }
+    }
+    assert.equal((await c.session.logout()).remoteRevoked, !failAgain)
+    assert.equal(calls, 2)
+    assert.equal(c.io.refreshes, 1)
+    assert.equal(c.io.saved, null)
+  }
+})
+test('logout refresh failures/mismatched session never confirm remote revocation or resurrect local state', async() => {
+  for (const status of [0, 401, 429, 503, 'mismatch']) {
+    const c = create(); await signIn(c)
+    c.client.logout = async() => { throw new LuxError('unauthenticated', 401) }
+    c.client.refresh = async() => {
+      if (status === 'mismatch') return { ...fixture.credentials, sessionId: 'different-session' }
+      throw new LuxError(status === 401 ? 'unauthenticated' : status === 429 ? 'rate_limited' : status ? 'server' : 'offline', status)
+    }
+    assert.equal((await c.session.logout()).remoteRevoked, false)
+    assert.equal(c.io.saved, null)
+    assert.equal(c.session.snapshot().status, 'signed_out')
+  }
+})
+test('a late detached logout refresh cannot overwrite a subsequently logged-in account', async() => {
+  const c = create(); await signIn(c)
+  const pending = deferred(); const started = deferred()
+  let calls = 0
+  c.client.logout = async() => { if (++calls === 1) throw new LuxError('unauthenticated', 401); return { ok: true } }
+  c.client.refresh = async() => { started.resolve(); return pending.promise }
+  const logout = c.session.logout()
+  await started.promise
+  c.client.login = async() => ({ ...login(), user: { ...login().user, id: 'new-user', username: 'new-account' } })
+  await signIn(c)
+  const writes = c.io.writes
+  pending.resolve({ ...fixture.credentials, accessToken: 'detached-old-access', refreshToken: 'detached-old-refresh' })
+  await logout
+  assert.equal(c.io.writes, writes)
+  assert.equal(c.io.saved.user.id, 'new-user')
+  assert.equal(c.session.snapshot().account.username, 'new-account')
+  assert.equal(c.io.saved.credentials.accessToken, 'fixture-access')
+})

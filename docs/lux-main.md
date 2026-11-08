@@ -23,3 +23,5 @@ M4b 使用 main 单例的 `requestSyncKey()`，由当前身份提供已保存的
 会话/设备 IPC：`sessions`、`devices`、`revoke_session(handle)`、`revoke_device(handle)`、`revoke_others`。列表只含随机 handle、名称、平台/移动标志、时间与 current；raw session ID、client ID、device ID、同步密钥与服务端附加字段均不透传。句柄在同一生命周期内稳定，账号/服务器切换或退出后全部失效，main registry 上限 4096。撤销只接收已登记且类别相符的句柄，URL ID 在 main 编码；未知/旧句柄不会发请求。
 
 撤销当前 HTTP session 成功后立即清除本机身份；revoke-others 由绑定 sid 的认证保留当前会话；删除同步设备只撤销其同步凭据，保留 HTTP 登录。临时错误保留身份。M4b 负责同步连接状态的相应更新；renderer 不应把同步设备删除误称为所有登录会话退出。
+
+退出的远端确认必须来自成功 logout 响应。仅 accessToken 过期/无效产生的 401 不代表 refresh 会话已撤销：本机清除后，main 在旧服务器上以分离凭据私下刷新（提前过期或首次 401 时），最多重试一次 logout。刷新返回 sid 必须匹配旧会话；第二次 401、refresh 失败或临时错误都返回 remoteRevoked=false。此路径不保存刷新结果，不修改当前身份，新登录或退出不会被迟到响应覆盖。

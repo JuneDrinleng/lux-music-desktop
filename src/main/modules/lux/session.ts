@@ -158,9 +158,26 @@ export class LuxSession {
     const session = this.current
     this.forget()
     if (!session) return { remoteRevoked: true }
-    try { await session.client.logout(session.credentials.accessToken); return { remoteRevoked: true } } catch (error) {
-      return { remoteRevoked: error instanceof LuxError && error.status === 401 }
+    // Work on detached old credentials only. An expired access token's 401
+    // cannot prove that its refresh family was revoked. Nothing below may
+    // persist or publish an identity after local logout/account switching.
+    const signal = this.controller.signal
+    const remote = { credentials: { ...session.credentials }, refreshed: false }
+    const refresh = async() => {
+      const credentials = await session.client.refresh(remote.credentials.refreshToken, signal)
+      if (credentials.sessionId !== session.credentials.sessionId) throw new LuxError('protocol')
+      remote.credentials = credentials
+      remote.refreshed = true
     }
+    try {
+      if (remote.credentials.accessTokenExpiresAt <= this.now()) await refresh()
+      try { await session.client.logout(remote.credentials.accessToken, signal) } catch (error) {
+        if (!(error instanceof LuxError) || error.status !== 401 || remote.refreshed) throw error
+        await refresh()
+        await session.client.logout(remote.credentials.accessToken, signal)
+      }
+      return { remoteRevoked: true }
+    } catch { return { remoteRevoked: false } }
   }
 }
 
