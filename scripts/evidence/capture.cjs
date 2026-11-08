@@ -8,9 +8,9 @@ const { preferences, palettes, customThemeId } = require('./profile.cjs')
 
 const root = path.resolve(__dirname, '../..')
 const mode = process.env.LUX_EVIDENCE_MODE ?? 'baseline'
-if (!['baseline', 'themes', 'media', 'window', 'native-drag', 'settings', 'queue', 'downloads'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
+if (!['baseline', 'themes', 'media', 'window', 'native-drag', 'settings', 'queue', 'downloads', 'search'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
 if (process.env.LUX_EVIDENCE_XVFB && !['0', '1'].includes(process.env.LUX_EVIDENCE_XVFB)) throw new Error('LUX_EVIDENCE_XVFB must be 0 or 1')
-if (['media', 'window', 'native-drag', 'queue'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
+if (['media', 'window', 'native-drag', 'queue', 'search'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
 const output = path.resolve(root, process.env.LUX_EVIDENCE_DIR ?? (mode !== 'baseline' ? 'artifacts/screenshots' : 'docs/screenshots/m0'))
 const sizes = (process.env.LUX_EVIDENCE_SIZES ?? '1280x800,1024x700').split(',').map(value => {
   const match = /^(\d+)x(\d+)$/.exec(value)
@@ -31,6 +31,7 @@ const git = args => {
 const phasePlan = () => {
   if (mode === 'baseline') return [{ id: 'baseline', baseline: true }]
   if (mode === 'queue') return [{ id: 'queue', media: true, queue: true }]
+  if (mode === 'search') return [{ id: 'search', search: true }]
   if (mode === 'media') return [{ id: 'media', media: true }]
   if (mode === 'downloads') return [{ id: 'downloads', downloads: true }]
   if (mode === 'window') return [{ id: 'window', window: true }]
@@ -76,7 +77,7 @@ async function run() {
   const lxData = path.join(userData, 'LxDatas')
   fs.mkdirSync(lxData, { recursive: true })
   fs.mkdirSync(output, { recursive: true })
-  const seededPreferences = { ...preferences, ...(mode === 'downloads' ? { 'download.maxDownloadNum': 1, 'download.savePath': scratch, 'download.isSavePathGroupByListName': false, 'download.isEmbedPic': false, 'download.isEmbedLyric': false, 'download.isDownloadLrc': false } : {}) }
+  const seededPreferences = { ...preferences, ...(mode === 'search' ? { 'search.isShowHotSearch': true, 'search.isShowHistorySearch': true, 'list.actionButtonsVisible': true } : {}), ...(mode === 'downloads' ? { 'download.maxDownloadNum': 1, 'download.savePath': scratch, 'download.isSavePathGroupByListName': false, 'download.isEmbedPic': false, 'download.isEmbedLyric': false, 'download.isDownloadLrc': false } : {}) }
   fs.writeFileSync(path.join(lxData, 'config_v2.json'), JSON.stringify({ version: '2.1.0', setting: { version: '2.1.0', ...seededPreferences } }, null, 2))
   let customFixture = null
   if (mode === 'themes') {
@@ -178,6 +179,14 @@ async function run() {
     const captures = phases.flatMap(phase => phase.captures)
     const count = kind => captures.filter(item => item.kind === kind).length
     if (['baseline', 'themes'].includes(mode) && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
+    if (mode === 'search') {
+      const behavior = phases[0]?.checks.find(check => check.kind === 'search-behaviors')
+      if (phases.length !== 1 || count('search') !== 17 || !behavior || behavior.fixture.expectedFailures !== 2) throw new Error('Search behavior/screenshot matrix is incomplete')
+      if (!behavior.results.some(result => result.action === 'play-download-add-menu-preserved') || behavior.results.filter(result => result.action === 'source-switch').length !== 6) throw new Error('Search source/action coverage is incomplete')
+      for (const action of ['hot-search', 'keyboard-suggestion-submit', 'multi-select', 'add-to-list-through-ipc', 'music-pagination', 'songlist-pagination', 'music-switch-resets-page', 'music-loading', 'songlist-loading', 'music-empty', 'songlist-empty', 'music-failure', 'songlist-failure', 'music-retry-original-submit', 'songlist-retry-original-submit', 'history-click', 'history-remove-contextmenu', 'history-clear', 'hot-search-click', 'font-scaling-search-retained', 'theme-oat_milk', 'theme-ink_night']) {
+        if (!behavior.results.some(result => result.action === action)) throw new Error(`Missing actual search behavior: ${action}`)
+      }
+    }
     if (['media', 'queue'].includes(mode)) {
       if (phases.length !== 1 || count('media') !== 3) throw new Error('Real-media process/three-screenshot matrix is incomplete')
       const media = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'real-player')

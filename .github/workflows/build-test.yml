@@ -104,6 +104,12 @@ jobs:
           LUX_EVIDENCE_DIR: artifacts/downloads
         run: npm run evidence
 
+      - name: Verify search behaviors in actual Electron
+        env:
+          LUX_EVIDENCE_MODE: search
+          LUX_EVIDENCE_DIR: artifacts/search
+        run: npm run evidence
+
       - name: Upload verification logs, build and screenshots
         if: always()
         uses: actions/upload-artifact@v7

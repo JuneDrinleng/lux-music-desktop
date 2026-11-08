@@ -121,3 +121,13 @@ LUX_EVIDENCE_MODE=downloads LUX_EVIDENCE_DIR=artifacts/downloads npm run evidenc
 截图不能证明真实音乐源下载、网络重试、系统文件管理器/浏览器实际打开、扬声器声音，以及 Windows/macOS 原生体验。完整 manifest、构建/harness/PNG 哈希和日志进入 CI artifact（90 天），关键 PNG 与摘要入库。
 
 PR #17 列对齐回归：downloads 模式在 1280×800／16px 与 1024×700／20px 下，读取六个表头和每个可见任务行的真实 DOM 几何。左右边界差均不得超过 1 CSS px，表头文字中心必须落在对应数据列内；不只检查文字是否可见。先写出 `column-alignment-<尺寸>-font<字号>.json` 再断言，失败可复核原始测量。driver 同时要求两种尺寸都有通过记录；CI 不允许缺失这两条证据。
+
+M3a1 搜索页使用独立模式，CI 在原 themes/media/window/native-drag 之后额外运行：
+
+```sh
+LUX_EVIDENCE_MODE=search LUX_EVIDENCE_DIR=artifacts/search npm run evidence
+```
+
+`search-preload.cjs` 仅在此模式提供酷我热搜、建议、歌曲/歌单的**原始 HTTP 响应 fixture**，在 Node HTTP 边界用内存流响应，不开 socket，不改 SDK、store、路由或 IPC。曲目/歌单与封面明确标为 FIXTURE；其他音源仍受原离线守卫阻断。注入的首次失败带专用错误码，只有这两次预期 rejection 被计入 fixture 观测，其余运行错误仍使取证失败。临时 profile 仅额外打开原热搜/历史设置。
+
+真实输入验证建议键盘选择、原搜索框提交、歌曲/歌单和所有来源切换、两种分页、加载/空/失败与原清空后提交入口重试、热搜点击、历史点击/右键移除/清空、Ctrl 多选；真实 DOM 滚动后验证每个虚拟槽的 `top=index×ceil(fontSize×2.3)`、行高和翻页回顶。原设置页切至 19px 后再验证尺寸，另拍 1024×700、1280×800、1440×900 及暖米/墨夜。输入等待原生焦点、全选和插入确认，视图切换等待生产虚拟化组件的真实绘制。历史仍走原 IPC 持久化；原菜单播放/下载/添加及未安装用户 API 时的禁用规则实际核验，添加经真实 IPC/SQLite 落库。支持源依赖的在线播放/下载和 Windows/macOS 音频/窗口边界不在此离线 fixture 中冒称通过。

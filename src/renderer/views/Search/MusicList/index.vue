@@ -73,10 +73,19 @@ const handleTogglePage = (page: number) => {
   height: 100%;
 }
 
-.list {
-  overflow: hidden;
-  height: 100%;
-  flex: auto;
+// Inset paint only: never change the fixed virtual slot height or cell padding.
+.container :global(.thead) {
+  border-bottom: var(--lux-hairline-width) solid var(--lux-hairline);
+  th { color: var(--lux-option); font-weight: var(--lux-weight-label); }
 }
-
+.container :global(.list-item) {
+  box-shadow: inset 0 calc(-1 * var(--lux-hairline-width)) var(--lux-hairline);
+  color: var(--lux-list);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--lux-type-body);
+  :global(.name > .name) { color: var(--lux-ink); font-weight: var(--lux-weight-label); }
+  &:hover, &:global(.active), &:global(.selected) { background: var(--lux-accent-soft); }
+  &:global(.active) { box-shadow: inset var(--lux-marker-width) 0 var(--lux-ink), inset 0 -1px var(--lux-hairline); }
+}
+.container :global(p) { color: var(--lux-muted); font-size: var(--lux-type-section); }
 </style>
