@@ -1,7 +1,7 @@
 const createUiTools = require('./ui.cjs')
 
 module.exports = async function searchEvidence(context) {
-  const { execute, waitFor, mainWindow, screenshot, checks, key, navigate, config, readDefaultList, flushPaint } = context
+  const { execute, waitFor, mainWindow, screenshot, checks, key, navigate, config, readDefaultList } = context
   const { click, i18nControl } = createUiTools(context)
   const input = "document.querySelector('#toolbar input')"
   const page = '[data-search-page]'
@@ -17,8 +17,9 @@ module.exports = async function searchEvidence(context) {
       console.error('Search failure snapshot:', JSON.stringify(await state()))
       throw error
     }
-    // Let the production virtualizer's queued frame finish before switching views.
-    await flushPaint()
+    // Drain queued virtualizer callbacks/tasks before switching views. Screenshots
+    // separately retain the original strictly advancing two-frame paint gate.
+    await execute('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(resolve, 0))))', 'search virtualizer callbacks settled')
     results.push({ action, state: await state() })
   }
   const fill = async(text) => {
@@ -163,6 +164,7 @@ module.exports = async function searchEvidence(context) {
   for (const theme of ['oat_milk', 'ink_night']) {
     await navigate('/setting')
     if (await execute("Boolean(document.querySelector('[data-action=show-themes]'))")) await click("document.querySelector('[data-action=show-themes]')")
+    await waitFor(() => execute("document.querySelectorAll('[data-theme-id]').length >= 21"), 'expanded production theme catalog')
     await click(`document.querySelector('[data-theme-id=${theme}]')`)
     await waitFor(() => execute(`document.querySelector('[data-theme-id=${theme}]').getAttribute('aria-pressed') === 'true'`), `real search theme ${theme}`)
     await navigate('/search')

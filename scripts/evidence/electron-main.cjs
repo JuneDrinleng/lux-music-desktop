@@ -314,7 +314,7 @@ async function capture() {
     assertTheme(initial, 'lime')
     checks.push({ kind: 'new-profile-default', themeId: 'lime', snapshot: initial })
   }
-  if (config.phase.search) await require('./search.cjs')({ execute, waitFor, mainWindow, screenshot, checks, key, navigate, config, flushPaint, readDefaultList: () => bounded(global.lx.worker.dbService.getListMusics('default'), 'real search add database query') })
+  if (config.phase.search) await require('./search.cjs')({ execute, waitFor, mainWindow, screenshot, checks, key, navigate, config, readDefaultList: () => bounded(global.lx.worker.dbService.getListMusics('default'), 'real search add database query') })
   if (config.phase.media) {
     await require('./player.cjs')({ config, mainWindow, execute, waitFor, screenshot, navigate, bounded, checks, observations, stage, delay, readSetting, key })
   }
