@@ -69,3 +69,7 @@ LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/native-drag npm run evi
 `native-drag` 在一个真实原应用进程检查侧栏与工具栏区域，输出一张图及完整原生指针/窗口坐标记录。两个 10×5 的真实 priming 运动必须先让窗口实际移动并稳定，随后才读取 beforeTravel；四段 10×5 连续手势后，实际窗口相对 beforeTravel 必须移动40×20，抬键后仍稳定，最后才允许 setPosition 恢复 originalBefore。总指针运动60×30，窗口总位移另行如实记录，不将总手势夸成40×20。CSS drag/指针移动/截图本身均不能代替实际窗口位移。每个区域全部 await 受20秒预算约束，单命令至多2秒且先等退出；异常时额外各2秒抬键与观察，截止后不再发后续手势或 restore。
 
 尺寸准备前读取并要求原应用 resizable=false、非全屏的默认窗口状态；临时调整截图 viewport 后先恢复该原生不可缩放状态，实际焦点/可见性/content size/renderer viewport 与 DPR/zoom=1 就绪且真实重绘后才开始手势。两区域前后都必须保持不可缩放，缺少状态证据即失败。这是原应用固定窗口状态的独立拖动取证；最终 M2gate 仍须在同一 interactions 窗口里完成 F11 往返后再做原生拖动。此前单段手势失败与最小 Electron 诊断保留；此模式不声明 Windows/macOS 已通过。
+
+`navigation.cjs` 导出原六路由的真实点击、原详情页返回、下载入口开关，以及后续可读侧栏标签、原 Router back/forward 的独立检查。此小块只准备工具，尚未接 runner 或增加 CI mode；当前 themes/media/window/native-drag 四套完整矩阵继续运行，不能把未调用的导出声明为导航功能验收通过。
+
+M2a 接入时逐项调用原路由/下载开关/可读标签，M2b 实现历史按钮后调用完整详情 query back/forward 检查。需要的未来 DOM 不存在必须报错，不能 skip 成功。详情 fixture 只用挂载的生产 Router 初始化 source/id/page/fromName，后续动作使用原控件和原生输入；下载开关 cleanup 无条件回原设置页，等待 renderer/main/磁盘/checkbox 同时恢复。标签测量读取真实 span、文字范围、可见样式、祖先裁剪和中心命中；静态准备或明确 mock I/O 边界检查均不替代实际消费者截图。
