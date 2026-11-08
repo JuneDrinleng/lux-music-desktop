@@ -98,6 +98,12 @@ jobs:
           LUX_EVIDENCE_SIZES: 1280x800,1024x700,1440x900
         run: npm run evidence
 
+      - name: Verify download states, column alignment and original controls
+        env:
+          LUX_EVIDENCE_MODE: downloads
+          LUX_EVIDENCE_DIR: artifacts/downloads
+        run: npm run evidence
+
       - name: Upload verification logs, build and screenshots
         if: always()
         uses: actions/upload-artifact@v7

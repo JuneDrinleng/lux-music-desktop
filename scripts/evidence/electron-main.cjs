@@ -99,7 +99,7 @@ function writeManifest(status, failure) {
       captureScheduling: 'webContents background throttling disabled only by the evidence harness; every screenshot still awaits two real animation frames',
       displayMode: config.displayMode,
       blockedNetworkRequests,
-      seededPreferences: preferences,
+      seededPreferences: config.seededPreferences ?? preferences,
       themeFixture: config.customFixture ? { id: customThemeId, source: 'explicit raw legacy-green clone in temporary LxDatas/theme.json; selected via real app UI/IPC' } : null,
       userData: app.getPath('userData'),
       unverifiedNativeBoundaries: ['Windows/macOS window controls and taskbar', 'system URL scheme registration (suppressed)', 'system tray', 'audio output', 'desktop lyric window', 'downloaded media', 'real online music services'],
@@ -316,6 +316,7 @@ async function capture() {
   if (config.phase.media) {
     await require('./player.cjs')({ config, mainWindow, execute, waitFor, screenshot, navigate, bounded, checks, observations, stage, delay, readSetting, key })
   }
+  if (config.phase.downloads) await require('./downloads.cjs')({ config, mainWindow, execute, waitFor, screenshot, navigate, checks, stage, delay })
   if (config.phase.window) {
     await require('./window.cjs')({ mainWindow, execute, waitFor, screenshot, navigate, checks, observations, key, readSetting, flushPaint })
   }

@@ -107,3 +107,17 @@ LUX_EVIDENCE_MODE=queue LUX_EVIDENCE_DIR=artifacts/queue npm run evidence
 复用原 media 全流程及两首生成 WAV，随后从原歌曲菜单入队，通过原生鼠标输入拖动、原生键盘排序、播放指定项、原下一首消费、移除与清空；检查当前播放及 SQLite 来源歌单保持。没有注入队列状态或替换播放方法。另验证 Escape 回焦点、mini/middle/full 的队列入口、三主题和四尺寸（含 828×540 最小窗口）、原最大 19px 字号；队列外框须实际为 2px 直角主线且无阴影，面板和操作中心可见。
 
 要求一个真实 Electron 进程、原媒体三图及队列八图，并保留进程/WM 身份、正常退出和清理核验。原所有 CI 矩阵保留，原始清单、构建及日志在 CI artifact 保留 90 天；本地关键队列图与精简取证清单入库。不代表 Windows/macOS、实际声卡/扬声器或生产在线服务已经验证。
+
+下载页状态与原控件行为（M3b1）：
+
+```sh
+LUX_EVIDENCE_MODE=downloads LUX_EVIDENCE_DIR=artifacts/downloads npm run evidence
+```
+
+`downloads` 使用真实生产构建、原下载页/调度动作、IPC 和 SQLite，生成明确标为 `[fixture]` 的五个任务及一份 20 秒静音 WAV。仅下载传输 worker 的 start/pause/remove 与打开文件夹/外部网址边界被替代，其他 worker 方法仍委托原实现；不会访问公网或个人数据。单并发与关闭封面/歌词写入的取证设置种入临时 profile，主题切换后也保持。
+
+必须验证五个筛选、进度/速度、暂停/继续/排队、双击、失败重试到完成、原生 Audio 播放、文件 IPC/来源 URL、Ctrl 多选及批量开始/暂停/移除、搜索参数和字号缩放。另有三项离线测试覆盖原单项/批量参数、播放索引/稍后播放/添加到歌单和全部九个右键动作。六张实际截图包含黄绿/暖米/墨夜、1280×800/1024×700、多选右键菜单、20px 字号和空态；原虚拟行高 2.3 倍字号保持，按钮几何和行/虚拟槽高度必须一致。CI 保留完整 themes/media/window，再执行 downloads；任一断言/运行异常/截图缺失都失败。
+
+截图不能证明真实音乐源下载、网络重试、系统文件管理器/浏览器实际打开、扬声器声音，以及 Windows/macOS 原生体验。完整 manifest、构建/harness/PNG 哈希和日志进入 CI artifact（90 天），关键 PNG 与摘要入库。
+
+PR #17 列对齐回归：downloads 模式在 1280×800／16px 与 1024×700／20px 下，读取六个表头和每个可见任务行的真实 DOM 几何。左右边界差均不得超过 1 CSS px，表头文字中心必须落在对应数据列内；不只检查文字是否可见。先写出 `column-alignment-<尺寸>-font<字号>.json` 再断言，失败可复核原始测量。driver 同时要求两种尺寸都有通过记录；CI 不允许缺失这两条证据。
