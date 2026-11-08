@@ -108,7 +108,7 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 | --- | --- | --- |
 | [x] M2t1 `codex/desktop-m2-display` | 私有显示/窗口管理器及计时基础设施 | 原 baseline/themes 矩阵不减少；完整检查、35张主题/页面图与9个 Electron 进程；WM PID/身份/退出清理核验；PR #3 CI42405103927全绿，squash e2dc1e8f |
 | [x] M2t1b `codex/desktop-m2-display-probe` | 辅助WM无GUI版本/二进制元数据与依赖隔离 | 包归属/版本/实际执行SHA，每条metadata命令1500ms/真实EWMH仍8000ms；原35图/七门/最终CI，保留失败输出；不改Electron环境；PR #7 CI42427123339全绿，squash bfb3870d |
-| [ ] M2t2 `codex/desktop-m2-media` | 本地音频与滚轮音量取证工具 | 明确生成WAV，经原导入/SQLite/原生播放器验证；只读真实wheel校准，音量/静音三方状态一致；不伪造音频设备；独立CI绿与合并 |
+| [x] M2t2 `codex/desktop-m2-media` | 本地音频与滚轮音量取证工具 | 明确生成WAV，经原导入/SQLite/原生播放器验证；只读真实wheel校准，音量/静音三方状态一致；不伪造音频设备；PR #5 CI42429160025全绿，squash d1128ff6 |
 | [ ] M2t3a `codex/desktop-m2-ui-tools` | 共用真实输入工具 | 从已合媒体helper抽取target/click/label并实际复用；保留themes/media完整CI，不加入未来UI假设 |
 | [ ] M2t3b `codex/desktop-m2-window-evidence` | 原窗口行为取证工具 | 兼容现有原控件，真实拖动/最小化/关闭请求/F11；独立window mode实际CI，不用setPosition冒充拖动 |
 | [ ] M2t3c `codex/desktop-m2-navigation-evidence` | 导航/历史行为工具 | 先导出明确未启用的未来UI检查；随M2a/M2b消费者逐项激活，无缺失跳过 |
