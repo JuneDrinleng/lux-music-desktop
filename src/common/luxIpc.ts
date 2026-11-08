@@ -8,7 +8,14 @@ export interface LuxState {
   account?: { username: string, displayName: string }
 }
 export interface LuxProfile { username: string, displayName: string, avatar: string, gender: string, signature: string }
+export interface LuxSessionView { handle: string, current: boolean, deviceName: string, platform: string, createdAt: number, lastActiveAt: number }
+export interface LuxDeviceView { handle: string, deviceName: string, isMobile: boolean, lastSeen?: number, lastConnectDate?: number }
 export interface LuxReplies {
+  sessions: LuxSessionView[]
+  devices: LuxDeviceView[]
+  revoke_session: { ok: true }
+  revoke_device: { ok: true }
+  revoke_others: { ok: true, revoked: number }
   state: LuxState
   login: LuxState
   register: LuxState
@@ -19,7 +26,8 @@ export interface LuxReplies {
   update_profile: LuxProfile
 }
 export type LuxCommand =
-  | { action: 'state' | 'restore' | 'logout' | 'profile' }
+  | { action: 'state' | 'restore' | 'logout' | 'profile' | 'sessions' | 'devices' | 'revoke_others' }
+  | { action: 'revoke_session' | 'revoke_device', handle: string }
   | { action: 'server_info', server: string }
   | { action: 'login', server: string, username: string, password: string }
   | { action: 'register', server: string, username: string, password: string, inviteCode: string }

@@ -1,5 +1,6 @@
 import type { LuxCommand, LuxProfile, LuxReplies, LuxResult, LuxState } from '@common/luxIpc'
 import { LuxClient } from './client'
+import { LuxDevices } from './devices'
 import { LuxError } from './contract'
 import type { LuxSession } from './session'
 
@@ -27,8 +28,10 @@ const string = (value: unknown, max: number, empty = false) => {
 const command = (input: unknown): LuxCommand => {
   const value = object(input)
   switch (value.action) {
-    case 'state': case 'restore': case 'logout': case 'profile':
+    case 'state': case 'restore': case 'logout': case 'profile': case 'sessions': case 'devices': case 'revoke_others':
       keys(value, ['action']); return { action: value.action }
+    case 'revoke_session': case 'revoke_device':
+      keys(value, ['action', 'handle']); return { action: value.action, handle: string(value.handle, 128) }
     case 'server_info':
       keys(value, ['action', 'server']); return { action: value.action, server: string(value.server, 2048) }
     case 'login': case 'register': {
@@ -63,18 +66,24 @@ const publicState = (session: LuxSession): LuxState => {
 const publicProfile = (profile: LuxProfile): LuxProfile => ({ username: profile.username, displayName: profile.displayName, avatar: profile.avatar, gender: profile.gender, signature: profile.signature })
 
 export const createLuxHandler = (session: LuxSession, trusted: (event: Electron.IpcMainInvokeEvent) => boolean) => {
+  const devices = new LuxDevices(session)
   const mutation = { busy: false }
   return async(event: Electron.IpcMainInvokeEvent, input: unknown): Promise<LuxResult<LuxReplies[keyof LuxReplies]>> => {
     try { if (!trusted(event)) return { ok: false, error: { kind: 'forbidden', status: 0 } } } catch { return { ok: false, error: { kind: 'forbidden', status: 0 } } }
     let ownsMutation = false
     try {
       const data = command(input)
-      if (['login', 'register', 'logout', 'restore'].includes(data.action)) {
+      if (['login', 'register', 'logout', 'restore', 'revoke_session', 'revoke_device', 'revoke_others'].includes(data.action)) {
         if (mutation.busy) return { ok: false, error: { kind: 'busy', status: 0 }, state: publicState(session) }
         mutation.busy = ownsMutation = true
       }
       let value: LuxReplies[keyof LuxReplies]
       switch (data.action) {
+        case 'sessions': value = await devices.sessions(); break
+        case 'devices': value = await devices.devices(); break
+        case 'revoke_session': value = await devices.revokeSession(data.handle); break
+        case 'revoke_device': value = await devices.revokeDevice(data.handle); break
+        case 'revoke_others': value = await devices.revokeOthers(); break
         case 'state': value = publicState(session); break
         case 'login': case 'register':
           await session.login(data.server, data.username, data.password, data.action === 'register' ? data.inviteCode : undefined)
