@@ -8,9 +8,9 @@ const { preferences, palettes, customThemeId } = require('./profile.cjs')
 
 const root = path.resolve(__dirname, '../..')
 const mode = process.env.LUX_EVIDENCE_MODE ?? 'baseline'
-if (!['baseline', 'themes', 'media', 'window', 'native-drag', 'settings'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
+if (!['baseline', 'themes', 'media', 'window', 'native-drag', 'settings', 'queue'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
 if (process.env.LUX_EVIDENCE_XVFB && !['0', '1'].includes(process.env.LUX_EVIDENCE_XVFB)) throw new Error('LUX_EVIDENCE_XVFB must be 0 or 1')
-if (['media', 'window', 'native-drag'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
+if (['media', 'window', 'native-drag', 'queue'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
 const output = path.resolve(root, process.env.LUX_EVIDENCE_DIR ?? (mode !== 'baseline' ? 'artifacts/screenshots' : 'docs/screenshots/m0'))
 const sizes = (process.env.LUX_EVIDENCE_SIZES ?? '1280x800,1024x700').split(',').map(value => {
   const match = /^(\d+)x(\d+)$/.exec(value)
@@ -30,6 +30,7 @@ const git = args => {
 }
 const phasePlan = () => {
   if (mode === 'baseline') return [{ id: 'baseline', baseline: true }]
+  if (mode === 'queue') return [{ id: 'queue', media: true, queue: true }]
   if (mode === 'media') return [{ id: 'media', media: true }]
   if (mode === 'window') return [{ id: 'window', window: true }]
   if (mode === 'native-drag') return [{ id: 'native-drag', nativeDrag: true }]
@@ -175,12 +176,19 @@ async function run() {
     const captures = phases.flatMap(phase => phase.captures)
     const count = kind => captures.filter(item => item.kind === kind).length
     if (['baseline', 'themes'].includes(mode) && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
-    if (mode === 'media') {
+    if (['media', 'queue'].includes(mode)) {
       if (phases.length !== 1 || count('media') !== 3) throw new Error('Real-media process/three-screenshot matrix is incomplete')
       const media = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'real-player')
       if (media.length !== 1) throw new Error('Expected exactly one real local-media pipeline proof')
       for (const action of ['local-file-import', 'playing', 'pause', 'seek', 'next', 'prev', 'volume-and-mute', 'playback-mode']) {
         if (!media[0].results.some(result => result.action === action)) throw new Error(`Missing actual local-media behavior proof: ${action}`)
+      }
+    }
+    if (mode === 'queue') {
+      const queue = phases.flatMap(phase => phase.checks).find(check => check.kind === 'real-queue')
+      if (count('queue') !== 8 || !queue) throw new Error('Queue screenshot/behavior evidence is incomplete')
+      for (const action of ['enqueue', 'drag', 'keyboard-reorder', 'play', 'remove', 'clear', 'next-consumes-queue', 'escape-focus', 'player-variants']) {
+        if (!queue.results.some(result => result.action === action)) throw new Error(`Missing real queue action: ${action}`)
       }
     }
     if (mode === 'window') {
