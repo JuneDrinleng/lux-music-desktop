@@ -8,9 +8,9 @@ const { preferences, palettes, customThemeId } = require('./profile.cjs')
 
 const root = path.resolve(__dirname, '../..')
 const mode = process.env.LUX_EVIDENCE_MODE ?? 'baseline'
-if (!['baseline', 'themes', 'media', 'window', 'native-drag'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
+if (!['baseline', 'themes', 'media', 'window', 'native-drag', 'layout'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
 if (process.env.LUX_EVIDENCE_XVFB && !['0', '1'].includes(process.env.LUX_EVIDENCE_XVFB)) throw new Error('LUX_EVIDENCE_XVFB must be 0 or 1')
-if (['media', 'window', 'native-drag'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
+if (['media', 'window', 'native-drag', 'layout'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
 const output = path.resolve(root, process.env.LUX_EVIDENCE_DIR ?? (mode !== 'baseline' ? 'artifacts/screenshots' : 'docs/screenshots/m0'))
 const sizes = (process.env.LUX_EVIDENCE_SIZES ?? '1280x800,1024x700').split(',').map(value => {
   const match = /^(\d+)x(\d+)$/.exec(value)
@@ -33,6 +33,12 @@ const phasePlan = () => {
   if (mode === 'media') return [{ id: 'media', media: true }]
   if (mode === 'window') return [{ id: 'window', window: true }]
   if (mode === 'native-drag') return [{ id: 'native-drag', nativeDrag: true }]
+  if (mode === 'layout') {
+    return [
+      { id: 'layout-wide', layout: 'wide', transparentWindow: true },
+      { id: 'layout-minimum', layout: 'minimum', transparentWindow: false },
+    ]
+  }
   const ids = [...Object.keys(palettes), 'green', customThemeId]
   return [
     ...ids.map((themeId, index) => ({ id: `theme-${themeId}`, baseline: index === 0, selectThemeId: themeId, expectedRestoredThemeId: ids[index - 1] ?? null, activationKey: index % 2 ? 'Space' : 'Enter' })),
@@ -114,11 +120,21 @@ async function run() {
       const manifestName = `phase-${phase.id}.json`
       const phaseStartedAt = new Date().toISOString()
       const phaseStartedTick = performance.now()
-      fs.writeFileSync(configPath, JSON.stringify({ root, output, sizes, source, scratch, userData, runId, mode, phase, manifestName, customFixture, command: 'npm run evidence', driverNode: process.version, displayMode }, null, 2))
-      log.write(`\nEvidence phase ${phase.id}: starting a NEW Electron process with the SAME isolated userData\n`)
+      const phaseScratch = phase.layout ? path.join(scratch, phase.id) : scratch
+      const phaseUserData = phase.layout ? path.join(phaseScratch, 'user-data') : userData
+      const seededPreferences = phase.layout ? { ...preferences, 'common.transparentWindow': phase.transparentWindow, 'common.fontSize': 16, 'theme.id': 'lime' } : preferences
+      if (phase.layout) {
+        const directory = path.join(phaseUserData, 'LxDatas')
+        fs.mkdirSync(directory, { recursive: true })
+        fs.writeFileSync(path.join(directory, 'config_v2.json'), JSON.stringify({ version: '2.1.0', setting: { version: '2.1.0', ...seededPreferences } }, null, 2))
+      }
+      const phaseArgs = phase.layout && phase.transparentWindow ? commandArgs.filter(arg => arg !== '-dt') : commandArgs
+      const phaseSizes = phase.layout ? [{ width: 1280, height: 800 }] : sizes
+      fs.writeFileSync(configPath, JSON.stringify({ root, output, sizes: phaseSizes, source, scratch: phaseScratch, userData: phaseUserData, seededPreferences, runId, mode, phase, manifestName, customFixture, command: 'npm run evidence', driverNode: process.version, displayMode }, null, 2))
+      log.write(`\nEvidence phase ${phase.id}: starting a NEW Electron process with ${phase.layout ? 'a FRESH phase-specific profile' : 'the SAME isolated userData'}\n`)
       console.log(`Evidence phase ${phase.id}: new Electron process`)
       const processResult = await new Promise((resolve, reject) => {
-        const child = spawn(command, commandArgs, { cwd: root, env, stdio: ['ignore', 'pipe', 'pipe'] })
+        const child = spawn(command, phaseArgs, { cwd: root, env, stdio: ['ignore', 'pipe', 'pipe'] })
         const timeoutMs = 150000
         let timedOut = false
         let killTimer
@@ -173,7 +189,7 @@ async function run() {
     }
     const captures = phases.flatMap(phase => phase.captures)
     const count = kind => captures.filter(item => item.kind === kind).length
-    if (!['media', 'window', 'native-drag'].includes(mode) && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
+    if (['baseline', 'themes'].includes(mode) && count('route') !== sizes.length * 6) throw new Error('Baseline route/size matrix is incomplete')
     if (mode === 'media') {
       if (phases.length !== 1 || count('media') !== 3) throw new Error('Real-media process/three-screenshot matrix is incomplete')
       const media = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'real-player')
@@ -200,6 +216,101 @@ async function run() {
         if (!result || result.afterTravel.x - result.beforeTravel.x !== 40 || result.afterTravel.y - result.beforeTravel.y !== 20 || result.restored.x !== result.originalBefore.x || result.restored.y !== result.originalBefore.y) throw new Error(`Actual measured native movement/restoration missing: ${scope}`)
       }
     }
+    if (mode === 'layout') {
+      const plan = [['layout-wide', true, 20], ['layout-minimum', false, 14]]
+      if (source.dirty || !source.commit || phases.length !== 2 || captures.length !== 34 || count('shell-route') !== 30 || count('shell-focus') !== 2 || count('shell-download-setting') !== 2) throw new Error('Full M2a layout/native-window matrix is incomplete')
+      const profileIds = new Set(); const routeKeys = new Set()
+      const sides = ['left', 'top', 'right', 'bottom']
+      const insetsMatch = (actual, expected) => sides.every(side => Number.isFinite(actual?.[side]) && Math.abs(actual[side] - expected) <= 0.01)
+      for (const [index, [id, transparent, total]] of plan.entries()) {
+        const phase = phases[index]
+        if (phase.phase.id !== id || phase.phase.transparentWindow !== transparent || phase.captures.length !== total || JSON.stringify(phase.source) !== JSON.stringify(source)) throw new Error(`Wrong layout phase/source: ${id}`)
+        const profile = phase.application.userData
+        if (profileIds.has(profile) || profile !== path.join(scratch, id, 'user-data') || phase.application.seededPreferences['common.transparentWindow'] !== transparent) throw new Error('Layout phases must use distinct freshly seeded native-window profiles')
+        profileIds.add(profile)
+        const fixtures = phase.checks.filter(check => check.kind === 'layout-native-window-fixture')
+        if (fixtures.length !== 1) throw new Error(`Missing native layout startup/restoration proof: ${id}`)
+        for (const state of [fixtures[0].initial, fixtures[0].restored]) {
+          if (!state || state.mainDt !== !transparent || state.constructorTransparentDerived !== transparent || state.mainPreference !== transparent || state.diskPreference !== transparent ||
+            state.userData !== profile || state.appData !== path.join(scratch, id) || state.startupFlags.includes('-dt') !== !transparent) throw new Error(`Native constructor input/profile disagrees: ${id}`)
+          if (state.construction.file !== 'src/main/modules/winMain/main.ts' || state.construction.expression !== 'transparent: !global.envParams.cmdParams.dt' || state.construction.sourceSha256 !== sha256(path.join(root, 'src/main/modules/winMain/main.ts'))) throw new Error('Production native-window construction source changed')
+          const renderer = state.renderer
+          if (new URL(state.url).searchParams.get('dt') !== String(!transparent) || renderer.urlDt !== String(!transparent) || renderer.dt !== !transparent ||
+            !renderer.classes.includes(transparent ? 'transparent' : 'disableTransparent') || renderer.classes.includes(transparent ? 'disableTransparent' : 'transparent')) throw new Error(`Native dt/URL/renderer classes disagree: ${id}`)
+          if (!insetsMatch(renderer.htmlPadding, transparent ? 8 : 0) || !insetsMatch(renderer.bodyBorder, transparent ? 0 : 1)) throw new Error(`Actual native-mode CSS insets disagree: ${id}`)
+        }
+        if (!fixtures[0].initial.nativeWindowId || fixtures[0].initial.nativeWindowId !== fixtures[0].restored.nativeWindowId) throw new Error('Layout fixture unexpectedly recreated or omitted its native window')
+        if (phase.captures.some(item => item.phaseId !== id || item.themeId !== 'lime' || item.resolvedId !== 'lime')) throw new Error('Fresh layout phase inherited an unexpected theme/phase')
+        const phaseRoutes = phase.captures.filter(item => item.kind === 'shell-route')
+        if (phaseRoutes.length !== (transparent ? 18 : 12) || phase.checks.filter(check => check.kind === 'readable-navigation-labels').length !== (transparent ? 18 : 14)) throw new Error(`Missing per-route readable labels: ${id}`)
+        for (const check of phase.checks.filter(check => check.kind === 'readable-navigation-labels')) {
+          if (check.labels.length !== 6 || check.labels.some(label => !label.text || !label.visible || label.clipped || label.occluded || !label.textRects.length)) throw new Error(`Incomplete actual label text/clip proof: ${id}`)
+        }
+        for (const item of phaseRoutes) {
+          const frame = item.frame; const geometry = item.geometry
+          const key = `${frame.width}x${frame.height}/${frame.fontSize}/${item.route}`
+          if (routeKeys.has(key) || item.width !== frame.width || item.height !== frame.height || geometry.width !== frame.width || geometry.height !== frame.height ||
+            geometry.fontSize !== `${frame.fontSize}px` || item.labels.path !== item.route || item.labels.hasSemanticNavigation !== true || item.labels.entries.length !== 6 ||
+            item.labels.entries.some(entry => !entry.text || entry.text !== entry.label) || item.labels.entries.filter(entry => entry.current === 'page').length !== 1 ||
+            !item.labels.entries.some(entry => entry.current === 'page' && entry.href === '#' + item.route) || item.identity.title !== 'Lux Music') throw new Error(`Route/frame proof disagrees: ${key}`)
+          if (!insetsMatch(geometry.frames.html.padding, transparent ? 8 : 0) || !insetsMatch(geometry.frames.body.border, transparent ? 0 : 1)) throw new Error(`Per-frame root insets changed: ${key}`)
+          routeKeys.add(key)
+        }
+      }
+      for (const [width, height, font] of [[1024, 700, 16], [1280, 800, 16], [1440, 900, 16], [828, 540, 16], [828, 540, 19]]) {
+        for (const route of ['/search', '/songList/list', '/leaderboard', '/list', '/download', '/setting']) if (!routeKeys.has(`${width}x${height}/${font}/${route}`)) throw new Error('M2a five-frame/six-route matrix has a missing fixture')
+      }
+      const focus = phases[1].checks.filter(check => check.kind === 'layout-keyboard-focus')
+      for (const name of ['navigation-minimum-font19', 'search-minimum-font19']) {
+        const result = focus.find(check => check.name === name)
+        const capture = phases[1].captures.find(item => item.kind === 'shell-focus' && item.focus?.name === name)
+        if (!result || result.actual.width !== 828 || result.actual.height !== 540 || result.actual.fontSize !== '19px' ||
+          !result.actual.active || !result.actual.focusVisible || !result.actual.visibility.visible || !(result.actual.outlineAlpha > 0) ||
+          result.actual.clipping.outsideViewport || result.actual.clipping.ancestors.some(parent => parent.clipped) ||
+          JSON.stringify(result.keyboard.inputSequence) !== JSON.stringify(['programmatic starting focus', 'Shift+Tab', 'Tab'])) throw new Error(`Missing actual 19px keyboard focus: ${name}`)
+        if (!capture || JSON.stringify(capture.focus.actual) !== JSON.stringify(result.actual) || JSON.stringify(capture.focus.keyboard) !== JSON.stringify(result.keyboard)) throw new Error(`Focus PNG is missing its actual input/style proof: ${name}`)
+      }
+      const allChecks = phases.flatMap(phase => phase.checks)
+      for (const value of [false, true]) {
+        const gate = allChecks.find(check => check.kind === 'original-download-gating' && check.value === value)
+        if (!phases[0].captures.some(item => item.kind === 'shell-download-setting' && item.value === value && item.width === 1280 && item.height === 800)) throw new Error('Download state PNG is missing')
+        if (!gate || ['renderer', 'main', 'disk', 'checkbox'].some(key => gate.setting[key] !== value) || gate.state.entries.length !== (value ? 6 : 5) ||
+          gate.state.entries.some(entry => entry.href === '#/download') !== value || ['/search', '/songList/list', '/leaderboard', '/list', '/setting'].some(route => !gate.state.entries.some(entry => entry.href === '#' + route))) throw new Error('Original download setting/entry proof is incomplete')
+      }
+      const detail = allChecks.find(check => check.kind === 'original-detail-fixture')
+      if (!detail || detail.fixture.path !== '/songList/detail' || detail.fixture.origin !== 'SongList' || detail.restored.path !== '/songList/list' ||
+        JSON.stringify(detail.query) !== JSON.stringify({ source: 'kw', id: 'digest-8__9001', page: '3', fromName: 'SongList' }) ||
+        Object.keys(detail.fixture.query).length !== 4 || Object.entries(detail.query).some(([key, value]) => detail.fixture.query[key] !== value) ||
+        !allChecks.some(check => check.kind === 'original-detail-back' && check.origin === 'SongList')) throw new Error('Original mounted-router detail fixture/native back proof is incomplete')
+      for (const phase of phases) {
+        const fontFamily = phase.checks.filter(check => check.kind === 'shell-original-font-family')
+        if (fontFamily.length !== (phase.phase.id === 'layout-wide' ? 1 : 0)) throw new Error('Missing or unexpected original font-family proof')
+        for (const proof of fontFamily) {
+          const { original, selected, restored, fontQuery, chosen, inputs } = proof
+          const three = (state, value) => ['renderer', 'main', 'disk'].every(key => state[key] === value)
+          const inherited = state => state.families.html === state.families.container && state.families.html === state.families.navigation
+          const chosenValue = /[\s()+]/.test(chosen) ? `"${chosen}"` : chosen
+          if (!three(original, '') || !three(selected, chosenValue) || !three(restored, '') ||
+            ![original, selected, restored].every(inherited) || selected.families.html === original.families.html ||
+            JSON.stringify(restored.families) !== JSON.stringify(original.families) ||
+            JSON.stringify(original.selectionLabels) !== JSON.stringify([original.defaultLabel]) ||
+            JSON.stringify(restored.selectionLabels) !== JSON.stringify(original.selectionLabels) ||
+            JSON.stringify(selected.selectionLabels) !== JSON.stringify([chosen, original.defaultLabel]) ||
+            fontQuery.status !== 0 || fontQuery.signal || fontQuery.error || fontQuery.timeoutMs !== 2000 ||
+            !Number.isInteger(fontQuery.familyCount) || fontQuery.familyCount < 1 || !Number.isInteger(fontQuery.pid) || fontQuery.pid <= 0 || fontQuery.executable !== 'fc-list' || fontQuery.selectedFamily !== chosen || !fontQuery.stdoutSha256 || !fontQuery.menuLabelsSha256 ||
+            !inputs.some(input => input.name === 'installed-primary-select') || !inputs.some(input => input.name === 'restore-primary-default') ||
+            inputs.some(input => !Number.isFinite(input.point.x) || !Number.isFinite(input.point.y))) throw new Error('Incomplete real font selection/inheritance/restoration proof')
+        }
+        const fonts = phase.checks.filter(check => check.kind === 'shell-original-font')
+        if (fonts.length !== (phase.phase.layout === 'wide' ? 6 : 3) || fonts.some(check => check.after.checked !== true || ['renderer', 'main', 'disk'].some(key => check.after[key] !== check.value) || check.after.computed !== `${check.value}px` || check.after.rootComputed !== `${check.value}px`)) throw new Error('Original font control proof disagrees')
+        const cleanups = phase.checks.filter(check => check.kind === 'shell-layout-consumer')
+        if (cleanups.length !== (phase.phase.layout === 'wide' ? 2 : 1) || cleanups.some(check => {
+          const restored = check.restored; const expected = check.original.renderer
+          return typeof check.originalResizable !== 'boolean' || ['renderer', 'main', 'disk'].some(key => restored[key] !== expected) || restored.computed !== `${expected}px` || restored.rootComputed !== `${expected}px` ||
+            restored.width !== check.originalSize[0] || restored.height !== check.originalSize[1] || restored.nativeSize[0] !== check.originalSize[0] || restored.nativeSize[1] !== check.originalSize[1] || restored.resizable !== check.originalResizable
+        })) throw new Error('Layout original font/viewport/resizable cleanup proof is incomplete')
+      }
+    }
     if (mode === 'themes') {
       if (count('theme') !== 6 || count('focus') !== 6 || count('compatibility') !== 2 || count('restart') !== 8 || count('auto-preview') !== 1) throw new Error('Theme/focus/compatibility/restart/automatic-preview matrix is incomplete')
       if (!phases.some(phase => phase.checks.some(check => check.kind === 'automatic-theme-preview-palettes'))) throw new Error('Missing automatic-theme real CSS palette proof')
@@ -222,7 +333,7 @@ async function run() {
       source,
       runtime: phases[0]?.runtime ?? null,
       application: phases[0]?.application ?? null,
-      lifecycle: { processLaunches: phases.length, sharedUserData: 'one isolated temporary profile; seeded only once before the first process', restartMethod: 'await real Electron process exit, then spawn a fresh Electron process; no reload', customThemeFixture: customFixture },
+      lifecycle: { processLaunches: phases.length, sharedUserData: mode === 'layout' ? 'a fresh isolated profile for each native-window layout phase; no settings/theme/history carry-over' : 'one isolated temporary profile; seeded only once before the first process', restartMethod: 'await real Electron process exit, then spawn a fresh Electron process; no reload', customThemeFixture: customFixture },
       phases,
       captures,
       observations: phases.flatMap(phase => phase.observations),

@@ -94,12 +94,12 @@ function writeManifest(status, failure) {
       rendererEntry: 'dist/index.html',
       nativeDatabase: 'better-sqlite3; real application worker, isolated temporary database',
       routeNavigation: 'click actual sidebar anchors and inspect active route',
-      data: config.mode === 'media' ? 'one isolated userData; generated local WAV fixtures imported through the original UI/worker/DB; no personal files, accounts, secrets, or public API responses' : 'one shared isolated userData; no user accounts, secrets, music, or public API responses',
+      data: config.mode === 'layout' ? 'fresh phase-specific isolated native-window profile; no personal data or cross-phase settings' : config.mode === 'media' ? 'one isolated userData; generated local WAV fixtures imported through the original UI/worker/DB; no personal files, accounts, secrets, or public API responses' : 'one shared isolated userData; no user accounts, secrets, music, or public API responses',
       network: 'Node TCP and Chromium HTTP(S) denied; remote pages show real offline states',
       captureScheduling: 'webContents background throttling disabled only by the evidence harness; every screenshot still awaits two real animation frames',
       displayMode: config.displayMode,
       blockedNetworkRequests,
-      seededPreferences: preferences,
+      seededPreferences: config.seededPreferences ?? preferences,
       themeFixture: config.customFixture ? { id: customThemeId, source: 'explicit raw legacy-green clone in temporary LxDatas/theme.json; selected via real app UI/IPC' } : null,
       userData: app.getPath('userData'),
       unverifiedNativeBoundaries: ['Windows/macOS window controls and taskbar', 'system URL scheme registration (suppressed)', 'system tray', 'audio output', 'desktop lyric window', 'downloaded media', 'real online music services'],
@@ -334,6 +334,41 @@ async function capture() {
     if (preparedResizable !== true || renderer.startInFullscreen !== false || renderer.fullscreen || renderer.devicePixelRatio !== 1 || renderer.scale !== 1 || mainWindow.webContents.getZoomFactor() !== 1) throw new Error('Original native-drag fixture state or CSS/native coordinate scale changed')
     checks.push({ kind: 'native-drag-window-fixture', originalResizable, originalFullscreen, startInFullscreen: global.lx.appSetting['common.startInFullscreen'], preparedResizable, restoredResizable: mainWindow.isResizable(), contentSize: mainWindow.getContentSize(), renderer, paint })
     await require('./native-drag.cjs')({ mainWindow, execute, waitFor, screenshot, flushPaint, delay, checks, observations, stage })
+  }
+  if (config.phase.layout) {
+    const constructionFile = 'src/main/modules/winMain/main.ts'
+    const constructionSource = fs.readFileSync(path.join(config.root, constructionFile), 'utf8')
+    const expression = 'transparent: !global.envParams.cmdParams.dt'
+    if (!constructionSource.includes(expression)) throw new Error('Original native constructor transparency condition changed')
+    const nativeState = async() => ({
+      mainDt: global.envParams.cmdParams.dt,
+      constructorTransparentDerived: !global.envParams.cmdParams.dt, // Source-condition derivation, not a native alpha query.
+      construction: { file: constructionFile, sourceSha256: hash(Buffer.from(constructionSource)), expression },
+      mainPreference: global.lx.appSetting['common.transparentWindow'],
+      diskPreference: readSetting()['common.transparentWindow'],
+      userData: app.getPath('userData'),
+      appData: app.getPath('appData'),
+      nativeWindowId: mainWindow.getNativeWindowHandle().toString('hex'),
+      startupFlags: process.argv.filter(arg => ['-dha', '-dt'].includes(arg)),
+      url: mainWindow.webContents.getURL(),
+      renderer: await execute(`(() => {
+        const html = document.documentElement; const hs = getComputedStyle(html); const bs = getComputedStyle(document.body);
+        const sides = ['Left', 'Top', 'Right', 'Bottom'];
+        return { dt: window.dt, urlDt: new URLSearchParams(location.search).get('dt'), classes: Array.from(html.classList),
+          htmlPadding: Object.fromEntries(sides.map(side => [side.toLowerCase(), parseFloat(hs['padding' + side])])),
+          bodyBorder: Object.fromEntries(sides.map(side => [side.toLowerCase(), parseFloat(bs['border' + side + 'Width'])])) };
+      })()`),
+    })
+    const initial = await nativeState()
+    if (initial.mainDt !== !config.phase.transparentWindow || initial.mainPreference !== config.phase.transparentWindow || initial.diskPreference !== config.phase.transparentWindow) throw new Error('Initial original native-window fixture disagrees before layout capture')
+    const runner = require('./layout-runner.cjs')({ mainWindow, execute, waitFor, navigate, readSetting, screenshot, flushPaint, checks, observations, stage, focusWithKeyboard })
+    if (config.phase.layout === 'wide') {
+      await require('./font-family.cjs')({ mainWindow, execute, waitFor, readSetting, flushPaint, checks, observations, stage })
+      await runner.wide()
+      await runner.interactions()
+    } else if (config.phase.layout === 'minimum') await runner.minimum()
+    else throw new Error(`Unknown fixed layout task ${config.phase.layout}`)
+    checks.push({ kind: 'layout-native-window-fixture', initial, restored: await nativeState() })
   }
   if (config.phase.expectedRestoredThemeId) await proveRestoredTheme(config.phase.expectedRestoredThemeId)
   if (config.phase.baseline) {

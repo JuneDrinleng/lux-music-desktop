@@ -1,4 +1,5 @@
 const createUiTools = require('./ui.cjs')
+const createLayout = require('./layout.cjs')
 
 const routes = [
   { name: 'search', path: '/search', labelKey: 'search' },
@@ -14,6 +15,7 @@ const detailQuery = { source: 'kw', id: 'digest-8__9001', page: '3', fromName: '
 module.exports = function createNavigationEvidence(context) {
   const { execute, waitFor, navigate, screenshot, checks, observations, readSetting, stage } = context
   const { click, i18nControl } = createUiTools(context)
+  const { rendererToolsSource } = createLayout(context)
   const state = () => execute(`(() => {
     const router = document.querySelector('#root').__vue_app__?.config.globalProperties.$router;
     if (!router) throw new Error('Mounted production router unavailable');
@@ -59,33 +61,33 @@ module.exports = function createNavigationEvidence(context) {
     if (!current.hasSemanticNavigation || current.entries.length !== routes.length) throw new Error('Readable navigation consumer is absent or incomplete; enable this check only after M2a')
     const expected = await execute(`Object.fromEntries(${JSON.stringify(routes)}.map(route => [route.path, window.i18n.t(route.labelKey)]))`)
     const labels = await execute(`Array.from(document.querySelectorAll('#left a[href]'), anchor => {
+      const tools = ${rendererToolsSource};
       const label = Array.from(anchor.children).find(el => el.tagName === 'SPAN');
       if (!label) throw new Error('Future readable navigation label span is missing');
       const box = rect => ({ left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, width: rect.width, height: rect.height });
       const rect = label.getBoundingClientRect();
       const clipping = { left: 0, top: 0, right: innerWidth, bottom: innerHeight };
       const style = getComputedStyle(label);
-      let visible = rect.width > 0 && rect.height > 0;
-      for (let element = label; element; element = element.parentElement) {
-        const parentStyle = getComputedStyle(element);
-        if (parentStyle.display === 'none' || parentStyle.visibility !== 'visible' || Number(parentStyle.opacity) === 0 || parentStyle.contentVisibility === 'hidden') visible = false;
-        const parentRect = element.getBoundingClientRect();
-        if (element.clientWidth > 0 && /^(hidden|clip|auto|scroll)$/.test(parentStyle.overflowX)) {
-          clipping.left = Math.max(clipping.left, parentRect.left + element.clientLeft);
-          clipping.right = Math.min(clipping.right, parentRect.left + element.clientLeft + element.clientWidth);
+      const visibility = tools.visibility(label); const visible = rect.width > 0 && rect.height > 0 && visibility.visible;
+      const clips = tools.clipping(label).ancestors; const self = tools.frame(label);
+      if (/^(hidden|clip|auto|scroll)$/.test(style.overflowX) || /^(hidden|clip|auto|scroll)$/.test(style.overflowY)) {
+        if (self.transform !== 'none' || !['0px', 'padding-box', 'padding-box 0px'].includes(style.overflowClipMargin)) throw new Error('Transformed/expanded label clip needs a dedicated consumer');
+      }
+      clips.unshift({ tag: label.tagName, id: label.id, overflowX: style.overflowX, overflowY: style.overflowY, clip: self.paddingBox });
+      for (const parent of clips) {
+        if (/^(hidden|clip|auto|scroll)$/.test(parent.overflowX)) {
+          clipping.left = Math.max(clipping.left, parent.clip.x); clipping.right = Math.min(clipping.right, parent.clip.right);
         }
-        if (element.clientHeight > 0 && /^(hidden|clip|auto|scroll)$/.test(parentStyle.overflowY)) {
-          clipping.top = Math.max(clipping.top, parentRect.top + element.clientTop);
-          clipping.bottom = Math.min(clipping.bottom, parentRect.top + element.clientTop + element.clientHeight);
+        if (/^(hidden|clip|auto|scroll)$/.test(parent.overflowY)) {
+          clipping.top = Math.max(clipping.top, parent.clip.y); clipping.bottom = Math.min(clipping.bottom, parent.clip.bottom);
         }
       }
       const range = document.createRange();
       range.selectNodeContents(label);
       const textRects = Array.from(range.getClientRects(), box).filter(rect => rect.width > 0 && rect.height > 0);
-      const clipped = !textRects.length || textRects.some(rect => rect.left < clipping.left - 1 || rect.top < clipping.top - 1 || rect.right > clipping.right + 1 || rect.bottom > clipping.bottom + 1)
-        || (label.clientWidth > 0 && label.scrollWidth > label.clientWidth + 1) || (label.clientHeight > 0 && label.scrollHeight > label.clientHeight + 1);
+      const clipped = !textRects.length || textRects.some(rect => rect.left < clipping.left - 0.01 || rect.top < clipping.top - 0.01 || rect.right > clipping.right + 0.01 || rect.bottom > clipping.bottom + 0.01);
       const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
-      return { href: anchor.getAttribute('href').split('?')[0], text: label.innerText.trim(), rect: box(rect), textRects, clipping, visible, clipped, occluded: !hit || !anchor.contains(hit), style: { display: style.display, visibility: style.visibility, opacity: style.opacity } };
+      return { href: anchor.getAttribute('href').split('?')[0], text: label.innerText.trim(), rect: box(rect), textRects, clipping, clipAncestors: clips, visibility, visible, clipped, occluded: !hit || !anchor.contains(hit), style: { display: style.display, visibility: style.visibility, opacity: style.opacity } };
     })`)
     for (const route of routes) {
       const entry = current.entries.find(entry => entry.href === '#' + route.path)

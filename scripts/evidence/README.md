@@ -70,15 +70,15 @@ LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/native-drag npm run evi
 
 尺寸准备前读取并要求原应用 resizable=false、非全屏的默认窗口状态；临时调整截图 viewport 后先恢复该原生不可缩放状态，实际焦点/可见性/content size/renderer viewport 与 DPR/zoom=1 就绪且真实重绘后才开始手势。两区域前后都必须保持不可缩放，缺少状态证据即失败。这是原应用固定窗口状态的独立拖动取证；最终 M2gate 仍须在同一 interactions 窗口里完成 F11 往返后再做原生拖动。此前单段手势失败与最小 Electron 诊断保留；此模式不声明 Windows/macOS 已通过。
 
-`navigation.cjs` 导出原六路由的真实点击、原详情页返回、下载入口开关，以及后续可读侧栏标签、原 Router back/forward 的独立检查。此小块只准备工具，尚未接 runner 或增加 CI mode；当前 themes/media/window/native-drag 四套完整矩阵继续运行，不能把未调用的导出声明为导航功能验收通过。
+`navigation.cjs` 导出原六路由的真实点击、原详情页返回、下载入口开关，以及后续可读侧栏标签、原 Router back/forward 的独立检查。M2a 的完整 layout mode 已接入原路由、可读标签、详情返回和下载开关；history 仍随 M2b 后续启用。themes/media/window/native-drag 四套完整矩阵继续运行。
 
-M2a 接入时逐项调用原路由/下载开关/可读标签，M2b 实现历史按钮后调用完整详情 query back/forward 检查。需要的未来 DOM 不存在必须报错，不能 skip 成功。详情 fixture 只用挂载的生产 Router 初始化 source/id/page/fromName，后续动作使用原控件和原生输入；下载开关 cleanup 无条件回原设置页，等待 renderer/main/磁盘/checkbox 同时恢复。标签测量读取真实 span、文字范围、可见样式、祖先裁剪和中心命中；静态准备或明确 mock I/O 边界检查均不替代实际消费者截图。
+layout mode 逐项调用原路由/下载开关/可读标签，M2b 实现历史按钮后再调用完整详情 query back/forward 检查。需要的未来 DOM 不存在必须报错，不能 skip 成功。详情 fixture 只用挂载的生产 Router 初始化 source/id/page/fromName，后续动作使用原控件和原生输入；下载开关 cleanup 无条件回原设置页，等待 renderer/main/磁盘/checkbox 同时恢复。标签测量读取真实 span、全部 Range 文字范围、native visibility、同一 0.01px float 裁剪和中心命中，并记录自身/祖先 clip boxes 供独立复算；静态准备或明确 mock I/O 边界检查均不替代实际消费者截图。
 
-`layout.cjs` 和 `layout-runner.cjs` 是同一外壳布局/字号/焦点取证工具块，尚未接 runner mode 或 CI activation。前者导出计划 App 的正常流几何与真实键盘焦点检查；后者只编排 M2a 的五组尺寸/字号、原导航/下载与品牌/title，依赖已合 ui/navigation helpers。当前 themes/media/window/native-drag 四套完整矩阵继续运行，未调用的新导出不算新 App 通过。
+`layout.cjs` 和 `layout-runner.cjs` 是同一外壳布局/字号/焦点取证工具块，由 M2a 的完整 layout mode 显式启用。前者导出计划 App 的正常流几何与真实键盘焦点检查；后者只编排 M2a 的五组尺寸/字号、原导航/下载与品牌/title，依赖已合 ui/navigation helpers。当前 themes/media/window/native-drag 四套完整矩阵继续运行；播放器和历史的未调用导出仍不算通过。
 
-M2a 真正合入 `#main-shell` 后才能显式启用 wide（18 route）、minimum（12 route+navigation/search两张focus）、interactions（原详情返回+两张download）。每张route附真实可读标签和几何；原字体radio经native输入并等renderer/main/disk/checked/根computed一致，清理分别恢复原字号/viewport/进入夹具时resizable值。下载disabled态只验证原四方开关/入口成员及外壳几何，不能称其五标签可读性已额外跑过；M2b原history与第三张19px focus仍独立待启用。布局resize是明确fixture，不替代native-drag默认false实际门。
+M2a App 提供 `#main-shell`，layout mode 固定启用 wide（18 route）、minimum（12 route+navigation/search两张focus）、interactions（原详情返回+两张download）。每张route附真实可读标签和几何；原字体radio经native输入并等renderer/main/disk/checked/根computed一致，清理分别恢复原字号/viewport/进入夹具时resizable值。下载disabled态只验证原四方开关/入口成员及外壳几何，不能称其五标签可读性已额外跑过；M2b原history与第三张19px focus仍独立待启用。布局resize是明确fixture，不替代native-drag默认false实际门。
 
-当前通用capture固定`-dt`且profile透明设置false；工具本身不切native透明模式。未来M2a需以真实新窗口分别核透明HTML padding与非透明body border，并对齐main dt/生产constructor、URL与renderer类；单去参数或改class不构成双模式证据。五组route环境和21项合同也不代表两种原生模式已经实际运行。
+除 layout-wide 外，通用 capture 固定 `-dt` 与非透明 profile。layout mode 固定两个新进程/新 profile：wide 初始透明配置并去 `-dt`，minimum 非透明配置并保留 `-dt`。记录并核 main dt、原构造条件派生值、真实 argv/URL、renderer 类、HTML padding/body border 与同一 native handle 的前后状态。派生值不声称原生 alpha 查询；真实运行仍以对应 clean head 的 CI/artifact 为证。
 
 工具使用计划 App 的direct-parent/flex约束，不是任意wrapper/grid布局的通用正误定义。当前拟验收形态是固定scale1、0/1px边框、无变换clip及全部可见祖先；任意fractional border/CSSOM独立取整、hidden祖先被子元素visibility覆盖等条件形态未在真实UI复现或列为通用支持。0.01px裁剪阈值不能放大为1px掩盖裁剪，实际透明/非透明根边界与最小窗19px仍须记录metrics和实图核验。21项数值/合成DOM合同、renderer语法或mock边界不替代原生颜色解析/Tab/真实DOM或截图。
 
@@ -87,3 +87,7 @@ M2a 真正合入 `#main-shell` 后才能显式启用 wide（18 route）、minimu
 `player-layout.cjs` 准备三播放器的尺寸、原控件与弹层矩阵，仍未接 runner/CI。它通过 layout factory 的只读 `rendererToolsSource` 复用同一可见性和 0.01px 裁剪检查；layout 算法未改。弹层需等真实 opacity=1、identity transform 和连续稳定矩形，不能用过渡态或 1px 裁剪作为成功。
 
 M2c1 先跑原媒体回归；M2c2/3/4 各在相应真实组件存在后显式启用完整 style 子集：五环境五图、volume/mode 两图，mini 再加进度弹层。最终 `verifyCompleteMatrix()` 强制 15+6+1 个互异截图；原设置/静音须控件与 renderer/main/磁盘一致，失败独立清理并保留首错。原 navigation/search/history 三张最小窗 19px 焦点、mini 键盘展开/seek、四语言和真实媒体仍分别必需，播放器子集不完成父 M2。合成边界、DOMMatrix/表达式语法检查不替代实际 UI；现有四套完整 CI 继续运行，无新 selector 或缺 DOM 跳过。
+
+`LUX_EVIDENCE_MODE=layout` 固定两阶段，无 phase selector：1024×700/16、1280×800/16、1440×900/16 三环境 18 张路由图及两张下载图；828×540/16 与 /19 两环境 12 张路由图，以及真正 19px 的 navigation/search 两张 Tab 焦点图。driver 强制 34 图、30 个唯一路由/环境、两份独立 native 配置、原详情 query/返回、原字号四方状态及清理。旧四 mode 加此 mode 共 76 张常规图、14 个实际 Electron 进程；这不等于最终父 M2 的 101 图/14 进程验收。
+
+wide 阶段另经原 Basic 字体菜单选择一个实际已装字体，核 renderer/main/磁盘与 HTML、container、导航文字的继承，并在 finally 恢复原空字体/default 与无 secondary。font-list 来源的本机 fc-list 查询限时 2000ms，记录实际子进程退出和输出摘要；所有选择仍为原控件输入，不写 style/设置模拟通过。该新空 profile 的有限回归不增加截图，也不代替 M3d 任意双字体/特殊名字/缺失字体的完整验收。

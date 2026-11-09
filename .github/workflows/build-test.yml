@@ -85,6 +85,12 @@ jobs:
           LUX_EVIDENCE_DIR: artifacts/native-drag
         run: npm run evidence
 
+      - name: Verify M2a transparent and opaque layout consumers
+        env:
+          LUX_EVIDENCE_MODE: layout
+          LUX_EVIDENCE_DIR: artifacts/layout
+        run: npm run evidence
+
       - name: Upload verification logs, build and screenshots
         if: always()
         uses: actions/upload-artifact@v7

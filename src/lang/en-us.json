@@ -750,5 +750,7 @@
   "theme_sakura": "Sakura",
   "theme_lavender": "Lavender",
   "theme_oat_milk": "Oat milk",
-  "theme_ink_night": "Ink night"
+  "theme_ink_night": "Ink night",
+  "shell_primary_navigation": "Primary navigation",
+  "shell_desktop_edition": "Desktop edition"
 }

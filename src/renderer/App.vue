@@ -1,11 +1,13 @@
 <template>
   <div id="container" class="view-container">
-    <layout-aside id="left" />
-    <div id="right">
-      <layout-toolbar id="toolbar" />
-      <layout-view id="view" />
-      <layout-play-bar id="player" />
+    <div id="main-shell">
+      <layout-aside id="left" />
+      <div id="right">
+        <layout-toolbar id="toolbar" />
+        <layout-view id="view" />
+      </div>
     </div>
+    <layout-play-bar id="player" />
     <layout-icons />
     <layout-change-log-modal />
     <layout-update-modal />
@@ -127,34 +129,43 @@ body {
 #container {
   position: relative;
   display: flex;
+  flex-flow: column nowrap;
   height: 100%;
   background-color: var(--color-app-background);
 }
-
+#main-shell {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}
 #left {
   flex: none;
-  width: @width-app-left;
+  width: 12rem;
 }
 #right {
-  flex: auto;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-flow: column nowrap;
   transition: background-color @transition-normal;
   background-color: var(--color-main-background);
-
-  border-top-left-radius: @radius-border;
-  border-bottom-left-radius: @radius-border;
   overflow: hidden;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 }
 #toolbar, #player {
   flex: none;
 }
 #view {
   position: relative;
-  flex: auto;
-  // display: flex;
+  flex: 1;
   min-height: 0;
+  min-width: 0;
+}
+@media (max-width: 1100px) {
+  #left { width: 10.5rem; }
+}
+@media (max-width: 900px) {
+  #left { width: 9rem; }
 }
 
 .view-container {

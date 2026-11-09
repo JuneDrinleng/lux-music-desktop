@@ -750,5 +750,7 @@
   "theme_sakura": "사쿠라",
   "theme_lavender": "라벤더",
   "theme_oat_milk": "오트 밀크",
-  "theme_ink_night": "잉크 나이트"
+  "theme_ink_night": "잉크 나이트",
+  "shell_primary_navigation": "주 탐색",
+  "shell_desktop_edition": "데스크톱 에디션"
 }

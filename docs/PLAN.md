@@ -126,7 +126,7 @@ M0 类型或构建基线失败必须修复或明确拆分后修复，不能通�
 | [x] M2t3b2 `codex/desktop-m2-native-drag` | 原生窗口拖动取证 | 独立修复XTest指针移动但窗口不动的诊断；侧栏与工具栏实际位移、owned WM/原生进程/清理；不用setPosition或drag CSS冒充实际拖动；PR #16 CI42449819631全绿，squash d0c13375 |
 | [x] M2t3c `codex/desktop-m2-navigation-evidence` | 导航/历史行为工具 | 导出明确未启用的未来UI检查，随M2a/M2b消费者逐项激活，无缺失跳过；PR #18 CI42451551914全绿，squash 83dbc751 |
 | [x] M2t3d1 `codex/desktop-m2-layout-evidence` | 外壳布局、字号与焦点取证工具 | layout+layout-runner已合；M2a消费者后真实验收五环境30route及2focus/2download，M2b第三focus/历史仍必需；PR #19 CI42452270857全绿，squash 3e4e3e3b |
-| [ ] M2t3d2 `codex/desktop-m2-player-layout-evidence` | 三播放器布局与弹层取证工具 | 独立player-layout依赖ui/layout，显式逐style/固定全矩阵15player+6popup+1mini-progress；不覆盖真实media，不混入t3d1；随M2c逐组件启用并保留原三focus/四语言/键盘与完整父M2标准 |
+| [x] M2t3d2 `codex/desktop-m2-player-layout-evidence` | 三播放器布局与弹层取证工具 | 独立player-layout共享可见性/严格裁剪helper，随M2c逐组件启用15player+6popup+1mini-progress；原media/三focus/四语言/键盘/父标准保留；PR #20 CI42462661313全绿，squash d36207d4 |
 | [ ] M2a `codex/desktop-m2-layout` | App与带文字侧栏 | 六原路由/下载条件、品牌与全宽底栏容器，尺寸/字体截图；不改播放核心和虚拟行高；完整检查与CI绿合并 |
 | [ ] M2b `codex/desktop-m2-history` | 工具栏与原生Router历史 | 独立7项行为测试及真实详情query back/forward/页内返回；四语言、边界禁用；完整检查与CI绿合并 |
 | [ ] M2c1 `codex/desktop-m2-player-shared` | 播放条共用样式与工具键 | 保留原volume/mode/歌词/添加绑定，真实媒体回归；完整检查与CI绿合并 |
