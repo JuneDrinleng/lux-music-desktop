@@ -335,6 +335,9 @@ async function capture() {
     checks.push({ kind: 'native-drag-window-fixture', originalResizable, originalFullscreen, startInFullscreen: global.lx.appSetting['common.startInFullscreen'], preparedResizable, restoredResizable: mainWindow.isResizable(), contentSize: mainWindow.getContentSize(), renderer, paint })
     await require('./native-drag.cjs')({ mainWindow, execute, waitFor, screenshot, flushPaint, delay, checks, observations, stage })
   }
+  if (config.phase.settings) {
+    await require('./settings.cjs')({ config, mainWindow, execute, waitFor, screenshot, navigate, checks, delay, readSetting })
+  }
   if (config.phase.expectedRestoredThemeId) await proveRestoredTheme(config.phase.expectedRestoredThemeId)
   if (config.phase.baseline) {
     stage('verify six actual sidebar entries')
