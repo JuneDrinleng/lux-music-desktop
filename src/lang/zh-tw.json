@@ -1,4 +1,10 @@
 {
+  "queue__title": "播放佇列",
+  "queue__current": "正在播放",
+  "queue__clear": "清空佇列",
+  "queue__reorder": "調整順序（↑ / ↓）",
+  "queue__empty": "佇列為空。可在歌曲選單選擇「稍後播放」。",
+  "queue__hint": "拖動左側把手排序，或聚焦把手後按 ↑ / ↓。點擊曲目立即播放。",
   "action": "操作",
   "agree": "接受",
   "alert_button_text": "好吧",

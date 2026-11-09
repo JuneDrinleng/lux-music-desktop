@@ -1,4 +1,10 @@
 {
+  "queue__title": "Play queue",
+  "queue__current": "Now playing",
+  "queue__clear": "Clear queue",
+  "queue__reorder": "Reorder (↑ / ↓)",
+  "queue__empty": "The queue is empty. Choose Play later in a track menu.",
+  "queue__hint": "Drag a handle or focus it and press ↑ / ↓ to reorder. Select a track to play now.",
   "action": "Actions",
   "agree": "Accept",
   "alert_button_text": "All right",

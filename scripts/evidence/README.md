@@ -97,3 +97,13 @@ LUX_EVIDENCE_MODE=settings LUX_EVIDENCE_DIR=artifacts/settings LUX_EVIDENCE_SIZE
 复用同一生产 Electron/隔离 profile/离线网络与私有 WM 工具。真实鼠标逐一打开原 16 分类，对页面中的原控件逐个滚动并检查命中/遮挡，记录分类、子组和数量（不读输入值）。在首尺寸保存全部分类，其余尺寸保存基本设置；再由原控件切换暖米/墨夜、最大 19px 字体，验证搜索历史开关经原 IPC 持久化并恢复。矩阵缺项或控件被遮挡直接失败，CI 完整执行，主题/媒体矩阵保持原样。
 
 这里只证明原入口可达及公共容器排版，未实际导入源/恢复备份/启用同步或 OpenAPI；平台专有设置与原生对话框仍需 Windows/macOS 真机。弹层内部与具体控件的改版按 PLAN 4.2 后续小 PR 交付。
+
+## 播放队列（M3c1）
+
+```sh
+LUX_EVIDENCE_MODE=queue LUX_EVIDENCE_DIR=artifacts/queue npm run evidence
+```
+
+复用原 media 全流程及两首生成 WAV，随后从原歌曲菜单入队，通过原生鼠标输入拖动、原生键盘排序、播放指定项、原下一首消费、移除与清空；检查当前播放及 SQLite 来源歌单保持。没有注入队列状态或替换播放方法。另验证 Escape 回焦点、mini/middle/full 的队列入口、三主题和四尺寸（含 828×540 最小窗口）、原最大 19px 字号；队列外框须实际为 2px 直角主线且无阴影，面板和操作中心可见。
+
+要求一个真实 Electron 进程、原媒体三图及队列八图，并保留进程/WM 身份、正常退出和清理核验。原所有 CI 矩阵保留，原始清单、构建及日志在 CI artifact 保留 90 天；本地关键队列图与精简取证清单入库。不代表 Windows/macOS、实际声卡/扬声器或生产在线服务已经验证。

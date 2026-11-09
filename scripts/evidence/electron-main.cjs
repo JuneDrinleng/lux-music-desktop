@@ -94,7 +94,7 @@ function writeManifest(status, failure) {
       rendererEntry: 'dist/index.html',
       nativeDatabase: 'better-sqlite3; real application worker, isolated temporary database',
       routeNavigation: 'click actual sidebar anchors and inspect active route',
-      data: config.mode === 'media' ? 'one isolated userData; generated local WAV fixtures imported through the original UI/worker/DB; no personal files, accounts, secrets, or public API responses' : 'one shared isolated userData; no user accounts, secrets, music, or public API responses',
+      data: ['media', 'queue'].includes(config.mode) ? 'one isolated userData; generated local WAV fixtures imported through the original UI/worker/DB; no personal files, accounts, secrets, or public API responses' : 'one shared isolated userData; no user accounts, secrets, music, or public API responses',
       network: 'Node TCP and Chromium HTTP(S) denied; remote pages show real offline states',
       captureScheduling: 'webContents background throttling disabled only by the evidence harness; every screenshot still awaits two real animation frames',
       displayMode: config.displayMode,
@@ -132,7 +132,7 @@ app.on('browser-window-created', (_event, window) => {
   const preload = path.join(__dirname, 'offline-preload.cjs')
   if (typeof ses.registerPreloadScript === 'function') ses.registerPreloadScript({ type: 'frame', filePath: preload })
   else ses.setPreloads([...ses.getPreloads(), preload])
-  if (config.mode === 'media') {
+  if (['media', 'queue'].includes(config.mode)) {
     const mediaPreload = path.join(__dirname, 'player-preload.cjs')
     if (typeof ses.registerPreloadScript === 'function') ses.registerPreloadScript({ type: 'frame', filePath: mediaPreload })
     else ses.setPreloads([...ses.getPreloads(), mediaPreload])
@@ -314,7 +314,7 @@ async function capture() {
     checks.push({ kind: 'new-profile-default', themeId: 'lime', snapshot: initial })
   }
   if (config.phase.media) {
-    await require('./player.cjs')({ config, mainWindow, execute, waitFor, screenshot, navigate, bounded, checks, observations, stage, delay, readSetting })
+    await require('./player.cjs')({ config, mainWindow, execute, waitFor, screenshot, navigate, bounded, checks, observations, stage, delay, readSetting, key })
   }
   if (config.phase.window) {
     await require('./window.cjs')({ mainWindow, execute, waitFor, screenshot, navigate, checks, observations, key, readSetting, flushPaint })

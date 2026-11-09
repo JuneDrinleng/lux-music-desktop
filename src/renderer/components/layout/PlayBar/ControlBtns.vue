@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.controlBtn">
+    <layout-play-queue />
     <!-- <common-volume-bar /> -->
     <button :class="$style.titleBtn" :aria-label="$t('player__add_music_to')" @click="addMusicTo">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="90%" viewBox="0 0 512 512" space="preserve">

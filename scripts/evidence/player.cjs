@@ -252,6 +252,7 @@ module.exports = async function runRealPlayerEvidence(context) {
     await selectMode('listLoop')
     mediaChecks.push({ action: 'playback-mode', random, restored: await readMedia() })
     await screenshot('media-real-controls.png', 'media', { player: await readMedia() })
+    if (config.phase.queue) await require('./queue.cjs')({ ...context, fixtures, imported, readMedia, progressStyle })
     checks.push({ kind: 'real-player', pipeline: 'generated PCM WAV → actual list menu → OS-picker boundary → real metadata worker → SQLite → native row/button input → production HTMLAudioElement', fixtures, results: mediaChecks, audioObservation: 'only read native elements from the constructor observer; no media method or property replaced', unverified: ['physical audio hardware and speakers', 'production online music services', 'full lyrics, sound effects, playback rate and desktop lyric behavior'] })
     observations.push({ kind: 'software-media-fixture-boundary', files: fixtures, verified: 'real local file metadata, SQLite list persistence, native audio clock/pause/seek/resource transitions and original playback controls', unverified: 'audible speaker output; generated tones are evidence fixtures, not user media' })
   } catch (error) {
