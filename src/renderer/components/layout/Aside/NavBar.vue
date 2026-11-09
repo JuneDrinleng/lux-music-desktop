@@ -90,7 +90,7 @@ export default {
   flex: 1;
   min-height: 0;
   overflow: auto;
-  padding: .25rem .75rem;
+  padding: .5rem .75rem;
   -webkit-app-region: no-drag;
 }
 .list { display: flex; flex-direction: column; gap: .25rem; }
