@@ -20,6 +20,7 @@ module.exports = async function playDetailEvidence(context) {
   const control = (key, prefix = false) => i18nControl('[data-action=detail-controls] [aria-label]', key, prefix)
   const hideButton = i18nControl('[aria-label]', 'player__hide_detail_tip')
   const modeKeys = { listLoop: 'list_loop', random: 'random', list: 'list', singleLoop: 'single_loop', none: 'off' }
+  const modalClose = 'Array.from(document.querySelectorAll("#root header button")).find(el => el.querySelector("use")?.getAttribute("xlink:href") === "#icon-delete")'
   const results = []
   let pendingVolumeDelta = null
   const open = async() => {
@@ -63,7 +64,7 @@ module.exports = async function playDetailEvidence(context) {
   }
   const rate = async(value) => {
     await click(control('player__playback_rate', true))
-    const slider = 'document.querySelector("#root [aria-hidden=false] [class*=sliderMask]")'
+    const slider = 'document.getElementById("player__playback_preserves_pitch")?.parentElement.parentElement.parentElement.nextElementSibling.lastElementChild'
     await until(() => execute(`Boolean(${slider})`), 'original rate slider')
     await click(slider, { ratio: (value * 100 - 50) / 150 })
     await until(async() => Math.abs((await readMedia()).audio.playbackRate - value) < 0.015, 'native playbackRate from original slider')
@@ -159,15 +160,15 @@ module.exports = async function playDetailEvidence(context) {
       await screenshot(`detail-${theme}-${side}-${width}x${height}-font${font}.png`, 'play-detail', { theme, side, focus, geometry: await geometry() })
     }
     await click(control('comment__show'))
-    await until(() => execute(`Boolean(${detail}.querySelector('[class*=unavailable]'))`), 'original local-file comments unavailable state')
+    await until(() => execute(`(() => { const el = ${detail}.querySelector('.comment'); return el && el.textContent.includes(window.i18n.t('comment__unavailable')) && Math.abs(el.getBoundingClientRect().width - el.clientWidth) < 0.1 })()`), 'original local-file comments unavailable state')
     await screenshot('detail-comment-return-828x540.png', 'play-detail', { geometry: await geometry(), boundary: 'local WAV has no online comments; original unavailable state' })
     await click(control('comment__show'))
     await hide()
     await open()
     results.push({ action: 'themes-sizes-sides-focus-comments-hide-restore', geometry: await geometry() })
     await click(control('player__sound_effect'))
-    await until(() => execute('Boolean(document.querySelector("#root [class*=content] input[id*=sound_effect]"))'), 'original sound-effect modal binding')
-    await click('document.querySelector("#root input[id*=sound_effect]").closest("[class*=modal]").querySelector("header button")')
+    await until(() => execute('Boolean(document.getElementById("player__sound_effect_panner_enabled"))'), 'original sound-effect modal binding')
+    await click(modalClose)
     await until(() => execute('!document.querySelector("#root input[id*=sound_effect]")'), 'sound-effect modal closes')
     await hide()
     await navigate('/setting')
@@ -175,7 +176,7 @@ module.exports = async function playDetailEvidence(context) {
     const timer = "Array.from(document.querySelectorAll('#view button')).find(el => el.textContent.trim().startsWith(window.i18n.t('setting__play_timeout')))"
     await click(timer)
     await until(() => execute('Boolean(document.querySelector("#view input[type=number]"))'), 'original timer modal binding')
-    await click('document.querySelector("#view input[type=number]").closest("[class*=modal]").querySelector("header button")')
+    await click(modalClose)
     await until(() => execute('!document.querySelector("#view input[type=number]")'), 'timer closes without scheduling')
     results.push({ action: 'original-effects-and-timer-entries', timer: 'original Basic settings entry after hiding detail; no timer started', effects: 'original shared modal opened without altering algorithms' })
   } catch (error) {
@@ -187,7 +188,6 @@ module.exports = async function playDetailEvidence(context) {
     // Restoration owns a separate finite 20s budget, including failure paths.
     const restore = async() => {
       // Close an original shared modal if a check failed while it was open.
-      const modalClose = 'Array.from(document.querySelectorAll("#root [class*=modal] header button")).at(-1)'
       if (await execute(`Boolean(${modalClose})`)) await click(modalClose)
       if (mainWindow.isFullScreen()) { key('F11'); await waitFor(() => Promise.resolve(!mainWindow.isFullScreen()), 'restore fullscreen', 4000) }
       await hide()
