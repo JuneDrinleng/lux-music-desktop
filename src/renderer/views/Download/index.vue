@@ -1,6 +1,10 @@
 <template>
-  <div :class="$style.download">
+  <div :class="$style.download" data-page="downloads">
     <div :class="$style.header">
+      <div :class="$style.heading">
+        <h1>{{ $t('download') }}</h1>
+        <span :class="$style.count">{{ list.length.toString().padStart(2, '0') }}</span>
+      </div>
       <base-tab v-model="activeTab" :class="$style.tab" :list="tabs" />
     </div>
     <div :class="$style.content">
@@ -8,12 +12,12 @@
         <table>
           <thead>
             <tr>
-              <th class="num" style="width: 5%;">#</th>
+              <th class="num" style="width: 2.75rem;">#</th>
               <th class="nobreak">{{ $t('music_name') }}</th>
               <th class="nobreak" style="width: 20%;">{{ $t('download__progress') }}</th>
               <th class="nobreak" style="width: 22%;">{{ $t('download__status') }}</th>
-              <th class="nobreak" style="width: 10%;">{{ $t('download__quality') }}</th>
-              <th class="nobreak" style="width: 13%;">{{ $t('action') }}</th>
+              <th class="nobreak" style="width: 4.5rem;">{{ $t('download__quality') }}</th>
+              <th class="nobreak" style="width: 7rem;">{{ $t('action') }}</th>
             </tr>
           </thead>
         </table>
@@ -24,27 +28,30 @@
           container-class="scroll" content-class="list"
         >
           <div
-            class="list-item"
+            class="list-item" :data-status="item.status" :data-task-id="item.id"
             :class="[{[$style.active]: playTaskId == item.id }, { selected: rightClickSelectedIndex == index }, { active: selectedList.includes(item) }]"
             @click="handleListItemClick($event, index)" @contextmenu="handleListItemRightClick($event, index)"
           >
-            <div class="list-item-cell no-select" :class="$style.num" style="flex: 0 0 5%;">
+            <div class="list-item-cell no-select" :class="$style.num" style="flex: 0 0 2.75rem;">
               <transition name="play-active">
                 <div v-if="playTaskId == item.id" :class="$style.playIcon">
                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" height="50%" viewBox="0 0 512 512" space="preserve">
                     <use xlink:href="#icon-play-outline" />
                   </svg>
                 </div>
-                <div v-else class="num">{{ index + 1 }}</div>
+                <div v-else class="num">{{ (index + 1).toString().padStart(2, '0') }}</div>
               </transition>
             </div>
             <div class="list-item-cell auto name">
               <span class="select name" :aria-label="getName(item)">{{ getName(item) }}</span>
             </div>
-            <div class="list-item-cell" style="flex: 0 0 20%;">{{ item.progress }}%<span v-if="item.status == downloadStatus.RUN && item.speed"> - {{ item.speed }}/s</span></div>
-            <div class="list-item-cell" style="flex: 0 0 22%;" :aria-label="item.statusText">{{ item.statusText }}</div>
-            <div class="list-item-cell" style="flex: 0 0 10%;">{{ getTypeName(item.metadata.quality) }}</div>
-            <div class="list-item-cell" style="flex: 0 0 13%; padding-left: 0; padding-right: 0;">
+            <div class="list-item-cell" :class="$style.progress" style="flex: 0 0 20%;">
+              <span>{{ item.progress }}%<span v-if="item.status == downloadStatus.RUN && item.speed" :class="$style.speed"> · {{ item.speed }}/s</span></span>
+              <progress :value="item.progress" max="100" :aria-label="$t('download__progress')" />
+            </div>
+            <div class="list-item-cell" :class="$style.status" style="flex: 0 0 22%;" :aria-label="item.statusText">{{ item.statusText }}</div>
+            <div class="list-item-cell" style="flex: 0 0 4.5rem;">{{ getTypeName(item.metadata.quality) }}</div>
+            <div class="list-item-cell" :class="$style.actions" style="flex: 0 0 7rem; padding-left: 0; padding-right: 0;">
               <material-list-buttons
                 :index="index" :download-btn="false" :file-btn="item.status != downloadStatus.ERROR" remove-btn="remove-btn"
                 :start-btn="!item.isComplate && item.status != downloadStatus.WAITING && (item.status != downloadStatus.RUN)"
@@ -244,22 +251,114 @@ export default {
 </script>
 
 <style lang="less" module>
-@import '@renderer/assets/styles/layout.less';
-
 .download {
   position: relative;
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
+  padding: 0 var(--lux-page-gutter);
+  box-sizing: border-box;
+  background: var(--lux-paper);
+  color: var(--lux-ink);
+
+  :global(.scroll) {
+    // Match the header's reserved scrollbar width even for short lists.
+    scrollbar-gutter: stable;
+  }
 
   :global(.list-item) {
+    border-bottom: var(--lux-hairline-width) solid var(--lux-hairline);
+    color: var(--lux-list);
+    font-size: var(--lux-type-meta);
+    box-shadow: inset var(--lux-marker-width) 0 transparent;
+
+    &:hover, &:global(.selected) {
+      background: var(--lux-paper-raised);
+    }
+    &:global(.active) {
+      color: var(--lux-ink);
+      background: var(--lux-accent-soft);
+      box-shadow: inset var(--lux-marker-width) 0 var(--lux-ink);
+    }
+    &:global(.active) .status, &:global(.active) .num :global(.num) {
+      color: var(--lux-ink);
+    }
     &.active {
-      color: var(--color-button-font);
+      box-shadow: inset var(--lux-marker-width) 0 var(--lux-accent);
+    }
+    :global(.name) {
+      min-width: 0;
+      font-weight: var(--lux-weight-label);
+    }
+    :global(.num) {
+      color: var(--lux-muted);
+      font-size: var(--lux-type-meta);
+      font-variant-numeric: tabular-nums;
+    }
+    &[data-status=run] .status {
+      color: var(--lux-accent-ink);
+    }
+    &[data-status=error] .status {
+      color: var(--lux-danger);
     }
   }
 }
-.num {
+.header {
+  flex: none;
+  padding-top: var(--lux-space-5);
+  border-bottom: var(--lux-rule-width) solid var(--lux-rule);
+}
+.heading {
+  display: flex;
+  align-items: baseline;
+  gap: var(--lux-space-3);
+  margin-bottom: var(--lux-space-4);
+
+  h1 {
+    color: var(--lux-display);
+    font-size: var(--lux-type-page);
+    line-height: var(--lux-type-page-line);
+    font-weight: var(--lux-weight-display);
+    letter-spacing: -.04em;
+  }
+}
+.count {
+  color: var(--lux-muted);
+  font-size: var(--lux-type-section);
+  font-variant-numeric: tabular-nums;
+}
+.tab {
+  padding: 0;
+  gap: var(--lux-space-5);
+  font-size: var(--lux-type-body);
+
+  [role=tab] {
+    color: var(--lux-muted);
+  }
+  [aria-selected=true] {
+    color: var(--lux-ink);
+    font-weight: var(--lux-weight-label);
+  }
+  [role=tab] > span::after {
+    border-radius: 0;
+    background: var(--lux-ink);
+  }
+}
+.thead {
+  border-bottom: var(--lux-hairline-width) solid var(--lux-hairline);
+
+  table {
+    table-layout: fixed;
+  }
+  th {
+    box-sizing: border-box;
+    color: var(--lux-muted);
+    font-size: var(--lux-type-meta);
+    font-weight: var(--lux-weight-label);
+  }
+}
+.num, .playIcon {
   height: 100%;
   display: flex;
   align-items: center;
@@ -268,39 +367,50 @@ export default {
 }
 .playIcon {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: var(--color-button-font);
-  opacity: .7;
+  inset: 0;
+  color: var(--lux-accent-ink);
 }
-
 .content {
   min-height: 0;
-  font-size: 14px;
   display: flex;
   flex-flow: column nowrap;
   flex: auto;
 }
+.progress {
+  font-variant-numeric: tabular-nums;
 
-.noItem {
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-
-  p {
-    font-size: 24px;
-    color: var(--color-font-label);
+  progress {
+    display: block;
+    width: 100%;
+    height: var(--lux-marker-width);
+    margin-top: var(--lux-space-1);
+    appearance: none;
+    border: 0;
+    &::-webkit-progress-bar { background: var(--lux-hairline); }
+    &::-webkit-progress-value { background: var(--lux-ink); }
   }
 }
-
+.speed, .status {
+  color: var(--lux-muted);
+}
+.actions {
+  > div { display: flex; }
+  button {
+    width: var(--lux-hit-icon);
+    height: var(--lux-hit-icon);
+    padding: var(--lux-space-2);
+    margin: 0;
+    border-radius: 0;
+    color: var(--lux-ink);
+    &:hover { background: var(--lux-hairline); }
+  }
+}
+.noItem {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--lux-muted);
+  font-size: var(--lux-type-section);
+}
 </style>
-

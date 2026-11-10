@@ -8,7 +8,7 @@ const { preferences, palettes, customThemeId } = require('./profile.cjs')
 
 const root = path.resolve(__dirname, '../..')
 const mode = process.env.LUX_EVIDENCE_MODE ?? 'baseline'
-if (!['baseline', 'themes', 'media', 'window', 'native-drag', 'settings', 'queue'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
+if (!['baseline', 'themes', 'media', 'window', 'native-drag', 'settings', 'queue', 'downloads'].includes(mode)) throw new Error(`Unsupported LUX_EVIDENCE_MODE: ${mode}`)
 if (process.env.LUX_EVIDENCE_XVFB && !['0', '1'].includes(process.env.LUX_EVIDENCE_XVFB)) throw new Error('LUX_EVIDENCE_XVFB must be 0 or 1')
 if (['media', 'window', 'native-drag', 'queue'].includes(mode) && (process.platform !== 'linux' || process.env.LUX_EVIDENCE_XVFB === '0')) throw new Error(`${mode} evidence requires its own Linux Xvfb/WM session`)
 const output = path.resolve(root, process.env.LUX_EVIDENCE_DIR ?? (mode !== 'baseline' ? 'artifacts/screenshots' : 'docs/screenshots/m0'))
@@ -32,6 +32,7 @@ const phasePlan = () => {
   if (mode === 'baseline') return [{ id: 'baseline', baseline: true }]
   if (mode === 'queue') return [{ id: 'queue', media: true, queue: true }]
   if (mode === 'media') return [{ id: 'media', media: true }]
+  if (mode === 'downloads') return [{ id: 'downloads', downloads: true }]
   if (mode === 'window') return [{ id: 'window', window: true }]
   if (mode === 'native-drag') return [{ id: 'native-drag', nativeDrag: true }]
   if (mode === 'settings') return [{ id: 'settings', settings: true }]
@@ -75,7 +76,8 @@ async function run() {
   const lxData = path.join(userData, 'LxDatas')
   fs.mkdirSync(lxData, { recursive: true })
   fs.mkdirSync(output, { recursive: true })
-  fs.writeFileSync(path.join(lxData, 'config_v2.json'), JSON.stringify({ version: '2.1.0', setting: { version: '2.1.0', ...preferences } }, null, 2))
+  const seededPreferences = { ...preferences, ...(mode === 'downloads' ? { 'download.maxDownloadNum': 1, 'download.savePath': scratch, 'download.isSavePathGroupByListName': false, 'download.isEmbedPic': false, 'download.isEmbedLyric': false, 'download.isDownloadLrc': false } : {}) }
+  fs.writeFileSync(path.join(lxData, 'config_v2.json'), JSON.stringify({ version: '2.1.0', setting: { version: '2.1.0', ...seededPreferences } }, null, 2))
   let customFixture = null
   if (mode === 'themes') {
     const registry = JSON.parse(fs.readFileSync(path.join(root, 'src/common/theme/index.json'), 'utf8'))
@@ -116,7 +118,7 @@ async function run() {
       const manifestName = `phase-${phase.id}.json`
       const phaseStartedAt = new Date().toISOString()
       const phaseStartedTick = performance.now()
-      fs.writeFileSync(configPath, JSON.stringify({ root, output, sizes, source, scratch, userData, runId, mode, phase, manifestName, customFixture, command: 'npm run evidence', driverNode: process.version, displayMode }, null, 2))
+      fs.writeFileSync(configPath, JSON.stringify({ root, output, sizes, source, scratch, userData, runId, mode, phase, manifestName, customFixture, seededPreferences, command: 'npm run evidence', driverNode: process.version, displayMode }, null, 2))
       log.write(`\nEvidence phase ${phase.id}: starting a NEW Electron process with the SAME isolated userData\n`)
       console.log(`Evidence phase ${phase.id}: new Electron process`)
       const processResult = await new Promise((resolve, reject) => {
@@ -213,6 +215,13 @@ async function run() {
       if (phases.length !== 1 || count('settings-category') !== 16 || count('settings-theme') !== 2 || count('settings-size') !== sizes.length - 1 || count('settings-font') !== 1) throw new Error('Settings category/theme/size/font matrix is incomplete')
       const checks = phases.flatMap(phase => phase.checks)
       if (checks.filter(check => check.kind === 'settings-controls-reachable').length !== 16 || !checks.some(check => check.kind === 'settings-checkbox-persistence' && check.restored)) throw new Error('Missing original settings entry/checkbox proof')
+    }
+    if (mode === 'downloads' && (phases.length !== 1 || count('downloads') !== 6 || !phases[0].checks.some(check => check.kind === 'download-behaviors' && check.results.length >= 10))) throw new Error('Download behavior/screenshot matrix is incomplete')
+    if (mode === 'downloads') {
+      const alignments = phases.flatMap(phase => phase.checks).filter(check => check.kind === 'download-column-alignment')
+      for (const [width, height, fontSize] of [[1280, 800, '16px'], [1024, 700, '20px']]) {
+        if (!alignments.some(check => check.width === width && check.height === height && check.fontSize === fontSize)) throw new Error(`Missing download column alignment proof: ${width}x${height}/${fontSize}`)
+      }
     }
     if (mode === 'themes') {
       if (count('theme') !== 6 || count('focus') !== 6 || count('compatibility') !== 2 || count('restart') !== 8 || count('auto-preview') !== 1) throw new Error('Theme/focus/compatibility/restart/automatic-preview matrix is incomplete')
