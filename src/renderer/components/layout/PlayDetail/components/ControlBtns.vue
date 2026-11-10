@@ -110,42 +110,26 @@ export default {
 
 .footerLeftControlBtns {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
+  flex-flow: row wrap;
   align-items: center;
-  gap: 8px;
+  gap: var(--lux-space-1);
+  padding: var(--lux-space-2);
+  margin: calc(-1 * var(--lux-space-2));
 
   button {
-    width: 20px;
-    color: var(--color-font);
-  }
-
-  .footerLeftControlBtn {
-    // width: 18px;
-    // height: 18px;
-    opacity: .5;
+    width: var(--lux-hit-icon);
+    height: var(--lux-hit-icon);
+    padding: var(--lux-space-2);
+    color: var(--lux-ink);
+    border: none;
+    background: transparent;
     cursor: pointer;
-    transition: opacity @transition-normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-
-    &:hover {
-      opacity: .9;
-    }
-
-    &.active {
-      color: var(--color-primary-font);
-      opacity: .8;
-    }
-  }
-
-  .lrcBtn {
-    width: 20px;
+    &:hover { background: var(--lux-accent-soft); }
+    &.active { color: var(--lux-accent-ink); }
+    svg { max-width: 100%; max-height: 100%; }
   }
 }
-
 </style>
