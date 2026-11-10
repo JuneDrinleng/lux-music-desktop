@@ -1,0 +1,34 @@
+实际失败记录（完整输出见本地 artifacts；均已修复后重跑）
+npm ci --ignore-scripts: exit 226；默认 /home/box/.npm 缓存只读。
+npm run verify 首轮: exit 1；lint exit 1，其余六门 exit 0。
+
+> lx-music-desktop@2.12.6 lint
+> eslint --ext .ts,.js,.vue -f node_modules/eslint-formatter-friendly src && eslint --ext .cjs scripts tests
+
+
+/workspace/codex-dev/wt/desktop-m3c2/scripts/evidence/play-detail.cjs
+  26:31  error  Strings must use singlequote  quotes
+
+✖ 1 problem (1 error, 0 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
+
+独占 harness 两次聚焦 eslint 引号检查 exit 1，随后重跑 exit 0。
+首次 media: exit 1；固定倍速 input id 命中底部隐藏的共用弹层，后限定可见弹层。
+失败路径恢复时，同曲目列表双击未恢复播放；后改用原播放按钮核对并恢复暂停状态。
+play-detail-failure
+Error: Script failed to execute, this normally means an error was thrown. Check the renderer console for the error.
+    at node:electron/js2c/renderer_init:2:19925
+    at IpcRendererInternal.<anonymous> (node:electron/js2c/renderer_init:2:14496)
+    at IpcRendererInternal.emit (node:events:509:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:13581)
+play-detail-restoration-failure
+Error: Timed out waiting for restore original real track
+    at waitFor (/workspace/codex-dev/wt/desktop-m3c2/scripts/evidence/electron-main.cjs:69:9)
+    at async restore (/workspace/codex-dev/wt/desktop-m3c2/scripts/evidence/play-detail.cjs:201:7)
+    at async Object.bounded (/workspace/codex-dev/wt/desktop-m3c2/scripts/evidence/electron-main.cjs:49:12)
+    at async playDetailEvidence (/workspace/codex-dev/wt/desktop-m3c2/scripts/evidence/play-detail.cjs:220:7)
+    at async runRealPlayerEvidence (/workspace/codex-dev/wt/desktop-m3c2/scripts/evidence/player.cjs:264:30)
+    at async capture (/workspace/codex-dev/wt/desktop-m3c2/scripts/evidence/electron-main.cjs:317:5)
+
+最终 verify 重编译后，旧矩阵对当前 renderer 哈希审计 exit 1；原输出 artifacts/m3c2-audit-failed-buildhash.log 保留。旧矩阵归档为 artifacts/m3c2-*-before-finalbuild，最终构建的六模式重新执行并逐项审计 exit 0。

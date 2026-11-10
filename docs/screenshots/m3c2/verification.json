@@ -1,0 +1,61 @@
+{
+  "commit": "569c134a082723673e3518b34fe81da39f2e13f4",
+  "dirty": false,
+  "pullRequestHead": "569c134a082723673e3518b34fe81da39f2e13f4",
+  "pullRequestBase": "567c5d7b9456f5ca7cd6e3871f3cdb650239b7d7",
+  "timestamp": "2026-11-10T00:10:50.285Z",
+  "node": "v24.22.1",
+  "platform": "linux-x64",
+  "checks": [
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 43372.222548
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 21394.077358000002
+    },
+    {
+      "command": "npm run test",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1877.6178070000024
+    },
+    {
+      "command": "npm run build:main",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 5262.299713999993
+    },
+    {
+      "command": "npm run build:renderer",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 26302.441154999993
+    },
+    {
+      "command": "npm run build:renderer-lyric",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6181.063255999994
+    },
+    {
+      "command": "npm run build:renderer-scripts",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1683.934672000003
+    }
+  ],
+  "testSummary": {
+    "tests": 157,
+    "pass": 157,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  }
+}
