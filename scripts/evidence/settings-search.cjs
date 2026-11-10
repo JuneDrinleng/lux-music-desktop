@@ -214,11 +214,10 @@ module.exports = async function settingsSearchEvidence(context) {
     for (const scene of scenes) {
       const selection = { theme: await theme(scene.theme), font: await font(scene.font) }
       mainWindow.setContentSize(scene.width, scene.height)
-      await until(() => execute(`innerWidth === ${scene.width} && innerHeight === ${scene.height}`), 'exact search settings viewport')
-      if (scene.width === 828 && JSON.stringify(mainWindow.getMinimumSize()) !== '[828,540]') throw new Error('Search scene is not the actual native minimum window')
+      await until(async() => JSON.stringify(mainWindow.getContentSize()) === JSON.stringify([scene.width, scene.height]) && await execute(`innerWidth === ${scene.width} && innerHeight === ${scene.height}`), 'exact native/renderer search settings viewport')
       await openSearch()
       const file = `settings-search-${scene.theme}-${scene.width}x${scene.height}-font${scene.font}.png`
-      const detail = { scene, selection, layout: await layout() }
+      const detail = { scene, selection, native: { contentSize: mainWindow.getContentSize(), minimumConstraint: mainWindow.getMinimumSize() }, layout: await layout() }
       await within(`screenshot ${file}`, () => screenshot(file, 'settings-search', detail))
       record.scenes.push({ file, ...detail })
     }
