@@ -64,7 +64,7 @@ module.exports = async function playDetailEvidence(context) {
   }
   const rate = async(value) => {
     await click(control('player__playback_rate', true))
-    const slider = 'document.getElementById("player__playback_preserves_pitch")?.parentElement.parentElement.parentElement.nextElementSibling.lastElementChild'
+    const slider = 'document.querySelector("#root [aria-hidden=false] input[id=player__playback_preserves_pitch]")?.parentElement?.parentElement?.parentElement?.nextElementSibling?.lastElementChild'
     await until(() => execute(`Boolean(${slider})`), 'original rate slider')
     await click(slider, { ratio: (value * 100 - 50) / 150 })
     await until(async() => Math.abs((await readMedia()).audio.playbackRate - value) < 0.015, 'native playbackRate from original slider')
@@ -197,8 +197,8 @@ module.exports = async function playDetailEvidence(context) {
       await navigate('/list')
       const track = imported.find(item => item.id === before.musicInfo.id)
       if (!track) throw new Error('Original detail track is outside the imported fixture pair')
-      await click(`Array.from(document.querySelectorAll('#my-list .list-item')).find(el => el.textContent.includes(${JSON.stringify(track.name)}))`, { count: 2 })
-      await waitFor(async() => (await readMedia()).musicInfo.id === track.id && !(await readMedia()).audio.paused, 'restore original real track', 4000)
+      if ((await readMedia()).musicInfo.id !== track.id) await click(`Array.from(document.querySelectorAll('#my-list .list-item')).find(el => el.textContent.includes(${JSON.stringify(track.name)}))`, { count: 2 })
+      await waitFor(async() => (await readMedia()).musicInfo.id === track.id && Boolean((await readMedia()).audio), 'restore original real track', 4000)
       await open()
       if (readSetting()['player.isMute'] !== before.audio.muted) {
         await click(control(readSetting()['player.isMute'] ? 'player__volume_muted' : 'player__volume', !readSetting()['player.isMute']))
@@ -209,7 +209,8 @@ module.exports = async function playDetailEvidence(context) {
       if (pendingVolumeDelta && Math.abs((await readMedia()).audio.volume - before.audio.volume) > 0.001) await wheel(await target(control(before.audio.muted ? 'player__volume_muted' : 'player__volume', !before.audio.muted)), -pendingVolumeDelta)
       if ((await readMedia()).audio.playbackRate !== before.audio.playbackRate) await rate(before.audio.playbackRate)
       if (readSetting()['player.togglePlayMethod'] !== before.setting.mode) await mode(before.setting.mode)
-      if (before.audio.paused) { await click(control('player__pause')); await waitFor(async() => (await readMedia()).audio.paused, 'restore original pause state', 3000) }
+      if ((await readMedia()).audio.paused !== before.audio.paused) await click(control(before.audio.paused ? 'player__pause' : 'player__play'))
+      await waitFor(async() => (await readMedia()).audio.paused === before.audio.paused, 'restore original pause state', 3000)
       await click('document.querySelector("[data-action=detail-controls] [data-action=seek-progress]")', { ratio: before.audio.currentTime / before.audio.duration })
       await hide()
       const final = await readMedia()
