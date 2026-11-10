@@ -13,7 +13,7 @@ npm run verify 首轮: exit 1；lint exit 1，其余六门 exit 0。
   1 error and 0 warnings potentially fixable with the `--fix` option.
 
 
-独占 harness 两次聚焦 eslint 引号检查 exit 1，随后重跑 exit 0。
+首轮 verify lint 及一次聚焦 harness eslint 引号检查 exit 1，随后重跑 exit 0。
 首次 media: exit 1；固定倍速 input id 命中底部隐藏的共用弹层，后限定可见弹层。
 失败路径恢复时，同曲目列表双击未恢复播放；后改用原播放按钮核对并恢复暂停状态。
 play-detail-failure

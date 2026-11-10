@@ -13,6 +13,7 @@ LUX_EVIDENCE_MODE=window LUX_EVIDENCE_DIR=artifacts/m3c2-window npm run evidence
 LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/m3c2-native-drag npm run evidence
 LUX_EVIDENCE_MODE=settings LUX_EVIDENCE_DIR=artifacts/m3c2-settings LUX_EVIDENCE_SIZES=1280x800,1024x700,1440x900 npm run evidence
 LUX_EVIDENCE_MODE=queue LUX_EVIDENCE_DIR=artifacts/m3c2-queue npm run evidence
+LUX_EVIDENCE_MODE=downloads LUX_EVIDENCE_DIR=artifacts/m3c2-downloads npm run evidence
 ```
 
 | 模式 | 实际图数 | 原行为与新增行为 |
@@ -23,11 +24,14 @@ LUX_EVIDENCE_MODE=queue LUX_EVIDENCE_DIR=artifacts/m3c2-queue npm run evidence
 | native-drag | 1 | 原两个拖动区真实位移与复位 |
 | settings | 21 | 原十六分组、主题/尺寸/19px、复选框持久化 |
 | queue | 8 + 3 media | 原九项队列行为、原媒体八项行为 |
+| downloads | 6 | 最新 dev #17 原十项行为与两个尺寸/字号的列对齐；下载 transport fixture 边界沿用原说明 |
 
-共 82 张；每个进程退出 0，WM EWMH 身份对应拥有的 xfwm4 子进程，清理完成，截图尺寸和所有哈希已逐项核验。详情检查由原 CI 必跑的 media → `player.cjs` 直接调用 `play-detail.cjs`，使用独立 `play-detail` kind；原 media 90s 时限、断言及共用 capture/electron-main/CI 文件没有放宽或改动。新详情检查 55s，恢复 20s；无诊断跳过开关，缺 DOM 或行为不符直接抛错。queue 模式保留原矩阵。
+共 88 张；每个进程退出 0，WM EWMH 身份对应拥有的 xfwm4 子进程，清理完成，截图尺寸和所有哈希已逐项核验。详情检查由原 CI 必跑的 media → `player.cjs` 直接调用 `play-detail.cjs`，使用独立 `play-detail` kind；原 media 90s 时限、断言及共用 capture/electron-main/CI 文件没有放宽或改动。新详情检查 55s，恢复 20s；无诊断跳过开关，缺 DOM 或行为不符直接抛错。queue 模式保留原矩阵。
 
 详情图覆盖 1024×700、1280×800、1440×900、实际最小 828×540/19px；黄绿/暖米/墨夜、左右窗口按钮、原生 Tab 焦点、每个可见按钮中心命中和横向溢出均核对。无封面保留唱片占位；第二首使用原同名 PNG 封面查找，图片来源是仓库 `doc/images/icon.png`，不是注入歌曲状态。
 
 边界：仅 Linux Xvfb/xfwm4；驱动 Node 24.22.1，现有 CI 使用 Node 22。本地 WAV 不含歌词，评论是原“不支持获取评论”状态；在线歌词/评论内容未验。窄屏打开评论后信息列按原布局收窄，可滚动查看长标题。音效仅核对原弹层入口，定时仅打开关闭且未启动；不证明物理声卡/扬声器输出、全部音效算法、桌面歌词原生窗口或 Windows/macOS 行为。
 
 完整构建、取证 manifest、截图与日志由未改动的 CI `desktop-evidence-<github.sha>-<attempt>` artifact 提供，保留期 **90 天**；最终 run/attempt、head/base、artifact 链接与验收状态记录在 PR 正文和本地 `_goal/REPORT.md`，不以历史 PR 绿灯替代本轮验证。
+
+基线已更新到最新 dev `63bfbdd8cb9b8926e5eba869c8784ca355561d12`（#17）；以上七门与七模式均重新执行，最终源码取证 head 为 `057aecaa64311064179f1971b1f402bdc016e6f9`，其后只更新本目录证据。旧基线成功输出保留在 `artifacts/m3c2-*-base567c5d7b`。
