@@ -9,3 +9,4 @@
    新 helper 误把 828×540 最小支持尺寸等同于 BrowserWindow.getMinimumSize() 限制。src/common/config.ts 的原 windowSizeList 最小预设为 828×540；winMain 原构造为 resizable:false，未设置 minWidth/minHeight。修正为严格同时核对 native content size 和 renderer viewport；记录原生 minimumConstraint，不伪称它有 828×540 限制。
 
 完整本地日志与上述失败 manifest 保存在 artifacts/m3d4e1-local/；既有 CI 将完整 artifacts/ 和 dist/ 上传，保留期 90 天。CI 不会重放本地开发失败，以上记录用于保留本地事实。
+5. themes 首轮本地命令被 SIGTERM 中断，工具观测退出码 143；停止在 oat_milk 选择等待中，无完整 manifest，不能计为通过。中断原因和该中断轮的原生清理未确认。保存 partial phase/display/log 到 artifacts/m3d4e1-local/themes-attempt-1；未延长任何期限、未改 runner。第二轮完整重跑原命令，9 个实际 Electron 进程、35 张矩阵图全部通过，所有 owned WM/Electron 退出及临时 profile 删除均确认。

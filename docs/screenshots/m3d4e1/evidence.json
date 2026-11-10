@@ -1,0 +1,2385 @@
+{
+  "task": "desktop-m3d4e1",
+  "base": "63bfbdd8cb9b8926e5eba869c8784ca355561d12",
+  "implementationHead": "24964c70567278fb4f4eb494b53009cc1bb3d376",
+  "localDocumentationHead": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+  "source": {
+    "commit": "24964c70567278fb4f4eb494b53009cc1bb3d376",
+    "branch": "codex/desktop-m3d4e1",
+    "pullRequestHeadSha": null,
+    "pullRequestBaseSha": null,
+    "dirty": false,
+    "buildSha256": {
+      "249.js": "f827c5972adb6a25884296b33ed45c8d6ef4c1468e761b6abc65088dd8403712",
+      "249.js.map": "d74b4c839f12a821adaf2e3c6202630b325df7ecf820e613f3ced6fd174ac4ec",
+      "272.js": "85f5181b3501dee8e1e0b509ce49caeed26e0920d5c954d00202195912087234",
+      "272.js.map": "527b43d286ac3225b54ebe158be70108cd1ae2b14581f3b34cd6035a80867763",
+      "315.js": "78427b31655cf035aea93bab58050157fe787eb7291df684826efa6ca61a4dec",
+      "315.js.map": "aad5780c1ece3c1db3a8e6932911488491a313fa9c861a305ac0e6a2a14d3385",
+      "408.js": "77a0e19d940d170807b992b45a60a486ff72db07e1e1034e72b7c1567af11740",
+      "408.js.map": "7f210c53f93b9cd3a2f9adcd739da28d03dd405cb628874169f885a6526d8431",
+      "409.js": "baa22cf8017f80b92c708296d312f8b63d031ab9e3f8a29ab02dce674cd56128",
+      "409.js.map": "2d187a7e4218cd15cc81c186aa4a85b33fd358430b4925565ced96d18720b59a",
+      "420.js": "f559363e7bf023ac547320dd72405d20de0f181cb9dbc9ebdf5e723d0d42b9ef",
+      "420.js.map": "f1010713c926eede3291e5a3c333e9e6cb5deaf4f0e20f5f9aee5a5c4d90aee6",
+      "438.js": "f189bd6834d38fcc0f122111eeb1d099a1186a90f0f0499e2aef263a5ee485b7",
+      "438.js.map": "8737f3a7fb17d50f804a4ce8280db14e4efd84148daaf8740900a53eda79c688",
+      "46.js": "0d9294e5ab3712753cdfb98a6e13cf63d9bb2455a1fa47def5ed856fb9b92220",
+      "46.js.map": "dce9eb42d2b85a2dcea810a2dffef6aa697561fc8a4f249710d156086180ef0a",
+      "465.js": "0cf9ba5127ee79b1041ce7855fa522ffeeb784a6318b91da210c3e99114fc1c8",
+      "465.js.map": "cd59099d90ae3038ae82cb6f20902f5013507bbb46947128326e4b2d3b6baf19",
+      "630.js": "c95d96b5bf5c2f24eefd2ed8aff4ae9f2af06f6c971f2bd1369fc4b637c036a1",
+      "630.js.map": "4481fba4d6e839ccc47a6093a8331bfb0d62da202399b60b11ae9cb6254e83f0",
+      "675.js": "10268a6ca02548b91798ffde34fd444f601590518d977e001927298635557298",
+      "675.js.map": "e1ac0c74525fa5678b22871f050b3a1195cfee074edba361664f725cec8bafbe",
+      "764.js": "a6f87684b2bf99c18c78e095fc0874d1f16f35d65ea853caf26bcf00ce006ffc",
+      "764.js.map": "1b305a1e71e650566af2572ea324b441317098a548edd621c8bbb4115129f90c",
+      "790.js": "bb3b21798a7d0b99ceae82a4c5242a449b7e8085554a050dc78c0c2ea151595e",
+      "790.js.map": "7a0e388eac6a3e2c9c28d941ae5fea77ce0e298a550bae15cd6c0b04801ee70c",
+      "930.js": "10932601f97122b7d3734281b9ee4c5059c63ac9964cc6baf443bba726854f26",
+      "930.js.map": "2ddb75127d65dc776076504147bac277c74f4839fb2f9ba2e93e1692b8523fdf",
+      "978.js": "3177c9f0734a39ece7c1de039807d261ec35bb34320460d9d30d5fef7844cd1d",
+      "978.js.LICENSE.txt": "b3c329926d3bef0b39302d3b779f84effba3578e264279e6ca7b88535d51a0fe",
+      "978.js.map": "eb7bbe966eded66843709e5436f4cfe26ca21f89291fdd24a68bf55ca0922ca5",
+      "984.js": "02159dcf550e499559187afcea0352da1144f81ad0b24078c401fc1e2f5230e7",
+      "984.js.map": "a17a6958624014b09b29145b4f58b76a7dc799aae6bef0a892a2b600684231e5",
+      "dbService.worker.js": "80dc388b39a0399405c7173e4291364750331b016503e3401ab8dc469f3c9ac7",
+      "index.html": "d17a312ac64214d57b94fd3a6dde1dda970c0e0177fb27039478c82c4fabcf96",
+      "lyric.html": "f675d5b4d758f628425586bd4369c2884defa1fb80cdb0158ab51718127d693a",
+      "main.js": "7ceb7447e0aa315f570895b6f1fefa8738dec0a7c0bb5a106e3500aab7f11913",
+      "media/bright-hall-3f627fa1.wav": "4f0d8c51a4a5f7a5061c4037136a314a673abb502a86fab869a3b068a4754f83",
+      "media/cardiod-35-10-spread-fa4ea52f.wav": "cf3ab1550ea86065baa9f63a00c6265de7360e167a0bc6a1d0ca54b3f97050ad",
+      "media/cinema-diningroom-e66a593a.wav": "c515a820912cd2fe54f687f6cee36bb2c0b947a6bc23ad057327a8ae9abe44b0",
+      "media/dining-living-true-stereo-b9112ee8.wav": "b0287ec2305edc75d6c484c6a9e55339162acdc2edf7c18b53dfb835563b454f",
+      "media/feedback-spring-7efe92c2.wav": "41d038558169517e38995325de9309c28ebf7c01abda579ec58670043f1961ba",
+      "media/filter-telephone-318685f3.wav": "4dc96614900e1b3fa85611de2ddfd39f2e26530b3b8336239dc1badbfd89f7e9",
+      "media/living-bedroom-leveled-d6a1258e.wav": "d0ec29a1ac756ee6fcd20e1d05018792e645eb606cdc8727a38497f99de34592",
+      "media/matrix-reverb1-44d89638.wav": "333d05904c01c774b28a05a0fae147f8475f6e4f7daa92c3e16d879867f97d0c",
+      "media/matrix-reverb2-c5e38eb5.wav": "888b47ee698110b8e0de89aa8f03edfcd76f19485b2c08675d5ff1d72c6c1343",
+      "media/medium-room1-71e73cdf.wav": "2ac7b2973096c56e3c1fbb252f687371be8cc818af2fc0c59aca61b67c5abc7e",
+      "media/s2_r4_bd-b3f483cd.wav": "400e242cb263d1ce83bed6b7fc2e75f498e0695735974f943d0269befcb31b2f",
+      "media/s3_r1_bd-efaac21f.wav": "3ae4c9ade438e69c23e2e26ecc9bc579bee345be506a6ac30349c34c66177be0",
+      "media/spreader50-65ms-464ad7db.wav": "40fffaf053416be74002d7636c7b469eb17c8762a0d096491c986d00f9a36e64",
+      "media/tim-omni-35-10-magnetic-7a3cb7be.wav": "d73086428420282fe2452f71e289d8521ac9b118947637e9ef97bc832de710c4",
+      "pitch_shifter.audioWorklet.js": "25471bef842572e059fa4e6c3396af2bc576d9faa09e0941135cb886f98a6e4c",
+      "pitch_shifter.audioWorklet.js.map": "b47c842a9b9750c77d73922071fc1f61b996b7a10048834968f65b23d24fbdda",
+      "renderer-lyric.a4feb459.css": "06ebbb2a82e373efd56ae38cb44080396ca390e045c69dc14dad4214103a442d",
+      "renderer-lyric.a4feb459.css.map": "53fd3acb6cf5072a3186b3d97e986d571ba05f5cfef6952bec9f5692a65e8a34",
+      "renderer-lyric.js": "be0c80bd394538cfb1112877c02b49244038550697c931e7976d66ef3604385f",
+      "renderer-lyric.js.LICENSE.txt": "de3e11568629c0e539e6cf9e7a251c7502b3de75cbb8d6598737a48dd0d02a59",
+      "renderer-lyric.js.map": "d076f2782f477e92524375b384efd0100c2e34e23fa79d904e63d4b68b004df5",
+      "renderer.06b43ece.css": "85d1d4293b0d9a8bbe7f8d869763664d7f65e52759620d00dd49c6bcb7469259",
+      "renderer.06b43ece.css.map": "a9c063a9e65c392b60a528892b1b21c235874793e26ed8b42f00e1af67a81783",
+      "renderer.download.worker.js": "58822b91114eafa79a2d41bc5f0ef3159dd1b20f67164e6585611d493c257816",
+      "renderer.download.worker.js.map": "506467a022883c0b0f3131fbe9ad45acb9051c136d13e82324727698604b3941",
+      "renderer.js": "78603fe0d7bf213cf2f258912253fe02fa1ec65729f7ea0629e41dcbdcaba7b3",
+      "renderer.js.LICENSE.txt": "bbcd3b96b195b7ca89f8d15a33b23b4badf42ad0152a87b90bdbf67bfc8d6e5e",
+      "renderer.js.map": "2e7867ad1c0314f2f9dd587f1dd17a11d9bdaee0d0d1758c0bd92dafd9eaffda",
+      "renderer.main.worker.js": "12109215a028367b3e6fac256f93d61328b45da3cecc623a2f40e1e0997ffbde",
+      "renderer.main.worker.js.map": "93fdaa928a9c9e29f8c303f7eda0c17d8ba744dda28c6818ff909bd1a40703a3",
+      "static/images/taskbar/collect.png": "24c87b9d3fdca1cc44daa14a8ff9cc4e9713c7452e487cf7785d1c90e360b50c",
+      "static/images/taskbar/collected.png": "8e12eea68e888231fb82147d937fdb73cc069d2003a59980bf41a3156b042b07",
+      "static/images/taskbar/next.png": "7125bb861430d4f4afe67d0a8785f1c8177807e40e5813e483c4ceb84ba3d6a3",
+      "static/images/taskbar/pause.png": "7d6e8aa0daecd0190dfb133bbf25f9a07a96067469d591004898f40ee1031f03",
+      "static/images/taskbar/play.png": "b2c9e162e37e2f9c2706ba93a2d9223c0dff27dfb21a9ed5c7896f0bbb29c67a",
+      "static/images/taskbar/prev.png": "83a4a8d37d8fd87e8335a0a04988bef4c9751e2955e2e39f45ba4a88d70ad7db",
+      "static/images/tray/trayTemplate.ico": "c1016d1134aecda755b34754b2a1475b1f26c8129bf28c99ae908da7cc705265",
+      "static/images/tray/trayTemplate.png": "5eb72d1d7adee103bad10913229cd36b1bb9bf47cb321c3e9a1b57b02f27f542",
+      "static/images/tray/trayTemplate@1.25x.png": "3d93efcf3395e06cc12d159d26863532adee52defe192316e11d9675743eb0af",
+      "static/images/tray/trayTemplate@1.5x.png": "14f2a6889b853166416cc48693e11d987dfbd161f67619585c85a1fe2beff5d8",
+      "static/images/tray/trayTemplate@2x.ico": "74fb642e24a687afcfb980cf22925a8dbcf8f416af1440eb3c1f9d86a8b490cd",
+      "static/images/tray/trayTemplate@2x.png": "3a98c5c0c79d2f235a9e1890802a5ca8ca8f79531df81e17cfd6377c55294db0",
+      "static/images/tray/tray_black.ico": "3547d1c10197e53cdca68ac557c0c27e2679483283b18dda0e2a752fefe80a0e",
+      "static/images/tray/tray_black.png": "0e3817b191a2eadb343a09f68498027334f741a5a343e004daca5f173d421e59",
+      "static/images/tray/tray_black@1.25x.png": "0b6e7823ff4bda76b224adc9a264e4b6bc41886e149d2c13b0fa62d17807cce4",
+      "static/images/tray/tray_black@1.5x.png": "26f4b3c9cafce0a7a4dc845cc1d3009a5c5eed3e5bbf99e290b77d120e42c5bb",
+      "static/images/tray/tray_black@2x.ico": "4cc8c4c0c18191e6dbeb9cd6e0fc730d00012d131efd5e002876ae0a15497775",
+      "static/images/tray/tray_black@2x.png": "2183885202605fd25b1648948838355d0cd153162403258ee3178b8317ff26cb",
+      "static/images/tray/tray_origin.ico": "efcf345b5943716daf637414e5960cd83cb6816274b382813874efbff17f16af",
+      "static/images/tray/tray_origin.png": "b0deb836c4ea77f6c153fd3a5e3e5c50e60df09ea625c30134a2bf9cb2377c65",
+      "static/images/tray/tray_origin@2x.ico": "0129884c33229ab48b188ee02988f03f9e8f0511a82d55cbffd1187cb757a0c4",
+      "static/images/tray/tray_origin@2x.png": "6ffc7d2d11aed40ec883ea020e8605e9c6839e240a94f65c75243b3d93203f82",
+      "theme_images/china_ink.jpg": "3f022a20c234334523fd876fad5e721cf2a1ad9c3a60525365ba88ccf8e6746e",
+      "theme_images/jqbg.jpg": "74fbe3b664788c4d81b77d5cacc6f38a5ad58c9222a75abb75a51de0a296754e",
+      "theme_images/landingMoon.png": "01572eff8b85e71ac9ad1e8228b8b48143b4ff4c0246ecd803eadf1cf1008eb4",
+      "theme_images/myzcbg.jpg": "1e4ee8c55bcb5f7a45639c12723ba0a7a1c39e7a52ff1cea2ea1a60d9de9584f",
+      "theme_images/xnkl.png": "c6926a2e8780a6073a94e09657aecd360ca0e3136437dcfc2c5e78742c3912b5",
+      "user-api-preload.js": "5054614e36a516c8174c35735de74b20b8c34c48a0ed2a802eff73c24ad05a8e",
+      "user-api-preload.js.map": "aadc0d376dcc9022a81c18219dc86d89188d8e26c0c3a8667e675a29b7e531c5",
+      "userApi/renderer/user-api.html": "bd4f1b83d8c804334c401035173dfd9fff65f87f6909b9915c6d4ac96fb4fbd8"
+    },
+    "harnessSha256": {
+      "capture.cjs": "4d73ebfe0d7b10581a103d85444c93429b13be3169040be9e1f702f8b864ff0a",
+      "display.cjs": "7d2a1cce5270d21138e215bf9ccd1bd2d4b45d95064bed7c88e857dcb345fa26",
+      "downloads.cjs": "1dd9a48fe228365c41c01c969ffdba928a9056812bf401fe257aff0009504d9e",
+      "electron-main.cjs": "bb13fee3c438ffec6cfac02021e509455782b92b10aff77202184cb4abdfd176",
+      "layout-runner.cjs": "ce69f1d1c01666dfbeba5cfa7bb85a6cf240fad906aa75ec4b6e88430e9cb0c4",
+      "layout.cjs": "fd37e59dd158e6243b459dd4242e4618ea64c6545f5d19f2133908874c8d36d7",
+      "native-drag.cjs": "540d3de40799159bcd857d9fdb754320e7074a8cfbd60dca25d549d7b7d42e54",
+      "navigation.cjs": "11693d29afb5454910d99eb0891ddf99133a68956ca5cd1da9c5f957949c4d0d",
+      "offline-preload.cjs": "94fadee845e38b4e14b5609a0a2477a9be5ef5ba6e51599ed802ff56917d58c3",
+      "offline.cjs": "664201a557982cc9b19aa456079ed92d61e6208d1e2e601dbf6c052732218d87",
+      "player-layout.cjs": "387f59b634f4a4c024269e1a93c68186989d24bc9f308ff2c7d93e082807b7dd",
+      "player-preload.cjs": "ab831a7cb189ac2839e88021fa2185d7756838892ca804e05daa55f6b1b79176",
+      "player.cjs": "bb2698af35ac985545abf1c0ccf0a0f7382539b39a0200a09288eb5c3ecc3081",
+      "prepare-runtime.cjs": "1bf3cf0c81431e957dfe8d09be3e1d5f016fcd26aa5aa7a1e700090cbac7047c",
+      "profile.cjs": "a49f4df90244d1a89b4db385bbf524bb4408c23e3b9db20abaf4969f42ee1fec",
+      "queue.cjs": "81cdb4e6bcc841ab72dafff45f945b1b3ee363c47a9f6196902ec5682fa5eb54",
+      "settings-search.cjs": "4fa0b0ab6e7b7efb73798b23ebcda5c6a8b5b1aac64a0208184ddda0bacfdb30",
+      "settings.cjs": "d75c54499a343b809c05b629ef1c1a1305c1cd2a131b645d3e43108e105d0ac5",
+      "ui.cjs": "ea4ce0d847f5dd890cc734cffcc54f71e1ca909e95962658374bf9ebf758ed91",
+      "window.cjs": "2bdf1abae98ac1435d5000116fcec3b75703edc6def45760d3c25ee3e506c272"
+    }
+  },
+  "verification": {
+    "commit": "e57419bb162a5afdb0280cd789984eb29b22720e",
+    "dirty": false,
+    "pullRequestHead": null,
+    "pullRequestBase": null,
+    "timestamp": "2026-11-10T08:03:08.758Z",
+    "node": "v24.22.1",
+    "platform": "linux-x64",
+    "checks": [
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 43949.74254399999
+      },
+      {
+        "command": "npm run typecheck",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 19614.207973999997
+      },
+      {
+        "command": "npm run test",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1840.2077209999989
+      },
+      {
+        "command": "npm run build:main",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 5747.827657000002
+      },
+      {
+        "command": "npm run build:renderer",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 77527.94073599999
+      },
+      {
+        "command": "npm run build:renderer-lyric",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 8108.587008000002
+      },
+      {
+        "command": "npm run build:renderer-scripts",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1654.6614859999972
+      }
+    ],
+    "testCounts": {
+      "pass": 160,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "nonTestGateCounts": "not applicable"
+  },
+  "production": {
+    "file": "src/renderer/views/Setting/components/SettingSearch.vue",
+    "sha256": "7f73fe4f1653bd5542af50e4accabd4a6caff1446558f9d15dda30d593fdb667",
+    "scriptByteIdentical": true,
+    "scriptSha256": "fce00f8c2a8371d84b78a3bd7f849fddda694f4cde7b2c3ee9ead150648faef7",
+    "originalQueuePlusFinalAwaitOnly": true
+  },
+  "search": {
+    "kind": "settings-search",
+    "budgetMs": {
+      "body": 40000,
+      "cleanup": 10000
+    },
+    "scenes": [
+      {
+        "file": "settings-search-lime-1024x700-font16.png",
+        "scene": {
+          "theme": "lime",
+          "width": 1024,
+          "height": 700,
+          "font": 16
+        },
+        "native": {
+          "contentSize": [
+            1024,
+            700
+          ],
+          "minimumConstraint": [
+            0,
+            0
+          ]
+        },
+        "selection": {
+          "theme": {
+            "theme.id": {
+              "renderer": "lime",
+              "main": "lime",
+              "disk": "lime"
+            }
+          },
+          "font": {
+            "common.fontSize": {
+              "renderer": 16,
+              "main": 16,
+              "disk": 16
+            }
+          }
+        },
+        "layout": {
+          "ids": [
+            "setting_search_showHot_enable",
+            "setting_search_showHistory_enable",
+            "setting_search_focusSearchBox_enable"
+          ],
+          "horizontalOverflow": false,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "paper": "rgb(238, 240, 251)",
+          "ink": "rgb(17, 24, 39)",
+          "tokens": {
+            "paper": "#eef0fb",
+            "ink": "#111827",
+            "muted": "#767d89",
+            "rule": "#111827",
+            "hairline": "#e1e6ef"
+          },
+          "headingReachable": true,
+          "controls": [
+            {
+              "id": "setting_search_showHot_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_showHistory_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_focusSearchBox_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            }
+          ]
+        }
+      },
+      {
+        "file": "settings-search-lime-1280x800-font16.png",
+        "scene": {
+          "theme": "lime",
+          "width": 1280,
+          "height": 800,
+          "font": 16
+        },
+        "native": {
+          "contentSize": [
+            1280,
+            800
+          ],
+          "minimumConstraint": [
+            0,
+            0
+          ]
+        },
+        "selection": {
+          "theme": {
+            "theme.id": {
+              "renderer": "lime",
+              "main": "lime",
+              "disk": "lime"
+            }
+          },
+          "font": {
+            "common.fontSize": {
+              "renderer": 16,
+              "main": 16,
+              "disk": 16
+            }
+          }
+        },
+        "layout": {
+          "ids": [
+            "setting_search_showHot_enable",
+            "setting_search_showHistory_enable",
+            "setting_search_focusSearchBox_enable"
+          ],
+          "horizontalOverflow": false,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "paper": "rgb(238, 240, 251)",
+          "ink": "rgb(17, 24, 39)",
+          "tokens": {
+            "paper": "#eef0fb",
+            "ink": "#111827",
+            "muted": "#767d89",
+            "rule": "#111827",
+            "hairline": "#e1e6ef"
+          },
+          "headingReachable": true,
+          "controls": [
+            {
+              "id": "setting_search_showHot_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_showHistory_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_focusSearchBox_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            }
+          ]
+        }
+      },
+      {
+        "file": "settings-search-lime-1440x900-font16.png",
+        "scene": {
+          "theme": "lime",
+          "width": 1440,
+          "height": 900,
+          "font": 16
+        },
+        "native": {
+          "contentSize": [
+            1440,
+            900
+          ],
+          "minimumConstraint": [
+            0,
+            0
+          ]
+        },
+        "selection": {
+          "theme": {
+            "theme.id": {
+              "renderer": "lime",
+              "main": "lime",
+              "disk": "lime"
+            }
+          },
+          "font": {
+            "common.fontSize": {
+              "renderer": 16,
+              "main": 16,
+              "disk": 16
+            }
+          }
+        },
+        "layout": {
+          "ids": [
+            "setting_search_showHot_enable",
+            "setting_search_showHistory_enable",
+            "setting_search_focusSearchBox_enable"
+          ],
+          "horizontalOverflow": false,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "paper": "rgb(238, 240, 251)",
+          "ink": "rgb(17, 24, 39)",
+          "tokens": {
+            "paper": "#eef0fb",
+            "ink": "#111827",
+            "muted": "#767d89",
+            "rule": "#111827",
+            "hairline": "#e1e6ef"
+          },
+          "headingReachable": true,
+          "controls": [
+            {
+              "id": "setting_search_showHot_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_showHistory_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_focusSearchBox_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            }
+          ]
+        }
+      },
+      {
+        "file": "settings-search-oat_milk-1280x800-font16.png",
+        "scene": {
+          "theme": "oat_milk",
+          "width": 1280,
+          "height": 800,
+          "font": 16
+        },
+        "native": {
+          "contentSize": [
+            1280,
+            800
+          ],
+          "minimumConstraint": [
+            0,
+            0
+          ]
+        },
+        "selection": {
+          "theme": {
+            "theme.id": {
+              "renderer": "oat_milk",
+              "main": "oat_milk",
+              "disk": "oat_milk"
+            }
+          },
+          "font": {
+            "common.fontSize": {
+              "renderer": 16,
+              "main": 16,
+              "disk": 16
+            }
+          }
+        },
+        "layout": {
+          "ids": [
+            "setting_search_showHot_enable",
+            "setting_search_showHistory_enable",
+            "setting_search_focusSearchBox_enable"
+          ],
+          "horizontalOverflow": false,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "paper": "rgb(246, 241, 234)",
+          "ink": "rgb(28, 23, 18)",
+          "tokens": {
+            "paper": "#f6f1ea",
+            "ink": "#1c1712",
+            "muted": "#6f6458",
+            "rule": "#1c1712",
+            "hairline": "#e2d8cb"
+          },
+          "headingReachable": true,
+          "controls": [
+            {
+              "id": "setting_search_showHot_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_showHistory_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_focusSearchBox_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            }
+          ]
+        }
+      },
+      {
+        "file": "settings-search-ink_night-1280x800-font16.png",
+        "scene": {
+          "theme": "ink_night",
+          "width": 1280,
+          "height": 800,
+          "font": 16
+        },
+        "native": {
+          "contentSize": [
+            1280,
+            800
+          ],
+          "minimumConstraint": [
+            0,
+            0
+          ]
+        },
+        "selection": {
+          "theme": {
+            "theme.id": {
+              "renderer": "ink_night",
+              "main": "ink_night",
+              "disk": "ink_night"
+            }
+          },
+          "font": {
+            "common.fontSize": {
+              "renderer": 16,
+              "main": 16,
+              "disk": 16
+            }
+          }
+        },
+        "layout": {
+          "ids": [
+            "setting_search_showHot_enable",
+            "setting_search_showHistory_enable",
+            "setting_search_focusSearchBox_enable"
+          ],
+          "horizontalOverflow": false,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "paper": "rgb(18, 20, 28)",
+          "ink": "rgb(243, 244, 248)",
+          "tokens": {
+            "paper": "#12141c",
+            "ink": "#f3f4f8",
+            "muted": "#a0a6b8",
+            "rule": "#f3f4f8",
+            "hairline": "#2f3444"
+          },
+          "headingReachable": true,
+          "controls": [
+            {
+              "id": "setting_search_showHot_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_showHistory_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_focusSearchBox_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            }
+          ]
+        }
+      },
+      {
+        "file": "settings-search-lime-828x540-font19.png",
+        "scene": {
+          "theme": "lime",
+          "width": 828,
+          "height": 540,
+          "font": 19
+        },
+        "native": {
+          "contentSize": [
+            828,
+            540
+          ],
+          "minimumConstraint": [
+            0,
+            0
+          ]
+        },
+        "selection": {
+          "theme": {
+            "theme.id": {
+              "renderer": "lime",
+              "main": "lime",
+              "disk": "lime"
+            }
+          },
+          "font": {
+            "common.fontSize": {
+              "renderer": 19,
+              "main": 19,
+              "disk": 19
+            }
+          }
+        },
+        "layout": {
+          "ids": [
+            "setting_search_showHot_enable",
+            "setting_search_showHistory_enable",
+            "setting_search_focusSearchBox_enable"
+          ],
+          "horizontalOverflow": false,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "paper": "rgb(238, 240, 251)",
+          "ink": "rgb(17, 24, 39)",
+          "tokens": {
+            "paper": "#eef0fb",
+            "ink": "#111827",
+            "muted": "#767d89",
+            "rule": "#111827",
+            "hairline": "#e1e6ef"
+          },
+          "headingReachable": true,
+          "controls": [
+            {
+              "id": "setting_search_showHot_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_showHistory_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            },
+            {
+              "id": "setting_search_focusSearchBox_enable",
+              "labelReachable": true,
+              "checkboxReachable": true
+            }
+          ]
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "setting_search_showHot_enable",
+        "setting": "search.isShowHotSearch",
+        "original": false,
+        "operations": [
+          {
+            "input": "mouse",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "mouse",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          },
+          {
+            "input": "Enter",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "Enter",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          },
+          {
+            "input": "Space",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "Space",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          }
+        ],
+        "reentered": {
+          "renderer": true,
+          "main": true,
+          "disk": true
+        },
+        "restored": {
+          "renderer": false,
+          "main": false,
+          "disk": false
+        }
+      },
+      {
+        "id": "setting_search_showHistory_enable",
+        "setting": "search.isShowHistorySearch",
+        "original": false,
+        "operations": [
+          {
+            "input": "mouse",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "mouse",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          },
+          {
+            "input": "Enter",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "Enter",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          },
+          {
+            "input": "Space",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "Space",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          }
+        ],
+        "reentered": {
+          "renderer": true,
+          "main": true,
+          "disk": true
+        },
+        "restored": {
+          "renderer": false,
+          "main": false,
+          "disk": false
+        }
+      },
+      {
+        "id": "setting_search_focusSearchBox_enable",
+        "setting": "search.isFocusSearchBox",
+        "original": false,
+        "operations": [
+          {
+            "input": "mouse",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "mouse",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          },
+          {
+            "input": "Enter",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "Enter",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          },
+          {
+            "input": "Space",
+            "expected": true,
+            "ariaTransitions": [
+              "true"
+            ],
+            "before": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            },
+            "after": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            }
+          },
+          {
+            "input": "Space",
+            "expected": false,
+            "ariaTransitions": [
+              "false"
+            ],
+            "before": {
+              "renderer": true,
+              "main": true,
+              "disk": true
+            },
+            "after": {
+              "renderer": false,
+              "main": false,
+              "disk": false
+            }
+          }
+        ],
+        "reentered": {
+          "renderer": true,
+          "main": true,
+          "disk": true
+        },
+        "restored": {
+          "renderer": false,
+          "main": false,
+          "disk": false
+        }
+      }
+    ],
+    "focus": [
+      {
+        "id": "setting_search_showHot_enable",
+        "file": "settings-search-focus-setting_search_showHot_enable.png",
+        "input": "native heading mouse click, then real Tab only; no DOM focus()",
+        "trace": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "role": "checkbox",
+            "target": true
+          }
+        ],
+        "geometry": {
+          "rect": {
+            "left": 214.578125,
+            "top": 213.9375,
+            "right": 233.28125,
+            "bottom": 232.640625,
+            "width": 18.703125,
+            "height": 18.703125
+          },
+          "clip": {
+            "left": 178.953125,
+            "top": 66.125,
+            "right": 826.515625,
+            "bottom": 462.125
+          },
+          "text": [],
+          "centreHit": true,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "fontSize": "16.625px",
+          "focusVisible": true,
+          "outline": {
+            "width": "2px",
+            "offset": "3px",
+            "color": "rgb(17, 24, 39)",
+            "style": "solid"
+          }
+        }
+      },
+      {
+        "id": "setting_search_showHistory_enable",
+        "file": "settings-search-focus-setting_search_showHistory_enable.png",
+        "input": "native heading mouse click, then real Tab only; no DOM focus()",
+        "trace": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "role": "checkbox",
+            "target": false
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "role": "checkbox",
+            "target": true
+          }
+        ],
+        "geometry": {
+          "rect": {
+            "left": 214.578125,
+            "top": 279.53125,
+            "right": 233.28125,
+            "bottom": 298.234375,
+            "width": 18.703125,
+            "height": 18.703125
+          },
+          "clip": {
+            "left": 178.953125,
+            "top": 66.125,
+            "right": 826.515625,
+            "bottom": 462.125
+          },
+          "text": [],
+          "centreHit": true,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "fontSize": "16.625px",
+          "focusVisible": true,
+          "outline": {
+            "width": "2px",
+            "offset": "3px",
+            "color": "rgb(17, 24, 39)",
+            "style": "solid"
+          }
+        }
+      },
+      {
+        "id": "setting_search_focusSearchBox_enable",
+        "file": "settings-search-focus-setting_search_focusSearchBox_enable.png",
+        "input": "native heading mouse click, then real Tab only; no DOM focus()",
+        "trace": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "role": "checkbox",
+            "target": false
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "role": "checkbox",
+            "target": false
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "role": "checkbox",
+            "target": true
+          }
+        ],
+        "geometry": {
+          "rect": {
+            "left": 214.578125,
+            "top": 345.125,
+            "right": 233.28125,
+            "bottom": 363.828125,
+            "width": 18.703125,
+            "height": 18.703125
+          },
+          "clip": {
+            "left": 178.953125,
+            "top": 66.125,
+            "right": 826.515625,
+            "bottom": 462.125
+          },
+          "text": [],
+          "centreHit": true,
+          "font": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+          "fontSize": "16.625px",
+          "focusVisible": true,
+          "outline": {
+            "width": "2px",
+            "offset": "3px",
+            "color": "rgb(17, 24, 39)",
+            "style": "solid"
+          }
+        }
+      }
+    ],
+    "cleanup": [
+      {
+        "name": "search.isShowHotSearch",
+        "restored": true
+      },
+      {
+        "name": "search.isShowHistorySearch",
+        "restored": true
+      },
+      {
+        "name": "search.isFocusSearchBox",
+        "restored": true
+      },
+      {
+        "name": "theme",
+        "restored": true
+      },
+      {
+        "name": "font",
+        "restored": true
+      },
+      {
+        "name": "category and route",
+        "restored": true
+      },
+      {
+        "name": "native bounds and state",
+        "restored": true
+      },
+      {
+        "name": "final values and queue/audio/source invariants",
+        "restored": true
+      }
+    ],
+    "initial": {
+      "values": {
+        "search.isShowHotSearch": false,
+        "search.isShowHistorySearch": false,
+        "search.isFocusSearchBox": false,
+        "theme.id": "ink_night",
+        "common.fontSize": 16
+      },
+      "hash": "#/list?id=default",
+      "native": {
+        "bounds": {
+          "x": 403,
+          "y": 241,
+          "width": 1280,
+          "height": 800
+        },
+        "visible": true,
+        "focused": true,
+        "minimized": false,
+        "maximized": false,
+        "fullscreen": false
+      },
+      "boundary": {
+        "queue": [],
+        "musicId": "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+        "audio": {
+          "src": "file:///tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+          "paused": false,
+          "volume": 1,
+          "muted": false
+        },
+        "sourceIds": [
+          "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+          "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-2.wav"
+        ]
+      }
+    },
+    "originalCategory": "基本设置",
+    "bodyComplete": true,
+    "bodyElapsedMs": 9160,
+    "final": {
+      "values": {
+        "search.isShowHotSearch": {
+          "renderer": false,
+          "main": false,
+          "disk": false
+        },
+        "search.isShowHistorySearch": {
+          "renderer": false,
+          "main": false,
+          "disk": false
+        },
+        "search.isFocusSearchBox": {
+          "renderer": false,
+          "main": false,
+          "disk": false
+        },
+        "theme.id": {
+          "renderer": "ink_night",
+          "main": "ink_night",
+          "disk": "ink_night"
+        },
+        "common.fontSize": {
+          "renderer": 16,
+          "main": 16,
+          "disk": 16
+        }
+      },
+      "hash": "#/list?id=default",
+      "native": {
+        "bounds": {
+          "x": 403,
+          "y": 241,
+          "width": 1280,
+          "height": 800
+        },
+        "visible": true,
+        "focused": true,
+        "minimized": false,
+        "maximized": false,
+        "fullscreen": false
+      },
+      "boundary": {
+        "queue": [],
+        "musicId": "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+        "audio": {
+          "src": "file:///tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+          "paused": false,
+          "volume": 1,
+          "muted": false
+        },
+        "sourceIds": [
+          "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+          "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-2.wav"
+        ]
+      }
+    },
+    "elapsedMs": 9479,
+    "unverified": [
+      "search result pages and full M3a",
+      "public online sources",
+      "physical audio hardware",
+      "Windows/macOS"
+    ],
+    "complete": true
+  },
+  "captures": [
+    {
+      "file": "settings-search-lime-1024x700-font16.png",
+      "kind": "settings-search",
+      "width": 1024,
+      "height": 700,
+      "sha256": "b2da93c149c8756cc4c138b134765f79a8c930961a9d90944e65556dba94cf20",
+      "bytes": 55744,
+      "paint": {
+        "firstFrameTime": 23485,
+        "secondFrameTime": 23501.6,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "lime",
+        "width": 1024,
+        "height": 700,
+        "font": 16
+      }
+    },
+    {
+      "file": "settings-search-lime-1280x800-font16.png",
+      "kind": "settings-search",
+      "width": 1280,
+      "height": 800,
+      "sha256": "8e91d85ce84cbb51d0f89cb3dd4f670b8d510f10f34188f95dc032fea886a405",
+      "bytes": 58884,
+      "paint": {
+        "firstFrameTime": 23835,
+        "secondFrameTime": 23851.7,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "lime",
+        "width": 1280,
+        "height": 800,
+        "font": 16
+      }
+    },
+    {
+      "file": "settings-search-lime-1440x900-font16.png",
+      "kind": "settings-search",
+      "width": 1440,
+      "height": 900,
+      "sha256": "6b37e2bda710f76ae39e453f00b99a9bcda845be7a174f4f9e91b520f9b63e50",
+      "bytes": 61432,
+      "paint": {
+        "firstFrameTime": 24285,
+        "secondFrameTime": 24301.6,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "lime",
+        "width": 1440,
+        "height": 900,
+        "font": 16
+      }
+    },
+    {
+      "file": "settings-search-oat_milk-1280x800-font16.png",
+      "kind": "settings-search",
+      "width": 1280,
+      "height": 800,
+      "sha256": "694a2b1485f628850acf993fc5f02488e208269d90b5400a8198b6e36064a8f4",
+      "bytes": 58851,
+      "paint": {
+        "firstFrameTime": 24768.3,
+        "secondFrameTime": 24785,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "oat_milk",
+        "width": 1280,
+        "height": 800,
+        "font": 16
+      }
+    },
+    {
+      "file": "settings-search-ink_night-1280x800-font16.png",
+      "kind": "settings-search",
+      "width": 1280,
+      "height": 800,
+      "sha256": "122dc1f632bbf44781155d26dc9834cd8abca7c2d09d472f27bc1b827039fb93",
+      "bytes": 57727,
+      "paint": {
+        "firstFrameTime": 25234.9,
+        "secondFrameTime": 25251.6,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "ink_night",
+        "width": 1280,
+        "height": 800,
+        "font": 16
+      }
+    },
+    {
+      "file": "settings-search-lime-828x540-font19.png",
+      "kind": "settings-search",
+      "width": 828,
+      "height": 540,
+      "sha256": "a737f5297d668643e8ad7dfd7ae419b105c7fefe02f3f1d78b67f13bea1b68a2",
+      "bytes": 52711,
+      "paint": {
+        "firstFrameTime": 25901.6,
+        "secondFrameTime": 25918.2,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "lime",
+        "width": 828,
+        "height": 540,
+        "font": 19
+      }
+    },
+    {
+      "file": "settings-search-focus-setting_search_showHot_enable.png",
+      "kind": "settings-search",
+      "width": 828,
+      "height": 540,
+      "sha256": "b753d4d5e48788709ffb9df7885ba4a1a2a6affe17454caf573502c2d2641168",
+      "bytes": 52762,
+      "paint": {
+        "firstFrameTime": 26734.9,
+        "secondFrameTime": 26751.5,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "lime",
+        "width": 828,
+        "height": 540,
+        "font": 19
+      }
+    },
+    {
+      "file": "settings-search-focus-setting_search_showHistory_enable.png",
+      "kind": "settings-search",
+      "width": 828,
+      "height": 540,
+      "sha256": "79aee35579147c2710f08706bc0e23f56d143053595e0fb5d1184e3c0f55a091",
+      "bytes": 52786,
+      "paint": {
+        "firstFrameTime": 28784.7,
+        "secondFrameTime": 28801.4,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "lime",
+        "width": 828,
+        "height": 540,
+        "font": 19
+      }
+    },
+    {
+      "file": "settings-search-focus-setting_search_focusSearchBox_enable.png",
+      "kind": "settings-search",
+      "width": 828,
+      "height": 540,
+      "sha256": "54d3865c8b224ca8d8f3d35bf48cbd63c1bf5fc2053ff72883ce2301ca6c8c96",
+      "bytes": 52700,
+      "paint": {
+        "firstFrameTime": 30851.3,
+        "secondFrameTime": 30868,
+        "visibilityState": "visible"
+      },
+      "scene": {
+        "theme": "lime",
+        "width": 828,
+        "height": 540,
+        "font": 19
+      }
+    }
+  ],
+  "retained": [
+    {
+      "mode": "themes",
+      "command": "LUX_EVIDENCE_MODE=themes LUX_EVIDENCE_DIR=artifacts/m3d4e1-themes npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "0d358818-783a-4e9b-8cee-cd436c79182b",
+      "startedAt": "2026-11-10T12:11:21.318Z",
+      "finishedAt": "2026-11-10T12:12:27.225Z",
+      "source": {
+        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 35,
+      "kinds": {
+        "route": 12,
+        "theme": 6,
+        "focus": 6,
+        "auto-preview": 1,
+        "restart": 8,
+        "compatibility": 2
+      },
+      "manifestSha256": "81f16cb2e0d86df5079e574291c4f82b14c6e0947cdcf13317d0fe6e7d52a3d5",
+      "phases": [
+        {
+          "phase": "theme-lime",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 28,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:11:21.451Z",
+            "exitedAt": "2026-11-10T12:11:39.094Z",
+            "elapsedMs": 17643.493697,
+            "previousPhaseExited": null
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 60,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 60,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 60\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 83,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 60,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-mist_blue",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 195,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:11:39.095Z",
+            "exitedAt": "2026-11-10T12:11:45.457Z",
+            "elapsedMs": 6362.173231000001,
+            "previousPhaseExited": true
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 223,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 223,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 223\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 246,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 223,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-sakura",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 344,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:11:45.458Z",
+            "exitedAt": "2026-11-10T12:11:51.669Z",
+            "elapsedMs": 6210.762786000003,
+            "previousPhaseExited": true
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 374,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 374,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 374\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 396,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 374,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-lavender",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 498,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:11:51.670Z",
+            "exitedAt": "2026-11-10T12:11:58.079Z",
+            "elapsedMs": 6408.987423000002,
+            "previousPhaseExited": true
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 528,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 528,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 528\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 551,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 528,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-oat_milk",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 651,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:11:58.079Z",
+            "exitedAt": "2026-11-10T12:12:04.399Z",
+            "elapsedMs": 6319.307362,
+            "previousPhaseExited": true
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 681,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 681,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 681\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 704,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 681,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-ink_night",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 805,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:12:04.399Z",
+            "exitedAt": "2026-11-10T12:12:10.643Z",
+            "elapsedMs": 6243.723711999999,
+            "previousPhaseExited": true
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 835,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 835,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 835\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 858,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 835,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-green",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 960,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:12:10.643Z",
+            "exitedAt": "2026-11-10T12:12:16.814Z",
+            "elapsedMs": 6170.861062999997,
+            "previousPhaseExited": true
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 989,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 989,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 989\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 1012,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 989,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-user_theme_evidence",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 1112,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:12:16.815Z",
+            "exitedAt": "2026-11-10T12:12:22.824Z",
+            "elapsedMs": 6008.788206000005,
+            "previousPhaseExited": true
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 1141,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1141,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1141\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 1163,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 1141,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "custom-theme-restart",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 1265,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:12:22.824Z",
+            "exitedAt": "2026-11-10T12:12:27.187Z",
+            "elapsedMs": 4363.021075000004,
+            "previousPhaseExited": true
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 1294,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1294,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1294\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 1316,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 1294,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "media",
+      "command": "LUX_EVIDENCE_MODE=media LUX_EVIDENCE_DIR=artifacts/m3d4e1-media npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "7daa43ec-a1b3-47bd-9c95-1285b90cfc64",
+      "startedAt": "2026-11-10T12:09:15.478Z",
+      "finishedAt": "2026-11-10T12:09:27.195Z",
+      "source": {
+        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 3,
+      "kinds": {
+        "media": 3
+      },
+      "manifestSha256": "4a047c491f065d09e927918b4910c0f070efff6e1b8aaf06d514a7324d13f076",
+      "phases": [
+        {
+          "phase": "media",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 27,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:09:15.545Z",
+            "exitedAt": "2026-11-10T12:09:27.161Z",
+            "elapsedMs": 11615.222912,
+            "previousPhaseExited": null
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 59,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 59,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 59\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 82,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 59,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "window",
+      "command": "LUX_EVIDENCE_MODE=window LUX_EVIDENCE_DIR=artifacts/m3d4e1-window npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "976f6091-b6fc-48a6-a163-4303bd4fa1d3",
+      "startedAt": "2026-11-10T12:09:27.490Z",
+      "finishedAt": "2026-11-10T12:09:37.813Z",
+      "source": {
+        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 3,
+      "kinds": {
+        "window-controls": 2,
+        "window-fullscreen": 1
+      },
+      "manifestSha256": "6e6cca7b9635d58a2ae7f62c0cc31ded48f55865bedfca631c90cf5f0c385c62",
+      "phases": [
+        {
+          "phase": "window",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 224,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:09:27.543Z",
+            "exitedAt": "2026-11-10T12:09:37.771Z",
+            "elapsedMs": 10228.488101,
+            "previousPhaseExited": null
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 256,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 256,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 256\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 279,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 256,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "native-drag",
+      "command": "LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/m3d4e1-native-drag npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "c11e7bc8-3ee8-498e-8d83-9d6620257ca0",
+      "startedAt": "2026-11-10T12:09:38.042Z",
+      "finishedAt": "2026-11-10T12:09:45.267Z",
+      "source": {
+        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 1,
+      "kinds": {
+        "window-native-drag": 1
+      },
+      "manifestSha256": "ba525528672d22dc2b44f77ec730d3e133cb57e6c5496cf45b4afa6ca2306d6e",
+      "phases": [
+        {
+          "phase": "native-drag",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 420,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:09:38.104Z",
+            "exitedAt": "2026-11-10T12:09:45.230Z",
+            "elapsedMs": 7126.530987,
+            "previousPhaseExited": null
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 452,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 452,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 452\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 474,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 452,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "settings",
+      "command": "LUX_EVIDENCE_MODE=settings LUX_EVIDENCE_DIR=artifacts/m3d4e1-settings LUX_EVIDENCE_SIZES=1280x800,1024x700,1440x900 npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "303ed4e7-1f68-4eea-92a8-63fbaf29227e",
+      "startedAt": "2026-11-10T12:09:15.480Z",
+      "finishedAt": "2026-11-10T12:09:26.899Z",
+      "source": {
+        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 21,
+      "kinds": {
+        "settings-category": 16,
+        "settings-size": 2,
+        "settings-theme": 2,
+        "settings-font": 1
+      },
+      "manifestSha256": "34582ad9d6827a50dc86e389cd8b332ba4e02fe90a2f2e7fc6107683051ca180",
+      "phases": [
+        {
+          "phase": "settings",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 27,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:09:15.552Z",
+            "exitedAt": "2026-11-10T12:09:26.863Z",
+            "elapsedMs": 11310.570194,
+            "previousPhaseExited": null
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 62,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 62,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 62\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 85,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 62,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "queue",
+      "command": "LUX_EVIDENCE_MODE=queue LUX_EVIDENCE_DIR=artifacts/m3d4e1-queue npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "8aaa2a86-8c87-447b-8725-45f87d454aff",
+      "startedAt": "2026-11-10T12:08:16.667Z",
+      "finishedAt": "2026-11-10T12:08:53.399Z",
+      "source": {
+        "commit": "24964c70567278fb4f4eb494b53009cc1bb3d376",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 20,
+      "kinds": {
+        "media": 3,
+        "queue": 8,
+        "settings-search": 9
+      },
+      "manifestSha256": "823882ba3a5929f67f2b11d303d337112c4ae64ce9293edb4cb804aa28515572",
+      "phases": [
+        {
+          "phase": "queue",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 41,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:08:16.826Z",
+            "exitedAt": "2026-11-10T12:08:53.356Z",
+            "elapsedMs": 36529.844173000005,
+            "previousPhaseExited": null
+          },
+          "display": ":106",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 73,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 73,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 73\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 96,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 73,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "downloads",
+      "command": "LUX_EVIDENCE_MODE=downloads LUX_EVIDENCE_DIR=artifacts/m3d4e1-downloads npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "5ac71b62-1150-4d8c-8f41-c01bfaec4958",
+      "startedAt": "2026-11-10T12:09:27.123Z",
+      "finishedAt": "2026-11-10T12:09:44.135Z",
+      "source": {
+        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 6,
+      "kinds": {
+        "downloads": 6
+      },
+      "manifestSha256": "b963829e57f7c22ecd1a1e70ce5b1b8c7e44c256a0fbc961b3a286b1a1cd536b",
+      "phases": [
+        {
+          "phase": "downloads",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 227,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:09:27.178Z",
+            "exitedAt": "2026-11-10T12:09:44.095Z",
+            "elapsedMs": 16916.550030000002,
+            "previousPhaseExited": null
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 259,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 259,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 259\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 282,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 259,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    }
+  ],
+  "pngHashes": {
+    "artifacts/m3d4e1-themes/search-1280x800.png": "ceecd6cd6066c9976d3046f2660c940eb5d25301cf15b8940d671ddcd886841f",
+    "artifacts/m3d4e1-themes/songlists-1280x800.png": "5b0e9e7230e686128f8f296c0d8075fe66029d002b1e9234be30fceff9dea437",
+    "artifacts/m3d4e1-themes/leaderboard-1280x800.png": "54cebe4f6d19501386de126dd34da733a9e30d358674ba326ac7f95d76e3e731",
+    "artifacts/m3d4e1-themes/library-1280x800.png": "bb4cf2f720b973dbf5560f7a555604d749bacc68984cbffe558bd8218da831d5",
+    "artifacts/m3d4e1-themes/downloads-1280x800.png": "ac52a5e1ca4d65ad2fb26fac2d4a98554cfa1b00dba25566d651396275c08e13",
+    "artifacts/m3d4e1-themes/settings-1280x800.png": "bb64f426e23aab36553f7ab049449f418bd30216822b76d5faa245bd77ad954c",
+    "artifacts/m3d4e1-themes/search-1024x700.png": "95b8abee237bf41d7380bab16c6b9b194d38dc31acea4f8784465e5eea8a08b9",
+    "artifacts/m3d4e1-themes/songlists-1024x700.png": "7796960132e806ee58eb6b0cec0f1dc43207cbc0f9ef9b1e803d13ae00c6efc2",
+    "artifacts/m3d4e1-themes/leaderboard-1024x700.png": "e7f3128a05769ac7e15841b3070ab76fc7613fd64d1558ba84e91f41b6d7d70d",
+    "artifacts/m3d4e1-themes/library-1024x700.png": "97c8f704521d0218b5bc4e785708c5fef60e30ac7d97e90a399ffe47a35785a5",
+    "artifacts/m3d4e1-themes/downloads-1024x700.png": "89df12c5714bea110e7ef4a058b7b4f76952d8985df36548860df7b8f40466f1",
+    "artifacts/m3d4e1-themes/settings-1024x700.png": "11feec3f44045b1c4a7fa6190bfcd38bcf5ca8262c3a9d9c2a540b32a5c14ca8",
+    "artifacts/m3d4e1-themes/theme-lime-1280x800.png": "035324dfb6e860d0b4006c4ca7046f2c8bccb1f91a01e1570e40186712096c86",
+    "artifacts/m3d4e1-themes/focus-lime-1280x800.png": "35372abf3bdc52eafb0b39fe70f9f154ebcf2353c2c50bfa4c8c69abf35e7bf7",
+    "artifacts/m3d4e1-themes/auto-preview-1280x800.png": "bc0e2c2bc515329fbb7a66c73599ab98bdeb76216e86026f346dfed7e76e05e9",
+    "artifacts/m3d4e1-themes/restart-lime-1280x800.png": "bb64f426e23aab36553f7ab049449f418bd30216822b76d5faa245bd77ad954c",
+    "artifacts/m3d4e1-themes/theme-mist_blue-1280x800.png": "96a696b904b30661cec21d912473c23d084e644402f78b895df0d1ce0078cca8",
+    "artifacts/m3d4e1-themes/focus-mist_blue-1280x800.png": "abb3e4fd589751da032608aaabe2a98eb2a0e6474988c85d0362416b2871fd5d",
+    "artifacts/m3d4e1-themes/restart-mist_blue-1280x800.png": "30d7bf2ce9f7c15882e1d1913ded652fea28d26b1c1f0c5bae20213d55362dc5",
+    "artifacts/m3d4e1-themes/theme-sakura-1280x800.png": "6c02d5f5c7c43f3823a49bff3009857e46e9b78bb4dc332706e6c1927828e994",
+    "artifacts/m3d4e1-themes/focus-sakura-1280x800.png": "739adba527527bfd9a6aeca5f67f40adff4c9055bd16c863ce5f754369cd38b0",
+    "artifacts/m3d4e1-themes/restart-sakura-1280x800.png": "86f6af271367e75b658246987abc29e5469ca496324ab4006cf9c3c1c09cbd4a",
+    "artifacts/m3d4e1-themes/theme-lavender-1280x800.png": "ed45ae174115cc8fad95f94e74cce774702e4b5454cace6b512d2efd7dd7d135",
+    "artifacts/m3d4e1-themes/focus-lavender-1280x800.png": "21431475ddcd025fc149512647852bd2a3d8846c827abe076dd1dec59c25446c",
+    "artifacts/m3d4e1-themes/restart-lavender-1280x800.png": "3363a08a985512e3285f67ef7e79ce9784bd4e15c419868e7e011c2e7a19a847",
+    "artifacts/m3d4e1-themes/theme-oat_milk-1280x800.png": "ce9ab3e96c7a60996ba891b9da4ae5e1f797c3aa85e8059db516329e36a4af26",
+    "artifacts/m3d4e1-themes/focus-oat_milk-1280x800.png": "29cd3878af4218f0d131e53d1a436e571093dc1f794e39ac502b0b93cd121f37",
+    "artifacts/m3d4e1-themes/restart-oat_milk-1280x800.png": "6adc09398f9ed9a70aa82629e775b2f1a9b80d6e7a851c13e6eb9beef4afc782",
+    "artifacts/m3d4e1-themes/theme-ink_night-1280x800.png": "a2ee492001d1b2c5db6e47bfebf113c861080f8eee0703e99e4000199e6c33fa",
+    "artifacts/m3d4e1-themes/focus-ink_night-1280x800.png": "008d66d95cb74651c0a15c6578f258ba53b7d08b57217cece3c6d3343bf28f48",
+    "artifacts/m3d4e1-themes/restart-ink_night-1280x800.png": "df2c105b00057564a6a318448c0b8730edf9a9090b02535c71df4ada4d907bbc",
+    "artifacts/m3d4e1-themes/theme-green-1280x800.png": "357b20546ee82796715b53782cb8d76011bce766b7f10b2c1f54a93b7ab9b928",
+    "artifacts/m3d4e1-themes/restart-green-1280x800.png": "856236b9ac5286f1c0aab36e0d3aac1d368b6760c378107534de9f2a4e0c0dcb",
+    "artifacts/m3d4e1-themes/theme-user_theme_evidence-1280x800.png": "bad3ba3ae121ce08ac3deff816c6d352255c881898cbd7034942122634671edc",
+    "artifacts/m3d4e1-themes/restart-user_theme_evidence-1280x800.png": "65aa0db1a497ff21d5bdb14d60b0bc81f8a4d348382d326ebd12d11e646d3640",
+    "artifacts/m3d4e1-media/media-real-playing.png": "f10ad08b9ca743ab9fdec582e7804374ba4623b1e6047b8bf63e6464c9ff96bb",
+    "artifacts/m3d4e1-media/media-real-paused-seek.png": "64e18ac2ad6c6561c709aa6d7e7740179737b913adf2198a37f89ccc2690a576",
+    "artifacts/m3d4e1-media/media-real-controls.png": "22ceeb74c0448ff6862e05f519f0e1144e3158adb58e20ca9ec7a3bd437ea699",
+    "artifacts/m3d4e1-window/window-controls-left.png": "2493eb488cfa1186fa9903ee1530fc4ce837d9b27e5a8fe19c6d71b3b9752528",
+    "artifacts/m3d4e1-window/window-controls-right.png": "ceecd6cd6066c9976d3046f2660c940eb5d25301cf15b8940d671ddcd886841f",
+    "artifacts/m3d4e1-window/window-fullscreen.png": "b07fcf137da186001dd82c0ce268039a4969630c1e712fc0273ad5c6e39186bd",
+    "artifacts/m3d4e1-native-drag/window-native-drag.png": "ceecd6cd6066c9976d3046f2660c940eb5d25301cf15b8940d671ddcd886841f",
+    "artifacts/m3d4e1-settings/settings-basic.png": "bb64f426e23aab36553f7ab049449f418bd30216822b76d5faa245bd77ad954c",
+    "artifacts/m3d4e1-settings/settings-play.png": "2a6260a364f14ba5060d3fea59508e1de7097c278312fce481f561229bd3a4ce",
+    "artifacts/m3d4e1-settings/settings-play_detail.png": "12859a1d9a775963ea28469229190c9910ffa48a53a35bb2b33db0cbc6d470b0",
+    "artifacts/m3d4e1-settings/settings-desktop_lyric.png": "1bded940a3f1564bf506d0b59dbd012d9fc4bafb97c6d60e5eb920eacc7e7bfc",
+    "artifacts/m3d4e1-settings/settings-search.png": "7028e6ba3d18bdd4b7376b95625dcd18ae400005235e703bca28d58dc8a973df",
+    "artifacts/m3d4e1-settings/settings-list.png": "87211594644411404732fa540759e74c071645461a8c8a29f9ac271009d70a1c",
+    "artifacts/m3d4e1-settings/settings-download.png": "0879013bc37cca85b57ce5f8a97025299abc968d897a17158bf9b7181b6f85f5",
+    "artifacts/m3d4e1-settings/settings-hot_key.png": "73332c4f0921f0bc98bbfcc2f4c87883e63f8064a58b8eae2949726c4b469367",
+    "artifacts/m3d4e1-settings/settings-sync.png": "0cb852eb09be4e4d6f7ae2d44bde6533de9fb6a3e46c550d1b25ac06e9fc3bd9",
+    "artifacts/m3d4e1-settings/settings-open_api.png": "c90effb805d9609790cd9fec662208f4a159c5a1e3fa906682eb9f4a254d3da7",
+    "artifacts/m3d4e1-settings/settings-network.png": "ef8648618ba78204876e7881119616167fb59eca80e590ae87eb9e8a2d0ea257",
+    "artifacts/m3d4e1-settings/settings-odc.png": "445d19765e90b775c1b7f61a2eea0567ce887c2905856b9dc3507300a0e1ccaa",
+    "artifacts/m3d4e1-settings/settings-backup.png": "d795ba0b9059345297a27fc283a8d2563de95faeebf814c19f56c44390b57449",
+    "artifacts/m3d4e1-settings/settings-other.png": "29ecf223adaeaa8f0340caff9563079e702422673ac1b3349e4984c2d359535a",
+    "artifacts/m3d4e1-settings/settings-update.png": "9d4df5ab68c174573b43dc6d55bdf6f7693c1b565b6f1ef089c36a10f75ad744",
+    "artifacts/m3d4e1-settings/settings-about.png": "e0d14aaa4ee53843cf523419e9ff6037ed0b6a84c3e8fbec250271bf5dece67c",
+    "artifacts/m3d4e1-settings/settings-basic-1024x700.png": "11feec3f44045b1c4a7fa6190bfcd38bcf5ca8262c3a9d9c2a540b32a5c14ca8",
+    "artifacts/m3d4e1-settings/settings-basic-1440x900.png": "0b47332fb244c87def6cb29b15bd33f6d6ac8af3764ff8a18e0dfef93cbfccc4",
+    "artifacts/m3d4e1-settings/settings-oat_milk.png": "ecb910099f1f9576475719ac97fffaf731d5f0e6b9a2edc23f94b06e1380dbbd",
+    "artifacts/m3d4e1-settings/settings-ink_night.png": "5cb1fb652c7addec15458360ee853f5cd35c8b3fb0f7d00be84e38c7ef008f2a",
+    "artifacts/m3d4e1-settings/settings-font-19.png": "4ed32747c9319160878b1df989070b963af403c305db1a8b9488c73d3eb048e7",
+    "artifacts/m3d4e1-queue/media-real-playing.png": "f10ad08b9ca743ab9fdec582e7804374ba4623b1e6047b8bf63e6464c9ff96bb",
+    "artifacts/m3d4e1-queue/media-real-paused-seek.png": "64e18ac2ad6c6561c709aa6d7e7740179737b913adf2198a37f89ccc2690a576",
+    "artifacts/m3d4e1-queue/media-real-controls.png": "22ceeb74c0448ff6862e05f519f0e1144e3158adb58e20ca9ec7a3bd437ea699",
+    "artifacts/m3d4e1-queue/queue-lime-1280x800.png": "9377d2f6932b7117c5cb7b982309a69cb20eb3fdd3f97d244570600cc67e95c8",
+    "artifacts/m3d4e1-queue/queue-lime-1024x700.png": "69862f5f1c0be1b78c6b845255d256d704c607b3b31aa9025493fae242043065",
+    "artifacts/m3d4e1-queue/queue-lime-1440x900.png": "8849eda469db3c67db25db5b882acad620a5a7e91530d6e3ac09167378972c77",
+    "artifacts/m3d4e1-queue/queue-lime-828x540.png": "538276262ec1031dbb6caf22d14e413c83fcdabb03733ed8b4f8575c412172ed",
+    "artifacts/m3d4e1-queue/queue-oat_milk-1280x800.png": "19daa63c51a438cf731a56f15989fe387cb0a15f3d8d58aaca1afbdc6fb429a8",
+    "artifacts/m3d4e1-queue/queue-ink_night-1280x800.png": "ad5a12d9c2bc3ba5440eb591f505878d648c398cdc5c0b444956a4fa7338c7bd",
+    "artifacts/m3d4e1-queue/queue-font-19-828x540.png": "59a5d937c79d0ba32e7c11135477d12f83bb012cbd11306c035ddebed8b68e9d",
+    "artifacts/m3d4e1-queue/queue-empty-1280x800.png": "980e924a90cd57996e4fa291a16a0ee4623cb94741c15b9d46e15ba49c010525",
+    "artifacts/m3d4e1-queue/settings-search-lime-1024x700-font16.png": "b2da93c149c8756cc4c138b134765f79a8c930961a9d90944e65556dba94cf20",
+    "artifacts/m3d4e1-queue/settings-search-lime-1280x800-font16.png": "8e91d85ce84cbb51d0f89cb3dd4f670b8d510f10f34188f95dc032fea886a405",
+    "artifacts/m3d4e1-queue/settings-search-lime-1440x900-font16.png": "6b37e2bda710f76ae39e453f00b99a9bcda845be7a174f4f9e91b520f9b63e50",
+    "artifacts/m3d4e1-queue/settings-search-oat_milk-1280x800-font16.png": "694a2b1485f628850acf993fc5f02488e208269d90b5400a8198b6e36064a8f4",
+    "artifacts/m3d4e1-queue/settings-search-ink_night-1280x800-font16.png": "122dc1f632bbf44781155d26dc9834cd8abca7c2d09d472f27bc1b827039fb93",
+    "artifacts/m3d4e1-queue/settings-search-lime-828x540-font19.png": "a737f5297d668643e8ad7dfd7ae419b105c7fefe02f3f1d78b67f13bea1b68a2",
+    "artifacts/m3d4e1-queue/settings-search-focus-setting_search_showHot_enable.png": "b753d4d5e48788709ffb9df7885ba4a1a2a6affe17454caf573502c2d2641168",
+    "artifacts/m3d4e1-queue/settings-search-focus-setting_search_showHistory_enable.png": "79aee35579147c2710f08706bc0e23f56d143053595e0fb5d1184e3c0f55a091",
+    "artifacts/m3d4e1-queue/settings-search-focus-setting_search_focusSearchBox_enable.png": "54d3865c8b224ca8d8f3d35bf48cbd63c1bf5fc2053ff72883ce2301ca6c8c96",
+    "artifacts/m3d4e1-downloads/downloads-lime-1280x800.png": "edde9190532b47198b7e2e4345e76f7e54c5b589f45290e8d1ee179064c49675",
+    "artifacts/m3d4e1-downloads/downloads-ink_night-1024x700.png": "98d2b130709a1dfbe806fd8bbb4c20e63ab2212b25864ae1ac37ad42fd7e614f",
+    "artifacts/m3d4e1-downloads/downloads-oat_milk-1280x800.png": "75c70859069c964ea3b22e4501df5faef4cb26c765d2958f362d9b07c3422f9c",
+    "artifacts/m3d4e1-downloads/downloads-selection-menu-1280x800.png": "61248602fa5c92565e57977e283a174e0780a4daedf5cd8cfdc8cf903a7b6c55",
+    "artifacts/m3d4e1-downloads/downloads-large-font-1024x700.png": "83328ba27cfaa2ad453e9469b06d7e10a76f1fdc8683f123f8782614f2cebe1f",
+    "artifacts/m3d4e1-downloads/downloads-empty-1024x700.png": "b7fb50710e82bc53ec5690342a59c536deb5346a5155761a7d674188d11ae7f2"
+  },
+  "ci": {
+    "workflow": ".github/workflows/build-test.yml",
+    "retentionDays": 90,
+    "finalHeadResult": "recorded after publication in DELIVERY.local.json and PR description; never infer from this earlier local source head"
+  },
+  "localGit": {
+    "reason": "workspace.sh worktree metadata is in read-only shared _base; no shared metadata modified",
+    "gitDir": "/tmp/desktop-m3d4e1-git",
+    "workTree": "/workspace/codex-dev/wt/desktop-m3d4e1",
+    "backupBundle": "artifacts/m3d4e1-local/implementation.bundle"
+  }
+}
