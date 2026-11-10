@@ -95,4 +95,5 @@ module.exports = async function runWindowEvidence(context) {
     }
   }
   if (failure) throw failure
+  await require('./settings-about.cjs')(context)
 }

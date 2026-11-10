@@ -1,0 +1,3602 @@
+{
+  "base": "63bfbdd8cb9b8926e5eba869c8784ca355561d12",
+  "implementationHead": "ed7fd45193b91c1a161feb7dab265f89073086a3",
+  "workingDirectory": "/workspace/codex-dev/wt/desktop-m3d5b1",
+  "gitMetadata": "/tmp/m3d5b1-git (task-owned standard Git repository; original read-only .git and shared _base unchanged)",
+  "source": {
+    "commit": "ed7fd45193b91c1a161feb7dab265f89073086a3",
+    "branch": "codex/desktop-m3d5b1",
+    "pullRequestHeadSha": null,
+    "pullRequestBaseSha": null,
+    "dirty": false,
+    "buildSha256": {
+      "249.js": "f827c5972adb6a25884296b33ed45c8d6ef4c1468e761b6abc65088dd8403712",
+      "249.js.map": "d74b4c839f12a821adaf2e3c6202630b325df7ecf820e613f3ced6fd174ac4ec",
+      "272.js": "85f5181b3501dee8e1e0b509ce49caeed26e0920d5c954d00202195912087234",
+      "272.js.map": "527b43d286ac3225b54ebe158be70108cd1ae2b14581f3b34cd6035a80867763",
+      "315.js": "78427b31655cf035aea93bab58050157fe787eb7291df684826efa6ca61a4dec",
+      "315.js.map": "aad5780c1ece3c1db3a8e6932911488491a313fa9c861a305ac0e6a2a14d3385",
+      "408.js": "77a0e19d940d170807b992b45a60a486ff72db07e1e1034e72b7c1567af11740",
+      "408.js.map": "7f210c53f93b9cd3a2f9adcd739da28d03dd405cb628874169f885a6526d8431",
+      "409.js": "baa22cf8017f80b92c708296d312f8b63d031ab9e3f8a29ab02dce674cd56128",
+      "409.js.map": "2d187a7e4218cd15cc81c186aa4a85b33fd358430b4925565ced96d18720b59a",
+      "420.js": "f559363e7bf023ac547320dd72405d20de0f181cb9dbc9ebdf5e723d0d42b9ef",
+      "420.js.map": "f1010713c926eede3291e5a3c333e9e6cb5deaf4f0e20f5f9aee5a5c4d90aee6",
+      "438.js": "f189bd6834d38fcc0f122111eeb1d099a1186a90f0f0499e2aef263a5ee485b7",
+      "438.js.map": "8737f3a7fb17d50f804a4ce8280db14e4efd84148daaf8740900a53eda79c688",
+      "46.js": "0d9294e5ab3712753cdfb98a6e13cf63d9bb2455a1fa47def5ed856fb9b92220",
+      "46.js.map": "dce9eb42d2b85a2dcea810a2dffef6aa697561fc8a4f249710d156086180ef0a",
+      "465.js": "0cf9ba5127ee79b1041ce7855fa522ffeeb784a6318b91da210c3e99114fc1c8",
+      "465.js.map": "cd59099d90ae3038ae82cb6f20902f5013507bbb46947128326e4b2d3b6baf19",
+      "630.js": "c95d96b5bf5c2f24eefd2ed8aff4ae9f2af06f6c971f2bd1369fc4b637c036a1",
+      "630.js.map": "4481fba4d6e839ccc47a6093a8331bfb0d62da202399b60b11ae9cb6254e83f0",
+      "675.js": "10268a6ca02548b91798ffde34fd444f601590518d977e001927298635557298",
+      "675.js.map": "e1ac0c74525fa5678b22871f050b3a1195cfee074edba361664f725cec8bafbe",
+      "764.js": "a6f87684b2bf99c18c78e095fc0874d1f16f35d65ea853caf26bcf00ce006ffc",
+      "764.js.map": "1b305a1e71e650566af2572ea324b441317098a548edd621c8bbb4115129f90c",
+      "790.js": "bb3b21798a7d0b99ceae82a4c5242a449b7e8085554a050dc78c0c2ea151595e",
+      "790.js.map": "7a0e388eac6a3e2c9c28d941ae5fea77ce0e298a550bae15cd6c0b04801ee70c",
+      "930.js": "10932601f97122b7d3734281b9ee4c5059c63ac9964cc6baf443bba726854f26",
+      "930.js.map": "2ddb75127d65dc776076504147bac277c74f4839fb2f9ba2e93e1692b8523fdf",
+      "978.js": "3177c9f0734a39ece7c1de039807d261ec35bb34320460d9d30d5fef7844cd1d",
+      "978.js.LICENSE.txt": "b3c329926d3bef0b39302d3b779f84effba3578e264279e6ca7b88535d51a0fe",
+      "978.js.map": "eb7bbe966eded66843709e5436f4cfe26ca21f89291fdd24a68bf55ca0922ca5",
+      "984.js": "02159dcf550e499559187afcea0352da1144f81ad0b24078c401fc1e2f5230e7",
+      "984.js.map": "a17a6958624014b09b29145b4f58b76a7dc799aae6bef0a892a2b600684231e5",
+      "dbService.worker.js": "80dc388b39a0399405c7173e4291364750331b016503e3401ab8dc469f3c9ac7",
+      "index.html": "67b32bc9b5e6c20d85c8be8614fc7f051b3dbecb6e3177ce576237477b2da72d",
+      "lyric.html": "f675d5b4d758f628425586bd4369c2884defa1fb80cdb0158ab51718127d693a",
+      "main.js": "7ceb7447e0aa315f570895b6f1fefa8738dec0a7c0bb5a106e3500aab7f11913",
+      "media/bright-hall-3f627fa1.wav": "4f0d8c51a4a5f7a5061c4037136a314a673abb502a86fab869a3b068a4754f83",
+      "media/cardiod-35-10-spread-fa4ea52f.wav": "cf3ab1550ea86065baa9f63a00c6265de7360e167a0bc6a1d0ca54b3f97050ad",
+      "media/cinema-diningroom-e66a593a.wav": "c515a820912cd2fe54f687f6cee36bb2c0b947a6bc23ad057327a8ae9abe44b0",
+      "media/dining-living-true-stereo-b9112ee8.wav": "b0287ec2305edc75d6c484c6a9e55339162acdc2edf7c18b53dfb835563b454f",
+      "media/feedback-spring-7efe92c2.wav": "41d038558169517e38995325de9309c28ebf7c01abda579ec58670043f1961ba",
+      "media/filter-telephone-318685f3.wav": "4dc96614900e1b3fa85611de2ddfd39f2e26530b3b8336239dc1badbfd89f7e9",
+      "media/living-bedroom-leveled-d6a1258e.wav": "d0ec29a1ac756ee6fcd20e1d05018792e645eb606cdc8727a38497f99de34592",
+      "media/matrix-reverb1-44d89638.wav": "333d05904c01c774b28a05a0fae147f8475f6e4f7daa92c3e16d879867f97d0c",
+      "media/matrix-reverb2-c5e38eb5.wav": "888b47ee698110b8e0de89aa8f03edfcd76f19485b2c08675d5ff1d72c6c1343",
+      "media/medium-room1-71e73cdf.wav": "2ac7b2973096c56e3c1fbb252f687371be8cc818af2fc0c59aca61b67c5abc7e",
+      "media/s2_r4_bd-b3f483cd.wav": "400e242cb263d1ce83bed6b7fc2e75f498e0695735974f943d0269befcb31b2f",
+      "media/s3_r1_bd-efaac21f.wav": "3ae4c9ade438e69c23e2e26ecc9bc579bee345be506a6ac30349c34c66177be0",
+      "media/spreader50-65ms-464ad7db.wav": "40fffaf053416be74002d7636c7b469eb17c8762a0d096491c986d00f9a36e64",
+      "media/tim-omni-35-10-magnetic-7a3cb7be.wav": "d73086428420282fe2452f71e289d8521ac9b118947637e9ef97bc832de710c4",
+      "pitch_shifter.audioWorklet.js": "25471bef842572e059fa4e6c3396af2bc576d9faa09e0941135cb886f98a6e4c",
+      "pitch_shifter.audioWorklet.js.map": "b47c842a9b9750c77d73922071fc1f61b996b7a10048834968f65b23d24fbdda",
+      "renderer-lyric.a4feb459.css": "06ebbb2a82e373efd56ae38cb44080396ca390e045c69dc14dad4214103a442d",
+      "renderer-lyric.a4feb459.css.map": "53fd3acb6cf5072a3186b3d97e986d571ba05f5cfef6952bec9f5692a65e8a34",
+      "renderer-lyric.js": "be0c80bd394538cfb1112877c02b49244038550697c931e7976d66ef3604385f",
+      "renderer-lyric.js.LICENSE.txt": "de3e11568629c0e539e6cf9e7a251c7502b3de75cbb8d6598737a48dd0d02a59",
+      "renderer-lyric.js.map": "d076f2782f477e92524375b384efd0100c2e34e23fa79d904e63d4b68b004df5",
+      "renderer.download.worker.js": "58822b91114eafa79a2d41bc5f0ef3159dd1b20f67164e6585611d493c257816",
+      "renderer.download.worker.js.map": "506467a022883c0b0f3131fbe9ad45acb9051c136d13e82324727698604b3941",
+      "renderer.e4eaa610.css": "5ba60b23c9aa0244b22284f26c837e8ad4603d77b0f3add993fe8d4cb84231df",
+      "renderer.e4eaa610.css.map": "e9bb08e7b2d692e02baf4a61972bc200fa112108d87eb5cd5c3c4fa1faaa3082",
+      "renderer.f39ee73a.css": "b32099031e237591b46b9f3f8f1aadd1ff79c8221998f7e38c2bdf9970408c73",
+      "renderer.f39ee73a.css.map": "f98ef6e7092fff2d15050d8b4f77d662a54ae7ddb6c9c6238f97c011cb15eb3d",
+      "renderer.js": "46c8701ab7bd9a580b25e2e66a7089c04c2522547db0ae3c01f8b7cdc21d0f6c",
+      "renderer.js.LICENSE.txt": "bbcd3b96b195b7ca89f8d15a33b23b4badf42ad0152a87b90bdbf67bfc8d6e5e",
+      "renderer.js.map": "43282687a8e470ed404c8e2370953675c011fc26feab2d298bba8c3f01a5368d",
+      "renderer.main.worker.js": "12109215a028367b3e6fac256f93d61328b45da3cecc623a2f40e1e0997ffbde",
+      "renderer.main.worker.js.map": "93fdaa928a9c9e29f8c303f7eda0c17d8ba744dda28c6818ff909bd1a40703a3",
+      "static/images/taskbar/collect.png": "24c87b9d3fdca1cc44daa14a8ff9cc4e9713c7452e487cf7785d1c90e360b50c",
+      "static/images/taskbar/collected.png": "8e12eea68e888231fb82147d937fdb73cc069d2003a59980bf41a3156b042b07",
+      "static/images/taskbar/next.png": "7125bb861430d4f4afe67d0a8785f1c8177807e40e5813e483c4ceb84ba3d6a3",
+      "static/images/taskbar/pause.png": "7d6e8aa0daecd0190dfb133bbf25f9a07a96067469d591004898f40ee1031f03",
+      "static/images/taskbar/play.png": "b2c9e162e37e2f9c2706ba93a2d9223c0dff27dfb21a9ed5c7896f0bbb29c67a",
+      "static/images/taskbar/prev.png": "83a4a8d37d8fd87e8335a0a04988bef4c9751e2955e2e39f45ba4a88d70ad7db",
+      "static/images/tray/trayTemplate.ico": "c1016d1134aecda755b34754b2a1475b1f26c8129bf28c99ae908da7cc705265",
+      "static/images/tray/trayTemplate.png": "5eb72d1d7adee103bad10913229cd36b1bb9bf47cb321c3e9a1b57b02f27f542",
+      "static/images/tray/trayTemplate@1.25x.png": "3d93efcf3395e06cc12d159d26863532adee52defe192316e11d9675743eb0af",
+      "static/images/tray/trayTemplate@1.5x.png": "14f2a6889b853166416cc48693e11d987dfbd161f67619585c85a1fe2beff5d8",
+      "static/images/tray/trayTemplate@2x.ico": "74fb642e24a687afcfb980cf22925a8dbcf8f416af1440eb3c1f9d86a8b490cd",
+      "static/images/tray/trayTemplate@2x.png": "3a98c5c0c79d2f235a9e1890802a5ca8ca8f79531df81e17cfd6377c55294db0",
+      "static/images/tray/tray_black.ico": "3547d1c10197e53cdca68ac557c0c27e2679483283b18dda0e2a752fefe80a0e",
+      "static/images/tray/tray_black.png": "0e3817b191a2eadb343a09f68498027334f741a5a343e004daca5f173d421e59",
+      "static/images/tray/tray_black@1.25x.png": "0b6e7823ff4bda76b224adc9a264e4b6bc41886e149d2c13b0fa62d17807cce4",
+      "static/images/tray/tray_black@1.5x.png": "26f4b3c9cafce0a7a4dc845cc1d3009a5c5eed3e5bbf99e290b77d120e42c5bb",
+      "static/images/tray/tray_black@2x.ico": "4cc8c4c0c18191e6dbeb9cd6e0fc730d00012d131efd5e002876ae0a15497775",
+      "static/images/tray/tray_black@2x.png": "2183885202605fd25b1648948838355d0cd153162403258ee3178b8317ff26cb",
+      "static/images/tray/tray_origin.ico": "efcf345b5943716daf637414e5960cd83cb6816274b382813874efbff17f16af",
+      "static/images/tray/tray_origin.png": "b0deb836c4ea77f6c153fd3a5e3e5c50e60df09ea625c30134a2bf9cb2377c65",
+      "static/images/tray/tray_origin@2x.ico": "0129884c33229ab48b188ee02988f03f9e8f0511a82d55cbffd1187cb757a0c4",
+      "static/images/tray/tray_origin@2x.png": "6ffc7d2d11aed40ec883ea020e8605e9c6839e240a94f65c75243b3d93203f82",
+      "theme_images/china_ink.jpg": "3f022a20c234334523fd876fad5e721cf2a1ad9c3a60525365ba88ccf8e6746e",
+      "theme_images/jqbg.jpg": "74fbe3b664788c4d81b77d5cacc6f38a5ad58c9222a75abb75a51de0a296754e",
+      "theme_images/landingMoon.png": "01572eff8b85e71ac9ad1e8228b8b48143b4ff4c0246ecd803eadf1cf1008eb4",
+      "theme_images/myzcbg.jpg": "1e4ee8c55bcb5f7a45639c12723ba0a7a1c39e7a52ff1cea2ea1a60d9de9584f",
+      "theme_images/xnkl.png": "c6926a2e8780a6073a94e09657aecd360ca0e3136437dcfc2c5e78742c3912b5",
+      "user-api-preload.js": "5054614e36a516c8174c35735de74b20b8c34c48a0ed2a802eff73c24ad05a8e",
+      "user-api-preload.js.map": "aadc0d376dcc9022a81c18219dc86d89188d8e26c0c3a8667e675a29b7e531c5",
+      "userApi/renderer/user-api.html": "bd4f1b83d8c804334c401035173dfd9fff65f87f6909b9915c6d4ac96fb4fbd8"
+    },
+    "harnessSha256": {
+      "capture.cjs": "4d73ebfe0d7b10581a103d85444c93429b13be3169040be9e1f702f8b864ff0a",
+      "display.cjs": "7d2a1cce5270d21138e215bf9ccd1bd2d4b45d95064bed7c88e857dcb345fa26",
+      "downloads.cjs": "1dd9a48fe228365c41c01c969ffdba928a9056812bf401fe257aff0009504d9e",
+      "electron-main.cjs": "bb13fee3c438ffec6cfac02021e509455782b92b10aff77202184cb4abdfd176",
+      "layout-runner.cjs": "ce69f1d1c01666dfbeba5cfa7bb85a6cf240fad906aa75ec4b6e88430e9cb0c4",
+      "layout.cjs": "fd37e59dd158e6243b459dd4242e4618ea64c6545f5d19f2133908874c8d36d7",
+      "native-drag.cjs": "540d3de40799159bcd857d9fdb754320e7074a8cfbd60dca25d549d7b7d42e54",
+      "navigation.cjs": "11693d29afb5454910d99eb0891ddf99133a68956ca5cd1da9c5f957949c4d0d",
+      "offline-preload.cjs": "94fadee845e38b4e14b5609a0a2477a9be5ef5ba6e51599ed802ff56917d58c3",
+      "offline.cjs": "664201a557982cc9b19aa456079ed92d61e6208d1e2e601dbf6c052732218d87",
+      "player-layout.cjs": "387f59b634f4a4c024269e1a93c68186989d24bc9f308ff2c7d93e082807b7dd",
+      "player-preload.cjs": "ab831a7cb189ac2839e88021fa2185d7756838892ca804e05daa55f6b1b79176",
+      "player.cjs": "bb2698af35ac985545abf1c0ccf0a0f7382539b39a0200a09288eb5c3ecc3081",
+      "prepare-runtime.cjs": "1bf3cf0c81431e957dfe8d09be3e1d5f016fcd26aa5aa7a1e700090cbac7047c",
+      "profile.cjs": "a49f4df90244d1a89b4db385bbf524bb4408c23e3b9db20abaf4969f42ee1fec",
+      "queue.cjs": "ecb8f59f63cac011e4f855970d3e38597452d0eb93c75b8b0c0d7b3347ebcb4f",
+      "settings-about.cjs": "5a7b20accd77a41829dd88a957aec932086cbc974088bfbf1ce193ea918504df",
+      "settings.cjs": "d75c54499a343b809c05b629ef1c1a1305c1cd2a131b645d3e43108e105d0ac5",
+      "ui.cjs": "ea4ce0d847f5dd890cc734cffcc54f71e1ca909e95962658374bf9ebf758ed91",
+      "window.cjs": "cd986b8758a9b8d8ad7d85c033c5bc3dac0de98150c3eb7ca6e275c0d5bb8389"
+    }
+  },
+  "runtimeProbe": {
+    "timestamp": "2026-11-10T03:45:17.041Z",
+    "versions": {
+      "node": "24.19.0",
+      "acorn": "8.17.0",
+      "ada": "3.4.4",
+      "amaro": "1.1.10",
+      "ares": "1.34.6",
+      "brotli": "1.2.0",
+      "cldr": "48.0",
+      "icu": "78.2",
+      "llhttp": "9.4.3",
+      "merve": "1.2.2",
+      "modules": "146",
+      "napi": "10",
+      "nbytes": "0.1.4",
+      "ncrypto": "0.0.1",
+      "nghttp2": "1.69.0",
+      "nghttp3": "",
+      "ngtcp2": "",
+      "openssl": "0.0.0",
+      "simdjson": "4.6.4",
+      "simdutf": "7.7.0",
+      "sqlite": "3.53.3",
+      "tz": "2025c",
+      "undici": "7.29.0",
+      "unicode": "17.0",
+      "uv": "1.52.1",
+      "uvwasi": "0.0.23",
+      "v8": "14.8.178.38-electron.0",
+      "zlib": "1.3.2.1-motley",
+      "zstd": "1.6.0",
+      "electron": "42.11.6",
+      "chrome": "148.0.7778.280"
+    },
+    "platform": "linux",
+    "arch": "x64",
+    "sqlite": "create/insert/select/close passed using packaged binding"
+  },
+  "modes": [
+    {
+      "mode": "themes",
+      "command": "LUX_EVIDENCE_MODE=themes LUX_EVIDENCE_DIR=artifacts/m3d5b1-themes npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+      "manifestSha256": "cccb0d26fa8738bcc8c6f7729ac28528606688135713a253c6b4424991a4240c",
+      "captureCountByKind": {
+        "route": 12,
+        "theme": 6,
+        "focus": 6,
+        "auto-preview": 1,
+        "restart": 8,
+        "compatibility": 2
+      },
+      "phases": [
+        {
+          "id": "theme-lime",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 83
+          },
+          "process": {
+            "launcherPid": 25,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T04:13:24.945Z",
+            "exitedAt": "2026-11-10T04:14:01.207Z",
+            "elapsedMs": 36261.615637,
+            "previousPhaseExited": null
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "theme-lime",
+            "display": ":106",
+            "privateDbusSession": true,
+            "wrapperPid": 47,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-lime/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-lime/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-lime/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-lime/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 60,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 60,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 60\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 869,
+            "electronPid": 83,
+            "electron": {
+              "pid": 83,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 54,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 55,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 56,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 59,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 60,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 61,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 65,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 66,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 67,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 68,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 69,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 79,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 80,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 81,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 82,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 83,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 36154
+          }
+        },
+        {
+          "id": "theme-mist_blue",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 249
+          },
+          "process": {
+            "launcherPid": 196,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T04:14:01.208Z",
+            "exitedAt": "2026-11-10T04:14:07.491Z",
+            "elapsedMs": 6283.119644999999,
+            "previousPhaseExited": true
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "theme-mist_blue",
+            "display": ":107",
+            "privateDbusSession": true,
+            "wrapperPid": 213,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-mist_blue/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-mist_blue/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-mist_blue/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-mist_blue/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 226,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 226,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 226\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 865,
+            "electronPid": 249,
+            "electron": {
+              "pid": 249,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 220,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 221,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 222,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 225,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 226,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 227,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 231,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 232,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 233,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 234,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 235,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 245,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 246,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 247,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 248,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 249,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 6203
+          }
+        },
+        {
+          "id": "theme-sakura",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 403
+          },
+          "process": {
+            "launcherPid": 350,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T04:14:07.492Z",
+            "exitedAt": "2026-11-10T04:14:13.622Z",
+            "elapsedMs": 6130.048275999994,
+            "previousPhaseExited": true
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "theme-sakura",
+            "display": ":106",
+            "privateDbusSession": true,
+            "wrapperPid": 367,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-sakura/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-sakura/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-sakura/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-sakura/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 380,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 380,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 380\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 868,
+            "electronPid": 403,
+            "electron": {
+              "pid": 403,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 374,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 375,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 376,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 379,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 380,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 381,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 385,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 386,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 387,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 388,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 389,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 399,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 400,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 401,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 402,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 403,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 6045
+          }
+        },
+        {
+          "id": "theme-lavender",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 556
+          },
+          "process": {
+            "launcherPid": 504,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T04:14:13.622Z",
+            "exitedAt": "2026-11-10T06:01:17.712Z",
+            "elapsedMs": 13344.997231000001,
+            "previousPhaseExited": true
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "theme-lavender",
+            "display": ":107",
+            "privateDbusSession": true,
+            "wrapperPid": 521,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-lavender/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-lavender/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-lavender/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-lavender/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 534,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 534,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 534\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 766,
+            "electronPid": 556,
+            "electron": {
+              "pid": 556,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 528,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 529,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 530,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 533,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 534,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 535,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 539,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 540,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 541,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 542,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 552,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 553,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 554,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 555,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 556,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 13180
+          }
+        },
+        {
+          "id": "theme-oat_milk",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 718
+          },
+          "process": {
+            "launcherPid": 659,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:01:17.718Z",
+            "exitedAt": "2026-11-10T06:01:29.070Z",
+            "elapsedMs": 11351.343879000007,
+            "previousPhaseExited": true
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "theme-oat_milk",
+            "display": ":105",
+            "privateDbusSession": true,
+            "wrapperPid": 674,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-oat_milk/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-oat_milk/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-oat_milk/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-oat_milk/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 687,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 687,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 687\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 1871,
+            "electronPid": 718,
+            "electron": {
+              "pid": 718,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 681,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 682,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 683,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 686,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 687,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 688,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 691,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 693,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 694,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 695,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 696,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 697,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 698,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 699,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 700,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 701,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 702,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 703,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 713,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 714,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 715,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 716,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 717,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 718,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 10925
+          }
+        },
+        {
+          "id": "theme-ink_night",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 887
+          },
+          "process": {
+            "launcherPid": 822,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:01:29.071Z",
+            "exitedAt": "2026-11-10T06:01:44.163Z",
+            "elapsedMs": 15094.779328000004,
+            "previousPhaseExited": true
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "theme-ink_night",
+            "display": ":106",
+            "privateDbusSession": true,
+            "wrapperPid": 839,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-ink_night/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-ink_night/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-ink_night/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-ink_night/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 852,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 852,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 852\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 2326,
+            "electronPid": 887,
+            "electron": {
+              "pid": 887,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 846,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 847,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 848,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 851,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 852,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 853,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 856,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 858,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 859,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 860,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 861,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 862,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 863,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 864,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 865,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 866,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 867,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 868,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 869,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 870,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 871,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 877,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 882,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 883,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 884,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 885,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 886,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 887,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 14303
+          }
+        },
+        {
+          "id": "theme-green",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 1051
+          },
+          "process": {
+            "launcherPid": 989,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:01:44.167Z",
+            "exitedAt": "2026-11-10T06:01:53.608Z",
+            "elapsedMs": 9440.803314000004,
+            "previousPhaseExited": true
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "theme-green",
+            "display": ":105",
+            "privateDbusSession": true,
+            "wrapperPid": 1006,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-green/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-green/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-green/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-green/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 1019,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1019,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1019\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 2314,
+            "electronPid": 1051,
+            "electron": {
+              "pid": 1051,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 1013,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 1014,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 1015,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 1018,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 1019,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1020,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1024,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1025,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1026,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1027,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1028,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1029,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1030,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1031,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1032,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1033,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1034,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1035,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1045,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1046,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1047,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1048,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1049,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 1050,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 1051,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 9076
+          }
+        },
+        {
+          "id": "theme-user_theme_evidence",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 1206
+          },
+          "process": {
+            "launcherPid": 1153,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:01:53.612Z",
+            "exitedAt": "2026-11-10T06:01:59.838Z",
+            "elapsedMs": 6226.478921999995,
+            "previousPhaseExited": true
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "theme-user_theme_evidence",
+            "display": ":104",
+            "privateDbusSession": true,
+            "wrapperPid": 1170,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-user_theme_evidence/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-user_theme_evidence/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-user_theme_evidence/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-theme-user_theme_evidence/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 1183,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1183,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1183\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 884,
+            "electronPid": 1206,
+            "electron": {
+              "pid": 1206,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 1177,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 1178,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 1179,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 1182,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 1183,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1184,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1188,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1189,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1190,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1191,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1201,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1202,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1203,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1204,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 1205,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 1206,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 6046
+          }
+        },
+        {
+          "id": "custom-theme-restart",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 1361
+          },
+          "process": {
+            "launcherPid": 1308,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:01:59.839Z",
+            "exitedAt": "2026-11-10T06:02:04.725Z",
+            "elapsedMs": 4886.859211000003,
+            "previousPhaseExited": true
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "12a4ccff-7ab7-4527-9609-1eb121837207",
+            "phaseId": "custom-theme-restart",
+            "display": ":106",
+            "privateDbusSession": true,
+            "wrapperPid": 1325,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-custom-theme-restart/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-custom-theme-restart/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-custom-theme-restart/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-5dzKvs/display-custom-theme-restart/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 1338,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1338,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1338\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 865,
+            "electronPid": 1361,
+            "electron": {
+              "pid": 1361,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 1332,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 1333,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 1334,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 1337,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 1338,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1339,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1343,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1344,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1345,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1346,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1356,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1357,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1358,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 1359,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 1360,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 1361,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 4799
+          }
+        }
+      ],
+      "captures": [
+        {
+          "file": "search-1280x800.png",
+          "kind": "route",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ceecd6cd6066c9976d3046f2660c940eb5d25301cf15b8940d671ddcd886841f"
+        },
+        {
+          "file": "songlists-1280x800.png",
+          "kind": "route",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5b0e9e7230e686128f8f296c0d8075fe66029d002b1e9234be30fceff9dea437"
+        },
+        {
+          "file": "leaderboard-1280x800.png",
+          "kind": "route",
+          "width": 1280,
+          "height": 800,
+          "sha256": "54cebe4f6d19501386de126dd34da733a9e30d358674ba326ac7f95d76e3e731"
+        },
+        {
+          "file": "library-1280x800.png",
+          "kind": "route",
+          "width": 1280,
+          "height": 800,
+          "sha256": "bb4cf2f720b973dbf5560f7a555604d749bacc68984cbffe558bd8218da831d5"
+        },
+        {
+          "file": "downloads-1280x800.png",
+          "kind": "route",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ac52a5e1ca4d65ad2fb26fac2d4a98554cfa1b00dba25566d651396275c08e13"
+        },
+        {
+          "file": "settings-1280x800.png",
+          "kind": "route",
+          "width": 1280,
+          "height": 800,
+          "sha256": "bb64f426e23aab36553f7ab049449f418bd30216822b76d5faa245bd77ad954c"
+        },
+        {
+          "file": "search-1024x700.png",
+          "kind": "route",
+          "width": 1024,
+          "height": 700,
+          "sha256": "95b8abee237bf41d7380bab16c6b9b194d38dc31acea4f8784465e5eea8a08b9"
+        },
+        {
+          "file": "songlists-1024x700.png",
+          "kind": "route",
+          "width": 1024,
+          "height": 700,
+          "sha256": "7796960132e806ee58eb6b0cec0f1dc43207cbc0f9ef9b1e803d13ae00c6efc2"
+        },
+        {
+          "file": "leaderboard-1024x700.png",
+          "kind": "route",
+          "width": 1024,
+          "height": 700,
+          "sha256": "e7f3128a05769ac7e15841b3070ab76fc7613fd64d1558ba84e91f41b6d7d70d"
+        },
+        {
+          "file": "library-1024x700.png",
+          "kind": "route",
+          "width": 1024,
+          "height": 700,
+          "sha256": "97c8f704521d0218b5bc4e785708c5fef60e30ac7d97e90a399ffe47a35785a5"
+        },
+        {
+          "file": "downloads-1024x700.png",
+          "kind": "route",
+          "width": 1024,
+          "height": 700,
+          "sha256": "89df12c5714bea110e7ef4a058b7b4f76952d8985df36548860df7b8f40466f1"
+        },
+        {
+          "file": "settings-1024x700.png",
+          "kind": "route",
+          "width": 1024,
+          "height": 700,
+          "sha256": "11feec3f44045b1c4a7fa6190bfcd38bcf5ca8262c3a9d9c2a540b32a5c14ca8"
+        },
+        {
+          "file": "theme-lime-1280x800.png",
+          "kind": "theme",
+          "width": 1280,
+          "height": 800,
+          "sha256": "035324dfb6e860d0b4006c4ca7046f2c8bccb1f91a01e1570e40186712096c86"
+        },
+        {
+          "file": "focus-lime-1280x800.png",
+          "kind": "focus",
+          "width": 1280,
+          "height": 800,
+          "sha256": "35372abf3bdc52eafb0b39fe70f9f154ebcf2353c2c50bfa4c8c69abf35e7bf7"
+        },
+        {
+          "file": "auto-preview-1280x800.png",
+          "kind": "auto-preview",
+          "width": 1280,
+          "height": 800,
+          "sha256": "bc0e2c2bc515329fbb7a66c73599ab98bdeb76216e86026f346dfed7e76e05e9"
+        },
+        {
+          "file": "restart-lime-1280x800.png",
+          "kind": "restart",
+          "width": 1280,
+          "height": 800,
+          "sha256": "bb64f426e23aab36553f7ab049449f418bd30216822b76d5faa245bd77ad954c"
+        },
+        {
+          "file": "theme-mist_blue-1280x800.png",
+          "kind": "theme",
+          "width": 1280,
+          "height": 800,
+          "sha256": "96a696b904b30661cec21d912473c23d084e644402f78b895df0d1ce0078cca8"
+        },
+        {
+          "file": "focus-mist_blue-1280x800.png",
+          "kind": "focus",
+          "width": 1280,
+          "height": 800,
+          "sha256": "abb3e4fd589751da032608aaabe2a98eb2a0e6474988c85d0362416b2871fd5d"
+        },
+        {
+          "file": "restart-mist_blue-1280x800.png",
+          "kind": "restart",
+          "width": 1280,
+          "height": 800,
+          "sha256": "30d7bf2ce9f7c15882e1d1913ded652fea28d26b1c1f0c5bae20213d55362dc5"
+        },
+        {
+          "file": "theme-sakura-1280x800.png",
+          "kind": "theme",
+          "width": 1280,
+          "height": 800,
+          "sha256": "6c02d5f5c7c43f3823a49bff3009857e46e9b78bb4dc332706e6c1927828e994"
+        },
+        {
+          "file": "focus-sakura-1280x800.png",
+          "kind": "focus",
+          "width": 1280,
+          "height": 800,
+          "sha256": "739adba527527bfd9a6aeca5f67f40adff4c9055bd16c863ce5f754369cd38b0"
+        },
+        {
+          "file": "restart-sakura-1280x800.png",
+          "kind": "restart",
+          "width": 1280,
+          "height": 800,
+          "sha256": "86f6af271367e75b658246987abc29e5469ca496324ab4006cf9c3c1c09cbd4a"
+        },
+        {
+          "file": "theme-lavender-1280x800.png",
+          "kind": "theme",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ed45ae174115cc8fad95f94e74cce774702e4b5454cace6b512d2efd7dd7d135"
+        },
+        {
+          "file": "focus-lavender-1280x800.png",
+          "kind": "focus",
+          "width": 1280,
+          "height": 800,
+          "sha256": "21431475ddcd025fc149512647852bd2a3d8846c827abe076dd1dec59c25446c"
+        },
+        {
+          "file": "restart-lavender-1280x800.png",
+          "kind": "restart",
+          "width": 1280,
+          "height": 800,
+          "sha256": "3363a08a985512e3285f67ef7e79ce9784bd4e15c419868e7e011c2e7a19a847"
+        },
+        {
+          "file": "theme-oat_milk-1280x800.png",
+          "kind": "theme",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ce9ab3e96c7a60996ba891b9da4ae5e1f797c3aa85e8059db516329e36a4af26"
+        },
+        {
+          "file": "focus-oat_milk-1280x800.png",
+          "kind": "focus",
+          "width": 1280,
+          "height": 800,
+          "sha256": "29cd3878af4218f0d131e53d1a436e571093dc1f794e39ac502b0b93cd121f37"
+        },
+        {
+          "file": "restart-oat_milk-1280x800.png",
+          "kind": "restart",
+          "width": 1280,
+          "height": 800,
+          "sha256": "6adc09398f9ed9a70aa82629e775b2f1a9b80d6e7a851c13e6eb9beef4afc782"
+        },
+        {
+          "file": "theme-ink_night-1280x800.png",
+          "kind": "theme",
+          "width": 1280,
+          "height": 800,
+          "sha256": "a2ee492001d1b2c5db6e47bfebf113c861080f8eee0703e99e4000199e6c33fa"
+        },
+        {
+          "file": "focus-ink_night-1280x800.png",
+          "kind": "focus",
+          "width": 1280,
+          "height": 800,
+          "sha256": "008d66d95cb74651c0a15c6578f258ba53b7d08b57217cece3c6d3343bf28f48"
+        },
+        {
+          "file": "restart-ink_night-1280x800.png",
+          "kind": "restart",
+          "width": 1280,
+          "height": 800,
+          "sha256": "df2c105b00057564a6a318448c0b8730edf9a9090b02535c71df4ada4d907bbc"
+        },
+        {
+          "file": "theme-green-1280x800.png",
+          "kind": "compatibility",
+          "width": 1280,
+          "height": 800,
+          "sha256": "357b20546ee82796715b53782cb8d76011bce766b7f10b2c1f54a93b7ab9b928"
+        },
+        {
+          "file": "restart-green-1280x800.png",
+          "kind": "restart",
+          "width": 1280,
+          "height": 800,
+          "sha256": "856236b9ac5286f1c0aab36e0d3aac1d368b6760c378107534de9f2a4e0c0dcb"
+        },
+        {
+          "file": "theme-user_theme_evidence-1280x800.png",
+          "kind": "compatibility",
+          "width": 1280,
+          "height": 800,
+          "sha256": "bad3ba3ae121ce08ac3deff816c6d352255c881898cbd7034942122634671edc"
+        },
+        {
+          "file": "restart-user_theme_evidence-1280x800.png",
+          "kind": "restart",
+          "width": 1280,
+          "height": 800,
+          "sha256": "65aa0db1a497ff21d5bdb14d60b0bc81f8a4d348382d326ebd12d11e646d3640"
+        }
+      ]
+    },
+    {
+      "mode": "media",
+      "command": "LUX_EVIDENCE_MODE=media LUX_EVIDENCE_DIR=artifacts/m3d5b1-media npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "e7d9218d-b0be-474e-bf21-ae0241522059",
+      "manifestSha256": "89ff1425422f250c288fbfc6afe1d132d0e0665cbd96e71d4cc6ade9b4ee0812",
+      "captureCountByKind": {
+        "media": 3
+      },
+      "phases": [
+        {
+          "id": "media",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 305
+          },
+          "process": {
+            "launcherPid": 251,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T04:14:03.333Z",
+            "exitedAt": "2026-11-10T04:14:14.105Z",
+            "elapsedMs": 10771.861605999999,
+            "previousPhaseExited": null
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "e7d9218d-b0be-474e-bf21-ae0241522059",
+            "phaseId": "media",
+            "display": ":105",
+            "privateDbusSession": true,
+            "wrapperPid": 270,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-Rbwpeq/display-media/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-Rbwpeq/display-media/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-Rbwpeq/display-media/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-Rbwpeq/display-media/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 283,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 283,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 283\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 772,
+            "electronPid": 305,
+            "electron": {
+              "pid": 305,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 277,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 278,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 279,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 282,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 283,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 284,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 288,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 289,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 290,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 291,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 301,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 302,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 303,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 304,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 305,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 10675
+          }
+        }
+      ],
+      "captures": [
+        {
+          "file": "media-real-playing.png",
+          "kind": "media",
+          "width": 1280,
+          "height": 800,
+          "sha256": "f10ad08b9ca743ab9fdec582e7804374ba4623b1e6047b8bf63e6464c9ff96bb"
+        },
+        {
+          "file": "media-real-paused-seek.png",
+          "kind": "media",
+          "width": 1280,
+          "height": 800,
+          "sha256": "64e18ac2ad6c6561c709aa6d7e7740179737b913adf2198a37f89ccc2690a576"
+        },
+        {
+          "file": "media-real-controls.png",
+          "kind": "media",
+          "width": 1280,
+          "height": 800,
+          "sha256": "537d580c188fca70aca82dd8858447c3b49b84d5fd8c8b8de13ad1db18fd5dcd"
+        }
+      ]
+    },
+    {
+      "mode": "window",
+      "command": "LUX_EVIDENCE_MODE=window LUX_EVIDENCE_DIR=artifacts/m3d5b1-window npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "af1b03b1-1edf-4560-9141-453498e1681f",
+      "manifestSha256": "1c2c278e7463ecb64a91cfb0a30b18b54fea41227f2d7482b2babebb8df16206",
+      "captureCountByKind": {
+        "window-controls": 2,
+        "window-fullscreen": 1,
+        "settings-about": 24
+      },
+      "phases": [
+        {
+          "id": "window",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 80
+          },
+          "process": {
+            "launcherPid": 25,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T04:13:24.939Z",
+            "exitedAt": "2026-11-10T04:14:03.049Z",
+            "elapsedMs": 38109.535031,
+            "previousPhaseExited": null
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "af1b03b1-1edf-4560-9141-453498e1681f",
+            "phaseId": "window",
+            "display": ":105",
+            "privateDbusSession": true,
+            "wrapperPid": 44,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-lH8K2S/display-window/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-lH8K2S/display-window/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-lH8K2S/display-window/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-lH8K2S/display-window/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 57,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 57,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 57\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 869,
+            "electronPid": 80,
+            "electron": {
+              "pid": 80,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 51,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 52,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 53,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 56,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 57,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 58,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 62,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 63,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 64,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 65,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 71,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 76,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 77,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 78,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 79,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 80,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 38022
+          }
+        }
+      ],
+      "captures": [
+        {
+          "file": "window-controls-left.png",
+          "kind": "window-controls",
+          "width": 1280,
+          "height": 800,
+          "sha256": "2493eb488cfa1186fa9903ee1530fc4ce837d9b27e5a8fe19c6d71b3b9752528"
+        },
+        {
+          "file": "window-controls-right.png",
+          "kind": "window-controls",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ceecd6cd6066c9976d3046f2660c940eb5d25301cf15b8940d671ddcd886841f"
+        },
+        {
+          "file": "window-fullscreen.png",
+          "kind": "window-fullscreen",
+          "width": 1920,
+          "height": 1200,
+          "sha256": "b07fcf137da186001dd82c0ce268039a4969630c1e712fc0273ad5c6e39186bd"
+        },
+        {
+          "file": "about-lime-1024x700-16px-top.png",
+          "kind": "settings-about",
+          "width": 1024,
+          "height": 700,
+          "sha256": "37f4a6dc762425d2a6865de761a860f097d7ec304edcde7a2b980b3cdbb9e67d"
+        },
+        {
+          "file": "about-lime-1024x700-16px-bottom.png",
+          "kind": "settings-about",
+          "width": 1024,
+          "height": 700,
+          "sha256": "37f4a6dc762425d2a6865de761a860f097d7ec304edcde7a2b980b3cdbb9e67d"
+        },
+        {
+          "file": "about-lime-1024x700-16px-focus.png",
+          "kind": "settings-about",
+          "width": 1024,
+          "height": 700,
+          "sha256": "807f032cd445afb953b93fb7957d18c3d23d298f68e476011497d96eaa77d831"
+        },
+        {
+          "file": "about-lime-1024x700-16px-pact.png",
+          "kind": "settings-about",
+          "width": 1024,
+          "height": 700,
+          "sha256": "10c85a1d32a750883e7b73fa46f2ecd93ab7ef29b17551841f2728ca87866726"
+        },
+        {
+          "file": "about-lime-1280x800-16px-top.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "8f7b41839d495c03b511aea7a9a3711fc664866cc4e46564966c3a77bcd6c07b"
+        },
+        {
+          "file": "about-lime-1280x800-16px-bottom.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "8f7b41839d495c03b511aea7a9a3711fc664866cc4e46564966c3a77bcd6c07b"
+        },
+        {
+          "file": "about-lime-1280x800-16px-focus.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "c2851840182173ee09b2c4dd8691e953e0288c74b9d7b4225b99c4b3d680b0db"
+        },
+        {
+          "file": "about-lime-1280x800-16px-pact.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "85d5795dc396793e7816aaa772e85ca2dbb27db66e276626ffbc1942c029d1b9"
+        },
+        {
+          "file": "about-lime-1440x900-16px-top.png",
+          "kind": "settings-about",
+          "width": 1440,
+          "height": 900,
+          "sha256": "3f1b142505c600845d8bbe35d2667d313f47a5f366815fe7db616272ea9847f3"
+        },
+        {
+          "file": "about-lime-1440x900-16px-bottom.png",
+          "kind": "settings-about",
+          "width": 1440,
+          "height": 900,
+          "sha256": "3f1b142505c600845d8bbe35d2667d313f47a5f366815fe7db616272ea9847f3"
+        },
+        {
+          "file": "about-lime-1440x900-16px-focus.png",
+          "kind": "settings-about",
+          "width": 1440,
+          "height": 900,
+          "sha256": "e955c055438cd4a09c0b8317ae7fed173a67a33b73ff38d07c790a1e474f84dd"
+        },
+        {
+          "file": "about-lime-1440x900-16px-pact.png",
+          "kind": "settings-about",
+          "width": 1440,
+          "height": 900,
+          "sha256": "532831bf3fe26f3f237c057dd656cd98b350f24a8c6c63635e5b6a866d46a5f7"
+        },
+        {
+          "file": "about-oat_milk-1280x800-16px-top.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "c329585ef5e8b282842266dba9349f49840e777e75865675b630839d646f8cb8"
+        },
+        {
+          "file": "about-oat_milk-1280x800-16px-bottom.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "c329585ef5e8b282842266dba9349f49840e777e75865675b630839d646f8cb8"
+        },
+        {
+          "file": "about-oat_milk-1280x800-16px-focus.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "b45ece9c4cf0ae3aa1c00fb596d77e163956e1676bf56497675ca14acb405deb"
+        },
+        {
+          "file": "about-oat_milk-1280x800-16px-pact.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "a3783cd8faf3aec574f8d80c93d43ef08d277e32d51f29806a5f0e4bb46db360"
+        },
+        {
+          "file": "about-ink_night-1280x800-16px-top.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "acd286ac5cbce1b0f5a6920c2def7d12cbe38fea45d5038a567c4cc2ba81ca72"
+        },
+        {
+          "file": "about-ink_night-1280x800-16px-bottom.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "acd286ac5cbce1b0f5a6920c2def7d12cbe38fea45d5038a567c4cc2ba81ca72"
+        },
+        {
+          "file": "about-ink_night-1280x800-16px-focus.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "135a3d47b9efb2c1fd5a7333cb0ea49f6a2a465287d23e16023055f384471270"
+        },
+        {
+          "file": "about-ink_night-1280x800-16px-pact.png",
+          "kind": "settings-about",
+          "width": 1280,
+          "height": 800,
+          "sha256": "b055a4303f60b6cd76a47d0bce1cf613b81ab62495bad168d58be95bd3d332ce"
+        },
+        {
+          "file": "about-lime-828x540-19px-top.png",
+          "kind": "settings-about",
+          "width": 828,
+          "height": 540,
+          "sha256": "cc40cda5a043f8200ae14d72b2464b6baa3144ad6d63988d4bdd99cd412eee6f"
+        },
+        {
+          "file": "about-lime-828x540-19px-bottom.png",
+          "kind": "settings-about",
+          "width": 828,
+          "height": 540,
+          "sha256": "cb05bb6a01c0dacecf85c4d399e337902b4b753794c897b9606c54a84188c558"
+        },
+        {
+          "file": "about-lime-828x540-19px-focus.png",
+          "kind": "settings-about",
+          "width": 828,
+          "height": 540,
+          "sha256": "ef31653219c4e2e1d34dcbf4949cdf638818ac3e9296f47d9a6d1b3b3501d040"
+        },
+        {
+          "file": "about-lime-828x540-19px-pact.png",
+          "kind": "settings-about",
+          "width": 828,
+          "height": 540,
+          "sha256": "998c2331990dbad1f9d5c44f149089e22fa1b3d90a9c343ca7e63cf57437ff6b"
+        }
+      ]
+    },
+    {
+      "mode": "native-drag",
+      "command": "LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/m3d5b1-native-drag npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "1b7aeace-b7a5-4dd7-b931-e6f0b1697588",
+      "manifestSha256": "7138866eaeeb994d7071b1476ea08ef81935bd6002e0325bfb66a599cd8f2c4b",
+      "captureCountByKind": {
+        "window-native-drag": 1
+      },
+      "phases": [
+        {
+          "id": "native-drag",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 83
+          },
+          "process": {
+            "launcherPid": 28,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:08:15.707Z",
+            "exitedAt": "2026-11-10T06:08:22.849Z",
+            "elapsedMs": 7141.917613,
+            "previousPhaseExited": null
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "1b7aeace-b7a5-4dd7-b931-e6f0b1697588",
+            "phaseId": "native-drag",
+            "display": ":104",
+            "privateDbusSession": true,
+            "wrapperPid": 47,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-h3P1Ha/display-native-drag/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-h3P1Ha/display-native-drag/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-h3P1Ha/display-native-drag/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-h3P1Ha/display-native-drag/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 60,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 60,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 60\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 869,
+            "electronPid": 83,
+            "electron": {
+              "pid": 83,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 54,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 55,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 56,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 59,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 60,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 61,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 65,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 66,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 67,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 68,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 78,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 79,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 80,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 81,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 82,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 83,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 7036
+          }
+        }
+      ],
+      "captures": [
+        {
+          "file": "window-native-drag.png",
+          "kind": "window-native-drag",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ceecd6cd6066c9976d3046f2660c940eb5d25301cf15b8940d671ddcd886841f"
+        }
+      ]
+    },
+    {
+      "mode": "settings",
+      "command": "LUX_EVIDENCE_MODE=settings LUX_EVIDENCE_DIR=artifacts/m3d5b1-settings LUX_EVIDENCE_SIZES=1280x800,1024x700,1440x900 npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "dc0c5069-b4c2-46c0-bbad-277da9bb354b",
+      "manifestSha256": "927d26e8f8b30909ddcfeb23597e5157e5a78e8319f3fc2654c77781b0423fd6",
+      "captureCountByKind": {
+        "settings-category": 16,
+        "settings-size": 2,
+        "settings-theme": 2,
+        "settings-font": 1
+      },
+      "phases": [
+        {
+          "id": "settings",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 80
+          },
+          "process": {
+            "launcherPid": 25,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:07:13.527Z",
+            "exitedAt": "2026-11-10T06:07:24.375Z",
+            "elapsedMs": 10847.717575,
+            "previousPhaseExited": null
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "dc0c5069-b4c2-46c0-bbad-277da9bb354b",
+            "phaseId": "settings",
+            "display": ":104",
+            "privateDbusSession": true,
+            "wrapperPid": 44,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-oDfYjs/display-settings/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-oDfYjs/display-settings/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-oDfYjs/display-settings/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-oDfYjs/display-settings/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 57,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 57,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 57\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 881,
+            "electronPid": 80,
+            "electron": {
+              "pid": 80,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 51,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 52,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 53,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 56,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 57,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 58,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 62,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 63,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 64,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 65,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 66,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 76,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 77,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 78,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 79,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 80,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 10743
+          }
+        }
+      ],
+      "captures": [
+        {
+          "file": "settings-basic.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "bb64f426e23aab36553f7ab049449f418bd30216822b76d5faa245bd77ad954c"
+        },
+        {
+          "file": "settings-play.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "2a6260a364f14ba5060d3fea59508e1de7097c278312fce481f561229bd3a4ce"
+        },
+        {
+          "file": "settings-play_detail.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "12859a1d9a775963ea28469229190c9910ffa48a53a35bb2b33db0cbc6d470b0"
+        },
+        {
+          "file": "settings-desktop_lyric.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "1bded940a3f1564bf506d0b59dbd012d9fc4bafb97c6d60e5eb920eacc7e7bfc"
+        },
+        {
+          "file": "settings-search.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "f2453515ebe998a4bdb7739273a2afd8e6f546d8432ff8478fecf1f28c01b298"
+        },
+        {
+          "file": "settings-list.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "87211594644411404732fa540759e74c071645461a8c8a29f9ac271009d70a1c"
+        },
+        {
+          "file": "settings-download.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "0879013bc37cca85b57ce5f8a97025299abc968d897a17158bf9b7181b6f85f5"
+        },
+        {
+          "file": "settings-hot_key.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "73332c4f0921f0bc98bbfcc2f4c87883e63f8064a58b8eae2949726c4b469367"
+        },
+        {
+          "file": "settings-sync.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "0cb852eb09be4e4d6f7ae2d44bde6533de9fb6a3e46c550d1b25ac06e9fc3bd9"
+        },
+        {
+          "file": "settings-open_api.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "c90effb805d9609790cd9fec662208f4a159c5a1e3fa906682eb9f4a254d3da7"
+        },
+        {
+          "file": "settings-network.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ef8648618ba78204876e7881119616167fb59eca80e590ae87eb9e8a2d0ea257"
+        },
+        {
+          "file": "settings-odc.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "445d19765e90b775c1b7f61a2eea0567ce887c2905856b9dc3507300a0e1ccaa"
+        },
+        {
+          "file": "settings-backup.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "d795ba0b9059345297a27fc283a8d2563de95faeebf814c19f56c44390b57449"
+        },
+        {
+          "file": "settings-other.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "29ecf223adaeaa8f0340caff9563079e702422673ac1b3349e4984c2d359535a"
+        },
+        {
+          "file": "settings-update.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "cf731e7cc0209e616bbfb622ae4e65db465ea7e9f919dc6f3a944a3418cc5fda"
+        },
+        {
+          "file": "settings-about.png",
+          "kind": "settings-category",
+          "width": 1280,
+          "height": 800,
+          "sha256": "8f7b41839d495c03b511aea7a9a3711fc664866cc4e46564966c3a77bcd6c07b"
+        },
+        {
+          "file": "settings-basic-1024x700.png",
+          "kind": "settings-size",
+          "width": 1024,
+          "height": 700,
+          "sha256": "11feec3f44045b1c4a7fa6190bfcd38bcf5ca8262c3a9d9c2a540b32a5c14ca8"
+        },
+        {
+          "file": "settings-basic-1440x900.png",
+          "kind": "settings-size",
+          "width": 1440,
+          "height": 900,
+          "sha256": "0b47332fb244c87def6cb29b15bd33f6d6ac8af3764ff8a18e0dfef93cbfccc4"
+        },
+        {
+          "file": "settings-oat_milk.png",
+          "kind": "settings-theme",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ea985fe3699f64e4a36ec59885ec99829e6fa114b355af2b383a1dc026fec439"
+        },
+        {
+          "file": "settings-ink_night.png",
+          "kind": "settings-theme",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5cb1fb652c7addec15458360ee853f5cd35c8b3fb0f7d00be84e38c7ef008f2a"
+        },
+        {
+          "file": "settings-font-19.png",
+          "kind": "settings-font",
+          "width": 1280,
+          "height": 800,
+          "sha256": "4ed32747c9319160878b1df989070b963af403c305db1a8b9488c73d3eb048e7"
+        }
+      ]
+    },
+    {
+      "mode": "queue",
+      "command": "LUX_EVIDENCE_MODE=queue LUX_EVIDENCE_DIR=artifacts/m3d5b1-queue npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "5ab51835-cfc5-499e-b261-dac5cc33af1e",
+      "manifestSha256": "72315a05acd5bb703115612983f2f40a2723d7468856ffd942fa2314bda1bc32",
+      "captureCountByKind": {
+        "media": 3,
+        "queue": 8
+      },
+      "phases": [
+        {
+          "id": "queue",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 274
+          },
+          "process": {
+            "launcherPid": 220,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:07:24.593Z",
+            "exitedAt": "2026-11-10T06:07:51.854Z",
+            "elapsedMs": 27260.259384,
+            "previousPhaseExited": null
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "5ab51835-cfc5-499e-b261-dac5cc33af1e",
+            "phaseId": "queue",
+            "display": ":104",
+            "privateDbusSession": true,
+            "wrapperPid": 239,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-Yetup6/display-queue/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-Yetup6/display-queue/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-Yetup6/display-queue/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-Yetup6/display-queue/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 252,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 252,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 252\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 775,
+            "electronPid": 274,
+            "electron": {
+              "pid": 274,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 246,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 247,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 248,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 251,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 252,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 253,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 257,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 258,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 259,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 260,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 270,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 271,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 272,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 273,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 274,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 27177
+          }
+        }
+      ],
+      "captures": [
+        {
+          "file": "media-real-playing.png",
+          "kind": "media",
+          "width": 1280,
+          "height": 800,
+          "sha256": "f10ad08b9ca743ab9fdec582e7804374ba4623b1e6047b8bf63e6464c9ff96bb"
+        },
+        {
+          "file": "media-real-paused-seek.png",
+          "kind": "media",
+          "width": 1280,
+          "height": 800,
+          "sha256": "64e18ac2ad6c6561c709aa6d7e7740179737b913adf2198a37f89ccc2690a576"
+        },
+        {
+          "file": "media-real-controls.png",
+          "kind": "media",
+          "width": 1280,
+          "height": 800,
+          "sha256": "22ceeb74c0448ff6862e05f519f0e1144e3158adb58e20ca9ec7a3bd437ea699"
+        },
+        {
+          "file": "queue-lime-1280x800.png",
+          "kind": "queue",
+          "width": 1280,
+          "height": 800,
+          "sha256": "3e15b0f4972f3375a67929a299b1159213e8510385b20e1655c9499dc804e07a"
+        },
+        {
+          "file": "queue-lime-1024x700.png",
+          "kind": "queue",
+          "width": 1024,
+          "height": 700,
+          "sha256": "69862f5f1c0be1b78c6b845255d256d704c607b3b31aa9025493fae242043065"
+        },
+        {
+          "file": "queue-lime-1440x900.png",
+          "kind": "queue",
+          "width": 1440,
+          "height": 900,
+          "sha256": "f6a7a221f8b3ca74c30475b584aa79b5762a2cbd0f232b7a1247d0f06d391aa6"
+        },
+        {
+          "file": "queue-lime-828x540.png",
+          "kind": "queue",
+          "width": 828,
+          "height": 540,
+          "sha256": "92fb5e372bdfacfc6b71c2084f42ca1b863111a808b6452ceceb3a9907509035"
+        },
+        {
+          "file": "queue-oat_milk-1280x800.png",
+          "kind": "queue",
+          "width": 1280,
+          "height": 800,
+          "sha256": "19daa63c51a438cf731a56f15989fe387cb0a15f3d8d58aaca1afbdc6fb429a8"
+        },
+        {
+          "file": "queue-ink_night-1280x800.png",
+          "kind": "queue",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ad5a12d9c2bc3ba5440eb591f505878d648c398cdc5c0b444956a4fa7338c7bd"
+        },
+        {
+          "file": "queue-font-19-828x540.png",
+          "kind": "queue",
+          "width": 828,
+          "height": 540,
+          "sha256": "59a5d937c79d0ba32e7c11135477d12f83bb012cbd11306c035ddebed8b68e9d"
+        },
+        {
+          "file": "queue-empty-1280x800.png",
+          "kind": "queue",
+          "width": 1280,
+          "height": 800,
+          "sha256": "980e924a90cd57996e4fa291a16a0ee4623cb94741c15b9d46e15ba49c010525"
+        }
+      ]
+    },
+    {
+      "mode": "downloads",
+      "command": "LUX_EVIDENCE_MODE=downloads LUX_EVIDENCE_DIR=artifacts/m3d5b1-downloads npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "b2ab6683-c8b7-4ffd-b8fe-130d1087ef4b",
+      "manifestSha256": "393095680bba5960b2e27beeab9f7ba3ce35748f198aa9032b1e172d2bb9835e",
+      "captureCountByKind": {
+        "downloads": 6
+      },
+      "phases": [
+        {
+          "id": "downloads",
+          "runtime": {
+            "os": "linux 6.12.113+ x64",
+            "driverNode": "v24.22.1",
+            "electron": "42.11.6",
+            "node": "24.19.0",
+            "chrome": "148.0.7778.280",
+            "modulesAbi": "146",
+            "scaleFactor": 1,
+            "processId": 499
+          },
+          "process": {
+            "launcherPid": 445,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T06:07:52.095Z",
+            "exitedAt": "2026-11-10T06:08:09.110Z",
+            "elapsedMs": 17014.608441,
+            "previousPhaseExited": null
+          },
+          "nativeDisplay": {
+            "schemaVersion": 1,
+            "runId": "b2ab6683-c8b7-4ffd-b8fe-130d1087ef4b",
+            "phaseId": "downloads",
+            "display": ":104",
+            "privateDbusSession": true,
+            "wrapperPid": 464,
+            "status": "passed",
+            "wmPaths": {
+              "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-1axaNZ/display-downloads/config",
+              "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-1axaNZ/display-downloads/cache",
+              "XDG_DATA_HOME": "/tmp/lux-electron-evidence-1axaNZ/display-downloads/data",
+              "XDG_STATE_HOME": "/tmp/lux-electron-evidence-1axaNZ/display-downloads/state"
+            },
+            "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+            "wmVersion": "xfwm4 package 4.20.0-1",
+            "wmBinary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "wmPid": 477,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 477,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 477\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            },
+            "readyElapsedMs": 767,
+            "electronPid": 499,
+            "electron": {
+              "pid": 499,
+              "code": 0,
+              "signal": null
+            },
+            "children": [
+              {
+                "label": "private D-Bus activation environment",
+                "pid": 471,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "initial WM root property probe",
+                "pid": 472,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 package ownership",
+                "pid": 473,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4 installed version",
+                "pid": 476,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "xfwm4",
+                "pid": 477,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 478,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 482,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 483,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 484,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 485,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 495,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 496,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM root property probe",
+                "pid": 497,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "WM identity probe",
+                "pid": 498,
+                "code": 0,
+                "signal": null
+              },
+              {
+                "label": "Electron",
+                "pid": 499,
+                "code": 0,
+                "signal": null
+              }
+            ],
+            "cleanupComplete": true,
+            "elapsedMs": 16922
+          }
+        }
+      ],
+      "captures": [
+        {
+          "file": "downloads-lime-1280x800.png",
+          "kind": "downloads",
+          "width": 1280,
+          "height": 800,
+          "sha256": "c991b88f52432c602888bb993badb96c57b054c10264ff88b29ca5807ebe172a"
+        },
+        {
+          "file": "downloads-ink_night-1024x700.png",
+          "kind": "downloads",
+          "width": 1024,
+          "height": 700,
+          "sha256": "98d2b130709a1dfbe806fd8bbb4c20e63ab2212b25864ae1ac37ad42fd7e614f"
+        },
+        {
+          "file": "downloads-oat_milk-1280x800.png",
+          "kind": "downloads",
+          "width": 1280,
+          "height": 800,
+          "sha256": "75c70859069c964ea3b22e4501df5faef4cb26c765d2958f362d9b07c3422f9c"
+        },
+        {
+          "file": "downloads-selection-menu-1280x800.png",
+          "kind": "downloads",
+          "width": 1280,
+          "height": 800,
+          "sha256": "61248602fa5c92565e57977e283a174e0780a4daedf5cd8cfdc8cf903a7b6c55"
+        },
+        {
+          "file": "downloads-large-font-1024x700.png",
+          "kind": "downloads",
+          "width": 1024,
+          "height": 700,
+          "sha256": "83328ba27cfaa2ad453e9469b06d7e10a76f1fdc8683f123f8782614f2cebe1f"
+        },
+        {
+          "file": "downloads-empty-1024x700.png",
+          "kind": "downloads",
+          "width": 1024,
+          "height": 700,
+          "sha256": "ae40ffc58f444275afb4f269c47b06111b4ce0ad5eac7979674e646ec5e03cbb"
+        }
+      ]
+    }
+  ],
+  "ciArtifactRetentionDays": 90
+}
