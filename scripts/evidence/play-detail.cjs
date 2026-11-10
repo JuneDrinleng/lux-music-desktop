@@ -155,6 +155,7 @@ module.exports = async function playDetailEvidence(context) {
       await until(async() => (await readMedia()).musicInfo.id !== previousId, 'original previous track for artwork variants')
       await until(() => execute(`Boolean(${detail}.querySelector('img')) === ${previousId === imported[0].id}`), 'original local sidecar cover or fallback')
       key('Tab')
+      await until(() => execute(`${detail}.contains(document.activeElement) && document.activeElement.matches(':focus-visible')`), 'actual detail keyboard focus')
       const focus = await execute(`(() => { const el = document.activeElement; const s = getComputedStyle(el); return { inside: ${detail}.contains(el), visible: el.matches(':focus-visible'), outline: s.outlineWidth, label: el.getAttribute('aria-label') } })()`)
       if (!focus.inside || !focus.visible || focus.outline !== '2px') throw new Error(`Missing detail keyboard focus: ${JSON.stringify(focus)}`)
       await screenshot(`detail-${theme}-${side}-${width}x${height}-font${font}.png`, 'play-detail', { theme, side, focus, geometry: await geometry() })
