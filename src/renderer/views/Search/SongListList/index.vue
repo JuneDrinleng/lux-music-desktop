@@ -62,12 +62,16 @@ const togglePage = (page: number) => {
   width: 100%;
   height: 100%;
   padding-top: 5px;
-}
+  ul > li {
+    color: var(--lux-ink);
+    h4 { font-weight: var(--lux-weight-label); }
+    img { border-radius: var(--lux-radius-cover); }
+    // Keep the original grid/scroll dimensions, removing only the cover shadow.
+    > div:first-child { box-shadow: none; border-radius: var(--lux-radius-cover); }
+  }
+  p { color: var(--lux-muted); }
+  p:only-child { font-size: var(--lux-type-section); }
 
-// .list {
-//   overflow: hidden;
-//   height: 100%;
-//   flex: auto;
-// }
+}
 
 </style>

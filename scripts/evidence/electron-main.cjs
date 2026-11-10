@@ -94,8 +94,8 @@ function writeManifest(status, failure) {
       rendererEntry: 'dist/index.html',
       nativeDatabase: 'better-sqlite3; real application worker, isolated temporary database',
       routeNavigation: 'click actual sidebar anchors and inspect active route',
-      data: config.mode === 'downloads' ? 'labelled synthetic download tasks seeded through real SQLite; generated silent WAV; transport worker and external shell fixtures; no personal files/accounts/public downloads' : ['media', 'queue'].includes(config.mode) ? 'one isolated userData; generated local WAV fixtures imported through the original UI/worker/DB; no personal files, accounts, secrets, or public API responses' : 'one shared isolated userData; no user accounts, secrets, music, or public API responses',
-      network: 'Node TCP and Chromium HTTP(S) denied; remote pages show real offline states',
+      data: config.mode === 'search' ? 'labelled deterministic raw HTTP search fixtures; real SDK, store, router, SQLite/IPC and production Vue UI; no accounts or public API responses' : config.mode === 'downloads' ? 'labelled synthetic download tasks seeded through real SQLite; generated silent WAV; transport worker and external shell fixtures; no personal files/accounts/public downloads' : ['media', 'queue'].includes(config.mode) ? 'one isolated userData; generated local WAV fixtures imported through the original UI/worker/DB; no personal files, accounts, secrets, or public API responses' : 'one shared isolated userData; no user accounts, secrets, music, or public API responses',
+      network: 'Node TCP and Chromium HTTP(S) denied; search mode serves labelled in-memory HTTP responses without sockets',
       captureScheduling: 'webContents background throttling disabled only by the evidence harness; every screenshot still awaits two real animation frames',
       displayMode: config.displayMode,
       blockedNetworkRequests,
@@ -129,6 +129,7 @@ setTimeout(() => fail(new Error('Evidence phase exceeded 120 seconds')), 120000)
 
 app.on('browser-window-created', (_event, window) => {
   const ses = window.webContents.session
+  if (config.mode === 'search') ses.registerPreloadScript({ type: 'frame', filePath: path.join(__dirname, 'search-preload.cjs') })
   const preload = path.join(__dirname, 'offline-preload.cjs')
   if (typeof ses.registerPreloadScript === 'function') ses.registerPreloadScript({ type: 'frame', filePath: preload })
   else ses.setPreloads([...ses.getPreloads(), preload])
@@ -313,6 +314,7 @@ async function capture() {
     assertTheme(initial, 'lime')
     checks.push({ kind: 'new-profile-default', themeId: 'lime', snapshot: initial })
   }
+  if (config.phase.search) await require('./search.cjs')({ execute, waitFor, mainWindow, screenshot, checks, key, navigate, config, readDefaultList: () => bounded(global.lx.worker.dbService.getListMusics('default'), 'real search add database query') })
   if (config.phase.media) {
     await require('./player.cjs')({ config, mainWindow, execute, waitFor, screenshot, navigate, bounded, checks, observations, stage, delay, readSetting, key })
   }
