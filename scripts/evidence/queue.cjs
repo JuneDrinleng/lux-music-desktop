@@ -125,4 +125,5 @@ module.exports = async function runQueueEvidence(context) {
   if (list.length !== imported.length || !imported.every(item => list.some(stored => stored.id === item.id))) throw new Error('Queue operations modified the source playlist')
   key('Escape')
   checks.push({ kind: 'real-queue', results, sourceListUnchanged: true, unverified: ['audible speaker output', 'Windows/macOS input', 'production online sources'] })
+  await require('./settings-search.cjs')(context)
 }

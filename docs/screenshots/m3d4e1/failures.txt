@@ -1,0 +1,12 @@
+真实失败与修复（不把失败或缺失检查计为通过）
+
+1. 首次 helper 定向 ESLint：exit 1，for-of 缺少花括号。修正后定向 ESLint exit 0；完整 verify 的 lint 亦为 0。
+2. npm run verify 第一次：进程 exit 1。lint/typecheck/test 依次 exit 0（160 pass / 0 fail / 0 skipped），随后 artifacts/verification/build-main.log 写入报 ENOSPC，统一入口中断；build:main 的进程退出码未落盘，后三项未运行。这一轮不算七门通过。
+   磁盘满期间沙箱创建 .agents 和 /tmp/.git 挂载点也报 ENOSPC，曾无法启动任何本地命令。恢复后仅清理本任务 /tmp/m3d4e1-npm-cache，重跑完整 npm run verify；第二轮七门均 exit 0。
+3. queue 第一次：exit 1。source e57419bb162a5afdb0280cd789984eb29b22720e。保留原 queue 8 / media 3，新增 search 0。
+   helper 错把根容器的 list 文字色当作 ink token；同时恢复时错误要求原侧栏 href 包含列表自动产生的 ?id=default。分类/路由和最终路由核对清理失败，其余六项清理成功。修正为直接核对 M1 ink/paper token，通过原侧栏及原列表逻辑恢复完整路由。保留所有绘制、裁剪、总期限断言。
+4. queue 第二次：exit 1。source 8d34c4e2d3ad97fb7fb238062b51d3d3d9398a21。保留 queue 8 / media 3；新增 search 五个场景后失败，未到键盘动作；八项清理均成功。
+   新 helper 误把 828×540 最小支持尺寸等同于 BrowserWindow.getMinimumSize() 限制。src/common/config.ts 的原 windowSizeList 最小预设为 828×540；winMain 原构造为 resizable:false，未设置 minWidth/minHeight。修正为严格同时核对 native content size 和 renderer viewport；记录原生 minimumConstraint，不伪称它有 828×540 限制。
+
+完整本地日志与上述失败 manifest 保存在 artifacts/m3d4e1-local/；既有 CI 将完整 artifacts/ 和 dist/ 上传，保留期 90 天。CI 不会重放本地开发失败，以上记录用于保留本地事实。
+5. themes 首轮本地命令被 SIGTERM 中断，工具观测退出码 143；停止在 oat_milk 选择等待中，无完整 manifest，不能计为通过。中断原因和该中断轮的原生清理未确认。保存 partial phase/display/log 到 artifacts/m3d4e1-local/themes-attempt-1；未延长任何期限、未改 runner。第二轮完整重跑原命令，9 个实际 Electron 进程、35 张矩阵图全部通过，所有 owned WM/Electron 退出及临时 profile 删除均确认。
