@@ -39,7 +39,11 @@ module.exports = async function settingsSearchEvidence(context) {
       return result
     } finally { clearTimeout(timer) }
   }
-  const execute = code => within('renderer observation', () => rawExecute(code))
+  const execute = async(code) => {
+    const result = await within('renderer observation', () => rawExecute(`(async() => { try { return { value: await (${code}) } } catch (error) { return { failure: String(error.stack || error) } } })()`))
+    if (result.failure) throw new Error(result.failure)
+    return result.value
+  }
   const until = (predicate, description) => within(description, () => waitFor(predicate, description, Math.min(2500, Math.max(1, deadline - performance.now()))))
   const { click: nativeClick, target, i18nControl } = createUiTools({ mainWindow, execute })
   const click = expression => within('original native mouse click', () => nativeClick(expression))
@@ -55,8 +59,8 @@ module.exports = async function settingsSearchEvidence(context) {
   }
   const agrees = (state, name, value) => ['renderer', 'main', 'disk'].every(source => state[name][source] === value)
   const visit = async(hash) => {
-    await click(`Array.from(document.querySelectorAll('#left a[href]')).find(el => el.getAttribute('href') === ${JSON.stringify(hash)})`)
-    await until(() => execute(`location.hash === ${JSON.stringify(hash)} && Boolean(document.querySelector('#view').children.length)`), `original sidebar ${hash}`)
+    await click(`Array.from(document.querySelectorAll('#left a[href]')).find(el => el.getAttribute('href').split('?')[0] === ${JSON.stringify(hash.split('?')[0])})`)
+    await until(() => execute(`${hash.includes('?') ? `location.hash === ${JSON.stringify(hash)}` : `location.hash.split('?')[0] === ${JSON.stringify(hash)}`} && Boolean(document.querySelector('#view').children.length)`), `original sidebar ${hash}`)
   }
   const category = async(name, id = name) => {
     await click(i18nControl('#view [role=tab]', `setting__${name}`))
@@ -135,7 +139,14 @@ module.exports = async function settingsSearchEvidence(context) {
         if (tr.left < cr.right || label.scrollWidth > label.clientWidth) throw new Error('Search text overlaps checkbox or overflows');
       }
       const root = getComputedStyle(document.querySelector('#root')); const ds = getComputedStyle(dd); const hs = getComputedStyle(heading);
-      if (panel.scrollWidth > panel.clientWidth || document.documentElement.scrollWidth > innerWidth || ds.fontFamily !== getComputedStyle(panel).fontFamily || ds.backgroundColor !== root.backgroundColor || ds.color !== root.color || hs.color !== root.color || hs.borderTopWidth !== '2px') throw new Error('Search semantic paper/ink/font/rule or horizontal layout disagrees');
+      const colors = new OffscreenCanvas(1, 1).getContext('2d');
+      const tokenMatches = (actual, name) => {
+        const token = root.getPropertyValue('--lux-' + name).trim();
+        if (!token || !CSS.supports('color', token)) return false;
+        colors.fillStyle = actual; const canonical = colors.fillStyle;
+        colors.fillStyle = token; return canonical === colors.fillStyle;
+      };
+      if (panel.scrollWidth > panel.clientWidth || document.documentElement.scrollWidth > innerWidth || ds.fontFamily !== getComputedStyle(panel).fontFamily || !tokenMatches(ds.backgroundColor, 'paper') || !tokenMatches(ds.color, 'ink') || !tokenMatches(hs.color, 'ink') || hs.borderTopWidth !== '2px') throw new Error('Search semantic paper/ink/font/rule or horizontal layout disagrees');
       return { ids: actual, horizontalOverflow: false, font: ds.fontFamily, paper: ds.backgroundColor, ink: ds.color, tokens: Object.fromEntries(['paper', 'ink', 'muted', 'rule', 'hairline'].map(name => [name, root.getPropertyValue('--lux-' + name).trim()])) };
     })()`)
     inventory.heading = await geometry('document.querySelector("#search")')
