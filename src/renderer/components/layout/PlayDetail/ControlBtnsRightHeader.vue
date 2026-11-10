@@ -98,11 +98,12 @@ const fullscreenExit = () => {
   flex: 0 0 @height-toolbar;
   -webkit-app-region: drag;
   width: 100%;
+  color: var(--lux-ink);
   align-self: flex-start;
 
   .controBtn {
     position: absolute;
-    top: 0;
+    top: 6px;
     display: flex;
     -webkit-app-region: no-drag;
 
@@ -111,7 +112,7 @@ const fullscreenExit = () => {
       position: relative;
       background: none;
       border: none;
-      outline: none;
+      &:focus-visible { outline: var(--lux-focus-width) solid var(--lux-ink); outline-offset: var(--lux-focus-offset); z-index: 1; }
       padding: 1px;
       cursor: pointer;
       display: flex;
@@ -125,11 +126,11 @@ const fullscreenExit = () => {
   }
 
   .controBtn {
-    right: 0;
+    right: 6px;
     button {
       width: 46px;
       height: 30px;
-      color: var(--color-font-label);
+      color: var(--lux-ink);
       transition: background-color 0.2s ease-in-out;
 
       &.hover {

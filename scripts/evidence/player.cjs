@@ -51,7 +51,16 @@ module.exports = async function runRealPlayerEvidence(context) {
     const filePath = path.join(fixtureDirectory, `lux-software-evidence-${index + 1}.wav`)
     const bytes = createWave(frequency)
     fs.writeFileSync(filePath, bytes)
-    return { filePath, frequency, durationSeconds: 45, sampleRate: 16000, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') }
+    // The second real file uses the existing local sidecar-cover lookup.
+    // The first remains the original no-cover case; neither injects UI state.
+    let cover = null
+    if (index === 1) {
+      const png = fs.readFileSync(path.join(config.root, 'doc/images/icon.png'))
+      const coverPath = filePath.replace(/\.wav$/, '.png')
+      fs.writeFileSync(coverPath, png)
+      cover = { filePath: coverPath, source: 'doc/images/icon.png', sha256: createHash('sha256').update(png).digest('hex') }
+    }
+    return { filePath, cover, frequency, durationSeconds: 45, sampleRate: 16000, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') }
   })
   const fixturePaths = fixtures.map(item => item.filePath)
   const wheelObservations = []
@@ -66,7 +75,7 @@ module.exports = async function runRealPlayerEvidence(context) {
     const elements = window.__luxEvidenceAudioElements;
     const audio = elements.find(el => { try { return ${JSON.stringify(fixturePaths)}.includes(decodeURIComponent(new URL(el.currentSrc || el.src).pathname)) } catch { return false } });
     return {
-      audio: audio ? { src: audio.src, currentSrc: audio.currentSrc, paused: audio.paused, ended: audio.ended, currentTime: audio.currentTime, duration: Number.isFinite(audio.duration) ? audio.duration : null, readyState: audio.readyState, networkState: audio.networkState, volume: audio.volume, muted: audio.muted, error: audio.error ? { code: audio.error.code, message: audio.error.message } : null } : null,
+      audio: audio ? { src: audio.src, currentSrc: audio.currentSrc, paused: audio.paused, ended: audio.ended, currentTime: audio.currentTime, duration: Number.isFinite(audio.duration) ? audio.duration : null, readyState: audio.readyState, networkState: audio.networkState, playbackRate: audio.playbackRate, volume: audio.volume, muted: audio.muted, error: audio.error ? { code: audio.error.code, message: audio.error.message } : null } : null,
       audioCount: elements.length, musicInfo: JSON.parse(JSON.stringify(window.lxData.musicInfo)),
       playInfo: JSON.parse(JSON.stringify(window.lxData.playInfo)), playMusicInfo: JSON.parse(JSON.stringify(window.lxData.playMusicInfo)), status: window.lxData.status.value,
       controls: { play: Boolean(${i18nControl('#player [aria-label]', 'player__play')}), pause: Boolean(${i18nControl('#player [aria-label]', 'player__pause')}) },
@@ -252,8 +261,9 @@ module.exports = async function runRealPlayerEvidence(context) {
     await selectMode('listLoop')
     mediaChecks.push({ action: 'playback-mode', random, restored: await readMedia() })
     await screenshot('media-real-controls.png', 'media', { player: await readMedia() })
+    if (!config.phase.queue) await require('./play-detail.cjs')({ ...context, imported, readMedia, wheel })
     if (config.phase.queue) await require('./queue.cjs')({ ...context, fixtures, imported, readMedia, progressStyle })
-    checks.push({ kind: 'real-player', pipeline: 'generated PCM WAV → actual list menu → OS-picker boundary → real metadata worker → SQLite → native row/button input → production HTMLAudioElement', fixtures, results: mediaChecks, audioObservation: 'only read native elements from the constructor observer; no media method or property replaced', unverified: ['physical audio hardware and speakers', 'production online music services', 'full lyrics, sound effects, playback rate and desktop lyric behavior'] })
+    checks.push({ kind: 'real-player', pipeline: 'generated PCM WAV → actual list menu → OS-picker boundary → real metadata worker → SQLite → native row/button input → production HTMLAudioElement', fixtures, results: mediaChecks, audioObservation: 'only read native elements from the constructor observer; no media method or property replaced', unverified: ['physical audio hardware and speakers', 'production online music services', 'full lyrics, sound-effect algorithms and desktop lyric behavior'] })
     observations.push({ kind: 'software-media-fixture-boundary', files: fixtures, verified: 'real local file metadata, SQLite list persistence, native audio clock/pause/seek/resource transitions and original playback controls', unverified: 'audible speaker output; generated tones are evidence fixtures, not user media' })
   } catch (error) {
     failure = error

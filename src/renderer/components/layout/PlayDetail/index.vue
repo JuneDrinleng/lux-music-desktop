@@ -1,6 +1,6 @@
 <template lang="pug">
 transition(enter-active-class="animated slideInRight" leave-active-class="animated slideOutDown" @after-enter="handleAfterEnter" @after-leave="handleAfterLeave")
-  div(v-if="isShowPlayerDetail" :class="[$style.container, { fullscreen: isFullscreen }]" @contextmenu="handleContextMenu")
+  div(v-if="isShowPlayerDetail" data-action="play-detail" :class="[$style.container, { fullscreen: isFullscreen }]" @contextmenu="handleContextMenu")
     div(:class="$style.bg")
     //- div(:class="$style.bg" :style="bgStyle")
     //- div(:class="$style.bg2")
@@ -10,9 +10,12 @@ transition(enter-active-class="animated slideInRight" leave-active-class="animat
       div.left(:class="$style.left")
         //- div(:class="$style.info")
         div(:class="$style.info")
-          img(v-if="musicInfo.pic" :class="$style.img" :src="musicInfo.pic")
+          div(:class="$style.cover")
+            img(v-if="musicInfo.pic" :class="$style.img" :src="musicInfo.pic" alt="")
+            div(v-else :class="$style.placeholder" aria-hidden="true")
           div.description(:class="['scroll', $style.description]")
-            p {{ $t('player__music_name') }}{{ musicInfo.name }}
+            p(:class="$style.eyebrow") {{ $t('player__music_name') }}
+            h1 {{ musicInfo.name }}
             p {{ $t('player__music_singer') }}{{ musicInfo.singer }}
             p(v-if="musicInfo.album") {{ $t('player__music_album') }}{{ musicInfo.album }}
 
@@ -144,12 +147,12 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--color-content-background);
+  background-color: var(--lux-paper);
   z-index: 10;
   // -webkit-app-region: drag;
   overflow: hidden;
   border-radius: @radius-border;
-  color: var(--color-font);
+  color: var(--lux-ink);
   // border-left: 12px solid var(--color-primary-alpha-900);
   -webkit-app-region: no-drag;
   contain: strict;
@@ -170,14 +173,14 @@ export default {
   background-size: var(--background-image-size);
   // background-size: 110% 110%;
   // filter: blur(60px);
-  opacity: .7;
+  opacity: .12;
   z-index: -1;
   &:before {
     content: '';
     display: block;
     width: 100%;
     height: 100%;
-    background-color: var(--color-app-background);
+    background-color: var(--lux-paper);
   }
   &:after {
     position: absolute;
@@ -187,7 +190,7 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
-    background-color: var(--color-main-background);
+    background-color: var(--lux-paper);
   }
 }
 // .bg2 {
@@ -205,7 +208,8 @@ export default {
   min-height: 0;
   overflow: hidden;
   display: flex;
-  margin: 0 30px;
+  margin: 0 var(--lux-page-gutter);
+  border-top: var(--lux-rule-width) solid var(--lux-rule);
   position: relative;
 
   &.showComment {
@@ -231,39 +235,79 @@ export default {
 }
 .left {
   flex: 0 0 40%;
+  min-width: 0;
   display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  padding: 13px;
+  justify-content: center;
+  padding: var(--lux-space-5) var(--lux-space-6) var(--lux-space-3) 0;
   overflow: hidden;
+  border-right: var(--lux-hairline-width) solid var(--lux-hairline);
   transition: flex-basis @transition-normal;
 }
-
 .info {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
-  max-width: 300px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 23rem;
   min-height: 0;
 }
-.img {
-  max-width: 100%;
-  max-height: 80%;
-  min-width: 100%;
-  box-shadow: 0 0 6px var(--color-primary-alpha-500);
-  border-radius: 6px;
-  opacity: .8;
+.cover {
+  width: min(100%, 36vh);
+  aspect-ratio: 1;
+  flex: none;
+  padding: var(--lux-space-2);
+  background: var(--lux-paper-raised);
+  border: var(--lux-hairline-width) solid var(--lux-rule);
+}
+.img, .placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.placeholder {
+  display: grid;
+  place-items: center;
+  background: var(--lux-placeholder);
+  &::before {
+    content: '';
+    width: 68%;
+    aspect-ratio: 1;
+    border: var(--lux-rule-width) solid var(--lux-muted);
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--lux-accent) 0 9%, transparent 10% 26%, var(--lux-hairline) 27% 28%, transparent 29% 47%, var(--lux-hairline) 48% 49%, transparent 50%);
+  }
 }
 .description {
-  max-width: 300px;
-  margin-top: 15px;
-  padding-bottom: 15px;
+  width: 100%;
+  margin-top: var(--lux-space-4);
+  padding: 0 var(--lux-space-2) var(--lux-space-3) 0;
   min-height: 0;
-  p {
-    line-height: 1.5;
-    font-size: 14px;
-    overflow-wrap: break-word;
+  h1 {
+    margin: var(--lux-space-2) 0 var(--lux-space-3);
+    color: var(--lux-display);
+    font-size: var(--lux-type-detail);
+    font-weight: var(--lux-weight-display);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
   }
+  p {
+    line-height: 1.6;
+    font-size: var(--lux-type-body);
+    overflow-wrap: anywhere;
+  }
+  .eyebrow {
+    color: var(--lux-eyebrow);
+    font-size: var(--lux-type-eyebrow);
+    font-weight: var(--lux-weight-label);
+    letter-spacing: .08em;
+  }
+}
+@media (max-height: 600px) {
+  .left { padding-top: var(--lux-space-3); }
+  .cover { width: min(100%, 29vh); }
+  .description { margin-top: var(--lux-space-2); }
+  .description h1 { font-size: var(--lux-type-section); }
 }
 
 
