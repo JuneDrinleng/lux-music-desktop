@@ -1,0 +1,3231 @@
+[
+  {
+    "kind": "original-window-events",
+    "side": "left",
+    "minimizeEvent": true,
+    "closeRequested": true,
+    "closeBoundary": "original button IPC reached BrowserWindow close; evidence listener prevented destruction; this is request evidence, not application exit; production main_window_close handlers still run in the isolated tray/sync/lyric-disabled fixture"
+  },
+  {
+    "kind": "original-window-events",
+    "side": "right",
+    "minimizeEvent": true,
+    "closeRequested": true,
+    "closeBoundary": "original button IPC reached BrowserWindow close; evidence listener prevented destruction; this is request evidence, not application exit; production main_window_close handlers still run in the isolated tray/sync/lyric-disabled fixture"
+  },
+  {
+    "kind": "original-fullscreen-state",
+    "entered": {
+      "native": true,
+      "renderer": true,
+      "controls": [
+        {
+          "label": "最小化",
+          "side": "right",
+          "x": 0,
+          "y": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        {
+          "label": "关闭",
+          "side": "right",
+          "x": 0,
+          "y": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        }
+      ],
+      "regions": [
+        {
+          "selector": "#toolbar",
+          "appRegion": "no-drag"
+        },
+        {
+          "selector": "#left",
+          "appRegion": "no-drag"
+        }
+      ]
+    },
+    "exited": {
+      "restoredPaint": {
+        "firstFrameTime": 6574.03,
+        "secondFrameTime": 6590.7,
+        "visibilityState": "visible"
+      },
+      "leaveFullscreenEvent": true,
+      "beforeBounds": {
+        "x": 403,
+        "y": 241,
+        "width": 1280,
+        "height": 800
+      },
+      "restoredBounds": {
+        "x": 403,
+        "y": 241,
+        "width": 1280,
+        "height": 800
+      },
+      "native": false,
+      "renderer": false,
+      "controls": [
+        {
+          "label": "最小化",
+          "side": "right",
+          "x": 1187,
+          "y": 1,
+          "right": 1233,
+          "bottom": 31,
+          "width": 46,
+          "height": 30,
+          "visible": true
+        },
+        {
+          "label": "关闭",
+          "side": "right",
+          "x": 1233,
+          "y": 1,
+          "right": 1279,
+          "bottom": 31,
+          "width": 46,
+          "height": 30,
+          "visible": true
+        }
+      ],
+      "regions": [
+        {
+          "selector": "#toolbar",
+          "appRegion": "drag"
+        },
+        {
+          "selector": "#left",
+          "appRegion": "drag"
+        }
+      ],
+      "restoredFont": "16px",
+      "expectedFont": "16px"
+    }
+  },
+  {
+    "kind": "settings-about-scene",
+    "id": "lime-1024x700-16px",
+    "themeState": {
+      "renderer": "lime",
+      "main": "lime",
+      "disk": "lime"
+    },
+    "fontState": {
+      "renderer": 16,
+      "main": 16,
+      "disk": 16
+    },
+    "inventory": {
+      "paragraphs": [
+        "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "最新版下载地址：GitHub Releases",
+        "软件的常见问题可转至：桌面版常见问题",
+        "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "仍有问题可到 GitHub 提交 Issue。",
+        "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "By: 落雪无痕"
+      ],
+      "links": [
+        "https://github.com/lyswhut/lx-music-desktop",
+        "GitHub Releases",
+        "桌面版常见问题",
+        "提交 Issue",
+        "这里"
+      ],
+      "fontFamily": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+      "background": "rgb(238, 240, 251)",
+      "color": "rgb(17, 24, 39)",
+      "tokens": {
+        "paper": "#eef0fb",
+        "ink": "#111827",
+        "muted": "#767d89",
+        "rule": "#111827",
+        "hairline": "#e1e6ef"
+      },
+      "viewport": {
+        "width": 1024,
+        "height": 700
+      },
+      "panel": {
+        "width": 802,
+        "height": 578,
+        "scrollHeight": 578
+      },
+      "horizontalOverflow": false
+    },
+    "reachability": [
+      {
+        "text": "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "rect": {
+          "x": 243.15625,
+          "y": 162,
+          "width": 757.84375,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "最新版下载地址：GitHub Releases",
+        "rect": {
+          "x": 243.15625,
+          "y": 199,
+          "width": 757.84375,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "软件的常见问题可转至：桌面版常见问题",
+        "rect": {
+          "x": 243.15625,
+          "y": 236,
+          "width": 757.84375,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "rect": {
+          "x": 243.15625,
+          "y": 273,
+          "width": 757.84375,
+          "height": 37
+        },
+        "lines": 6,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "仍有问题可到 GitHub 提交 Issue。",
+        "rect": {
+          "x": 243.15625,
+          "y": 310,
+          "width": 757.84375,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "rect": {
+          "x": 243.15625,
+          "y": 363,
+          "width": 757.84375,
+          "height": 38
+        },
+        "lines": 1,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "rect": {
+          "x": 243.15625,
+          "y": 401,
+          "width": 757.84375,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "rect": {
+          "x": 243.15625,
+          "y": 438,
+          "width": 757.84375,
+          "height": 37
+        },
+        "lines": 2,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "rect": {
+          "x": 243.15625,
+          "y": 491,
+          "width": 757.84375,
+          "height": 41
+        },
+        "lines": 7,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "By: 落雪无痕",
+        "rect": {
+          "x": 243.15625,
+          "y": 554,
+          "width": 757.84375,
+          "height": 39
+        },
+        "lines": 3,
+        "clip": {
+          "left": 221.15625,
+          "top": 56,
+          "right": 1023,
+          "bottom": 634
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(118, 125, 137)"
+        }
+      }
+    ],
+    "links": [
+      {
+        "center": {
+          "x": 657,
+          "y": 181,
+          "width": 296.34375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "https://github.com/lyswhut/lx-music-desktop"
+        },
+        "geometry": {
+          "text": "https://github.com/lyswhut/lx-music-desktop",
+          "rect": {
+            "x": 509.15625,
+            "y": 170,
+            "width": 296.34375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 221.15625,
+            "top": 56,
+            "right": 1023,
+            "bottom": 634
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 409,
+          "y": 218,
+          "width": 107.421875,
+          "height": 21,
+          "label": "点击打开",
+          "text": "GitHub Releases"
+        },
+        "geometry": {
+          "text": "GitHub Releases",
+          "rect": {
+            "x": 355.15625,
+            "y": 207,
+            "width": 107.421875,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 221.15625,
+            "top": 56,
+            "right": 1023,
+            "bottom": 634
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 446,
+          "y": 255,
+          "width": 98,
+          "height": 21,
+          "label": "点击打开",
+          "text": "桌面版常见问题"
+        },
+        "geometry": {
+          "text": "桌面版常见问题",
+          "rect": {
+            "x": 397.15625,
+            "y": 244,
+            "width": 98,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 221.15625,
+            "top": 56,
+            "right": 1023,
+            "bottom": 634
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 414,
+          "y": 329,
+          "width": 66.359375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "提交 Issue"
+        },
+        "geometry": {
+          "text": "提交 Issue",
+          "rect": {
+            "x": 380.9375,
+            "y": 318,
+            "width": 66.359375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 221.15625,
+            "top": 56,
+            "right": 1023,
+            "bottom": 634
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 575,
+          "y": 512,
+          "width": 28,
+          "height": 21,
+          "label": "点击打开",
+          "text": "这里"
+        },
+        "geometry": {
+          "text": "这里",
+          "rect": {
+            "x": 561.171875,
+            "y": 501,
+            "width": 28,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 221.15625,
+            "top": 56,
+            "right": 1023,
+            "bottom": 634
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      }
+    ],
+    "focus": {
+      "text": "许可协议",
+      "rect": {
+        "x": 363.15625,
+        "y": 500,
+        "width": 64.015625,
+        "height": 24
+      },
+      "lines": 1,
+      "clip": {
+        "left": 221.15625,
+        "top": 56,
+        "right": 1023,
+        "bottom": 634
+      },
+      "focusVisible": true,
+      "outline": {
+        "style": "solid",
+        "width": "2px",
+        "offset": "3px",
+        "color": "rgb(17, 24, 39)"
+      }
+    },
+    "pact": {
+      "opened": true,
+      "closed": true,
+      "agreement": {
+        "paragraphs": 24,
+        "signed": true,
+        "title": "许可协议"
+      },
+      "close": {
+        "text": "",
+        "rect": {
+          "x": 846.359375,
+          "y": 85.09375,
+          "width": 23.328125,
+          "height": 17.328125
+        },
+        "lines": 1,
+        "clip": {
+          "left": 154.296875,
+          "top": 84.765625,
+          "right": 869.6875,
+          "bottom": 615.234375
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(88, 101, 27)"
+        }
+      }
+    }
+  },
+  {
+    "kind": "settings-about-scene",
+    "id": "lime-1280x800-16px",
+    "themeState": {
+      "renderer": "lime",
+      "main": "lime",
+      "disk": "lime"
+    },
+    "fontState": {
+      "renderer": 16,
+      "main": 16,
+      "disk": 16
+    },
+    "inventory": {
+      "paragraphs": [
+        "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "最新版下载地址：GitHub Releases",
+        "软件的常见问题可转至：桌面版常见问题",
+        "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "仍有问题可到 GitHub 提交 Issue。",
+        "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "By: 落雪无痕"
+      ],
+      "links": [
+        "https://github.com/lyswhut/lx-music-desktop",
+        "GitHub Releases",
+        "桌面版常见问题",
+        "提交 Issue",
+        "这里"
+      ],
+      "fontFamily": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+      "background": "rgb(238, 240, 251)",
+      "color": "rgb(17, 24, 39)",
+      "tokens": {
+        "paper": "#eef0fb",
+        "ink": "#111827",
+        "muted": "#767d89",
+        "rule": "#111827",
+        "hairline": "#e1e6ef"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "panel": {
+        "width": 1003,
+        "height": 678,
+        "scrollHeight": 678
+      },
+      "horizontalOverflow": false
+    },
+    "reachability": [
+      {
+        "text": "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "rect": {
+          "x": 304.328125,
+          "y": 162,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "最新版下载地址：GitHub Releases",
+        "rect": {
+          "x": 304.328125,
+          "y": 199,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "软件的常见问题可转至：桌面版常见问题",
+        "rect": {
+          "x": 304.328125,
+          "y": 236,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "rect": {
+          "x": 304.328125,
+          "y": 273,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 6,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "仍有问题可到 GitHub 提交 Issue。",
+        "rect": {
+          "x": 304.328125,
+          "y": 310,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "rect": {
+          "x": 304.328125,
+          "y": 363,
+          "width": 946.671875,
+          "height": 38
+        },
+        "lines": 1,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "rect": {
+          "x": 304.328125,
+          "y": 401,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "rect": {
+          "x": 304.328125,
+          "y": 438,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 2,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "rect": {
+          "x": 304.328125,
+          "y": 491,
+          "width": 946.671875,
+          "height": 41
+        },
+        "lines": 7,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "By: 落雪无痕",
+        "rect": {
+          "x": 304.328125,
+          "y": 554,
+          "width": 946.671875,
+          "height": 39
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(118, 125, 137)"
+        }
+      }
+    ],
+    "links": [
+      {
+        "center": {
+          "x": 719,
+          "y": 181,
+          "width": 296.34375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "https://github.com/lyswhut/lx-music-desktop"
+        },
+        "geometry": {
+          "text": "https://github.com/lyswhut/lx-music-desktop",
+          "rect": {
+            "x": 570.328125,
+            "y": 170,
+            "width": 296.34375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 470,
+          "y": 218,
+          "width": 107.421875,
+          "height": 21,
+          "label": "点击打开",
+          "text": "GitHub Releases"
+        },
+        "geometry": {
+          "text": "GitHub Releases",
+          "rect": {
+            "x": 416.328125,
+            "y": 207,
+            "width": 107.421875,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 507,
+          "y": 255,
+          "width": 98,
+          "height": 21,
+          "label": "点击打开",
+          "text": "桌面版常见问题"
+        },
+        "geometry": {
+          "text": "桌面版常见问题",
+          "rect": {
+            "x": 458.328125,
+            "y": 244,
+            "width": 98,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 475,
+          "y": 329,
+          "width": 66.359375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "提交 Issue"
+        },
+        "geometry": {
+          "text": "提交 Issue",
+          "rect": {
+            "x": 442.109375,
+            "y": 318,
+            "width": 66.359375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 636,
+          "y": 512,
+          "width": 28,
+          "height": 21,
+          "label": "点击打开",
+          "text": "这里"
+        },
+        "geometry": {
+          "text": "这里",
+          "rect": {
+            "x": 622.34375,
+            "y": 501,
+            "width": 28,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      }
+    ],
+    "focus": {
+      "text": "许可协议",
+      "rect": {
+        "x": 424.328125,
+        "y": 500,
+        "width": 64.015625,
+        "height": 24
+      },
+      "lines": 1,
+      "clip": {
+        "left": 276.328125,
+        "top": 56,
+        "right": 1279,
+        "bottom": 734
+      },
+      "focusVisible": true,
+      "outline": {
+        "style": "solid",
+        "width": "2px",
+        "offset": "3px",
+        "color": "rgb(17, 24, 39)"
+      }
+    },
+    "pact": {
+      "opened": true,
+      "closed": true,
+      "agreement": {
+        "paragraphs": 24,
+        "signed": true,
+        "title": "许可协议"
+      },
+      "close": {
+        "text": "",
+        "rect": {
+          "x": 1063.96875,
+          "y": 97.09375,
+          "width": 23.328125,
+          "height": 17.328125
+        },
+        "lines": 1,
+        "clip": {
+          "left": 192.703125,
+          "top": 96.765625,
+          "right": 1087.296875,
+          "bottom": 703.234375
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(88, 101, 27)"
+        }
+      }
+    }
+  },
+  {
+    "kind": "settings-about-scene",
+    "id": "lime-1440x900-16px",
+    "themeState": {
+      "renderer": "lime",
+      "main": "lime",
+      "disk": "lime"
+    },
+    "fontState": {
+      "renderer": 16,
+      "main": 16,
+      "disk": 16
+    },
+    "inventory": {
+      "paragraphs": [
+        "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "最新版下载地址：GitHub Releases",
+        "软件的常见问题可转至：桌面版常见问题",
+        "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "仍有问题可到 GitHub 提交 Issue。",
+        "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "By: 落雪无痕"
+      ],
+      "links": [
+        "https://github.com/lyswhut/lx-music-desktop",
+        "GitHub Releases",
+        "桌面版常见问题",
+        "提交 Issue",
+        "这里"
+      ],
+      "fontFamily": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+      "background": "rgb(238, 240, 251)",
+      "color": "rgb(17, 24, 39)",
+      "tokens": {
+        "paper": "#eef0fb",
+        "ink": "#111827",
+        "muted": "#767d89",
+        "rule": "#111827",
+        "hairline": "#e1e6ef"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "panel": {
+        "width": 1128,
+        "height": 778,
+        "scrollHeight": 778
+      },
+      "horizontalOverflow": false
+    },
+    "reachability": [
+      {
+        "text": "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "rect": {
+          "x": 338.796875,
+          "y": 162,
+          "width": 1072.203125,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "最新版下载地址：GitHub Releases",
+        "rect": {
+          "x": 338.796875,
+          "y": 199,
+          "width": 1072.203125,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "软件的常见问题可转至：桌面版常见问题",
+        "rect": {
+          "x": 338.796875,
+          "y": 236,
+          "width": 1072.203125,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "rect": {
+          "x": 338.796875,
+          "y": 273,
+          "width": 1072.203125,
+          "height": 37
+        },
+        "lines": 6,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "仍有问题可到 GitHub 提交 Issue。",
+        "rect": {
+          "x": 338.796875,
+          "y": 310,
+          "width": 1072.203125,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "rect": {
+          "x": 338.796875,
+          "y": 363,
+          "width": 1072.203125,
+          "height": 38
+        },
+        "lines": 1,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "rect": {
+          "x": 338.796875,
+          "y": 401,
+          "width": 1072.203125,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "rect": {
+          "x": 338.796875,
+          "y": 438,
+          "width": 1072.203125,
+          "height": 37
+        },
+        "lines": 2,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "rect": {
+          "x": 338.796875,
+          "y": 491,
+          "width": 1072.203125,
+          "height": 41
+        },
+        "lines": 7,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "By: 落雪无痕",
+        "rect": {
+          "x": 338.796875,
+          "y": 554,
+          "width": 1072.203125,
+          "height": 39
+        },
+        "lines": 3,
+        "clip": {
+          "left": 310.796875,
+          "top": 56,
+          "right": 1439,
+          "bottom": 834
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(118, 125, 137)"
+        }
+      }
+    ],
+    "links": [
+      {
+        "center": {
+          "x": 753,
+          "y": 181,
+          "width": 296.34375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "https://github.com/lyswhut/lx-music-desktop"
+        },
+        "geometry": {
+          "text": "https://github.com/lyswhut/lx-music-desktop",
+          "rect": {
+            "x": 604.796875,
+            "y": 170,
+            "width": 296.34375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 310.796875,
+            "top": 56,
+            "right": 1439,
+            "bottom": 834
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 505,
+          "y": 218,
+          "width": 107.421875,
+          "height": 21,
+          "label": "点击打开",
+          "text": "GitHub Releases"
+        },
+        "geometry": {
+          "text": "GitHub Releases",
+          "rect": {
+            "x": 450.796875,
+            "y": 207,
+            "width": 107.421875,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 310.796875,
+            "top": 56,
+            "right": 1439,
+            "bottom": 834
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 542,
+          "y": 255,
+          "width": 98,
+          "height": 21,
+          "label": "点击打开",
+          "text": "桌面版常见问题"
+        },
+        "geometry": {
+          "text": "桌面版常见问题",
+          "rect": {
+            "x": 492.796875,
+            "y": 244,
+            "width": 98,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 310.796875,
+            "top": 56,
+            "right": 1439,
+            "bottom": 834
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 510,
+          "y": 329,
+          "width": 66.359375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "提交 Issue"
+        },
+        "geometry": {
+          "text": "提交 Issue",
+          "rect": {
+            "x": 476.578125,
+            "y": 318,
+            "width": 66.359375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 310.796875,
+            "top": 56,
+            "right": 1439,
+            "bottom": 834
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 671,
+          "y": 512,
+          "width": 28,
+          "height": 21,
+          "label": "点击打开",
+          "text": "这里"
+        },
+        "geometry": {
+          "text": "这里",
+          "rect": {
+            "x": 656.8125,
+            "y": 501,
+            "width": 28,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 310.796875,
+            "top": 56,
+            "right": 1439,
+            "bottom": 834
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      }
+    ],
+    "focus": {
+      "text": "许可协议",
+      "rect": {
+        "x": 458.796875,
+        "y": 500,
+        "width": 64.015625,
+        "height": 24
+      },
+      "lines": 1,
+      "clip": {
+        "left": 310.796875,
+        "top": 56,
+        "right": 1439,
+        "bottom": 834
+      },
+      "focusVisible": true,
+      "outline": {
+        "style": "solid",
+        "width": "2px",
+        "offset": "3px",
+        "color": "rgb(17, 24, 39)"
+      }
+    },
+    "pact": {
+      "opened": true,
+      "closed": true,
+      "agreement": {
+        "paragraphs": 24,
+        "signed": true,
+        "title": "许可协议"
+      },
+      "close": {
+        "text": "",
+        "rect": {
+          "x": 1199.96875,
+          "y": 109.09375,
+          "width": 23.328125,
+          "height": 17.328125
+        },
+        "lines": 1,
+        "clip": {
+          "left": 216.703125,
+          "top": 108.765625,
+          "right": 1223.296875,
+          "bottom": 791.234375
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(88, 101, 27)"
+        }
+      }
+    }
+  },
+  {
+    "kind": "settings-about-scene",
+    "id": "oat_milk-1280x800-16px",
+    "themeState": {
+      "renderer": "oat_milk",
+      "main": "oat_milk",
+      "disk": "oat_milk"
+    },
+    "fontState": {
+      "renderer": 16,
+      "main": 16,
+      "disk": 16
+    },
+    "inventory": {
+      "paragraphs": [
+        "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "最新版下载地址：GitHub Releases",
+        "软件的常见问题可转至：桌面版常见问题",
+        "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "仍有问题可到 GitHub 提交 Issue。",
+        "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "By: 落雪无痕"
+      ],
+      "links": [
+        "https://github.com/lyswhut/lx-music-desktop",
+        "GitHub Releases",
+        "桌面版常见问题",
+        "提交 Issue",
+        "这里"
+      ],
+      "fontFamily": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+      "background": "rgb(246, 241, 234)",
+      "color": "rgb(28, 23, 18)",
+      "tokens": {
+        "paper": "#f6f1ea",
+        "ink": "#1c1712",
+        "muted": "#6f6458",
+        "rule": "#1c1712",
+        "hairline": "#e2d8cb"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "panel": {
+        "width": 1003,
+        "height": 678,
+        "scrollHeight": 678
+      },
+      "horizontalOverflow": false
+    },
+    "reachability": [
+      {
+        "text": "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "rect": {
+          "x": 304.328125,
+          "y": 162,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "最新版下载地址：GitHub Releases",
+        "rect": {
+          "x": 304.328125,
+          "y": 199,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "软件的常见问题可转至：桌面版常见问题",
+        "rect": {
+          "x": 304.328125,
+          "y": 236,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "rect": {
+          "x": 304.328125,
+          "y": 273,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 6,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "仍有问题可到 GitHub 提交 Issue。",
+        "rect": {
+          "x": 304.328125,
+          "y": 310,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "rect": {
+          "x": 304.328125,
+          "y": 363,
+          "width": 946.671875,
+          "height": 38
+        },
+        "lines": 1,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "rect": {
+          "x": 304.328125,
+          "y": 401,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "rect": {
+          "x": 304.328125,
+          "y": 438,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 2,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "rect": {
+          "x": 304.328125,
+          "y": 491,
+          "width": 946.671875,
+          "height": 41
+        },
+        "lines": 7,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(28, 23, 18)"
+        }
+      },
+      {
+        "text": "By: 落雪无痕",
+        "rect": {
+          "x": 304.328125,
+          "y": 554,
+          "width": 946.671875,
+          "height": 39
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(111, 100, 88)"
+        }
+      }
+    ],
+    "links": [
+      {
+        "center": {
+          "x": 719,
+          "y": 181,
+          "width": 296.34375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "https://github.com/lyswhut/lx-music-desktop"
+        },
+        "geometry": {
+          "text": "https://github.com/lyswhut/lx-music-desktop",
+          "rect": {
+            "x": 570.328125,
+            "y": 170,
+            "width": 296.34375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(28, 23, 18)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 470,
+          "y": 218,
+          "width": 107.421875,
+          "height": 21,
+          "label": "点击打开",
+          "text": "GitHub Releases"
+        },
+        "geometry": {
+          "text": "GitHub Releases",
+          "rect": {
+            "x": 416.328125,
+            "y": 207,
+            "width": 107.421875,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(28, 23, 18)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 507,
+          "y": 255,
+          "width": 98,
+          "height": 21,
+          "label": "点击打开",
+          "text": "桌面版常见问题"
+        },
+        "geometry": {
+          "text": "桌面版常见问题",
+          "rect": {
+            "x": 458.328125,
+            "y": 244,
+            "width": 98,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(28, 23, 18)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 475,
+          "y": 329,
+          "width": 66.359375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "提交 Issue"
+        },
+        "geometry": {
+          "text": "提交 Issue",
+          "rect": {
+            "x": 442.109375,
+            "y": 318,
+            "width": 66.359375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(28, 23, 18)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 636,
+          "y": 512,
+          "width": 28,
+          "height": 21,
+          "label": "点击打开",
+          "text": "这里"
+        },
+        "geometry": {
+          "text": "这里",
+          "rect": {
+            "x": 622.34375,
+            "y": 501,
+            "width": 28,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(28, 23, 18)"
+          }
+        }
+      }
+    ],
+    "focus": {
+      "text": "许可协议",
+      "rect": {
+        "x": 424.328125,
+        "y": 500,
+        "width": 64.015625,
+        "height": 24
+      },
+      "lines": 1,
+      "clip": {
+        "left": 276.328125,
+        "top": 56,
+        "right": 1279,
+        "bottom": 734
+      },
+      "focusVisible": true,
+      "outline": {
+        "style": "solid",
+        "width": "2px",
+        "offset": "3px",
+        "color": "rgb(28, 23, 18)"
+      }
+    },
+    "pact": {
+      "opened": true,
+      "closed": true,
+      "agreement": {
+        "paragraphs": 24,
+        "signed": true,
+        "title": "许可协议"
+      },
+      "close": {
+        "text": "",
+        "rect": {
+          "x": 1063.96875,
+          "y": 97.09375,
+          "width": 23.328125,
+          "height": 17.328125
+        },
+        "lines": 1,
+        "clip": {
+          "left": 192.703125,
+          "top": 96.765625,
+          "right": 1087.296875,
+          "bottom": 703.234375
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(80, 50, 26)"
+        }
+      }
+    }
+  },
+  {
+    "kind": "settings-about-scene",
+    "id": "ink_night-1280x800-16px",
+    "themeState": {
+      "renderer": "ink_night",
+      "main": "ink_night",
+      "disk": "ink_night"
+    },
+    "fontState": {
+      "renderer": 16,
+      "main": 16,
+      "disk": 16
+    },
+    "inventory": {
+      "paragraphs": [
+        "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "最新版下载地址：GitHub Releases",
+        "软件的常见问题可转至：桌面版常见问题",
+        "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "仍有问题可到 GitHub 提交 Issue。",
+        "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "By: 落雪无痕"
+      ],
+      "links": [
+        "https://github.com/lyswhut/lx-music-desktop",
+        "GitHub Releases",
+        "桌面版常见问题",
+        "提交 Issue",
+        "这里"
+      ],
+      "fontFamily": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+      "background": "rgb(18, 20, 28)",
+      "color": "rgb(243, 244, 248)",
+      "tokens": {
+        "paper": "#12141c",
+        "ink": "#f3f4f8",
+        "muted": "#a0a6b8",
+        "rule": "#f3f4f8",
+        "hairline": "#2f3444"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "panel": {
+        "width": 1003,
+        "height": 678,
+        "scrollHeight": 678
+      },
+      "horizontalOverflow": false
+    },
+    "reachability": [
+      {
+        "text": "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "rect": {
+          "x": 304.328125,
+          "y": 162,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "最新版下载地址：GitHub Releases",
+        "rect": {
+          "x": 304.328125,
+          "y": 199,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "软件的常见问题可转至：桌面版常见问题",
+        "rect": {
+          "x": 304.328125,
+          "y": 236,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "rect": {
+          "x": 304.328125,
+          "y": 273,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 6,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "仍有问题可到 GitHub 提交 Issue。",
+        "rect": {
+          "x": 304.328125,
+          "y": 310,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "rect": {
+          "x": 304.328125,
+          "y": 363,
+          "width": 946.671875,
+          "height": 38
+        },
+        "lines": 1,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "rect": {
+          "x": 304.328125,
+          "y": 401,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 4,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "rect": {
+          "x": 304.328125,
+          "y": 438,
+          "width": 946.671875,
+          "height": 37
+        },
+        "lines": 2,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "rect": {
+          "x": 304.328125,
+          "y": 491,
+          "width": 946.671875,
+          "height": 41
+        },
+        "lines": 7,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(243, 244, 248)"
+        }
+      },
+      {
+        "text": "By: 落雪无痕",
+        "rect": {
+          "x": 304.328125,
+          "y": 554,
+          "width": 946.671875,
+          "height": 39
+        },
+        "lines": 3,
+        "clip": {
+          "left": 276.328125,
+          "top": 56,
+          "right": 1279,
+          "bottom": 734
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(160, 166, 184)"
+        }
+      }
+    ],
+    "links": [
+      {
+        "center": {
+          "x": 719,
+          "y": 181,
+          "width": 296.34375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "https://github.com/lyswhut/lx-music-desktop"
+        },
+        "geometry": {
+          "text": "https://github.com/lyswhut/lx-music-desktop",
+          "rect": {
+            "x": 570.328125,
+            "y": 170,
+            "width": 296.34375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(243, 244, 248)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 470,
+          "y": 218,
+          "width": 107.421875,
+          "height": 21,
+          "label": "点击打开",
+          "text": "GitHub Releases"
+        },
+        "geometry": {
+          "text": "GitHub Releases",
+          "rect": {
+            "x": 416.328125,
+            "y": 207,
+            "width": 107.421875,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(243, 244, 248)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 507,
+          "y": 255,
+          "width": 98,
+          "height": 21,
+          "label": "点击打开",
+          "text": "桌面版常见问题"
+        },
+        "geometry": {
+          "text": "桌面版常见问题",
+          "rect": {
+            "x": 458.328125,
+            "y": 244,
+            "width": 98,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(243, 244, 248)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 475,
+          "y": 329,
+          "width": 66.359375,
+          "height": 21,
+          "label": "点击打开",
+          "text": "提交 Issue"
+        },
+        "geometry": {
+          "text": "提交 Issue",
+          "rect": {
+            "x": 442.109375,
+            "y": 318,
+            "width": 66.359375,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(243, 244, 248)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 636,
+          "y": 512,
+          "width": 28,
+          "height": 21,
+          "label": "点击打开",
+          "text": "这里"
+        },
+        "geometry": {
+          "text": "这里",
+          "rect": {
+            "x": 622.34375,
+            "y": 501,
+            "width": 28,
+            "height": 21
+          },
+          "lines": 1,
+          "clip": {
+            "left": 276.328125,
+            "top": 56,
+            "right": 1279,
+            "bottom": 734
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(243, 244, 248)"
+          }
+        }
+      }
+    ],
+    "focus": {
+      "text": "许可协议",
+      "rect": {
+        "x": 424.328125,
+        "y": 500,
+        "width": 64.015625,
+        "height": 24
+      },
+      "lines": 1,
+      "clip": {
+        "left": 276.328125,
+        "top": 56,
+        "right": 1279,
+        "bottom": 734
+      },
+      "focusVisible": true,
+      "outline": {
+        "style": "solid",
+        "width": "2px",
+        "offset": "3px",
+        "color": "rgb(243, 244, 248)"
+      }
+    },
+    "pact": {
+      "opened": true,
+      "closed": true,
+      "agreement": {
+        "paragraphs": 24,
+        "signed": true,
+        "title": "许可协议"
+      },
+      "close": {
+        "text": "",
+        "rect": {
+          "x": 1063.96875,
+          "y": 97.09375,
+          "width": 23.328125,
+          "height": 17.328125
+        },
+        "lines": 1,
+        "clip": {
+          "left": 192.703125,
+          "top": 96.765625,
+          "right": 1087.296875,
+          "bottom": 703.234375
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(209, 233, 50)"
+        }
+      }
+    }
+  },
+  {
+    "kind": "settings-about-scene",
+    "id": "lime-828x540-19px",
+    "themeState": {
+      "renderer": "lime",
+      "main": "lime",
+      "disk": "lime"
+    },
+    "fontState": {
+      "renderer": 19,
+      "main": 19,
+      "disk": 19
+    },
+    "inventory": {
+      "paragraphs": [
+        "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "最新版下载地址：GitHub Releases",
+        "软件的常见问题可转至：桌面版常见问题",
+        "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "仍有问题可到 GitHub 提交 Issue。",
+        "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "By: 落雪无痕"
+      ],
+      "links": [
+        "https://github.com/lyswhut/lx-music-desktop",
+        "GitHub Releases",
+        "桌面版常见问题",
+        "提交 Issue",
+        "这里"
+      ],
+      "fontFamily": "system-ui, Ubuntu, \"Droid Sans\", \"Source Han Sans SC\", \"Source Han Sans CN\", \"Source Han Sans\", sans-serif",
+      "background": "rgb(238, 240, 251)",
+      "color": "rgb(17, 24, 39)",
+      "tokens": {
+        "paper": "#eef0fb",
+        "ink": "#111827",
+        "muted": "#767d89",
+        "rule": "#111827",
+        "hairline": "#e1e6ef"
+      },
+      "viewport": {
+        "width": 828,
+        "height": 540
+      },
+      "panel": {
+        "width": 641,
+        "height": 396,
+        "scrollHeight": 769
+      },
+      "horizontalOverflow": false
+    },
+    "reachability": [
+      {
+        "text": "本软件完全免费，代码已开源。开源地址：https://github.com/lyswhut/lx-music-desktop",
+        "rect": {
+          "x": 205.078125,
+          "y": 191.625,
+          "width": 588.796875,
+          "height": 68.875
+        },
+        "lines": 4,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "最新版下载地址：GitHub Releases",
+        "rect": {
+          "x": 205.078125,
+          "y": 241.5,
+          "width": 588.796875,
+          "height": 43.9375
+        },
+        "lines": 3,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "软件的常见问题可转至：桌面版常见问题",
+        "rect": {
+          "x": 205.078125,
+          "y": 241.4375,
+          "width": 588.796875,
+          "height": 43.9375
+        },
+        "lines": 3,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "本软件没有客服，但我们整理了一些常见的使用问题。仔细、仔细、仔细地阅读常见问题后，",
+        "rect": {
+          "x": 205.078125,
+          "y": 229.375,
+          "width": 588.796875,
+          "height": 68.875
+        },
+        "lines": 7,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "仍有问题可到 GitHub 提交 Issue。",
+        "rect": {
+          "x": 205.078125,
+          "y": 242.25,
+          "width": 588.796875,
+          "height": 43.9375
+        },
+        "lines": 4,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "由于软件开发的初衷仅是为了对新技术的学习与研究，因此软件直至停止维护都将会一直保持纯净。",
+        "rect": {
+          "x": 205.078125,
+          "y": 229.1875,
+          "width": 588.796875,
+          "height": 69.875
+        },
+        "lines": 2,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "目前本项目的原始发布地址只有 GitHub，其他渠道均为第三方转载发布，可信度请自行鉴别。",
+        "rect": {
+          "x": 205.078125,
+          "y": 229.0625,
+          "width": 588.796875,
+          "height": 68.875
+        },
+        "lines": 5,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "本项目没有微信公众号之类的所谓「官方账号」，谨防被骗！",
+        "rect": {
+          "x": 205.078125,
+          "y": 245.9375,
+          "width": 588.796875,
+          "height": 43.9375
+        },
+        "lines": 2,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "你已签署本软件的许可协议，协议的在线版本在这里。",
+        "rect": {
+          "x": 205.078125,
+          "y": 308.875,
+          "width": 588.796875,
+          "height": 48.125
+        },
+        "lines": 7,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(17, 24, 39)"
+        }
+      },
+      {
+        "text": "By: 落雪无痕",
+        "rect": {
+          "x": 205.078125,
+          "y": 383.125,
+          "width": 588.796875,
+          "height": 45.9375
+        },
+        "lines": 3,
+        "clip": {
+          "left": 178.953125,
+          "top": 66.125,
+          "right": 820,
+          "bottom": 461.625
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(118, 125, 137)"
+        }
+      }
+    ],
+    "links": [
+      {
+        "center": {
+          "x": 644,
+          "y": 226,
+          "width": 247,
+          "height": 49.875,
+          "label": "点击打开",
+          "text": "https://github.com/lyswhut/lx-music-desktop"
+        },
+        "geometry": {
+          "text": "https://github.com/lyswhut/lx-music-desktop",
+          "rect": {
+            "x": 520.671875,
+            "y": 201.125,
+            "width": 247,
+            "height": 49.875
+          },
+          "lines": 2,
+          "clip": {
+            "left": 178.953125,
+            "top": 66.125,
+            "right": 820,
+            "bottom": 461.625
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 402,
+          "y": 263,
+          "width": 127.4375,
+          "height": 24.9375,
+          "label": "点击打开",
+          "text": "GitHub Releases"
+        },
+        "geometry": {
+          "text": "GitHub Releases",
+          "rect": {
+            "x": 337.96875,
+            "y": 251,
+            "width": 127.4375,
+            "height": 24.9375
+          },
+          "lines": 1,
+          "clip": {
+            "left": 178.953125,
+            "top": 66.125,
+            "right": 820,
+            "bottom": 461.625
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 446,
+          "y": 263,
+          "width": 116.28125,
+          "height": 24.9375,
+          "label": "点击打开",
+          "text": "桌面版常见问题"
+        },
+        "geometry": {
+          "text": "桌面版常见问题",
+          "rect": {
+            "x": 387.796875,
+            "y": 250.9375,
+            "width": 116.28125,
+            "height": 24.9375
+          },
+          "lines": 1,
+          "clip": {
+            "left": 178.953125,
+            "top": 66.125,
+            "right": 820,
+            "bottom": 461.625
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 408,
+          "y": 264,
+          "width": 78.71875,
+          "height": 24.9375,
+          "label": "点击打开",
+          "text": "提交 Issue"
+        },
+        "geometry": {
+          "text": "提交 Issue",
+          "rect": {
+            "x": 368.546875,
+            "y": 251.75,
+            "width": 78.71875,
+            "height": 24.9375
+          },
+          "lines": 1,
+          "clip": {
+            "left": 178.953125,
+            "top": 66.125,
+            "right": 820,
+            "bottom": 461.625
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      },
+      {
+        "center": {
+          "x": 599,
+          "y": 334,
+          "width": 33.234375,
+          "height": 24.9375,
+          "label": "点击打开",
+          "text": "这里"
+        },
+        "geometry": {
+          "text": "这里",
+          "rect": {
+            "x": 582.484375,
+            "y": 321.9375,
+            "width": 33.234375,
+            "height": 24.9375
+          },
+          "lines": 1,
+          "clip": {
+            "left": 178.953125,
+            "top": 66.125,
+            "right": 820,
+            "bottom": 461.625
+          },
+          "focusVisible": false,
+          "outline": {
+            "style": "none",
+            "width": "3px",
+            "offset": "0px",
+            "color": "rgb(17, 24, 39)"
+          }
+        }
+      }
+    ],
+    "focus": {
+      "text": "许可协议",
+      "rect": {
+        "x": 347.46875,
+        "y": 319.375,
+        "width": 76.015625,
+        "height": 28.125
+      },
+      "lines": 1,
+      "clip": {
+        "left": 178.953125,
+        "top": 66.125,
+        "right": 820,
+        "bottom": 461.625
+      },
+      "focusVisible": true,
+      "outline": {
+        "style": "solid",
+        "width": "2px",
+        "offset": "3px",
+        "color": "rgb(17, 24, 39)"
+      }
+    },
+    "pact": {
+      "opened": true,
+      "closed": true,
+      "agreement": {
+        "paragraphs": 24,
+        "signed": true,
+        "title": "许可协议"
+      },
+      "close": {
+        "text": "",
+        "rect": {
+          "x": 677.140625,
+          "y": 66.828125,
+          "width": 25.953125,
+          "height": 18.828125
+        },
+        "lines": 1,
+        "clip": {
+          "left": 124.90625,
+          "top": 65.5625,
+          "right": 703.09375,
+          "bottom": 474.4375
+        },
+        "focusVisible": false,
+        "outline": {
+          "style": "none",
+          "width": "3px",
+          "offset": "0px",
+          "color": "rgb(88, 101, 27)"
+        }
+      }
+    }
+  },
+  {
+    "kind": "settings-about-restoration",
+    "initial": {
+      "bounds": {
+        "x": 403,
+        "y": 241,
+        "width": 1280,
+        "height": 800
+      },
+      "resizable": false,
+      "fullscreen": false,
+      "theme": "lime",
+      "font": 16,
+      "location": "#/search?source=all&type=music",
+      "category": null
+    },
+    "restored": [
+      "pact",
+      "fullscreen",
+      "theme",
+      "font",
+      "route/category",
+      "bounds",
+      "resizable"
+    ],
+    "restoredState": {
+      "pact": true,
+      "fullscreen": true,
+      "theme": {
+        "renderer": "lime",
+        "main": "lime",
+        "disk": "lime"
+      },
+      "font": {
+        "renderer": 16,
+        "main": 16,
+        "disk": 16
+      },
+      "route/category": true,
+      "bounds": true,
+      "resizable": true
+    },
+    "native": {
+      "bounds": {
+        "x": 403,
+        "y": 241,
+        "width": 1280,
+        "height": 800
+      },
+      "resizable": false,
+      "fullscreen": false
+    },
+    "failures": [],
+    "complete": true
+  },
+  {
+    "kind": "settings-about-complete",
+    "scenarios": 6,
+    "screenshots": 24,
+    "checksBudgetMs": 40000,
+    "cleanupBudgetMs": 10000
+  }
+]

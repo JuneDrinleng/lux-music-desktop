@@ -1612,5 +1612,563 @@
       "cleanupComplete": true,
       "elapsedMs": 17340
     }
+  },
+  {
+    "mode": "native-drag",
+    "attempt": 1,
+    "exitCode": 1,
+    "runId": "0cd3f58b-bcb3-4921-b68e-7c7edd56de14",
+    "failure": "Error: Timed out waiting for restore original position only after successful actual native travel and release\n    at waitFor (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/electron-main.cjs:69:9)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processTimers (node:internal/timers:568:9)\n    at async readOnly (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/native-drag.cjs:42:24)\n    at async stable (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/native-drag.cjs:72:7)\n    at async runNativeDragEvidence (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/native-drag.cjs:130:26)\n    at async capture (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/electron-main.cjs:337:5)",
+    "observations": [
+      {
+        "kind": "native-drag-attempt",
+        "scope": "#left",
+        "nativeWindowId": "4194307",
+        "originalBefore": {
+          "x": 403,
+          "y": 241,
+          "width": 1280,
+          "height": 800
+        },
+        "windowStateBefore": {
+          "resizable": false,
+          "fullscreen": false,
+          "minimized": false,
+          "visible": true,
+          "focused": true
+        },
+        "priming": [
+          {
+            "step": 1,
+            "bounds": {
+              "x": 403,
+              "y": 241,
+              "width": 1280,
+              "height": 800
+            },
+            "pointer": "X=456\nY=272\nSCREEN=0\nWINDOW=4194307"
+          },
+          {
+            "step": 2,
+            "bounds": {
+              "x": 413,
+              "y": 246,
+              "width": 1280,
+              "height": 800
+            },
+            "pointer": "X=466\nY=277\nSCREEN=0\nWINDOW=4194307"
+          }
+        ],
+        "travel": [
+          {
+            "step": 1,
+            "bounds": {
+              "x": 423,
+              "y": 251,
+              "width": 1280,
+              "height": 800
+            },
+            "pointer": "X=476\nY=282\nSCREEN=0\nWINDOW=4194307"
+          },
+          {
+            "step": 2,
+            "bounds": {
+              "x": 433,
+              "y": 256,
+              "width": 1280,
+              "height": 800
+            },
+            "pointer": "X=486\nY=287\nSCREEN=0\nWINDOW=4194307"
+          },
+          {
+            "step": 3,
+            "bounds": {
+              "x": 443,
+              "y": 261,
+              "width": 1280,
+              "height": 800
+            },
+            "pointer": "X=496\nY=292\nSCREEN=0\nWINDOW=4194307"
+          },
+          {
+            "step": 4,
+            "bounds": {
+              "x": 453,
+              "y": 266,
+              "width": 1280,
+              "height": 800
+            },
+            "pointer": "X=506\nY=297\nSCREEN=0\nWINDOW=4194307"
+          }
+        ],
+        "commands": [
+          {
+            "args": [
+              "getwindowgeometry",
+              "--shell",
+              "4194307"
+            ],
+            "timeout": 2000,
+            "pid": 592,
+            "stdout": "WINDOW=4194307\nX=403\nY=241\nWIDTH=1280\nHEIGHT=800\nSCREEN=0\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mousemove",
+              "--sync",
+              "--window",
+              "4194307",
+              "43",
+              "26"
+            ],
+            "timeout": 2000,
+            "pid": 593,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 594,
+            "stdout": "X=446\nY=267\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mousedown",
+              "1"
+            ],
+            "timeout": 2000,
+            "pid": 595,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mousemove_relative",
+              "--sync",
+              "10",
+              "5"
+            ],
+            "timeout": 2000,
+            "pid": 596,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 597,
+            "stdout": "X=456\nY=272\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mousemove_relative",
+              "--sync",
+              "10",
+              "5"
+            ],
+            "timeout": 2000,
+            "pid": 598,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 599,
+            "stdout": "X=466\nY=277\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 600,
+            "stdout": "X=466\nY=277\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mousemove_relative",
+              "--sync",
+              "10",
+              "5"
+            ],
+            "timeout": 2000,
+            "pid": 601,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 602,
+            "stdout": "X=476\nY=282\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mousemove_relative",
+              "--sync",
+              "10",
+              "5"
+            ],
+            "timeout": 2000,
+            "pid": 603,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 604,
+            "stdout": "X=486\nY=287\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mousemove_relative",
+              "--sync",
+              "10",
+              "5"
+            ],
+            "timeout": 2000,
+            "pid": 605,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 606,
+            "stdout": "X=496\nY=292\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mousemove_relative",
+              "--sync",
+              "10",
+              "5"
+            ],
+            "timeout": 2000,
+            "pid": 607,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 608,
+            "stdout": "X=506\nY=297\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "mouseup",
+              "1"
+            ],
+            "timeout": 2000,
+            "pid": 609,
+            "stdout": "",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          },
+          {
+            "args": [
+              "getmouselocation",
+              "--shell"
+            ],
+            "timeout": 2000,
+            "pid": 610,
+            "stdout": "X=506\nY=297\nSCREEN=0\nWINDOW=4194307\n",
+            "stderr": "",
+            "code": 0,
+            "signal": null,
+            "killed": false
+          }
+        ],
+        "point": {
+          "x": 43,
+          "y": 26,
+          "scope": "#left",
+          "hitTag": "DIV",
+          "hitText": "L X",
+          "appRegion": "drag"
+        },
+        "paint": {
+          "firstFrameTime": 1437.9,
+          "secondFrameTime": 1454.5,
+          "visibilityState": "visible"
+        },
+        "nativeGeometry": "WINDOW=4194307\nX=403\nY=241\nWIDTH=1280\nHEIGHT=800\nSCREEN=0",
+        "pointerBefore": {
+          "bounds": {
+            "x": 403,
+            "y": 241,
+            "width": 1280,
+            "height": 800
+          },
+          "pointer": "X=446\nY=267\nSCREEN=0\nWINDOW=4194307"
+        },
+        "beforeTravel": {
+          "x": 413,
+          "y": 246,
+          "width": 1280,
+          "height": 800
+        },
+        "pointerBeforeTravel": {
+          "bounds": {
+            "x": 413,
+            "y": 246,
+            "width": 1280,
+            "height": 800
+          },
+          "pointer": "X=466\nY=277\nSCREEN=0\nWINDOW=4194307"
+        },
+        "afterTravel": {
+          "x": 453,
+          "y": 266,
+          "width": 1280,
+          "height": 800
+        },
+        "afterRelease": {
+          "bounds": {
+            "x": 453,
+            "y": 266,
+            "width": 1280,
+            "height": 800
+          },
+          "pointer": "X=506\nY=297\nSCREEN=0\nWINDOW=4194307"
+        },
+        "totalWindowDelta": {
+          "x": 50,
+          "y": 25
+        },
+        "inputBoundary": "two10x5 priming steps plus four10x5 measured steps: total pointer motion60x30; only after-beforeTravel is asserted40x20; no programmatic movement before success",
+        "failed": true,
+        "failure": "Error: Timed out waiting for restore original position only after successful actual native travel and release\n    at waitFor (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/electron-main.cjs:69:9)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processTimers (node:internal/timers:568:9)\n    at async readOnly (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/native-drag.cjs:42:24)\n    at async stable (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/native-drag.cjs:72:7)\n    at async runNativeDragEvidence (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/native-drag.cjs:130:26)\n    at async capture (/workspace/codex-dev/wt/desktop-m3d5b1/scripts/evidence/electron-main.cjs:337:5)",
+        "finalBounds": {
+          "x": 403,
+          "y": 241,
+          "width": 1280,
+          "height": 800
+        },
+        "elapsedMs": 7080.946858
+      }
+    ],
+    "manifestSha256": "21727b814296c1b827e2b9484e8589d1f6e2d28709d26e1bae6d56c5c699c79e",
+    "nativeDisplay": {
+      "schemaVersion": 1,
+      "runId": "0cd3f58b-bcb3-4921-b68e-7c7edd56de14",
+      "phaseId": "native-drag",
+      "display": ":105",
+      "privateDbusSession": true,
+      "wrapperPid": 463,
+      "status": "failed",
+      "wmPaths": {
+        "XDG_CONFIG_HOME": "/tmp/lux-electron-evidence-KeP3KK/display-native-drag/config",
+        "XDG_CACHE_HOME": "/tmp/lux-electron-evidence-KeP3KK/display-native-drag/cache",
+        "XDG_DATA_HOME": "/tmp/lux-electron-evidence-KeP3KK/display-native-drag/data",
+        "XDG_STATE_HOME": "/tmp/lux-electron-evidence-KeP3KK/display-native-drag/state"
+      },
+      "wmAccessibilityBridge": "disabled for auxiliary xfwm4 only; Electron environment preserved",
+      "wmVersion": "xfwm4 package 4.20.0-1",
+      "wmBinary": {
+        "executable": "/usr/bin/xfwm4",
+        "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+        "packageVersion": "4.20.0-1",
+        "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+      },
+      "wmPid": 476,
+      "ready": {
+        "windowId": "0x200032",
+        "ownerPid": 476,
+        "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+        "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 476\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+        "ownership": "EWMH PID equals owned xfwm4 child PID"
+      },
+      "readyElapsedMs": 762,
+      "electronPid": 498,
+      "electron": {
+        "pid": 498,
+        "code": 1,
+        "signal": null
+      },
+      "children": [
+        {
+          "label": "private D-Bus activation environment",
+          "pid": 470,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "initial WM root property probe",
+          "pid": 471,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "xfwm4 package ownership",
+          "pid": 472,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "xfwm4 installed version",
+          "pid": 475,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "xfwm4",
+          "pid": 476,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM root property probe",
+          "pid": 477,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM root property probe",
+          "pid": 481,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM root property probe",
+          "pid": 482,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM root property probe",
+          "pid": 483,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM root property probe",
+          "pid": 484,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM root property probe",
+          "pid": 494,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM root property probe",
+          "pid": 495,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM root property probe",
+          "pid": 496,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "WM identity probe",
+          "pid": 497,
+          "code": 0,
+          "signal": null
+        },
+        {
+          "label": "Electron",
+          "pid": 498,
+          "code": 1,
+          "signal": null
+        }
+      ],
+      "cleanupComplete": true,
+      "elapsedMs": 11729
+    },
+    "retry": "same unchanged harness, isolated retry passed; first failure retained, not overwritten or counted as pass"
   }
 ]

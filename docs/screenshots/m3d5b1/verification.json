@@ -1,0 +1,72 @@
+{
+  "report": {
+    "commit": "ed7fd45193b91c1a161feb7dab265f89073086a3",
+    "dirty": false,
+    "pullRequestHead": null,
+    "pullRequestBase": null,
+    "timestamp": "2026-11-10T04:11:15.485Z",
+    "node": "v24.22.1",
+    "platform": "linux-x64",
+    "checks": [
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 44524.902682
+      },
+      {
+        "command": "npm run typecheck",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 24610.182267999997
+      },
+      {
+        "command": "npm run test",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1947.6307499999966
+      },
+      {
+        "command": "npm run build:main",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 5881.428729000007
+      },
+      {
+        "command": "npm run build:renderer",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 29924.075178
+      },
+      {
+        "command": "npm run build:renderer-lyric",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 10007.714433000001
+      },
+      {
+        "command": "npm run build:renderer-scripts",
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1643.7156329999998
+      }
+    ]
+  },
+  "unit": {
+    "tests": 160,
+    "pass": 160,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "logSha256": {
+    "build-renderer-lyric.log": "d22dcd02770e2468eb470b360d48dd72a5b5b2b7c21c25240cd7d9c9035e7afb",
+    "build-renderer-scripts.log": "50d12375d50f187242846b0dcf8774e19ab5c407538955359c26f523242550aa",
+    "lint.log": "09c55d87198e7333113f3505b7c3a53782e4e6038f0101f47c4075557259d949",
+    "build-main.log": "3ed4409ca8723e3217fb598589c556dcfe35abc02a053092d0582a54915b2f6a",
+    "typecheck.log": "08829cf3781bc3d47586aa746fd1d8b5a6248148a1dd623c90b56ba3368445da",
+    "build-renderer.log": "92300294330f5d187aad884a668803c4b993066bb5c4f8fed6a11795e15c0eef",
+    "test.log": "1754d34951f2d438258b5a4c23e27df147500e84fb53fc0243e307035a6ecdc1"
+  }
+}

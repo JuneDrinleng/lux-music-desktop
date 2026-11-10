@@ -18,5 +18,9 @@
     "scripts/evidence/capture.cjs": "4d73ebfe0d7b10581a103d85444c93429b13be3169040be9e1f702f8b864ff0a",
     "scripts/evidence/electron-main.cjs": "bb13fee3c438ffec6cfac02021e509455782b92b10aff77202184cb4abdfd176",
     ".github/workflows/build-test.yml": "554c5b10ccbcb2ce08409f41baeca607eba643809129391c07fe98465e05a734"
-  }
+  },
+  "baselineComponentSha256": "0685287668b53f889b8bbbbb8520eda5c9018e96536d3bb54274e1a68ad9abaa",
+  "currentComponentSha256": "146dd1ab06a873dcd38ca35952467158f05b1261f41949b1adc5c02e6088607a",
+  "originalWindowBodyByteIdenticalExceptSingleTailAwait": true,
+  "planSha256": "56e58ecc02ab0c1c34fcac6ff512247a27421a88c59224a7ab478143254c9960"
 }
