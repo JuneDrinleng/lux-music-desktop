@@ -35,3 +35,11 @@ LUX_EVIDENCE_MODE=downloads LUX_EVIDENCE_DIR=artifacts/m3c2-downloads npm run ev
 完整构建、取证 manifest、截图与日志由未改动的 CI `desktop-evidence-<github.sha>-<attempt>` artifact 提供，保留期 **90 天**；最终 run/attempt、head/base、artifact 链接与验收状态记录在 PR 正文和本地 `_goal/REPORT.md`，不以历史 PR 绿灯替代本轮验证。
 
 基线已更新到最新 dev `63bfbdd8cb9b8926e5eba869c8784ca355561d12`（#17）；以上七门与七模式均重新执行，最终源码取证 head 为 `057aecaa64311064179f1971b1f402bdc016e6f9`，其后只更新本目录证据。旧基线成功输出保留在 `artifacts/m3c2-*-base567c5d7b`。
+
+## PR #23 Space 键返工
+
+独立测试在 `5808677d275a93c98d3cb96641761a839a4c23e7` 发现：详情原生播放按钮的 Space 默认 click 被共享 keyup 的无条件 `preventDefault()` 取消。返工仅对原生 `BUTTON` 的 Space keyup 保留默认行为；仍分发原事件、清理按下状态，已配置快捷键仍可自行取消事件。其他目标与其他按键保留原行为。
+
+`tests/unit/key-bind.test.cjs` 覆盖原生默认行为、释放后无残留按键、其他目标/按键及快捷键优先处理；首项在返工前失败，修复后三项通过。media 取证现通过 `play-detail-keyboard.cjs` 增加实际 Tab 聚焦后的 Enter/Space 播放切换与恢复、Enter/Space 前后曲的原生资源核对，以及 `xdotool` 的真实系统 Space 输入。每次激活必须恰有一次可信 click，Space keyup 必须未被取消；不调用组件 handler 或模拟媒体状态。
+
+本目录原图及其历史摘要保留。此次返工的新构建、七种模式 manifest、检查命令/结果和未验证范围记录在任务目录 `_goal/REPORT.md` 与 `_goal/rework-evidence/`；本地 dev 自验不代替独立 test 对新 head 的复测。保留 `changes-requested`，仅在推送和远端核对成功后申请 `needs-test`。

@@ -81,7 +81,9 @@ const handleKeyDown = (event: LX.KeyEvent) => {
 
 const handleKeyUp = (event: LX.KeyEvent) => {
   // if (assertStopCallback(event.target)) return
-  event.preventDefault()
+  // Native buttons generate their Space click on keyup. Keep dispatching the
+  // event so shortcuts can claim it and held-key bookkeeping stays balanced.
+  if (event.key != ' ' || (event.target as HTMLElement | null)?.tagName != 'BUTTON') event.preventDefault()
   let keys = eventModifiers(event)
   switch (event.key) {
     case 'Control':

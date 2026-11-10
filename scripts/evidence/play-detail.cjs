@@ -1,5 +1,6 @@
 const { performance } = require('node:perf_hooks')
 const createUiTools = require('./ui.cjs')
+const checkDetailKeyboard = require('./play-detail-keyboard.cjs')
 
 // Only original DOM input and read-only native media observations. The parent
 // keeps its 90s media deadline; this check and its restoration have finite bounds.
@@ -89,6 +90,7 @@ module.exports = async function playDetailEvidence(context) {
     await open()
     const started = await readMedia()
     await until(async() => (await readMedia()).audio.currentTime > started.audio.currentTime + 0.2, 'detail native clock advances')
+    results.push(await checkDetailKeyboard({ ...context, control, until }))
     await click(control('player__pause'))
     await until(async() => (await readMedia()).audio.paused, 'detail pause')
     const paused = await readMedia()
