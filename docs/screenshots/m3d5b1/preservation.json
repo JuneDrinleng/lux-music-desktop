@@ -1,0 +1,22 @@
+{
+  "base": "63bfbdd8cb9b8926e5eba869c8784ca355561d12",
+  "scriptIdentical": true,
+  "scriptSha256": "6a83e2046a1844cd974ad32ecf70d0644e7503dc467a5d3654450827ebf1c48c",
+  "templateExceptLocalClassesIdentical": true,
+  "urlEvents": [
+    "openUrl('https://github.com/lyswhut/lx-music-desktop#readme')",
+    "openUrl('https://github.com/lyswhut/lx-music-desktop/releases')",
+    "openUrl('https://lyswhut.github.io/lx-music-doc/desktop/faq')",
+    "openUrl('https://github.com/lyswhut/lx-music-desktop/issues?q=is%3Aissue+')",
+    "openUrl('https://github.com/lyswhut/lx-music-desktop#%E9%A1%B9%E7%9B%AE%E5%8D%8F%E8%AE%AE')"
+  ],
+  "originalPactEventRetained": true,
+  "protectedUnchangedSha256": {
+    "src/renderer/components/layout/PactModal.vue": "3b767ed133e8bc492866d012892c76e841a46c21f9b703575c649a35470c34fb",
+    "src/common/utils/electron.ts": "eca5bd1d2432d4da5442a4b63b700aa8071a02f51368d2e4783cdbb824ff8c9e",
+    "src/renderer/views/Setting/index.vue": "71c82f1bf73a4bc70d9af8833457d218b421cf4d8c0347a19815cb7e571d578b",
+    "scripts/evidence/capture.cjs": "4d73ebfe0d7b10581a103d85444c93429b13be3169040be9e1f702f8b864ff0a",
+    "scripts/evidence/electron-main.cjs": "bb13fee3c438ffec6cfac02021e509455782b92b10aff77202184cb4abdfd176",
+    ".github/workflows/build-test.yml": "554c5b10ccbcb2ce08409f41baeca607eba643809129391c07fe98465e05a734"
+  }
+}
