@@ -4,7 +4,7 @@
 
 生产改动仅在 `SettingSearch.vue` 的局部 class 和 Less；三个 base-checkbox、id、顺序、四语言引用、model-value / updateSetting 绑定均保留。script 与领取 dev 逐字相同，script SHA256 为 `fce00f8c2a8371d84b78a3bd7f849fddda694f4cde7b2c3ee9ead150648faef7`。不勾选父 M3d。
 
-领取 base：`63bfbdd8cb9b8926e5eba869c8784ca355561d12`。最终本地 queue 取证 source head：`24964c70567278fb4f4eb494b53009cc1bb3d376`；其余完整矩阵 source head 为 `b674b8eb`（仅新增本地失败说明）。完整 source、build/harness/PNG SHA256、逐项结果和原生进程身份在 [evidence.json](evidence.json)，九张随 PR 保留的原始图的字节哈希在 [SHA256SUMS](SHA256SUMS)。PNG 已逐张目视检查。
+领取 base：`63bfbdd8cb9b8926e5eba869c8784ca355561d12`。更新集成 base：`604a2aeccfb9089f9c71ef87701d35b72242121f`（任务进行中 #23 合入，原搜索模板/脚本和 queue 均未被上游修改）。本轮七门检查和全部扩展矩阵的共同 source head：`8b0c83d9dc970db349a90e9784ab1dab51a1096b`。领取 base 的完整 89 张矩阵及原始日志另存 `artifacts/m3d4e1-local/base63-matrices/`，包含可恢复原提交的 source.bundle。完整 source、build/harness/PNG SHA256、逐项结果和原生进程身份在 [evidence.json](evidence.json)，九张随 PR 保留的原始图的字节哈希在 [SHA256SUMS](SHA256SUMS)。PNG 已逐张目视检查。
 
 ## 固定搜索矩阵
 
@@ -31,7 +31,7 @@
 
 每个控件分别鼠标、Enter、Space 切换一次并以同一方式恢复，共 18 次操作。只读 MutationObserver 核对每次恰好一个 aria-checked 变化，并核对原隐藏 input、指定 renderer / main / 磁盘键。每个鼠标切换后离开分类再返回，改变值保持。三个初值本轮均 false，最后均恢复 false；主题 ink_night、字号 16、原分类“基本设置”、完整路由 `#/list?id=default`、原窗口 bounds 和原生状态全部恢复。来源列表、最终空队列及当前音频语义保持。
 
-helper 主体预算 40 秒、清理 10 秒，所有异步操作纳入；本轮主体 9160ms，总计 9479ms。八项清理各自尝试并全部成功。缺场景、少图、缺动作或任何清理失败均抛错。queue 原 8 图及全部行为、源列表断言、real-queue 记录完成后，无条件 await helper，直接传原 context；player、capture、electron-main 和旧计数均未修改。
+helper 主体预算 40 秒、清理 10 秒，所有异步操作纳入；本轮主体 9157ms，总计 9428ms。八项清理各自尝试并全部成功。缺场景、少图、缺动作或任何清理失败均抛错。queue 原 8 图及全部行为、源列表断言、real-queue 记录完成后，无条件 await helper，直接传原 context；player、capture、electron-main 和旧计数均未修改。
 
 ## 完整本地检查
 
@@ -41,27 +41,27 @@ helper 主体预算 40 秒、清理 10 秒，所有异步操作纳入；本轮�
 | --- | --- | --- |
 | `npm run lint` | 0 | 不适用 |
 | `npm run typecheck` | 0 | 不适用 |
-| `npm test` | 0 | 160 / 0 / 0（cancelled/todo 亦为 0） |
+| `npm test` | 0 | 163 / 0 / 0（cancelled/todo 亦为 0） |
 | `npm run build:main` | 0 | 不适用 |
 | `npm run build:renderer` | 0 | 不适用 |
 | `npm run build:renderer-lyric` | 0 | 不适用 |
 | `npm run build:renderer-scripts` | 0 | 不适用 |
 
-该本地 verify source 为 `e57419bb`；之后仅修正 helper 的取证假设并实际重跑定向 ESLint、完整 queue 和以下所有原模式，生产构建字节未变。最终 PR head 的七门检查由完整 CI 再执行。纯样式没有新增镜像实现单测。
+该本轮完整 verify 与全部矩阵的 source 均为 `8b0c83d9dc970db349a90e9784ab1dab51a1096b`，各模式 build/harness 字节哈希一致。最终 PR head 的七门检查和完整矩阵由既有 CI 再执行。纯样式没有新增镜像实现单测。
 
 依赖安装前审阅 package / lock 生命周期，`npm ci --ignore-scripts` exit 0；审阅 Electron installer / SQLite probe 后 `npm run evidence:prepare` exit 0（Electron 42.11.6，SQLite create/insert/select/close）。未运行 postinstall、pack、publish。
 
 | 原模式 | 实际退出码 | 保留矩阵 |
 | --- | --- | --- |
-| themes | 0（完整重跑） | 35，9 个真实进程，共用该模式唯一临时 profile |
-| media | 0 | 3 |
+| themes | 0（更新 dev 后完整重跑） | 35，9 个真实进程，共用该模式唯一临时 profile |
+| media | 0 | 原 media 3 + 上游 #23 play-detail 8 = 11 |
 | window | 0 | 3 |
 | native-drag | 0 | 1 |
 | settings | 0 | 21，尺寸 1280×800 / 1024×700 / 1440×900 |
-| queue | 0（第三轮） | 原 queue 8 + media 3 + 新 settings-search 9 |
+| queue | 0（更新 dev 后完整重跑） | 原 queue 8 + media 3 + 新 settings-search 9 |
 | downloads | 0 | 6 |
 
-各实际命令、逐图 SHA256、阶段 PID / 退出码 / 期限均在 evidence.json。原启动音频警告等 observation 附图继续保留在原 artifact，不并入上述 89 张矩阵计数。
+各实际命令、逐图 SHA256、阶段 PID / 退出码 / 期限均在 evidence.json。原启动音频警告等 observation 附图继续保留在原 artifact，不并入上述 97 张矩阵计数。
 
 本地 Linux x64、Electron 42.11.6、Xvfb / private D-Bus / owned xfwm4 4.20.0-1。每个成功阶段 EWMH owner PID 与所启动 WM PID 一致，Electron 与 WM 退出码为 0，cleanupComplete=true，临时 profile 已删除。原 main 120 秒、capture 150 秒期限未延长。
 

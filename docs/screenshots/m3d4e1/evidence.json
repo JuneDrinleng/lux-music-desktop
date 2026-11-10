@@ -1,10 +1,11 @@
 {
   "task": "desktop-m3d4e1",
-  "base": "63bfbdd8cb9b8926e5eba869c8784ca355561d12",
-  "implementationHead": "24964c70567278fb4f4eb494b53009cc1bb3d376",
-  "localDocumentationHead": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+  "claimBase": "63bfbdd8cb9b8926e5eba869c8784ca355561d12",
+  "base": "604a2aeccfb9089f9c71ef87701d35b72242121f",
+  "implementationHead": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
+  "localDocumentationHead": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
   "source": {
-    "commit": "24964c70567278fb4f4eb494b53009cc1bb3d376",
+    "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
     "branch": "codex/desktop-m3d4e1",
     "pullRequestHeadSha": null,
     "pullRequestBaseSha": null,
@@ -20,7 +21,7 @@
       "408.js.map": "7f210c53f93b9cd3a2f9adcd739da28d03dd405cb628874169f885a6526d8431",
       "409.js": "baa22cf8017f80b92c708296d312f8b63d031ab9e3f8a29ab02dce674cd56128",
       "409.js.map": "2d187a7e4218cd15cc81c186aa4a85b33fd358430b4925565ced96d18720b59a",
-      "420.js": "f559363e7bf023ac547320dd72405d20de0f181cb9dbc9ebdf5e723d0d42b9ef",
+      "420.js": "4617f39530c7b955013cecd47a3669f8799f9e372ee03a26ce41bb3d85442fe2",
       "420.js.map": "f1010713c926eede3291e5a3c333e9e6cb5deaf4f0e20f5f9aee5a5c4d90aee6",
       "438.js": "f189bd6834d38fcc0f122111eeb1d099a1186a90f0f0499e2aef263a5ee485b7",
       "438.js.map": "8737f3a7fb17d50f804a4ce8280db14e4efd84148daaf8740900a53eda79c688",
@@ -38,13 +39,13 @@
       "790.js.map": "7a0e388eac6a3e2c9c28d941ae5fea77ce0e298a550bae15cd6c0b04801ee70c",
       "930.js": "10932601f97122b7d3734281b9ee4c5059c63ac9964cc6baf443bba726854f26",
       "930.js.map": "2ddb75127d65dc776076504147bac277c74f4839fb2f9ba2e93e1692b8523fdf",
-      "978.js": "3177c9f0734a39ece7c1de039807d261ec35bb34320460d9d30d5fef7844cd1d",
+      "978.js": "7e39dfc0b9426fa21d8de570c3b4eac9c63e0a5ccaaf256b5ec2e699ef56b595",
       "978.js.LICENSE.txt": "b3c329926d3bef0b39302d3b779f84effba3578e264279e6ca7b88535d51a0fe",
       "978.js.map": "eb7bbe966eded66843709e5436f4cfe26ca21f89291fdd24a68bf55ca0922ca5",
       "984.js": "02159dcf550e499559187afcea0352da1144f81ad0b24078c401fc1e2f5230e7",
       "984.js.map": "a17a6958624014b09b29145b4f58b76a7dc799aae6bef0a892a2b600684231e5",
       "dbService.worker.js": "80dc388b39a0399405c7173e4291364750331b016503e3401ab8dc469f3c9ac7",
-      "index.html": "d17a312ac64214d57b94fd3a6dde1dda970c0e0177fb27039478c82c4fabcf96",
+      "index.html": "7744fbbe67d9d4aa8762e81ca9b3e30a05718e045e9222b7ad7a80a69ec5de04",
       "lyric.html": "f675d5b4d758f628425586bd4369c2884defa1fb80cdb0158ab51718127d693a",
       "main.js": "7ceb7447e0aa315f570895b6f1fefa8738dec0a7c0bb5a106e3500aab7f11913",
       "media/bright-hall-3f627fa1.wav": "4f0d8c51a4a5f7a5061c4037136a314a673abb502a86fab869a3b068a4754f83",
@@ -70,11 +71,13 @@
       "renderer-lyric.js.map": "d076f2782f477e92524375b384efd0100c2e34e23fa79d904e63d4b68b004df5",
       "renderer.06b43ece.css": "85d1d4293b0d9a8bbe7f8d869763664d7f65e52759620d00dd49c6bcb7469259",
       "renderer.06b43ece.css.map": "a9c063a9e65c392b60a528892b1b21c235874793e26ed8b42f00e1af67a81783",
+      "renderer.2a835042.css": "f5ad67620aac1f7d77ce2b1b12e8ddfd0f8403c916a44576f458df68519e0438",
+      "renderer.2a835042.css.map": "55f74ce38a0036477ce822ca51accfb180668768040f60af97dacd086edc6f53",
       "renderer.download.worker.js": "58822b91114eafa79a2d41bc5f0ef3159dd1b20f67164e6585611d493c257816",
       "renderer.download.worker.js.map": "506467a022883c0b0f3131fbe9ad45acb9051c136d13e82324727698604b3941",
-      "renderer.js": "78603fe0d7bf213cf2f258912253fe02fa1ec65729f7ea0629e41dcbdcaba7b3",
+      "renderer.js": "6d0a57b0b1897865d288ae3e1bfd1433f9dd4d1cd8ce29f7605c3b005799e197",
       "renderer.js.LICENSE.txt": "bbcd3b96b195b7ca89f8d15a33b23b4badf42ad0152a87b90bdbf67bfc8d6e5e",
-      "renderer.js.map": "2e7867ad1c0314f2f9dd587f1dd17a11d9bdaee0d0d1758c0bd92dafd9eaffda",
+      "renderer.js.map": "0ea94f41aea420814b89b188632a53a2cecd1580a72df74278e8623173633259",
       "renderer.main.worker.js": "12109215a028367b3e6fac256f93d61328b45da3cecc623a2f40e1e0997ffbde",
       "renderer.main.worker.js.map": "93fdaa928a9c9e29f8c303f7eda0c17d8ba744dda28c6818ff909bd1a40703a3",
       "static/images/taskbar/collect.png": "24c87b9d3fdca1cc44daa14a8ff9cc4e9713c7452e487cf7785d1c90e360b50c",
@@ -119,9 +122,11 @@
       "navigation.cjs": "11693d29afb5454910d99eb0891ddf99133a68956ca5cd1da9c5f957949c4d0d",
       "offline-preload.cjs": "94fadee845e38b4e14b5609a0a2477a9be5ef5ba6e51599ed802ff56917d58c3",
       "offline.cjs": "664201a557982cc9b19aa456079ed92d61e6208d1e2e601dbf6c052732218d87",
+      "play-detail-keyboard.cjs": "18d9df0dc128db3129c41d70b61bfbc512660404f3e275c866ac5a4bba13d64c",
+      "play-detail.cjs": "2d6cf7f8ed92c4d61895b263bf6ab4645a5f38befe751959a69774dc362fa313",
       "player-layout.cjs": "387f59b634f4a4c024269e1a93c68186989d24bc9f308ff2c7d93e082807b7dd",
       "player-preload.cjs": "ab831a7cb189ac2839e88021fa2185d7756838892ca804e05daa55f6b1b79176",
-      "player.cjs": "bb2698af35ac985545abf1c0ccf0a0f7382539b39a0200a09288eb5c3ecc3081",
+      "player.cjs": "253c03166edce853979972f44451fcaa59c690e53f700d77ad3b083e1feb1963",
       "prepare-runtime.cjs": "1bf3cf0c81431e957dfe8d09be3e1d5f016fcd26aa5aa7a1e700090cbac7047c",
       "profile.cjs": "a49f4df90244d1a89b4db385bbf524bb4408c23e3b9db20abaf4969f42ee1fec",
       "queue.cjs": "81cdb4e6bcc841ab72dafff45f945b1b3ee363c47a9f6196902ec5682fa5eb54",
@@ -132,11 +137,11 @@
     }
   },
   "verification": {
-    "commit": "e57419bb162a5afdb0280cd789984eb29b22720e",
+    "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
     "dirty": false,
     "pullRequestHead": null,
     "pullRequestBase": null,
-    "timestamp": "2026-11-10T08:03:08.758Z",
+    "timestamp": "2026-11-10T12:15:18.670Z",
     "node": "v24.22.1",
     "platform": "linux-x64",
     "checks": [
@@ -144,47 +149,47 @@
         "command": "npm run lint",
         "exitCode": 0,
         "signal": null,
-        "durationMs": 43949.74254399999
+        "durationMs": 43398.289810999995
       },
       {
         "command": "npm run typecheck",
         "exitCode": 0,
         "signal": null,
-        "durationMs": 19614.207973999997
+        "durationMs": 20608.258666
       },
       {
         "command": "npm run test",
         "exitCode": 0,
         "signal": null,
-        "durationMs": 1840.2077209999989
+        "durationMs": 1842.4387120000029
       },
       {
         "command": "npm run build:main",
         "exitCode": 0,
         "signal": null,
-        "durationMs": 5747.827657000002
+        "durationMs": 6038.322002999994
       },
       {
         "command": "npm run build:renderer",
         "exitCode": 0,
         "signal": null,
-        "durationMs": 77527.94073599999
+        "durationMs": 30026.987473
       },
       {
         "command": "npm run build:renderer-lyric",
         "exitCode": 0,
         "signal": null,
-        "durationMs": 8108.587008000002
+        "durationMs": 5782.972966999994
       },
       {
         "command": "npm run build:renderer-scripts",
         "exitCode": 0,
         "signal": null,
-        "durationMs": 1654.6614859999972
+        "durationMs": 1675.2755710000056
       }
     ],
     "testCounts": {
-      "pass": 160,
+      "pass": 163,
       "fail": 0,
       "skipped": 0,
       "cancelled": 0,
@@ -198,6 +203,12 @@
     "scriptByteIdentical": true,
     "scriptSha256": "fce00f8c2a8371d84b78a3bd7f849fddda694f4cde7b2c3ee9ead150648faef7",
     "originalQueuePlusFinalAwaitOnly": true
+  },
+  "previousClaimBase": {
+    "source": "artifacts/m3d4e1-local/base63-matrices",
+    "allModesPassed": true,
+    "matrixPngCount": 89,
+    "sourceBundle": "artifacts/m3d4e1-local/base63-matrices/source.bundle"
   },
   "search": {
     "kind": "settings-search",
@@ -1190,22 +1201,22 @@
       },
       "boundary": {
         "queue": [],
-        "musicId": "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+        "musicId": "/tmp/lux-electron-evidence-Yyg0tc/software-media-fixtures/lux-software-evidence-1.wav",
         "audio": {
-          "src": "file:///tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+          "src": "file:///tmp/lux-electron-evidence-Yyg0tc/software-media-fixtures/lux-software-evidence-1.wav",
           "paused": false,
           "volume": 1,
           "muted": false
         },
         "sourceIds": [
-          "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
-          "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-2.wav"
+          "/tmp/lux-electron-evidence-Yyg0tc/software-media-fixtures/lux-software-evidence-1.wav",
+          "/tmp/lux-electron-evidence-Yyg0tc/software-media-fixtures/lux-software-evidence-2.wav"
         ]
       }
     },
     "originalCategory": "基本设置",
     "bodyComplete": true,
-    "bodyElapsedMs": 9160,
+    "bodyElapsedMs": 9157,
     "final": {
       "values": {
         "search.isShowHotSearch": {
@@ -1250,20 +1261,20 @@
       },
       "boundary": {
         "queue": [],
-        "musicId": "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+        "musicId": "/tmp/lux-electron-evidence-Yyg0tc/software-media-fixtures/lux-software-evidence-1.wav",
         "audio": {
-          "src": "file:///tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
+          "src": "file:///tmp/lux-electron-evidence-Yyg0tc/software-media-fixtures/lux-software-evidence-1.wav",
           "paused": false,
           "volume": 1,
           "muted": false
         },
         "sourceIds": [
-          "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-1.wav",
-          "/tmp/lux-electron-evidence-8J67gn/software-media-fixtures/lux-software-evidence-2.wav"
+          "/tmp/lux-electron-evidence-Yyg0tc/software-media-fixtures/lux-software-evidence-1.wav",
+          "/tmp/lux-electron-evidence-Yyg0tc/software-media-fixtures/lux-software-evidence-2.wav"
         ]
       }
     },
-    "elapsedMs": 9479,
+    "elapsedMs": 9428,
     "unverified": [
       "search result pages and full M3a",
       "public online sources",
@@ -1281,8 +1292,8 @@
       "sha256": "b2da93c149c8756cc4c138b134765f79a8c930961a9d90944e65556dba94cf20",
       "bytes": 55744,
       "paint": {
-        "firstFrameTime": 23485,
-        "secondFrameTime": 23501.6,
+        "firstFrameTime": 23365.6,
+        "secondFrameTime": 23382.3,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1300,8 +1311,8 @@
       "sha256": "8e91d85ce84cbb51d0f89cb3dd4f670b8d510f10f34188f95dc032fea886a405",
       "bytes": 58884,
       "paint": {
-        "firstFrameTime": 23835,
-        "secondFrameTime": 23851.7,
+        "firstFrameTime": 23832.3,
+        "secondFrameTime": 23849,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1319,8 +1330,8 @@
       "sha256": "6b37e2bda710f76ae39e453f00b99a9bcda845be7a174f4f9e91b520f9b63e50",
       "bytes": 61432,
       "paint": {
-        "firstFrameTime": 24285,
-        "secondFrameTime": 24301.6,
+        "firstFrameTime": 24182.4,
+        "secondFrameTime": 24198.9,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1335,11 +1346,11 @@
       "kind": "settings-search",
       "width": 1280,
       "height": 800,
-      "sha256": "694a2b1485f628850acf993fc5f02488e208269d90b5400a8198b6e36064a8f4",
+      "sha256": "9580a8cb0759eb0588083bf9f823f8aeedc4ddf60db038faf211e8ef375c9816",
       "bytes": 58851,
       "paint": {
-        "firstFrameTime": 24768.3,
-        "secondFrameTime": 24785,
+        "firstFrameTime": 24749,
+        "secondFrameTime": 24765.6,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1354,11 +1365,11 @@
       "kind": "settings-search",
       "width": 1280,
       "height": 800,
-      "sha256": "122dc1f632bbf44781155d26dc9834cd8abca7c2d09d472f27bc1b827039fb93",
+      "sha256": "63b6fd137d8855478575807c9ff33b96297bce480fbefc1b9a9948bdfa1eea64",
       "bytes": 57727,
       "paint": {
-        "firstFrameTime": 25234.9,
-        "secondFrameTime": 25251.6,
+        "firstFrameTime": 25215.6,
+        "secondFrameTime": 25232.3,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1376,8 +1387,8 @@
       "sha256": "a737f5297d668643e8ad7dfd7ae419b105c7fefe02f3f1d78b67f13bea1b68a2",
       "bytes": 52711,
       "paint": {
-        "firstFrameTime": 25901.6,
-        "secondFrameTime": 25918.2,
+        "firstFrameTime": 25798.9,
+        "secondFrameTime": 25815.6,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1392,11 +1403,11 @@
       "kind": "settings-search",
       "width": 828,
       "height": 540,
-      "sha256": "b753d4d5e48788709ffb9df7885ba4a1a2a6affe17454caf573502c2d2641168",
+      "sha256": "82853c39397cc7f110609ed900b7f49dbfa1f1026bcd8d552a44adcb1ddab695",
       "bytes": 52762,
       "paint": {
-        "firstFrameTime": 26734.9,
-        "secondFrameTime": 26751.5,
+        "firstFrameTime": 26648.9,
+        "secondFrameTime": 26665.5,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1414,8 +1425,8 @@
       "sha256": "79aee35579147c2710f08706bc0e23f56d143053595e0fb5d1184e3c0f55a091",
       "bytes": 52786,
       "paint": {
-        "firstFrameTime": 28784.7,
-        "secondFrameTime": 28801.4,
+        "firstFrameTime": 28698.7,
+        "secondFrameTime": 28715.4,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1433,8 +1444,8 @@
       "sha256": "54d3865c8b224ca8d8f3d35bf48cbd63c1bf5fc2053ff72883ce2301ca6c8c96",
       "bytes": 52700,
       "paint": {
-        "firstFrameTime": 30851.3,
-        "secondFrameTime": 30868,
+        "firstFrameTime": 30748.8,
+        "secondFrameTime": 30765.4,
         "visibilityState": "visible"
       },
       "scene": {
@@ -1451,11 +1462,11 @@
       "command": "LUX_EVIDENCE_MODE=themes LUX_EVIDENCE_DIR=artifacts/m3d4e1-themes npm run evidence",
       "exitCode": 0,
       "status": "passed",
-      "runId": "0d358818-783a-4e9b-8cee-cd436c79182b",
-      "startedAt": "2026-11-10T12:11:21.318Z",
-      "finishedAt": "2026-11-10T12:12:27.225Z",
+      "runId": "c0c8eae2-d733-4f5a-b1f3-6d8ea588904f",
+      "startedAt": "2026-11-10T12:17:08.715Z",
+      "finishedAt": "2026-11-10T12:18:12.870Z",
       "source": {
-        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
+        "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
         "branch": "codex/desktop-m3d4e1",
         "dirty": false
       },
@@ -1468,706 +1479,10 @@
         "restart": 8,
         "compatibility": 2
       },
-      "manifestSha256": "81f16cb2e0d86df5079e574291c4f82b14c6e0947cdcf13317d0fe6e7d52a3d5",
+      "manifestSha256": "f007bad1453920f49aac1bcfc7f4477e136f9eabeb4f39858b2087c1d47cf4c2",
       "phases": [
         {
           "phase": "theme-lime",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 28,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:11:21.451Z",
-            "exitedAt": "2026-11-10T12:11:39.094Z",
-            "elapsedMs": 17643.493697,
-            "previousPhaseExited": null
-          },
-          "display": ":99",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 60,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 60,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 60\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 83,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 60,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        },
-        {
-          "phase": "theme-mist_blue",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 195,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:11:39.095Z",
-            "exitedAt": "2026-11-10T12:11:45.457Z",
-            "elapsedMs": 6362.173231000001,
-            "previousPhaseExited": true
-          },
-          "display": ":101",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 223,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 223,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 223\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 246,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 223,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        },
-        {
-          "phase": "theme-sakura",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 344,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:11:45.458Z",
-            "exitedAt": "2026-11-10T12:11:51.669Z",
-            "elapsedMs": 6210.762786000003,
-            "previousPhaseExited": true
-          },
-          "display": ":99",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 374,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 374,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 374\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 396,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 374,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        },
-        {
-          "phase": "theme-lavender",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 498,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:11:51.670Z",
-            "exitedAt": "2026-11-10T12:11:58.079Z",
-            "elapsedMs": 6408.987423000002,
-            "previousPhaseExited": true
-          },
-          "display": ":101",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 528,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 528,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 528\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 551,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 528,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        },
-        {
-          "phase": "theme-oat_milk",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 651,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:11:58.079Z",
-            "exitedAt": "2026-11-10T12:12:04.399Z",
-            "elapsedMs": 6319.307362,
-            "previousPhaseExited": true
-          },
-          "display": ":99",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 681,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 681,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 681\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 704,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 681,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        },
-        {
-          "phase": "theme-ink_night",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 805,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:12:04.399Z",
-            "exitedAt": "2026-11-10T12:12:10.643Z",
-            "elapsedMs": 6243.723711999999,
-            "previousPhaseExited": true
-          },
-          "display": ":101",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 835,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 835,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 835\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 858,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 835,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        },
-        {
-          "phase": "theme-green",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 960,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:12:10.643Z",
-            "exitedAt": "2026-11-10T12:12:16.814Z",
-            "elapsedMs": 6170.861062999997,
-            "previousPhaseExited": true
-          },
-          "display": ":99",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 989,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 989,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 989\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 1012,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 989,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        },
-        {
-          "phase": "theme-user_theme_evidence",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 1112,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:12:16.815Z",
-            "exitedAt": "2026-11-10T12:12:22.824Z",
-            "elapsedMs": 6008.788206000005,
-            "previousPhaseExited": true
-          },
-          "display": ":101",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 1141,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 1141,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1141\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 1163,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 1141,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        },
-        {
-          "phase": "custom-theme-restart",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 1265,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:12:22.824Z",
-            "exitedAt": "2026-11-10T12:12:27.187Z",
-            "elapsedMs": 4363.021075000004,
-            "previousPhaseExited": true
-          },
-          "display": ":99",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 1294,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 1294,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1294\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 1316,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 1294,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        }
-      ]
-    },
-    {
-      "mode": "media",
-      "command": "LUX_EVIDENCE_MODE=media LUX_EVIDENCE_DIR=artifacts/m3d4e1-media npm run evidence",
-      "exitCode": 0,
-      "status": "passed",
-      "runId": "7daa43ec-a1b3-47bd-9c95-1285b90cfc64",
-      "startedAt": "2026-11-10T12:09:15.478Z",
-      "finishedAt": "2026-11-10T12:09:27.195Z",
-      "source": {
-        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
-        "branch": "codex/desktop-m3d4e1",
-        "dirty": false
-      },
-      "count": 3,
-      "kinds": {
-        "media": 3
-      },
-      "manifestSha256": "4a047c491f065d09e927918b4910c0f070efff6e1b8aaf06d514a7324d13f076",
-      "phases": [
-        {
-          "phase": "media",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 27,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:09:15.545Z",
-            "exitedAt": "2026-11-10T12:09:27.161Z",
-            "elapsedMs": 11615.222912,
-            "previousPhaseExited": null
-          },
-          "display": ":99",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 59,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 59,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 59\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 82,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 59,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        }
-      ]
-    },
-    {
-      "mode": "window",
-      "command": "LUX_EVIDENCE_MODE=window LUX_EVIDENCE_DIR=artifacts/m3d4e1-window npm run evidence",
-      "exitCode": 0,
-      "status": "passed",
-      "runId": "976f6091-b6fc-48a6-a163-4303bd4fa1d3",
-      "startedAt": "2026-11-10T12:09:27.490Z",
-      "finishedAt": "2026-11-10T12:09:37.813Z",
-      "source": {
-        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
-        "branch": "codex/desktop-m3d4e1",
-        "dirty": false
-      },
-      "count": 3,
-      "kinds": {
-        "window-controls": 2,
-        "window-fullscreen": 1
-      },
-      "manifestSha256": "6e6cca7b9635d58a2ae7f62c0cc31ded48f55865bedfca631c90cf5f0c385c62",
-      "phases": [
-        {
-          "phase": "window",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 224,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:09:27.543Z",
-            "exitedAt": "2026-11-10T12:09:37.771Z",
-            "elapsedMs": 10228.488101,
-            "previousPhaseExited": null
-          },
-          "display": ":101",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 256,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 256,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 256\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 279,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 256,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        }
-      ]
-    },
-    {
-      "mode": "native-drag",
-      "command": "LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/m3d4e1-native-drag npm run evidence",
-      "exitCode": 0,
-      "status": "passed",
-      "runId": "c11e7bc8-3ee8-498e-8d83-9d6620257ca0",
-      "startedAt": "2026-11-10T12:09:38.042Z",
-      "finishedAt": "2026-11-10T12:09:45.267Z",
-      "source": {
-        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
-        "branch": "codex/desktop-m3d4e1",
-        "dirty": false
-      },
-      "count": 1,
-      "kinds": {
-        "window-native-drag": 1
-      },
-      "manifestSha256": "ba525528672d22dc2b44f77ec730d3e133cb57e6c5496cf45b4afa6ca2306d6e",
-      "phases": [
-        {
-          "phase": "native-drag",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 420,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:09:38.104Z",
-            "exitedAt": "2026-11-10T12:09:45.230Z",
-            "elapsedMs": 7126.530987,
-            "previousPhaseExited": null
-          },
-          "display": ":101",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 452,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 452,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 452\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 474,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 452,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        }
-      ]
-    },
-    {
-      "mode": "settings",
-      "command": "LUX_EVIDENCE_MODE=settings LUX_EVIDENCE_DIR=artifacts/m3d4e1-settings LUX_EVIDENCE_SIZES=1280x800,1024x700,1440x900 npm run evidence",
-      "exitCode": 0,
-      "status": "passed",
-      "runId": "303ed4e7-1f68-4eea-92a8-63fbaf29227e",
-      "startedAt": "2026-11-10T12:09:15.480Z",
-      "finishedAt": "2026-11-10T12:09:26.899Z",
-      "source": {
-        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
-        "branch": "codex/desktop-m3d4e1",
-        "dirty": false
-      },
-      "count": 21,
-      "kinds": {
-        "settings-category": 16,
-        "settings-size": 2,
-        "settings-theme": 2,
-        "settings-font": 1
-      },
-      "manifestSha256": "34582ad9d6827a50dc86e389cd8b332ba4e02fe90a2f2e7fc6107683051ca180",
-      "phases": [
-        {
-          "phase": "settings",
-          "electronVersion": "42.11.6",
-          "process": {
-            "launcherPid": 27,
-            "code": 0,
-            "signal": null,
-            "timedOut": false,
-            "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:09:15.552Z",
-            "exitedAt": "2026-11-10T12:09:26.863Z",
-            "elapsedMs": 11310.570194,
-            "previousPhaseExited": null
-          },
-          "display": ":101",
-          "wm": {
-            "binary": {
-              "executable": "/usr/bin/xfwm4",
-              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
-              "packageVersion": "4.20.0-1",
-              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
-            },
-            "pid": 62,
-            "ready": {
-              "windowId": "0x200032",
-              "ownerPid": 62,
-              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 62\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
-              "ownership": "EWMH PID equals owned xfwm4 child PID"
-            }
-          },
-          "electron": {
-            "pid": 85,
-            "code": 0,
-            "signal": null
-          },
-          "wmExit": {
-            "label": "xfwm4",
-            "pid": 62,
-            "code": 0,
-            "signal": null
-          },
-          "cleanupComplete": true,
-          "temporaryProfileRemoved": true
-        }
-      ]
-    },
-    {
-      "mode": "queue",
-      "command": "LUX_EVIDENCE_MODE=queue LUX_EVIDENCE_DIR=artifacts/m3d4e1-queue npm run evidence",
-      "exitCode": 0,
-      "status": "passed",
-      "runId": "8aaa2a86-8c87-447b-8725-45f87d454aff",
-      "startedAt": "2026-11-10T12:08:16.667Z",
-      "finishedAt": "2026-11-10T12:08:53.399Z",
-      "source": {
-        "commit": "24964c70567278fb4f4eb494b53009cc1bb3d376",
-        "branch": "codex/desktop-m3d4e1",
-        "dirty": false
-      },
-      "count": 20,
-      "kinds": {
-        "media": 3,
-        "queue": 8,
-        "settings-search": 9
-      },
-      "manifestSha256": "823882ba3a5929f67f2b11d303d337112c4ae64ce9293edb4cb804aa28515572",
-      "phases": [
-        {
-          "phase": "queue",
           "electronVersion": "42.11.6",
           "process": {
             "launcherPid": 41,
@@ -2175,12 +1490,12 @@
             "signal": null,
             "timedOut": false,
             "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:08:16.826Z",
-            "exitedAt": "2026-11-10T12:08:53.356Z",
-            "elapsedMs": 36529.844173000005,
+            "startedAt": "2026-11-10T12:17:08.780Z",
+            "exitedAt": "2026-11-10T12:17:26.115Z",
+            "elapsedMs": 17334.872834,
             "previousPhaseExited": null
           },
-          "display": ":106",
+          "display": ":99",
           "wm": {
             "binary": {
               "executable": "/usr/bin/xfwm4",
@@ -2210,40 +1525,401 @@
           },
           "cleanupComplete": true,
           "temporaryProfileRemoved": true
-        }
-      ]
-    },
-    {
-      "mode": "downloads",
-      "command": "LUX_EVIDENCE_MODE=downloads LUX_EVIDENCE_DIR=artifacts/m3d4e1-downloads npm run evidence",
-      "exitCode": 0,
-      "status": "passed",
-      "runId": "5ac71b62-1150-4d8c-8f41-c01bfaec4958",
-      "startedAt": "2026-11-10T12:09:27.123Z",
-      "finishedAt": "2026-11-10T12:09:44.135Z",
-      "source": {
-        "commit": "b674b8eb505f538868fcb2f387308cd93dcc570a",
-        "branch": "codex/desktop-m3d4e1",
-        "dirty": false
-      },
-      "count": 6,
-      "kinds": {
-        "downloads": 6
-      },
-      "manifestSha256": "b963829e57f7c22ecd1a1e70ce5b1b8c7e44c256a0fbc961b3a286b1a1cd536b",
-      "phases": [
+        },
         {
-          "phase": "downloads",
+          "phase": "theme-mist_blue",
           "electronVersion": "42.11.6",
           "process": {
-            "launcherPid": 227,
+            "launcherPid": 209,
             "code": 0,
             "signal": null,
             "timedOut": false,
             "timeoutMs": 150000,
-            "startedAt": "2026-11-10T12:09:27.178Z",
-            "exitedAt": "2026-11-10T12:09:44.095Z",
-            "elapsedMs": 16916.550030000002,
+            "startedAt": "2026-11-10T12:17:26.117Z",
+            "exitedAt": "2026-11-10T12:17:32.240Z",
+            "elapsedMs": 6123.739742000002,
+            "previousPhaseExited": true
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 237,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 237,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 237\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 260,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 237,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-sakura",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 363,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:17:32.241Z",
+            "exitedAt": "2026-11-10T12:17:38.338Z",
+            "elapsedMs": 6097.050228999997,
+            "previousPhaseExited": true
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 393,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 393,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 393\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 415,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 393,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-lavender",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 518,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:17:38.338Z",
+            "exitedAt": "2026-11-10T12:17:44.296Z",
+            "elapsedMs": 5957.643056000001,
+            "previousPhaseExited": true
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 547,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 547,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 547\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 569,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 547,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-oat_milk",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 672,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:17:44.298Z",
+            "exitedAt": "2026-11-10T12:17:50.419Z",
+            "elapsedMs": 6120.804428000003,
+            "previousPhaseExited": true
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 701,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 701,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 701\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 723,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 701,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-ink_night",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 824,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:17:50.420Z",
+            "exitedAt": "2026-11-10T12:17:56.464Z",
+            "elapsedMs": 6044.745575000001,
+            "previousPhaseExited": true
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 854,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 854,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 854\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 876,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 854,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-green",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 979,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:17:56.465Z",
+            "exitedAt": "2026-11-10T12:18:02.497Z",
+            "elapsedMs": 6032.439108999999,
+            "previousPhaseExited": true
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 1007,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1007,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1007\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 1029,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 1007,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "theme-user_theme_evidence",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 1130,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:18:02.498Z",
+            "exitedAt": "2026-11-10T12:18:08.551Z",
+            "elapsedMs": 6053.867065999999,
+            "previousPhaseExited": true
+          },
+          "display": ":101",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 1159,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1159,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1159\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 1182,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 1159,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        },
+        {
+          "phase": "custom-theme-restart",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 1286,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:18:08.552Z",
+            "exitedAt": "2026-11-10T12:18:12.827Z",
+            "elapsedMs": 4275.095877,
+            "previousPhaseExited": true
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 1316,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1316,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1316\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 1338,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 1316,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "media",
+      "command": "LUX_EVIDENCE_MODE=media LUX_EVIDENCE_DIR=artifacts/m3d4e1-media npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "e82be3e8-1dd9-4226-b7a3-91fd3e6130d2",
+      "startedAt": "2026-11-10T12:18:13.182Z",
+      "finishedAt": "2026-11-10T12:18:54.711Z",
+      "source": {
+        "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 11,
+      "kinds": {
+        "media": 3,
+        "play-detail": 8
+      },
+      "manifestSha256": "048e10c8f89820fcae0bf3758ccdf2c2c84c3d40c64358434dc3c448c00af440",
+      "phases": [
+        {
+          "phase": "media",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 1467,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:18:13.240Z",
+            "exitedAt": "2026-11-10T12:18:54.667Z",
+            "elapsedMs": 41427.702446999996,
             "previousPhaseExited": null
           },
           "display": ":99",
@@ -2254,23 +1930,359 @@
               "packageVersion": "4.20.0-1",
               "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
             },
-            "pid": 259,
+            "pid": 1499,
             "ready": {
               "windowId": "0x200032",
-              "ownerPid": 259,
+              "ownerPid": 1499,
               "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
-              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 259\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1499\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
               "ownership": "EWMH PID equals owned xfwm4 child PID"
             }
           },
           "electron": {
-            "pid": 282,
+            "pid": 1521,
             "code": 0,
             "signal": null
           },
           "wmExit": {
             "label": "xfwm4",
-            "pid": 259,
+            "pid": 1499,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "window",
+      "command": "LUX_EVIDENCE_MODE=window LUX_EVIDENCE_DIR=artifacts/m3d4e1-window npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "d6d22294-153b-4a2a-a2af-9b7beeb9b886",
+      "startedAt": "2026-11-10T12:19:31.633Z",
+      "finishedAt": "2026-11-10T12:19:41.842Z",
+      "source": {
+        "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 3,
+      "kinds": {
+        "window-controls": 2,
+        "window-fullscreen": 1
+      },
+      "manifestSha256": "93ead0cb27bcd4483821233cd906f985849569e386dbeca1db2692840c2016a3",
+      "phases": [
+        {
+          "phase": "window",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 1984,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:19:31.694Z",
+            "exitedAt": "2026-11-10T12:19:41.802Z",
+            "elapsedMs": 10108.167936,
+            "previousPhaseExited": null
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 2016,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 2016,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 2016\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 2038,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 2016,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "native-drag",
+      "command": "LUX_EVIDENCE_MODE=native-drag LUX_EVIDENCE_DIR=artifacts/m3d4e1-native-drag npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "908ae94e-7e95-48be-be79-b9f4e9021fc2",
+      "startedAt": "2026-11-10T12:19:42.085Z",
+      "finishedAt": "2026-11-10T12:19:49.125Z",
+      "source": {
+        "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 1,
+      "kinds": {
+        "window-native-drag": 1
+      },
+      "manifestSha256": "57f7c70305a36ea38f564ceca1d24636eb29cca092f7fc0bdf48717b76a1ccea",
+      "phases": [
+        {
+          "phase": "native-drag",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 2180,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:19:42.143Z",
+            "exitedAt": "2026-11-10T12:19:49.089Z",
+            "elapsedMs": 6945.824613000001,
+            "previousPhaseExited": null
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 2212,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 2212,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 2212\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 2235,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 2212,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "settings",
+      "command": "LUX_EVIDENCE_MODE=settings LUX_EVIDENCE_DIR=artifacts/m3d4e1-settings LUX_EVIDENCE_SIZES=1280x800,1024x700,1440x900 npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "0933b264-9081-4c1d-88be-e5a603394155",
+      "startedAt": "2026-11-10T12:19:49.349Z",
+      "finishedAt": "2026-11-10T12:19:59.803Z",
+      "source": {
+        "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 21,
+      "kinds": {
+        "settings-category": 16,
+        "settings-size": 2,
+        "settings-theme": 2,
+        "settings-font": 1
+      },
+      "manifestSha256": "508cf9aabae980e82d9f8a6ff3ac747eb1486982a14c60b8d0cc62ff7c75354d",
+      "phases": [
+        {
+          "phase": "settings",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 2405,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:19:49.405Z",
+            "exitedAt": "2026-11-10T12:19:59.766Z",
+            "elapsedMs": 10361.05156,
+            "previousPhaseExited": null
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 2437,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 2437,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 2437\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 2459,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 2437,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "queue",
+      "command": "LUX_EVIDENCE_MODE=queue LUX_EVIDENCE_DIR=artifacts/m3d4e1-queue npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "49d4eb39-f7e9-461e-8d47-5b3d6e72acb7",
+      "startedAt": "2026-11-10T12:18:54.956Z",
+      "finishedAt": "2026-11-10T12:19:31.401Z",
+      "source": {
+        "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 20,
+      "kinds": {
+        "media": 3,
+        "queue": 8,
+        "settings-search": 9
+      },
+      "manifestSha256": "895b6640f6651b6255dfad26e7da8331eafeac20b0fb2c5910805a4ccab1c83c",
+      "phases": [
+        {
+          "phase": "queue",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 1714,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:18:55.017Z",
+            "exitedAt": "2026-11-10T12:19:31.356Z",
+            "elapsedMs": 36339.15934,
+            "previousPhaseExited": null
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 1746,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 1746,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 1746\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 1769,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 1746,
+            "code": 0,
+            "signal": null
+          },
+          "cleanupComplete": true,
+          "temporaryProfileRemoved": true
+        }
+      ]
+    },
+    {
+      "mode": "downloads",
+      "command": "LUX_EVIDENCE_MODE=downloads LUX_EVIDENCE_DIR=artifacts/m3d4e1-downloads npm run evidence",
+      "exitCode": 0,
+      "status": "passed",
+      "runId": "db48a372-7755-4440-b337-60bd5a6a9742",
+      "startedAt": "2026-11-10T12:20:00.054Z",
+      "finishedAt": "2026-11-10T12:20:17.233Z",
+      "source": {
+        "commit": "8b0c83d9dc970db349a90e9784ab1dab51a1096b",
+        "branch": "codex/desktop-m3d4e1",
+        "dirty": false
+      },
+      "count": 6,
+      "kinds": {
+        "downloads": 6
+      },
+      "manifestSha256": "a30cfb158f9c13f8029732bad8b3b4d4f7f626953a847888ac864712ddee2431",
+      "phases": [
+        {
+          "phase": "downloads",
+          "electronVersion": "42.11.6",
+          "process": {
+            "launcherPid": 2601,
+            "code": 0,
+            "signal": null,
+            "timedOut": false,
+            "timeoutMs": 150000,
+            "startedAt": "2026-11-10T12:20:00.113Z",
+            "exitedAt": "2026-11-10T12:20:17.194Z",
+            "elapsedMs": 17080.566936,
+            "previousPhaseExited": null
+          },
+          "display": ":99",
+          "wm": {
+            "binary": {
+              "executable": "/usr/bin/xfwm4",
+              "sha256": "79f18ffbece93c8ac0a8c5e2171192c7ebbc8689960ee9da1f562d1be62c30eb",
+              "packageVersion": "4.20.0-1",
+              "versionSource": "installed dpkg package owning the resolved executable; metadata only, not WM readiness"
+            },
+            "pid": 2633,
+            "ready": {
+              "windowId": "0x200032",
+              "ownerPid": 2633,
+              "rootProperty": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032",
+              "identityProperties": "_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0x200032\n_NET_WM_PID(CARDINAL) = 2633\n_NET_WM_NAME(UTF8_STRING) = \"Xfwm4\"",
+              "ownership": "EWMH PID equals owned xfwm4 child PID"
+            }
+          },
+          "electron": {
+            "pid": 2655,
+            "code": 0,
+            "signal": null
+          },
+          "wmExit": {
+            "label": "xfwm4",
+            "pid": 2633,
             "code": 0,
             "signal": null
           },
@@ -2318,7 +2330,15 @@
     "artifacts/m3d4e1-themes/restart-user_theme_evidence-1280x800.png": "65aa0db1a497ff21d5bdb14d60b0bc81f8a4d348382d326ebd12d11e646d3640",
     "artifacts/m3d4e1-media/media-real-playing.png": "f10ad08b9ca743ab9fdec582e7804374ba4623b1e6047b8bf63e6464c9ff96bb",
     "artifacts/m3d4e1-media/media-real-paused-seek.png": "64e18ac2ad6c6561c709aa6d7e7740179737b913adf2198a37f89ccc2690a576",
-    "artifacts/m3d4e1-media/media-real-controls.png": "22ceeb74c0448ff6862e05f519f0e1144e3158adb58e20ca9ec7a3bd437ea699",
+    "artifacts/m3d4e1-media/media-real-controls.png": "f0ed900177147be581c84bb2652ffba52aa8630e008d40e83e8fa294cb1c7846",
+    "artifacts/m3d4e1-media/detail-no-cover-1280x800.png": "075a45346b6b29a4d3d8f30444a058aa4b38a1704267d1851373acf1d19be7bb",
+    "artifacts/m3d4e1-media/detail-lime-right-1280x800-font16.png": "f70fd997b95e7a9eb2cd87aecb40bc14025fcd3cc70435376c3e9d542d4abfda",
+    "artifacts/m3d4e1-media/detail-lime-left-1024x700-font16.png": "f0783efd6ffcf5237aee3c1abcafb1f70ba5233b00ee55b0d2f934d8897482ed",
+    "artifacts/m3d4e1-media/detail-lime-right-1440x900-font16.png": "b128eb0068772491dc8a2f99b720936ccb31249844641ee605b4f2bd72336772",
+    "artifacts/m3d4e1-media/detail-oat_milk-left-1280x800-font16.png": "4e6253aa8340d913bf6a3ba06803b074dc9f44620715716f3898b95d7a56ca7b",
+    "artifacts/m3d4e1-media/detail-ink_night-right-1280x800-font16.png": "66b73378778a73ba3dd92b0a69f1f3b8001e3dfb50fdd98a0b331fb141497e71",
+    "artifacts/m3d4e1-media/detail-ink_night-left-828x540-font19.png": "af3359c2da7ebc202b59f21ce312f59fd0f36936712e1f06cb98fe4109423efe",
+    "artifacts/m3d4e1-media/detail-comment-return-828x540.png": "f7eeec4450d43d22b10301208cb047a3ea1878d0a6535295443e41f29391066b",
     "artifacts/m3d4e1-window/window-controls-left.png": "2493eb488cfa1186fa9903ee1530fc4ce837d9b27e5a8fe19c6d71b3b9752528",
     "artifacts/m3d4e1-window/window-controls-right.png": "ceecd6cd6066c9976d3046f2660c940eb5d25301cf15b8940d671ddcd886841f",
     "artifacts/m3d4e1-window/window-fullscreen.png": "b07fcf137da186001dd82c0ce268039a4969630c1e712fc0273ad5c6e39186bd",
@@ -2337,39 +2357,39 @@
     "artifacts/m3d4e1-settings/settings-odc.png": "445d19765e90b775c1b7f61a2eea0567ce887c2905856b9dc3507300a0e1ccaa",
     "artifacts/m3d4e1-settings/settings-backup.png": "d795ba0b9059345297a27fc283a8d2563de95faeebf814c19f56c44390b57449",
     "artifacts/m3d4e1-settings/settings-other.png": "29ecf223adaeaa8f0340caff9563079e702422673ac1b3349e4984c2d359535a",
-    "artifacts/m3d4e1-settings/settings-update.png": "9d4df5ab68c174573b43dc6d55bdf6f7693c1b565b6f1ef089c36a10f75ad744",
+    "artifacts/m3d4e1-settings/settings-update.png": "87135b5e905acd0a5eb1ec4b471d499bfe7e45393fc023de71109d169821a831",
     "artifacts/m3d4e1-settings/settings-about.png": "e0d14aaa4ee53843cf523419e9ff6037ed0b6a84c3e8fbec250271bf5dece67c",
     "artifacts/m3d4e1-settings/settings-basic-1024x700.png": "11feec3f44045b1c4a7fa6190bfcd38bcf5ca8262c3a9d9c2a540b32a5c14ca8",
     "artifacts/m3d4e1-settings/settings-basic-1440x900.png": "0b47332fb244c87def6cb29b15bd33f6d6ac8af3764ff8a18e0dfef93cbfccc4",
-    "artifacts/m3d4e1-settings/settings-oat_milk.png": "ecb910099f1f9576475719ac97fffaf731d5f0e6b9a2edc23f94b06e1380dbbd",
-    "artifacts/m3d4e1-settings/settings-ink_night.png": "5cb1fb652c7addec15458360ee853f5cd35c8b3fb0f7d00be84e38c7ef008f2a",
+    "artifacts/m3d4e1-settings/settings-oat_milk.png": "0ef01afbe9016595ad4e95a66107cd481b3f287abc3e2c874a8619aa25cf6f6c",
+    "artifacts/m3d4e1-settings/settings-ink_night.png": "a5833c6a36de3b12478edce6c2a4f5b70c300b67df5b3b645a5bf3127bdd8d67",
     "artifacts/m3d4e1-settings/settings-font-19.png": "4ed32747c9319160878b1df989070b963af403c305db1a8b9488c73d3eb048e7",
     "artifacts/m3d4e1-queue/media-real-playing.png": "f10ad08b9ca743ab9fdec582e7804374ba4623b1e6047b8bf63e6464c9ff96bb",
     "artifacts/m3d4e1-queue/media-real-paused-seek.png": "64e18ac2ad6c6561c709aa6d7e7740179737b913adf2198a37f89ccc2690a576",
     "artifacts/m3d4e1-queue/media-real-controls.png": "22ceeb74c0448ff6862e05f519f0e1144e3158adb58e20ca9ec7a3bd437ea699",
-    "artifacts/m3d4e1-queue/queue-lime-1280x800.png": "9377d2f6932b7117c5cb7b982309a69cb20eb3fdd3f97d244570600cc67e95c8",
+    "artifacts/m3d4e1-queue/queue-lime-1280x800.png": "3e15b0f4972f3375a67929a299b1159213e8510385b20e1655c9499dc804e07a",
     "artifacts/m3d4e1-queue/queue-lime-1024x700.png": "69862f5f1c0be1b78c6b845255d256d704c607b3b31aa9025493fae242043065",
     "artifacts/m3d4e1-queue/queue-lime-1440x900.png": "8849eda469db3c67db25db5b882acad620a5a7e91530d6e3ac09167378972c77",
     "artifacts/m3d4e1-queue/queue-lime-828x540.png": "538276262ec1031dbb6caf22d14e413c83fcdabb03733ed8b4f8575c412172ed",
     "artifacts/m3d4e1-queue/queue-oat_milk-1280x800.png": "19daa63c51a438cf731a56f15989fe387cb0a15f3d8d58aaca1afbdc6fb429a8",
-    "artifacts/m3d4e1-queue/queue-ink_night-1280x800.png": "ad5a12d9c2bc3ba5440eb591f505878d648c398cdc5c0b444956a4fa7338c7bd",
+    "artifacts/m3d4e1-queue/queue-ink_night-1280x800.png": "7de094a54384f5d0957c31bf3b89129b6e72e6e892e67d3f0b08e579e2020618",
     "artifacts/m3d4e1-queue/queue-font-19-828x540.png": "59a5d937c79d0ba32e7c11135477d12f83bb012cbd11306c035ddebed8b68e9d",
     "artifacts/m3d4e1-queue/queue-empty-1280x800.png": "980e924a90cd57996e4fa291a16a0ee4623cb94741c15b9d46e15ba49c010525",
     "artifacts/m3d4e1-queue/settings-search-lime-1024x700-font16.png": "b2da93c149c8756cc4c138b134765f79a8c930961a9d90944e65556dba94cf20",
     "artifacts/m3d4e1-queue/settings-search-lime-1280x800-font16.png": "8e91d85ce84cbb51d0f89cb3dd4f670b8d510f10f34188f95dc032fea886a405",
     "artifacts/m3d4e1-queue/settings-search-lime-1440x900-font16.png": "6b37e2bda710f76ae39e453f00b99a9bcda845be7a174f4f9e91b520f9b63e50",
-    "artifacts/m3d4e1-queue/settings-search-oat_milk-1280x800-font16.png": "694a2b1485f628850acf993fc5f02488e208269d90b5400a8198b6e36064a8f4",
-    "artifacts/m3d4e1-queue/settings-search-ink_night-1280x800-font16.png": "122dc1f632bbf44781155d26dc9834cd8abca7c2d09d472f27bc1b827039fb93",
+    "artifacts/m3d4e1-queue/settings-search-oat_milk-1280x800-font16.png": "9580a8cb0759eb0588083bf9f823f8aeedc4ddf60db038faf211e8ef375c9816",
+    "artifacts/m3d4e1-queue/settings-search-ink_night-1280x800-font16.png": "63b6fd137d8855478575807c9ff33b96297bce480fbefc1b9a9948bdfa1eea64",
     "artifacts/m3d4e1-queue/settings-search-lime-828x540-font19.png": "a737f5297d668643e8ad7dfd7ae419b105c7fefe02f3f1d78b67f13bea1b68a2",
-    "artifacts/m3d4e1-queue/settings-search-focus-setting_search_showHot_enable.png": "b753d4d5e48788709ffb9df7885ba4a1a2a6affe17454caf573502c2d2641168",
+    "artifacts/m3d4e1-queue/settings-search-focus-setting_search_showHot_enable.png": "82853c39397cc7f110609ed900b7f49dbfa1f1026bcd8d552a44adcb1ddab695",
     "artifacts/m3d4e1-queue/settings-search-focus-setting_search_showHistory_enable.png": "79aee35579147c2710f08706bc0e23f56d143053595e0fb5d1184e3c0f55a091",
     "artifacts/m3d4e1-queue/settings-search-focus-setting_search_focusSearchBox_enable.png": "54d3865c8b224ca8d8f3d35bf48cbd63c1bf5fc2053ff72883ce2301ca6c8c96",
-    "artifacts/m3d4e1-downloads/downloads-lime-1280x800.png": "edde9190532b47198b7e2e4345e76f7e54c5b589f45290e8d1ee179064c49675",
+    "artifacts/m3d4e1-downloads/downloads-lime-1280x800.png": "c991b88f52432c602888bb993badb96c57b054c10264ff88b29ca5807ebe172a",
     "artifacts/m3d4e1-downloads/downloads-ink_night-1024x700.png": "98d2b130709a1dfbe806fd8bbb4c20e63ab2212b25864ae1ac37ad42fd7e614f",
     "artifacts/m3d4e1-downloads/downloads-oat_milk-1280x800.png": "75c70859069c964ea3b22e4501df5faef4cb26c765d2958f362d9b07c3422f9c",
     "artifacts/m3d4e1-downloads/downloads-selection-menu-1280x800.png": "61248602fa5c92565e57977e283a174e0780a4daedf5cd8cfdc8cf903a7b6c55",
     "artifacts/m3d4e1-downloads/downloads-large-font-1024x700.png": "83328ba27cfaa2ad453e9469b06d7e10a76f1fdc8683f123f8782614f2cebe1f",
-    "artifacts/m3d4e1-downloads/downloads-empty-1024x700.png": "b7fb50710e82bc53ec5690342a59c536deb5346a5155761a7d674188d11ae7f2"
+    "artifacts/m3d4e1-downloads/downloads-empty-1024x700.png": "ae40ffc58f444275afb4f269c47b06111b4ce0ad5eac7979674e646ec5e03cbb"
   },
   "ci": {
     "workflow": ".github/workflows/build-test.yml",
